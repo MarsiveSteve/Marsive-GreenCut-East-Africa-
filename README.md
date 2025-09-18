@@ -10,7 +10,7 @@ This is the **MVP (Minimum Viable Product)** website for **Marsive GreenCut**, a
 ---
 
 ## 🚀 Live Demo
-👉 [View the site on GitHub Pages](https://your-username.github.io/your-repo-name/)  
+👉 [View the site on GitHub Pages](https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/)  
 
 ---
 
