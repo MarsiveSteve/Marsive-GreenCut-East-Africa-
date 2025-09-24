@@ -64,9 +64,10 @@ nav ul li a:hover {
   position: relative;
   height: 90vh;
   background: url('../images/banner.webp') no-repeat center center/cover;
-  display: flex;
+ display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* move content to the left */
+  padding-left: 60px; /* space from the left edge */
 }
 
 .hero::after {
