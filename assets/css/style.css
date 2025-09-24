@@ -1,108 +1,134 @@
-/* Reset and base */
-body, html {
-    margin: 0; 
-    padding: 0; 
-    font-family: Arial, sans-serif;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Navbar styles */
-nav {
-    background-color: #decba4;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    justify-content: space-between;
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
-nav .left {
-    display: flex;
-    align-items: center;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d9c29c; /* beige-like background */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-nav img.logo {
-    height: 50px;
-    margin-right: 15px;
-}
-
-nav .site-name {
-    font-size: 18px;
-    font-weight: 500;
-    color: #3a3a1d;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #3a3a1d;
-    font-weight: 500;
-}
-
-nav ul li a:hover, nav ul li a.active {
-    text-decoration: underline;
-}
-
-/* Book button */
-.btn-book {
-    background-color: #32c76f;
-    color: white;
-    padding: 10px 18px;
-    font-weight: 700;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.hero {
-  position: relative;
-  background: url('../images/banner.webp') no-repeat center center/cover;
-  height: 600px;
+.logo-container {
   display: flex;
   align-items: center;
-  padding-left: 60px;
-  color: white;
-  font-weight: 900;
-  font-size: 3rem;
-  line-height: 1.2;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-  max-width: 100%;
-  overflow: hidden;
+  gap: 10px;
 }
 
-/* Dark overlay for better text contrast */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.35); /* semi-transparent dark overlay */
-  z-index: 1;
+.logo {
+  height: 50px;
+  width: auto;
 }
 
-/* Content above overlay */
-.hero-content {
+.brand {
+  font-weight: bold;
+  font-size: 18px;
+  color: #2a2a2a;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #2a2a2a;
+}
+
+.nav-links a:hover {
+  color: #006400; /* dark green hover */
+}
+
+.btn {
+  background: #1db954; /* green button */
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #148c3d;
+}
+
+/* Hero Section */
+.hero {
   position: relative;
-  z-index: 2;
-  max-width: 700px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-left: 40px;
 }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .hero {
-    height: 400px;
-    font-size: 2rem;
-    padding-left: 30px;
-    padding-right: 30px;
-    justify-content: center;
-    text-align: center;
-  }
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 
-  .hero-content {
-    max-width: 100%;
-  }
+.hero-text {
+  color: white;
+  text-align: left;
+  max-width: 600px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero-text h1 {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Content Sections */
+.content {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.content h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #006400;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  cursor: pointer;
 }
