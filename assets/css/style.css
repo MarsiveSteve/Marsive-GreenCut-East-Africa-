@@ -81,3 +81,35 @@ body {
   line-height: 1.2;
   max-width: 600px;
 }
+
+/* Page content */
+.page-content {
+  padding: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-content h1 {
+  margin-bottom: 20px;
+  color: #2e2e2e;
+}
+
+.page-content p, 
+.page-content ul, 
+.page-content form {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.page-content form input,
+.page-content form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.page-content form button {
+  border: none;
+  cursor: pointer;
+}
