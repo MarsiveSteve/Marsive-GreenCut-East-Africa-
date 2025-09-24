@@ -1,0 +1,83 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d8b98d;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar .logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: #2e2e2e;
+  font-weight: 500;
+}
+
+.navbar nav ul li a:hover {
+  color: green;
+}
+
+.navbar .btn {
+  background: #2ecc71;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar .btn:hover {
+  background: #27ae60;
+}
+
+/* Hero Section */
+.hero {
+  background: url("../images/banner.jpg") no-repeat center center/cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 50px;
+}
+
+.hero-text h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  max-width: 600px;
+}
