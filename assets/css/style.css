@@ -5,111 +5,73 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  color: #333;
-}
-
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #d8b98d;
+  background: #e0c48e; /* beige tone */
   padding: 10px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
-.navbar .logo {
+.logo {
   display: flex;
   align-items: center;
   font-weight: bold;
   font-size: 1.2rem;
+  color: #2f2f2f;
 }
 
-.navbar .logo img {
+.logo img {
   height: 50px;
   margin-right: 10px;
+  border-radius: 5px;
 }
 
-.navbar nav ul {
+.navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.navbar nav ul li a {
+.navbar ul li a {
   text-decoration: none;
-  color: #2e2e2e;
-  font-weight: 500;
+  color: #2f2f2f;
+  font-weight: 600;
 }
 
-.navbar nav ul li a:hover {
-  color: green;
+.navbar ul li a:hover {
+  text-decoration: underline;
 }
 
-.navbar .btn {
-  background: #2ecc71;
+.btn {
+  background: #43a047;
   color: #fff;
-  padding: 8px 15px;
+  padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
 }
 
-.navbar .btn:hover {
-  background: #27ae60;
+.btn:hover {
+  background: #2e7d32;
 }
 
 /* Hero Section */
 .hero {
-  background: url("../images/banner.jpg") no-repeat center center/cover;
   height: 90vh;
+  background: url("../images/banner.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 50px;
+  justify-content: left;
+  padding-left: 50px;
 }
 
 .hero-text h1 {
-  color: white;
   font-size: 3rem;
   font-weight: bold;
+  color: #fff;
   line-height: 1.2;
-  max-width: 600px;
-}
-
-/* Page content */
-.page-content {
-  padding: 50px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.page-content h1 {
-  margin-bottom: 20px;
-  color: #2e2e2e;
-}
-
-.page-content p, 
-.page-content ul, 
-.page-content form {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
-
-.page-content form input,
-.page-content form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.page-content form button {
-  border: none;
-  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  max-width: 500px;
 }
