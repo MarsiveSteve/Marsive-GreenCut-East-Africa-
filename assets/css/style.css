@@ -75,3 +75,23 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
   max-width: 500px;
 }
+
+/* Hero Section */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  background: url("../images/banner.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: left;
+  padding-left: 60px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.3;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay for readability */
+  padding: 20px;
+  border-radius: 10px;
+}
