@@ -59,17 +59,30 @@ nav ul li a:hover, nav ul li a.active {
     cursor: pointer;
 }
 
-/* Hero section */
 .hero {
     background: url('../images/banner.webp') no-repeat center center/cover;
     height: 600px;
     display: flex;
     align-items: center;
     padding-left: 60px;
+    padding-right: 60px;
     color: white;
     font-weight: 900;
     font-size: 3rem;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     max-width: 700px;
-    line-height: 1.2;
+    line-height: 1.5;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .hero {
+        height: 400px;
+        font-size: 2rem;
+        padding-left: 30px;
+        padding-right: 30px;
+        max-width: 100%;
+        justify-content: center;  /* center text horizontally */
+        text-align: center;       /* center text */
+    }
 }
