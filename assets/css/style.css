@@ -81,7 +81,7 @@
   height: 90vh;
   display: flex;
   align-items: center;
-  background: url("../images/banner.jpg") no-repeat center center/cover;
+  background: url("../images/banner.webp") no-repeat center center/cover;
   color: white;
   text-align: left;
   padding-left: 60px;
