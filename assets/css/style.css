@@ -14,27 +14,15 @@ nav {
     justify-content: space-between;
 }
 
-nav {
-    background-color: #decba4;
-    display: flex;
-    align-items: center;
-    padding: 20px 40px; /* increased padding: top/bottom 20px, left/right 40px */
-    justify-content: space-between;
-    min-height: 80px; /* add minimum height */
-}
-
-
 nav .left {
     display: flex;
     align-items: center;
 }
 
 nav img.logo {
-    height: 70px;
-    margin-right: 20px;
+    height: 50px;
+    margin-right: 15px;
 }
-
-
 
 nav .site-name {
     font-size: 18px;
