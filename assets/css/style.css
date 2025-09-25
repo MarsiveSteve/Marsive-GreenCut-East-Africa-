@@ -26,8 +26,9 @@ header {
 
 /* Logo */
 .logo img {
-  height: 50px;
+  height: 60px; /* Adjust logo size */
   max-width: 100%;
+  display: block; /* Ensures it's visible */
 }
 
 /* Nav Links (desktop) */
