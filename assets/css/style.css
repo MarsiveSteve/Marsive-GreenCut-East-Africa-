@@ -160,31 +160,32 @@ nav ul li a:hover {
   }
 }
 
-.treeplanting-section {
+/* Lawn Care Section */
+.lawncare-section {
   background-color: #0a1a2f;
   color: white;
   padding: 60px 20px;
   text-align: center;
 }
 
-.treeplanting-title {
+.lawncare-title {
   font-size: 2.5em;
   margin-bottom: 20px;
 }
 
-.treeplanting-text {
+.lawncare-text {
   font-size: 1.2em;
   max-width: 800px;
   margin: 0 auto 40px;
   line-height: 1.6;
 }
 
-.treeplanting-image-wrapper {
+.lawncare-image-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.treeplanting-image {
+.lawncare-image {
   width: 95%;          /* 👈 makes image wider (close to edges) */
   max-width: 1200px;   /* optional: limit max size on large screens */
   border-radius: 0;    /* 👈 sharp corners */
@@ -194,25 +195,25 @@ nav ul li a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .treeplanting-section {
+  .lawncare-section {
     padding: 40px 15px;
   }
-  .treeplanting-title {
+  .lawncare-title {
     font-size: 2em;
   }
-  .treeplanting-text {
+  .lawncare-text {
     font-size: 1em;
   }
-  .treeplanting-image {
+  .lawncare-image {
     width: 100%;  /* full width on tablets/phones */
   }
 }
 
 @media (max-width: 480px) {
-  .treeplanting-title {
+  .lawncare-title {
     font-size: 1.6em;
   }
-  .treeplanting-text {
+  .lawncare-text {
     font-size: 0.95em;
   }
 }
