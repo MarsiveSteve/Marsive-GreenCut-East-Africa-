@@ -23,8 +23,10 @@ header {
   z-index: 1000;
 }
 
-header img {
-  height: 60px;
+.navbar .logo img {
+    width: 50px;  /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure it fits inside without stretching */
 }
 
 nav ul {
