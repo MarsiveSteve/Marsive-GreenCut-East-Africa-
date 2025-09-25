@@ -27,6 +27,19 @@ header img {
   height: 60px;
 }
 
+/* Company Name */
+.company-name {
+  flex-grow: 1;
+  text-align: center; /* Center the name */
+}
+
+.company-name h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #064420;
+  margin: 0;
+}
+
 nav ul {
   list-style: none;
   display: flex;
