@@ -12,6 +12,7 @@ body {
 }
 
 /* Header styles */
+/* Header styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -44,6 +45,7 @@ nav ul li a:hover {
   color: #228b22;
 }
 
+/* Buttons */
 .btn {
   background: #28a745;
   color: white;
@@ -58,6 +60,55 @@ nav ul li a:hover {
 .btn:hover {
   background: #218838;
 }
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #064420;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile nav hidden by default */
+.nav-links {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #e5cda3;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none; /* hidden until toggle */
+  }
+
+  nav ul.active {
+    display: flex; /* show when active */
+  }
+
+  .btn {
+    display: none; /* hide Book button on mobile, or move inside nav */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 
 /* Hero section */
 .hero {
