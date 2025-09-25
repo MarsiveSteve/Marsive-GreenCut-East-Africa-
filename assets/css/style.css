@@ -12,6 +12,7 @@ body {
 }
 
 /* Header styles */
+/* Header styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -23,40 +24,61 @@ header {
   z-index: 1000;
 }
 
-header img {
-  height: 60px;
+/* Logo */
+.logo img {
+  height: 50px;
+  max-width: 100%;
 }
 
 /* Company Name */
 .company-name {
   flex-grow: 1;
-  text-align: center; /* Center the name */
+  text-align: center;
 }
 
 .company-name h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Adjusted for better visibility */
   font-weight: bold;
   color: #064420;
   margin: 0;
 }
 
-nav ul {
+/* Nav Links (desktop) */
+.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav ul li a {
+.nav-links li a {
   text-decoration: none;
   color: #064420;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
   color: #228b22;
 }
 
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100; /* keep above everything */
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #064420;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Button */
 .btn {
   background: #28a745;
   color: white;
@@ -71,6 +93,41 @@ nav ul li a:hover {
 .btn:hover {
   background: #218838;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Hide nav and button initially */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #e5cda3;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Adjust layout for small screens */
+  .company-name h1 {
+    font-size: 1.2rem;  /* Smaller for mobile */
+  }
+}
+
 
 /* Hero section */
 .hero {
