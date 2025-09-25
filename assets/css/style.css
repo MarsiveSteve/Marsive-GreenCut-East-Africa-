@@ -12,61 +12,49 @@ body {
 }
 
 /* Header styles */
-/* Header styles */
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 15px 20px;
   background-color: #e5cda3;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-header img {
-  height: 60px;
+/* Logo */
+.logo img {
+  height: 50px;
+  max-width: 100%;
 }
 
-nav ul {
+/* Nav Links (desktop) */
+.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav ul li a {
+.nav-links li a {
   text-decoration: none;
   color: #064420;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
   color: #228b22;
 }
 
-/* Buttons */
-.btn {
-  background: #28a745;
-  color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #218838;
-}
-
-/* Hamburger menu (hidden on desktop) */
+/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  cursor: pointer;
+  z-index: 1100; /* keep above everything */
 }
 
 .hamburger span {
@@ -77,33 +65,30 @@ nav ul li a:hover {
   transition: all 0.3s ease;
 }
 
-/* Mobile nav hidden by default */
-.nav-links {
-  display: flex;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  nav ul {
+  /* Hide nav and button initially */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #e5cda3;
     position: absolute;
     top: 70px;
     right: 0;
     width: 100%;
-    background: #e5cda3;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
     padding: 20px 0;
-    display: none; /* hidden until toggle */
+    text-align: center;
   }
 
-  nav ul.active {
-    display: flex; /* show when active */
+  .nav-links.active {
+    display: flex;
   }
 
   .btn {
-    display: none; /* hide Book button on mobile, or move inside nav */
+    display: none;
   }
 
+  /* Show hamburger on mobile */
   .hamburger {
     display: flex;
   }
