@@ -80,7 +80,7 @@ nav ul li a:hover {
 
 .hero-text {
   position: relative;
-  color: rgb(125, 145, 79);
+  color: rgb(249, 253, 238);
   text-align: left;
   max-width: 600px;
   padding: 20px;
@@ -106,7 +106,7 @@ nav ul li a:hover {
 .lawncare-section {
   background-color: #0b1a33; /* Dark blue background */
   color: white;
-  padding: 60px 20px;
+  padding: 100px 20px;
   text-align: center;
 }
 
@@ -132,11 +132,10 @@ nav ul li a:hover {
 }
 
 .lawncare-image {
-  width: 95%;          /* 👈 makes image wider (close to edges) */
-  max-width: 1200px;   /* optional: limit max size on large screens */
-  border-radius: 0;    /* 👈 sharp corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  object-fit: cover;   /* 👈 ensures it crops nicely if tall */
+  width: 40%;
+  height: auto;
+  display: block;
+  border-radius: 0px;
 }
 
 /* Responsive Design */
