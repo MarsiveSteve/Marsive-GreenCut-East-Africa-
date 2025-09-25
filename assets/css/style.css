@@ -14,7 +14,7 @@ body {
 /* Header styles */
 /* Overall Header Layout */
 header {
-  background-color: #28a745;  /* Green background */
+  background-color: #e9eec0;  /* Green background */
   padding: 15px 40px;
   position: sticky;
   top: 0;
@@ -26,7 +26,7 @@ header {
 
 /* Logo Container */
 .logo-container {
-  text-align: center;
+  text-align: left;
   margin-bottom: 15px;  /* Space between logo and navbar */
 }
 
