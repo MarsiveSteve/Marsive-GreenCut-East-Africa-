@@ -326,3 +326,9 @@ nav ul li a:hover {
   max-width: 600px; /* Adjust the max width of the image */
   border-radius: 8px;
 }
+
+.comprehensive-services {
+  background-color: #2C6B2F; /* Green background color */
+  padding: 30px 0;
+  text-align: center;
+}
