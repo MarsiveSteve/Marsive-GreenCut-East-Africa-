@@ -104,48 +104,59 @@ nav ul li a:hover {
 
 /* Lawn Care Section */
 .lawncare-section {
-  background-color: #0b1a33; /* Dark blue background */
+  background-color: #0a1a2f;
   color: white;
-  padding: 100px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
-.lawncare-container {
-  max-width: 1100px;
-  margin: auto;
-}
-
 .lawncare-title {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   margin-bottom: 20px;
 }
 
 .lawncare-text {
-  font-size: 1.2rem;
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto 40px;
   line-height: 1.6;
-  margin-bottom: 40px;
 }
 
 .lawncare-image-wrapper {
-  overflow: hidden;
-  border-radius: 12px;
+  display: flex;
+  justify-content: center;
 }
 
 .lawncare-image {
-  width: 40%;
-  height: auto;
-  display: block;
-  border-radius: 0px;
+  width: 95%;          /* 👈 makes image wider (close to edges) */
+  max-width: 1200px;   /* optional: limit max size on large screens */
+  border-radius: 0;    /* 👈 sharp corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  object-fit: cover;   /* 👈 ensures it crops nicely if tall */
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-  .lawncare-title {
-    font-size: 2rem;
+  .lawncare-section {
+    padding: 40px 15px;
   }
-
+  .lawncare-title {
+    font-size: 2em;
+  }
   .lawncare-text {
-    font-size: 1rem;
+    font-size: 1em;
+  }
+  .lawncare-image {
+    width: 100%;  /* full width on tablets/phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .lawncare-title {
+    font-size: 1.6em;
+  }
+  .lawncare-text {
+    font-size: 0.95em;
   }
 }
 
