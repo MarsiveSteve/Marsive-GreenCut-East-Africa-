@@ -286,3 +286,43 @@ nav ul li a:hover {
   font-size: 16px;
   line-height: 1.6;
 }
+
+.landscaping-section {
+  background-color: #2C6B2F; /* Green background color */
+  padding: 50px 0;
+}
+
+.landscaping-container {
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.landscaping-text {
+  color: #fff;
+  max-width: 600px;
+  padding-right: 20px; /* Add spacing between text and image */
+}
+
+.landscaping-text h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.landscaping-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.landscaping-image {
+  margin-top: 20px; /* Image slightly below the text */
+}
+
+.landscaping-image img {
+  width: 100%;
+  height: auto;
+  max-width: 600px; /* Adjust the max width of the image */
+  border-radius: 8px;
+}
