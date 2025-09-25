@@ -23,9 +23,11 @@ header {
   z-index: 1000;
 }
 
-header img {
+.navbar .logo img {
   height: 60px;
+  width: auto; /* Maintain the aspect ratio */
 }
+
 
 nav ul {
   list-style: none;
