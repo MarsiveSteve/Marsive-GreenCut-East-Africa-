@@ -11,20 +11,31 @@ body {
   color: #333;
 }
 
-/* Header styles */
+/* Header styling */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background-color: #e5cda3;
+  padding: 15px 20px;
+  background-color: #3e4e46; /* Dark green background */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-header img {
-  height: 60px;
+.logo-container {
+  flex-grow: 1; /* Ensures logo can grow and be aligned correctly */
+}
+
+.logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 nav ul {
@@ -35,17 +46,17 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #064420;
+  color: #ffffff; /* White text */
   font-weight: bold;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: #228b22;
+  color: #4caf50; /* Green hover effect */
 }
 
 .btn {
-  background: #28a745;
+  background: #4caf50; /* Green background */
   color: white;
   padding: 10px 18px;
   border: none;
@@ -56,41 +67,67 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-  background: #218838;
+  background: #388e3c; /* Darker green on hover */
 }
 
-/* Hamburger menu */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   font-size: 30px;
   cursor: pointer;
+  color: #ffffff; /* White icon */
 }
 
-/* Mobile styling */
+/* Mobile Styling */
 @media (max-width: 768px) {
-  /* Hide the nav links by default */
+  /* Hide nav links initially */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     text-align: center;
-    background-color: beige;
+    background-color: #3e4e46; /* Dark background to match header */
+    position: absolute;
+    top: 60px; /* Position it below the header */
+    left: 0;
+    padding: 10px 0;
   }
 
   .nav-links li {
     margin: 10px 0;
   }
 
-  /* Show the hamburger icon */
+  /* Show hamburger icon on mobile */
   .hamburger {
     display: block;
   }
 
-  /* Show nav links when active */
+  /* Display nav links when active */
   .nav-links.active {
     display: flex;
   }
+
+  /* Style the booking button */
+  .btn {
+    width: 80%; /* Make it larger on mobile */
+    margin-top: 20px;
+    padding: 12px 18px;
+    font-size: 18px;
+  }
+
+  /* Center the logo */
+  .logo-container {
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  /* Adjust button position */
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
 
 
 /* Hero section */
