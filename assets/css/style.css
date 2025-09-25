@@ -59,6 +59,7 @@ nav ul li a:hover {
   background: #218838;
 }
 
+/* Hamburger menu */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -67,8 +68,9 @@ nav ul li a:hover {
 
 /* Mobile styling */
 @media (max-width: 768px) {
+  /* Hide the nav links by default */
   .nav-links {
-    display: none;  /* Hide the links by default */
+    display: none;
     flex-direction: column;
     width: 100%;
     text-align: center;
@@ -79,14 +81,17 @@ nav ul li a:hover {
     margin: 10px 0;
   }
 
+  /* Show the hamburger icon */
   .hamburger {
-    display: block;  /* Show the hamburger icon */
+    display: block;
   }
 
+  /* Show nav links when active */
   .nav-links.active {
-    display: flex;  /* Show the nav links when active */
+    display: flex;
   }
 }
+
 
 /* Hero section */
 .hero {
