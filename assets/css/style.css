@@ -13,15 +13,26 @@ body {
 
 /* Header styles */
 /* Overall Header Layout */
-header {
-  background-color: #e9eec0;  /* Green background */
-  padding: 15px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Align logo and company name to the left */
+header .navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .navbar img {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+header .navbar h1 {
+    font-size: 24px; /* Adjust font size as needed */
+    margin: 0;
+}
+
+/* Change the navbar background to beige */
+header .navbar {
+    background-color: #f5f5dc;
+    padding: 15px;
 }
 
 /* Logo Container */
