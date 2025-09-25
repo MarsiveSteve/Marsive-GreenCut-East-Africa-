@@ -12,7 +12,6 @@ body {
 }
 
 /* Header styles */
-/* Header styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -24,61 +23,27 @@ header {
   z-index: 1000;
 }
 
-/* Logo */
-.logo img {
-  height: 50px;
-  max-width: 100%;
+header img {
+  height: 60px;
 }
 
-/* Company Name */
-.company-name {
-  flex-grow: 1;
-  text-align: center;
-}
-
-.company-name h1 {
-  font-size: 1.8rem; /* Adjust for better visibility */
-  font-weight: bold;
-  color: #064420;
-  margin: 0;
-}
-
-/* Nav Links (desktop) */
-.nav-links {
+nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.nav-links li a {
+nav ul li a {
   text-decoration: none;
   color: #064420;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.nav-links li a:hover {
+nav ul li a:hover {
   color: #228b22;
 }
 
-/* Hamburger menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 1100; /* keep above everything */
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #064420;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Button */
 .btn {
   background: #28a745;
   color: white;
@@ -93,41 +58,6 @@ header {
 .btn:hover {
   background: #218838;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  /* Hide nav and button initially */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #e5cda3;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .btn {
-    display: none;
-  }
-
-  /* Show hamburger on mobile */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Adjust layout for small screens */
-  .company-name h1 {
-    font-size: 1.4rem;  /* Slightly smaller for mobile */
-  }
-}
-
 
 /* Hero section */
 .hero {
@@ -230,32 +160,31 @@ header {
   }
 }
 
-/* Lawn Care Section */
-.lawncare-section {
+.treeplanting-section {
   background-color: #0a1a2f;
   color: white;
   padding: 60px 20px;
   text-align: center;
 }
 
-.lawncare-title {
+.treeplanting-title {
   font-size: 2.5em;
   margin-bottom: 20px;
 }
 
-.lawncare-text {
+.treeplanting-text {
   font-size: 1.2em;
   max-width: 800px;
   margin: 0 auto 40px;
   line-height: 1.6;
 }
 
-.lawncare-image-wrapper {
+.treeplanting-image-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.lawncare-image {
+.treeplanting-image {
   width: 95%;          /* 👈 makes image wider (close to edges) */
   max-width: 1200px;   /* optional: limit max size on large screens */
   border-radius: 0;    /* 👈 sharp corners */
@@ -265,25 +194,25 @@ header {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .lawncare-section {
+  .treeplanting-section {
     padding: 40px 15px;
   }
-  .lawncare-title {
+  .treeplanting-title {
     font-size: 2em;
   }
-  .lawncare-text {
+  .treeplanting-text {
     font-size: 1em;
   }
-  .lawncare-image {
+  .treeplanting-image {
     width: 100%;  /* full width on tablets/phones */
   }
 }
 
 @media (max-width: 480px) {
-  .lawncare-title {
+  .treeplanting-title {
     font-size: 1.6em;
   }
-  .lawncare-text {
+  .treeplanting-text {
     font-size: 0.95em;
   }
 }
