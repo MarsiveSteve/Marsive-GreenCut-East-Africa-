@@ -37,7 +37,7 @@ header {
 }
 
 .company-name h1 {
-  font-size: 1.6rem; /* Adjusted for better visibility */
+  font-size: 1.8rem; /* Adjust for better visibility */
   font-weight: bold;
   color: #064420;
   margin: 0;
@@ -124,7 +124,7 @@ header {
 
   /* Adjust layout for small screens */
   .company-name h1 {
-    font-size: 1.2rem;  /* Smaller for mobile */
+    font-size: 1.4rem;  /* Slightly smaller for mobile */
   }
 }
 
