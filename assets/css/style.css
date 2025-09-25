@@ -59,6 +59,35 @@ nav ul li a:hover {
   background: #218838;
 }
 
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Mobile styling */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;  /* Hide the links by default */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: beige;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;  /* Show the hamburger icon */
+  }
+
+  .nav-links.active {
+    display: flex;  /* Show the nav links when active */
+  }
+}
+
 /* Hero section */
 .hero {
   position: relative;
