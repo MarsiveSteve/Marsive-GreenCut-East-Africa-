@@ -14,26 +14,58 @@ body {
 /* Header styles */
 /* Overall Header Layout */
 /* Align logo and company name to the left */
+/* Set the background color of the navbar to beige */
 header .navbar {
+    background-color: #f5f5dc; /* Beige */
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    padding: 10px 20px; /* Adjust the padding as needed */
 }
 
+/* Align the logo and company name to the left */
 header .navbar img {
-    margin-right: 10px; /* Adjust as needed */
+    height: 40px; /* Adjust the logo size */
+    margin-right: 10px; /* Space between logo and company name */
 }
 
 header .navbar h1 {
-    font-size: 24px; /* Adjust font size as needed */
+    font-size: 24px; /* Adjust the company name font size */
     margin: 0;
+    font-weight: bold;
 }
 
-/* Change the navbar background to beige */
-header .navbar {
-    background-color: #f5f5dc;
-    padding: 15px;
+/* Style the navigation links */
+header .navbar nav {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1; /* Take up remaining space */
 }
+
+header .navbar nav a {
+    text-decoration: none;
+    color: #333; /* Dark color for text */
+    padding: 10px 20px;
+    font-size: 16px; /* Adjust the text size */
+}
+
+header .navbar nav a:hover {
+    background-color: #d0d0d0; /* Slight gray hover effect */
+    border-radius: 5px;
+}
+
+/* Style for the 'Book Service' button */
+header .navbar .btn {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+header .navbar .btn:hover {
+    background-color: #45a049;
+}
+
 
 /* Logo Container */
 .logo-container {
