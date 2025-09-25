@@ -23,11 +23,9 @@ header {
   z-index: 1000;
 }
 
-.navbar .logo img {
+header img {
   height: 60px;
-  width: auto; /* Maintain the aspect ratio */
 }
-
 
 nav ul {
   list-style: none;
@@ -82,7 +80,7 @@ nav ul li a:hover {
 
 .hero-text {
   position: relative;
-  color: rgb(249, 253, 238);
+  color: rgb(125, 145, 79);
   text-align: left;
   max-width: 600px;
   padding: 20px;
@@ -105,62 +103,52 @@ nav ul li a:hover {
 }
 
 /* Lawn Care Section */
-.treeplanting-section {
-  background-color: #0a1a2f;
+.lawncare-section {
+  background-color: #0b1a33; /* Dark blue background */
   color: white;
   padding: 60px 20px;
   text-align: center;
 }
 
-.treeplanting-title {
-  font-size: 2.5em;
+.lawncare-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.lawncare-title {
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.treeplanting-text {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 0 auto 40px;
+.lawncare-text {
+  font-size: 1.2rem;
   line-height: 1.6;
+  margin-bottom: 40px;
 }
 
-.treeplanting-image-wrapper {
-  display: flex;
-  justify-content: center;
+.lawncare-image-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
 }
 
-.treeplanting-image {
-  width: 95%;          /* 👈 makes image wider (close to edges) */
-  max-width: 1200px;   /* optional: limit max size on large screens */
-  border-radius: 0;    /* 👈 sharp corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  object-fit: cover;   /* 👈 ensures it crops nicely if tall */
+.lawncare-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0px;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .treeplanting-section {
-    padding: 40px 15px;
+  .lawncare-title {
+    font-size: 2rem;
   }
-  .treeplanting-title {
-    font-size: 2em;
-  }
-  .treeplanting-text {
-    font-size: 1em;
-  }
-  .treeplanting-image {
-    width: 100%;  /* full width on tablets/phones */
+
+  .lawncare-text {
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 480px) {
-  .treeplanting-title {
-    font-size: 1.6em;
-  }
-  .treeplanting-text {
-    font-size: 0.95em;
-  }
-}
 .treeplanting-section {
   background-color: #0a1a2f;
   color: white;
