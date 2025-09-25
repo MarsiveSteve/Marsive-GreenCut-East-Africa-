@@ -174,9 +174,11 @@ nav ul li a:hover {
 }
 
 .treeplanting-image {
-  max-width: 100%;
-  border-radius: 0px;
+  width: 95%;          /* 👈 makes image wider (close to edges) */
+  max-width: 1200px;   /* optional: limit max size on large screens */
+  border-radius: 0;    /* 👈 sharp corners */
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  object-fit: cover;   /* 👈 ensures it crops nicely if tall */
 }
 
 /* Responsive */
@@ -189,6 +191,9 @@ nav ul li a:hover {
   }
   .treeplanting-text {
     font-size: 1em;
+  }
+  .treeplanting-image {
+    width: 100%;  /* full width on tablets/phones */
   }
 }
 
