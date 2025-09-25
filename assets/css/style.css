@@ -135,6 +135,7 @@ nav ul li a:hover {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 0px;
 }
 
 /* Responsive Design */
@@ -174,7 +175,7 @@ nav ul li a:hover {
 
 .treeplanting-image {
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
