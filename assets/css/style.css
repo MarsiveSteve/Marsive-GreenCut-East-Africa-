@@ -356,21 +356,20 @@ nav ul li a:hover {
 
 .detail-item {
   display: flex; /* Align items horizontally */
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 30px;
 }
 
 .detail-item img {
-  width: 100%; /* Ensure the image takes up the space */
-  max-width: 380px; /* Limit image size */
+  width: 50%; /* Adjust the image size */
   height: auto;
   object-fit: cover;
   margin-right: 20px;
 }
 
 .detail-text {
-  width: 60%; /* Text area takes the remaining space */
+  width: 50%; /* Text area takes the remaining space */
 }
 
 .detail-text h3 {
@@ -387,17 +386,17 @@ nav ul li a:hover {
 
 @media screen and (max-width: 768px) {
   .detail-item {
-    flex-direction: column; /* Stack images and text on smaller screens */
+    flex-direction: column; /* Stack items vertically on small screens */
     text-align: center;
   }
 
   .detail-item img {
-    max-width: 90%; /* Reduce image width on mobile */
+    width: 80%; /* Reduce image size on mobile */
     margin: 0 auto 15px;
   }
 
   .detail-text {
-    width: 90%;
+    width: 80%;
   }
 }
 
