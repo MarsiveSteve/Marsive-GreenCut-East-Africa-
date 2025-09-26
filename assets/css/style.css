@@ -1,4 +1,4 @@
-/* Reset and base styles */
+Dee/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -474,3 +474,18 @@ nav ul li a:hover {
   margin-top: 5px;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .client-section {
+    padding: 40px 15px;
+  }
+  .client-title {
+    font-size: 2em;
+  }
+  .testimonial-text {
+    font-size: 1em;
+  }
+  .testimonial-image {
+    width: 100%;  /* full width on tablets/phones */
+  }
+}
