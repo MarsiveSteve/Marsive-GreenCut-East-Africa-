@@ -348,23 +348,28 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 
-/* Styling for the new section with columnar design */
+/* Styling for the section in a left-to-right layout */
 .why-choose-us-details {
   background-color: #f1e1c9; /* Lighter beige */
   padding: 40px 20px;
 }
 
 .detail-item {
-  display: block; /* Stack the images and text in a column */
+  display: flex; /* Align items horizontally */
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 .detail-item img {
-  width: 100%;
-  max-width: 400px; /* Limit the image size */
+  width: 40%; /* Adjust the image size */
   height: auto;
-  margin: 0 auto 15px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.detail-text {
+  width: 55%; /* Text takes up most of the space */
 }
 
 .detail-text h3 {
@@ -380,8 +385,18 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 768px) {
+  .detail-item {
+    flex-direction: column; /* Stack the items vertically on small screens */
+    text-align: center;
+  }
+
   .detail-item img {
-    max-width: 100%; /* Allow image to scale on smaller screens */
+    width: 80%; /* Make the image smaller on small screens */
+    margin: 0 auto 15px;
+  }
+
+  .detail-text {
+    width: 80%;
   }
 }
 
