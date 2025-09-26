@@ -439,7 +439,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap; /* Allows wrapping for smaller screen sizes */
+  flex-wrap: nowrap; /* Allows wrapping for smaller screen sizes */
 }
 
 .client-testimonials .testimonial-item {
