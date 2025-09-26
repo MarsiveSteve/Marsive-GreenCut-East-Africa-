@@ -456,7 +456,7 @@ nav ul li a:hover {
 
 .testimonial img {
   width: 100%;  /* Image takes the full width */
-  height: 500px;  /* Elongated height for the images */
+  height: 350px;  /* Elongated height for the images */
   object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
   border-radius: 8px;
   margin-bottom: 20px;  /* Space between the image and text */
