@@ -348,9 +348,9 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 
-/* Styling for the section in a left-to-right layout */
+/* Styling for the section */
 .why-choose-us-details {
-  background-color: #f1e1c9; /* Lighter beige */
+  background-color: #f1e1c9; /* Light beige */
   padding: 40px 20px;
 }
 
@@ -362,18 +362,19 @@ nav ul li a:hover {
 }
 
 .detail-item img {
-  width: 40%; /* Adjust the image size */
+  width: 100%; /* Ensure the image takes up the space */
+  max-width: 380px; /* Limit image size */
   height: auto;
   object-fit: cover;
   margin-right: 20px;
 }
 
 .detail-text {
-  width: 55%; /* Text takes up most of the space */
+  width: 60%; /* Text area takes the remaining space */
 }
 
 .detail-text h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #4f4f4f;
   margin-bottom: 10px;
 }
@@ -386,17 +387,17 @@ nav ul li a:hover {
 
 @media screen and (max-width: 768px) {
   .detail-item {
-    flex-direction: column; /* Stack the items vertically on small screens */
+    flex-direction: column; /* Stack images and text on smaller screens */
     text-align: center;
   }
 
   .detail-item img {
-    width: 80%; /* Make the image smaller on small screens */
+    max-width: 90%; /* Reduce image width on mobile */
     margin: 0 auto 15px;
   }
 
   .detail-text {
-    width: 80%;
+    width: 90%;
   }
 }
 
