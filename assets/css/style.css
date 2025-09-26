@@ -481,10 +481,26 @@ nav ul li a:hover {
   }
 }
 
-/* Contact Section */
+.contact-form {
+  background-color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.contact-form .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contact-form h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
 .contact-form form {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -494,16 +510,16 @@ nav ul li a:hover {
 }
 
 .form-group label {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #2c3e50;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
 }
 
@@ -515,12 +531,36 @@ button {
   background-color: #1abc9c;
   color: #fff;
   font-size: 1rem;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  margin-top: 20px;
 }
 
 button:hover {
   background-color: #16a085;
 }
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .contact-form h2 {
+    font-size: 2rem;
+  }
+
+  .contact-form .container {
+    width: 95%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
