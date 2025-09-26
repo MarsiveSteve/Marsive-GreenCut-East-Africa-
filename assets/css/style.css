@@ -418,12 +418,13 @@ nav ul li a:hover {
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px; /* Reduced gap between sections */
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 20px; /* Reduced margin for the title section */
+  margin-bottom: 20px;
 }
 
 .section-title h2 {
@@ -441,9 +442,10 @@ nav ul li a:hover {
 .client-testimonials .container {
   display: flex;
   justify-content: space-between;
-  gap: 10px; /* Reduced gap between the testimonial items */
+  gap: 10px;
   flex-wrap: wrap;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 .client-testimonials .testimonial-item {
@@ -455,7 +457,7 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* Ensures equal height for all items */
+  height: 100%;
 }
 
 .client-testimonials .testimonial-item img {
@@ -469,7 +471,7 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-grow: 1; /* Makes the text section take remaining space */
+  flex-grow: 1;
 }
 
 .client-testimonials .testimonial-content h3 {
@@ -487,7 +489,8 @@ nav ul li a:hover {
   padding: 20px;
   border-radius: 8px;
   width: 50%;
-  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .contact-form h3 {
@@ -507,7 +510,7 @@ nav ul li a:hover {
 .contact-form button {
   width: 100%;
   padding: 10px;
-  background-color: #0cfa54;
+  background-color: #1abc9c;
   color: white;
   border: none;
   border-radius: 5px;
@@ -515,13 +518,17 @@ nav ul li a:hover {
 }
 
 .contact-form button:hover {
-  background-color: #0cfa54;
+  background-color: #16a085;
 }
 
 @media screen and (max-width: 768px) {
   .client-testimonials .container {
     flex-direction: column;
     align-items: center;
+  }
+  .client-testimonials .testimonial-item {
+    width: 80%; /* Make each item occupy more space on smaller screens */
+    margin-bottom: 20px;
   }
   .contact-form {
     width: 80%;
