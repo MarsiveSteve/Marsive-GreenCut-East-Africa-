@@ -507,7 +507,7 @@ nav ul li a:hover {
 .contact-form button {
   width: 100%;
   padding: 10px;
-  background-color: #1abc9c;
+  background-color: #0cfa54;
   color: white;
   border: none;
   border-radius: 5px;
@@ -515,7 +515,7 @@ nav ul li a:hover {
 }
 
 .contact-form button:hover {
-  background-color: #16a085;
+  background-color: #0cfa54;
 }
 
 @media screen and (max-width: 768px) {
