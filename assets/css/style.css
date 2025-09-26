@@ -375,6 +375,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;  /* This allows wrapping for smaller screen sizes */
 }
 
 .service {
@@ -384,11 +385,15 @@ nav ul li a:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 32%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .service img {
-  width: 100%;
-  height: auto;
+  width: 100%;  /* Ensure the image takes the full width of its container */
+  height: 200px;  /* Set a fixed height to avoid elongation */
+  object-fit: cover;  /* Ensures the image maintains its aspect ratio while covering the area */
   border-radius: 8px;
 }
 
