@@ -413,78 +413,68 @@ nav ul li a:hover {
 
 /*What our clients say section*/
 .client-testimonials {
-  background-color: #1abc9c; /* Green background */
+  background-color: #e8c29d; /* Light beige background */
   padding: 40px 0;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Reduced gap between sections */
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.section-title h2 {
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
-}
-
-.section-title p {
-  font-size: 18px;
-  color: white;
-  margin-top: 10px;
 }
 
 .client-testimonials .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.client-testimonials h2 {
+  font-size: 2.5rem;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.client-testimonials p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.client-testimonials .flex-container {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  max-width: 1200px;
+  gap: 20px;
+  flex-wrap: wrap;  /* Allows wrapping for smaller screen sizes */
 }
 
 .client-testimonials .testimonial-item {
-  width: 30%;
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 32%;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  align-items: center;
 }
 
 .client-testimonials .testimonial-item img {
-  width: 100%;
-  height: auto;
+  width: 100%;  /* Image takes the full width */
+  height: 500px;  /* Elongated height for the images */
+  object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
   border-radius: 8px;
+  margin-bottom: 20px;  /* Space between the image and text */
 }
 
-.client-testimonials .testimonial-content {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
+.client-testimonials .testimonial-item h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-top: 10px;
 }
 
-.client-testimonials .testimonial-content h3 {
-  font-size: 20px;
-  font-weight: bold;
+.client-testimonials .testimonial-item p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-top: 5px;
 }
 
-.client-testimonials .testimonial-content p {
-  font-size: 16px;
-  color: #555;
-}
-
-.contact-form {
+.client-testimonials .contact-form {
   background: white;
   padding: 20px;
   border-radius: 8px;
@@ -493,13 +483,14 @@ nav ul li a:hover {
   margin-bottom: 30px;
 }
 
-.contact-form h3 {
+.client-testimonials .contact-form h3 {
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.contact-form input, .contact-form textarea {
+.client-testimonials .contact-form input, 
+.client-testimonials .contact-form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -507,7 +498,7 @@ nav ul li a:hover {
   border: 1px solid #ccc;
 }
 
-.contact-form button {
+.client-testimonials .contact-form button {
   width: 100%;
   padding: 10px;
   background-color: #1abc9c;
@@ -517,20 +508,20 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-.contact-form button:hover {
+.client-testimonials .contact-form button:hover {
   background-color: #16a085;
 }
 
 @media screen and (max-width: 768px) {
-  .client-testimonials .container {
+  .client-testimonials .flex-container {
     flex-direction: column;
     align-items: center;
   }
   .client-testimonials .testimonial-item {
-    width: 80%; /* Make each item occupy more space on smaller screens */
+    width: 80%;
     margin-bottom: 20px;
   }
-  .contact-form {
+  .client-testimonials .contact-form {
     width: 80%;
   }
 }
