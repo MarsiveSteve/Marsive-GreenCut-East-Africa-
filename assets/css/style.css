@@ -347,3 +347,46 @@ nav ul li a:hover {
   max-width: 600px; /* Adjust the max width of the image */
   border-radius: 8px;
 }
+
+/* Styling for the new section */
+.why-choose-us-details {
+  background-color: #f1e1c9; /* Lighter beige */
+  padding: 40px 20px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.detail-item img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.detail-text h3 {
+  font-size: 1.5rem;
+  color: #4f4f4f;
+  margin-bottom: 10px;
+}
+
+.detail-text p {
+  font-size: 1rem;
+  color: #4f4f4f;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .detail-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .detail-item img {
+    margin-bottom: 15px;
+  }
+}
+
