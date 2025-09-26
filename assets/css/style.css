@@ -375,7 +375,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap;  /* This allows wrapping for smaller screen sizes */
+  flex-wrap: wrap;  /* Allows wrapping for smaller screen sizes */
 }
 
 .service {
@@ -391,21 +391,22 @@ nav ul li a:hover {
 }
 
 .service img {
-  width: 100%;  /* Ensure the image takes the full width of its container */
-  height: 200px;  /* Set a fixed height to avoid elongation */
-  object-fit: cover;  /* Ensures the image maintains its aspect ratio while covering the area */
+  width: 100%;  /* Image takes the full width */
+  height: 350px;  /* Elongated height for the images */
+  object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
   border-radius: 8px;
+  margin-bottom: 20px;  /* Space between the image and text */
 }
 
 .service h3 {
   font-size: 1.5rem;
   color: #2c3e50;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .service p {
   font-size: 1rem;
   color: #7f8c8d;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
