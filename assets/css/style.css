@@ -67,15 +67,17 @@ nav ul li a:hover {
 }
 
 /* Mobile styling */
-@media (max-width: 768px) {
-  /* Hide the nav links by default */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background-color: beige;
-  }
+media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
 
   .nav-links li {
     margin: 10px 0;
