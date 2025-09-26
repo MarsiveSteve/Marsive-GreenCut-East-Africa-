@@ -348,23 +348,23 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 
-/* Styling for the new section */
+/* Styling for the new section with columnar design */
 .why-choose-us-details {
   background-color: #f1e1c9; /* Lighter beige */
   padding: 40px 20px;
 }
 
 .detail-item {
-  display: flex;
-  align-items: center;
+  display: block; /* Stack the images and text in a column */
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .detail-item img {
-  width: 250px;
-  height: 200px;
-  object-fit: cover;
-  margin-right: 20px;
+  width: 100%;
+  max-width: 400px; /* Limit the image size */
+  height: auto;
+  margin: 0 auto 15px;
 }
 
 .detail-text h3 {
@@ -380,13 +380,8 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .detail-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .detail-item img {
-    margin-bottom: 15px;
+    max-width: 100%; /* Allow image to scale on smaller screens */
   }
 }
 
