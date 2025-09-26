@@ -350,7 +350,7 @@ nav ul li a:hover {
  
 /*Why Marsive Section*/
 .testimonials {
-  background-color: #ffffff;
+  background-color: #0cfa54;
   padding: 40px 0;
   text-align: center;
 }
@@ -411,65 +411,3 @@ nav ul li a:hover {
   margin-top: 5px;
 }
 
-/*client-testimonials*/
-.testimonials {
-  background-color: #0cf85b;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.testimonials .container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.testimonials h2 {
-  font-size: 2.5rem;
-  color: #4a4a4a;
-  margin-bottom: 20px;
-}
-
-.testimonials p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;  /* Allows wrapping for smaller screen sizes */
-}
-
-.testimonial {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 32%;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.testimonial img {
-  width: 100%;  /* Image takes the full width */
-  height: 500px;  /* Elongated height for the images */
-  object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
-  border-radius: 8px;
-  margin-bottom: 20px;  /* Space between the image and text */
-}
-
-.testimonial h3 {
-  font-size: 1.5rem;
-  color: #2c3e50;
-  margin-top: 10px;
-}
-
-.testimonial p {
-  font-size: 1rem;
-  color: #7f8c8d;
-  margin-top: 5px;
-}
