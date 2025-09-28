@@ -9,22 +9,32 @@
 </head>
 <body>
 
-  <!-- Header -->
+ <!-- Header -->
   <header>
+  <!-- Hamburger on the left -->
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Logo in the middle -->
+  <div class="logo">
     <img src="assets/images/logo.png" alt="Marsive GreenCut Logo">
-    <nav>
-    <!-- Hamburger Icon (Only shows on mobile) -->
-    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-      <ul>
-        <li><a href="services.html">Our Services</a></li>
-        <li><a href="about.html">Welcome</a></li>
-        <li><a href="about.html#why">Why Choose Us</a></li>
-        <li><a href="about.html#testimonials">Testimonials</a></li>
-        <li><a href="contact.html">Booking</a></li>
-      </ul>
-    </nav>
-    <button class="btn">Book Service</button>
-  </header>
+  </div>
+
+  <!-- Button on the right -->
+  <button class="btn">Book Service</button>
+
+  <!-- Nav links (hidden on mobile) -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Our Services</a></li>
+    <li><a href="#welcome">Welcome</a></li>
+    <li><a href="#why">Why Choose Us</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#booking">Booking</a></li>
+  </ul>
+</header
 
   <!-- Hero Section -->
   <section class="hero">
