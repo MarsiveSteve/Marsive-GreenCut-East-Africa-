@@ -65,19 +65,24 @@ header {
   display: none;
 }
 
-/* ----- Mobile dropdown when .active is added ----- */
-/* ----- Mobile dropdown when .active is added ----- */
+/* Make header the reference for absolute positioning */
+header {
+  position: relative;
+  z-index: 1000; /* keeps header/nav above hero */
+}
+
+/* Mobile dropdown when .active is added */
 .nav-links.active {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 70px; /* fixed distance under the header */
+  top: 100%; /* sits right under header */
   left: 0;
   width: 100%;
   background: #e5cda3;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-  z-index: 999; /* ensures it sits on top of hero */
+  z-index: 999;
 }
 
 .nav-links.active li {
