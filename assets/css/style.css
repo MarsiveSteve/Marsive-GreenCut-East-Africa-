@@ -1,4 +1,4 @@
-Dee/* Reset and base styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,89 +7,96 @@ Dee/* Reset and base styles */
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
 }
 
-/* Header styles */
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background-color: #e5cda3;
+  padding: 12px 20px;
+  background-color: #e5cda3; /* Beige like in screenshot */
   position: sticky;
   top: 0;
   z-index: 1000;
+}g
+
+/* Logo */
+.logo img {
+  height: 50px;
 }
 
-header img {
-  height: 60px;
-}
-
-nav ul {
+/* Nav links */
+.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav ul li a {
+.nav-links li a {
   text-decoration: none;
   color: #064420;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
   color: #228b22;
 }
 
+/* Button */
 .btn {
   background: #28a745;
   color: white;
-  padding: 10px 18px;
+  padding: 8px 14px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  cursor: pointer;
 }
 
 .btn:hover {
   background: #218838;
 }
 
-/* Hamburger menu */
+/* Hamburger */
 .hamburger {
   display: none;
-  font-size: 30px;
+  flex-direction: column;
+  gap: 4px;
   cursor: pointer;
 }
 
-/* Mobile styling */
-media (min-width: 640px) {
-    .container {
-        padding: 0 1.5rem;
-    }
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #064420;
+  border-radius: 2px;
 }
 
-@media (min-width: 1024px) {
-    .container {
-        padding: 0 2rem;
-    }
-}
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: #e5cda3;
+    padding: 20px;
+  }
 
   .nav-links li {
-    margin: 10px 0;
+    text-align: center;
+    margin: 15px 0;
   }
 
-  /* Show the hamburger icon */
-  .hamburger {
-    display: block;
-  }
-
-  /* Show nav links when active */
   .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
     display: flex;
   }
 }
@@ -144,6 +151,9 @@ media (min-width: 640px) {
   color: white;
   padding: 60px 20px;
   text-align: center;
+  display: flex;  /* Add flexbox layout */
+  flex-direction: column;  /* Stack content vertically */
+  align-items: center;  /* Center content horizontally */
 }
 
 .treeplanting-title {
@@ -161,6 +171,7 @@ media (min-width: 640px) {
 .treeplanting-image-wrapper {
   display: flex;
   justify-content: center;
+  width: 100%;  /* Ensure full width */
 }
 
 .treeplanting-image {
@@ -217,7 +228,7 @@ media (min-width: 640px) {
 
 .treeplanting-image-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: centeru
 }
 
 .treeplanting-image {
@@ -252,7 +263,8 @@ media (min-width: 640px) {
     font-size: 0.95em;
   }
 }
-
+ 
+ /*comprehensive-services Title*/
 .comprehensive-services {
   background-color: #2C6B2F; /* Green background color */
   padding: 30px 0;
@@ -309,7 +321,7 @@ media (min-width: 640px) {
   line-height: 1.6;
 }
 
-
+/*landscaping-section*/
 .landscaping-section {
   background-color: #2C6B2F; /* Green background color */
   padding: 50px 0;
@@ -349,14 +361,15 @@ media (min-width: 640px) {
   max-width: 600px; /* Adjust the max width of the image */
   border-radius: 8px;
 }
- 
-/*Why Marsive Section*/
-.why-marsive {
-  background-color: #ebec92;
-  padding: 40px 0;
-  text-align: center;
-}
 
+/* Why Marsive Section */
+.why-marsive {  background-color:#b68d4c ;  /* Green background, darker shade */
+  padding: 60px 0;  /* More padding for better spacing */
+  text-align: center;  /* Center-align the content */
+  margin-top: 60px;  /* Adjusted for spacing from previous section */
+}
+  
+  }
 .why-marsive .container {
   width: 80%;
   margin: 0 auto;
@@ -364,13 +377,13 @@ media (min-width: 640px) {
 
 .why-marsive h2 {
   font-size: 2.5rem;
-  color: #4a4a4a;
+  color: #222;                    /* Dark heading text */
   margin-bottom: 20px;
 }
 
 .why-marsive p {
   font-size: 1.2rem;
-  color: #555;
+  color: #f4f4f4;                  /* Light text for contrast on dark bg */
   margin-bottom: 40px;
 }
 
@@ -378,7 +391,7 @@ media (min-width: 640px) {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap;  /* Allows wrapping for smaller screen sizes */
+  flex-wrap: wrap;                 /* Wrap on small screens */
 }
 
 .service {
@@ -394,11 +407,11 @@ media (min-width: 640px) {
 }
 
 .service img {
-  width: 100%;  /* Image takes the full width */
-  height: 500px;  /* Elongated height for the images */
-  object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
+  width: 100%;
+  height: auto;                    /* Keep natural aspect ratio */
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 20px;  /* Space between the image and text */
+  margin-bottom: 20px;
 }
 
 .service h3 {
@@ -413,11 +426,17 @@ media (min-width: 640px) {
   margin-top: 5px;
 }
 
-/*Why Marsive Section*/
-.client {
-  background-color: #85ad7d;
-  padding: 40px 0;
-  text-align: center;
+/* Optional small-screen tweak */
+@media (max-width: 768px) {
+  .service {
+    width: 100%;
+  }
+}
+/*What Our Clients Say*/.client {
+  background-color: #27ae60;  /* Green background, darker shade */
+  padding: 60px 0;  /* More padding for better spacing */
+  text-align: center;  /* Center-align the content */
+  margin-top: 60px;  /* Adjusted for spacing from previous section */
 }
 
 .client-container {
@@ -427,19 +446,23 @@ media (min-width: 640px) {
 
 .client h2 {
   font-size: 2.5rem;
-  color: #0c0c0c;
+  color: white;  /* White color for the title */
   margin-bottom: 20px;
+  font-family: 'Georgia', serif;  /* Updated font-family for style consistency */
+  text-align: center;  /* Center-align the title */
 }
 
 .client p {
   font-size: 1.2rem;
-  color: #555;
+  color: white;  /* White text color for better contrast */
   margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
+  text-align: center;  /* Center-align the paragraph */
 }
 
 .flex-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;  /* Center the testimonials */
   gap: 20px;
   flex-wrap: wrap;  /* Allows wrapping for smaller screen sizes */
 }
@@ -449,16 +472,17 @@ media (min-width: 640px) {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 32%;
+  width: 48%;  /* Adjusted to fit properly on mobile */
   text-align: left;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;  /* Space between testimonial blocks */
 }
 
 .testimonial img {
   width: 100%;  /* Image takes the full width */
-  height: 350px;  /* Elongated height for the images */
+  height: 300px;  /* Adjusted height for image consistency */
   object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
   border-radius: 8px;
   margin-bottom: 20px;  /* Space between the image and text */
@@ -468,11 +492,18 @@ media (min-width: 640px) {
   font-size: 1.5rem;
   color: #2c3e50;
   margin-top: 10px;
+  font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
 }
 
 .testimonial p {
   font-size: 1rem;
   color: #7f8c8d;
   margin-top: 5px;
+  font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
+@media screen and (max-width: 768px) {
+  .testimonial {
+    width: 100%;  /* Stack testimonials on smaller screens */
+  }
+}
