@@ -66,17 +66,20 @@ header {
 }
 
 /* ----- Mobile dropdown when .active is added ----- */
+/* ----- Mobile dropdown when .active is added ----- */
 .nav-links.active {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: calc(100% + 6px); /* appears below header */
+  top: 70px; /* fixed distance under the header */
   left: 0;
   width: 100%;
   background: #e5cda3;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  z-index: 999; /* ensures it sits on top of hero */
 }
+
 .nav-links.active li {
   margin: 10px 0;
   text-align: center;
