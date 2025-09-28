@@ -9,24 +9,35 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Header */
+/* Header layout */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  background-color: #e5cda3; /* Beige like in screenshot */
+  background-color: #e5cda3;
   position: sticky;
   top: 0;
   z-index: 1000;
-}g
-
-/* Logo */
-.logo img {
-  height: 50px;
 }
 
-/* Nav links */
+/* Order control */
+.nav-links {
+  order: 1; /* Left */
+}
+
+.logo {
+  order: 2; /* Center */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  order: 3; /* Right */
+}
+
+/* Desktop nav */
 .nav-links {
   list-style: none;
   display: flex;
@@ -59,7 +70,7 @@ header {
   background: #218838;
 }
 
-/* Hamburger */
+/* Hamburger (hidden desktop) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -76,8 +87,22 @@ header {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .nav-links {
+  .nav-links,
+  .btn {
     display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    order: 1; /* Hamburger left */
+  }
+
+  .logo {
+    order: 2;
+    justify-content: center;
+  }
+
+  .nav-links {
     flex-direction: column;
     position: absolute;
     top: 65px;
@@ -95,12 +120,7 @@ header {
   .nav-links.active {
     display: flex;
   }
-
-  .hamburger {
-    display: flex;
-  }
 }
-
 
 /* Hero section */
 .hero {
