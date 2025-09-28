@@ -9,7 +9,9 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Header layout */
+/* =======================
+   HEADER & NAVIGATION
+   ======================= */
 header {
   display: flex;
   justify-content: space-between;
@@ -21,24 +23,9 @@ header {
   z-index: 1000;
 }
 
-/* Order control */
+/* Nav links (desktop) */
 .nav-links {
   order: 1; /* Left */
-}
-
-.logo {
-  order: 2; /* Center */
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.btn {
-  order: 3; /* Right */
-}
-
-/* Desktop nav */
-.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -55,8 +42,22 @@ header {
   color: #228b22;
 }
 
-/* Button */
+/* Logo (center) */
+.logo {
+  order: 2;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  max-height: 60px; /* keeps it neat */
+  width: auto;
+}
+
+/* Button (right) */
 .btn {
+  order: 3;
   background: #28a745;
   color: white;
   padding: 8px 14px;
@@ -64,13 +65,14 @@ header {
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+  margin-left: auto; /* keep it pushed right */
 }
 
 .btn:hover {
   background: #218838;
 }
 
-/* Hamburger (hidden desktop) */
+/* Hamburger (hidden on desktop) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -85,21 +87,27 @@ header {
   border-radius: 2px;
 }
 
-/* Mobile styles */
+/* =======================
+   MOBILE STYLES
+   ======================= */
 @media (max-width: 768px) {
   .nav-links,
   .btn {
-    display: none;
+    display: none; /* hide on mobile */
   }
 
   .hamburger {
     display: flex;
-    order: 1; /* Hamburger left */
+    order: 1; /* left */
   }
 
   .logo {
     order: 2;
     justify-content: center;
+  }
+
+  .logo img {
+    max-height: 50px; /* smaller on mobile */
   }
 
   .nav-links {
