@@ -313,6 +313,9 @@ header {
   }
 }
 
+
+
+
 /* What Our Clients Say Section */
 .client {
   background-color: #27ae60;  /* Green background, darker shade */
@@ -321,7 +324,7 @@ header {
   margin-top: 60px;  /* Adjusted for spacing from previous section */
 }
 
-.client-container {
+. client-container {
   width: 80%;
   margin: 0 auto;
 }
@@ -342,53 +345,59 @@ header {
   text-align: center;  /* Center-align the paragraph */
 }
 
-/* Flex container for testimonials */
+/* Flex container for the cards */
 .flex-container {
   display: flex;
-  justify-content: space-between;  /* Space between testimonials */
-  gap: 20px;  /* More space between items */
-  flex-wrap: wrap;  /* Allows wrapping on smaller screen sizes */
-  margin-top: 40px;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;               /* Prevent wrapping in desktop */
+  margin-top: 40px;                 /* Adds space between text and services */
 }
 
 .testimonial {
-  background-color: #c0ebb7;
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 32%;  /* Adjusted for 3 columns on desktop */
-  text-align: center;  /* Center-align text */
+  width: 32%;                       /* Slightly reduced width to fit 3 items */
+  text-align: center;               /* Ensure text is centered */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;  /* Space between testimonial blocks */
+  margin-bottom: 20px;              /* Added spacing at the bottom */
 }
 
 .testimonial img {
-  width: 100%;  /* Image takes the full width */
-  height: 300px;  /* Adjusted height for image consistency */
-  object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
+  width: 100%;
+  height: auto;                    /* Keep natural aspect ratio */
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 20px;  /* Space between the image and text */
+  margin-bottom: 20px;
 }
 
 .testimonial h3 {
   font-size: 1.5rem;
   color: #2c3e50;
   margin-top: 10px;
-  font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
 .testimonial p {
   font-size: 1rem;
   color: #7f8c8d;
   margin-top: 5px;
-  font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
-/* Media query for smaller screens (mobile) */
-@media screen and (max-width: 768px) {
-  .testimonial {
-    width: 100%;  /* Stack testimonials on smaller screens */
+/* Optional small-screen tweak */
+@media (max-width: 768px) {
+  .service {
+    width: 100%;                  /* Take full width on smaller screens */
+  }
+
+  .client h2 {
+    font-size: 2rem;               /* Slightly smaller heading for mobile */
+  }
+
+  .client p {
+    font-size: 1rem;               /* Adjust paragraph font size for mobile */
   }
 }
