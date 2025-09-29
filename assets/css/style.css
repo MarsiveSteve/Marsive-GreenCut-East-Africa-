@@ -259,7 +259,7 @@ header {
 .flex-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;                 /* Wrap on small screens */
 }
 
@@ -332,7 +332,7 @@ header {
 .flex-container {
   display: flex;
   justify-content: center;  /* Center the testimonials */
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;  /* Allows wrapping for smaller screen sizes */
 }
 
