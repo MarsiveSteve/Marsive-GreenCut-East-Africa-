@@ -109,36 +109,42 @@ header {
   text-align: center;
 }
 
+/* ---------- Desktop (≥768px) ---------- */
 @media (min-width: 768px) {
   header {
     position: relative;
     justify-content: flex-start;
-    height: 90px;
-    padding: 0 30px;
+    height: 90px;               /* taller navbar */
+    padding: 0 30px;            /* more breathing space */
   }
 
   /* Reset logo position on desktop */
   .logo {
-    position: static;        /* back in normal flex flow */
-    transform: none;         /* cancel mobile centering */
-    margin-right: 24px;      /* spacing before nav */
-    pointer-events: auto;    /* clickable again */
+    position: static;           /* no absolute centering on desktop */
+    transform: none;            /* cancel mobile centering */
+    margin-right: 24px;         /* space between logo and nav */
+    pointer-events: auto;
     display: flex;
     align-items: center;
   }
 
   .logo img {
-    max-height: 70px;
+    max-height: 70px;            /* logo grows with navbar */
     max-width: 180px;
+  }
+
+  /* Hide hamburger menu on desktop */
+  .hamburger {
+    display: none;  /* ensure hamburger is hidden on desktop */
   }
 
   .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 28px;                  /* more spacing between links */
     margin-left: auto;
     align-items: center;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.1rem;          /* larger text */
+    font-weight: 500;           /* bolder text */
   }
 
   .btn {
@@ -146,7 +152,7 @@ header {
     margin-left: 24px;
     background: #28a745;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 20px;         /* larger button */
     border: none;
     border-radius: 6px;
     font-size: 1rem;
@@ -154,9 +160,10 @@ header {
     cursor: pointer;
   }
 
-  header .nav-links,
-  header .btn {
-    align-self: center;
+  /* Vertically center items in the navbar */
+  header .nav-links, 
+  header .btn { 
+    align-self: center; 
   }
 }
 
