@@ -233,7 +233,6 @@ header {
 }
 
 /* General Section styles */
-/* General Styling */
 * {
   margin: 0;
   padding: 0;
@@ -242,75 +241,6 @@ header {
 
 body {
   font-family: Arial, sans-serif;
-}
-
-/* Service Section */
-.service-section {
-  background-color: #0a1a2f;  /* Dark blue background */
-  color: white;
-  padding: 40px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Individual Service Block */
-.service {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 40px;
-  width: 100%;
-}
-
-.service img {
-  width: 100%;
-  height: auto;
-  border-bottom: 5px solid white;
-}
-
-.service-content {
-  padding: 20px;
-  text-align: center;
-}
-
-.service h2 {
-  font-size: 1.8em;
-  margin: 20px 0;
-}
-
-.service p {
-  font-size: 1.1em;
-  max-width: 600px;
-}
-
-/* Responsiveness */
-@media screen and (min-width: 600px) {
-  .service {
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin-bottom: 60px;
-  }
-
-  .service img {
-    width: 50%;
-  }
-
-  .service-content {
-    width: 45%;
-    padding: 20px;
-  }
-}
-
-@media screen and (max-width: 599px) {
-  .service h2 {
-    font-size: 1.5em;
-  }
-
-  .service p {
-    font-size: 1em;
-  }
 }
 
 /* Service Section */
