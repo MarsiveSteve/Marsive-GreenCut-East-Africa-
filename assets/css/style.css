@@ -95,7 +95,12 @@ header {
   text-align: center;
 }
 
-
+/* ---------- Hide website name on mobile ---------- */
+@media (max-width: 767px) {
+  .website-name {
+    display: none; /* Hide website name on mobile */
+  }
+}
 
 /* ---------- Desktop (≥768px) ---------- */
 @media (min-width: 768px) {
