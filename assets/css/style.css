@@ -232,13 +232,13 @@ header {
 
 
 /* Why Marsive Section */
-.why-marsive {  background-color:#b68d4c ;  /* Green background, darker shade */
+.why-marsive {
+  background-color: #b68d4c;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
   text-align: center;  /* Center-align the content */
   margin-top: 60px;  /* Adjusted for spacing from previous section */
 }
-  
-  }
+
 .why-marsive .container {
   width: 80%;
   margin: 0 auto;
@@ -256,11 +256,13 @@ header {
   margin-bottom: 40px;
 }
 
+/* Flex container for the cards */
 .flex-container {
   display: flex;
   justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;                 /* Wrap on small screens */
+  gap: 20px;
+  flex-wrap: nowrap;               /* Prevent wrapping in desktop */
+  margin-top: 40px;                 /* Adds space between text and services */
 }
 
 .service {
@@ -268,11 +270,12 @@ header {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 32%;
-  text-align: left;
+  width: 32%;                       /* Slightly reduced width to fit 3 items */
+  text-align: center;               /* Ensure text is centered */
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;              /* Added spacing at the bottom */
 }
 
 .service img {
@@ -298,9 +301,18 @@ header {
 /* Optional small-screen tweak */
 @media (max-width: 768px) {
   .service {
-    width: 100%;
+    width: 100%;                  /* Take full width on smaller screens */
+  }
+
+  .why-marsive h2 {
+    font-size: 2rem;               /* Slightly smaller heading for mobile */
+  }
+
+  .why-marsive p {
+    font-size: 1rem;               /* Adjust paragraph font size for mobile */
   }
 }
+
 /*What Our Clients Say*/.client {
   background-color: #27ae60;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
