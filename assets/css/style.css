@@ -20,12 +20,12 @@ header {
   background-color: #e5cda3;
   top: 0;
   z-index: 1000;
-  height: 64px;
+  height: 64px;         /* Set consistent navbar height */
 }
 
 /* Logo scales with header height */
 .logo img {
-  height: 100%; 
+  height: 100%;         /* Fills navbar height */
   max-height: 100%;
   width: auto;
   display: block;
@@ -37,7 +37,7 @@ header {
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 1200;
+  z-index: 1200; /* Keeps it above the centered logo */
 }
 
 .hamburger div {
@@ -56,25 +56,18 @@ header {
 .logo {
   position: absolute;
   left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  height: 100%;
+  top: 0; /* Align to top */
+  transform: translateX(-50%); /* Only center horizontally */
+  height: 100%; /* Fill header height */
   display: flex;
-  align-items: center;
+  align-items: center; /* Keep image centered inside */
 }
 
 .logo img {
-  height: 100%;
+  height: 100%;   /* Match header height */
   width: auto;
   max-height: 100%;
   object-fit: contain;
-}
-
-.website-name {
-  color: green;
-  font-size: 1.5rem;  /* Adjust font size as per design */
-  font-weight: bold;
-  text-align: center;
 }
 
 /* Nav & button hidden/compact on mobile by default */
@@ -89,17 +82,23 @@ header {
   display: none;
 }
 
+/* Make header the reference for absolute positioning */
+header {
+  position: relative;
+  z-index: 1000;
+}
+
 /* Mobile dropdown when .active is added */
 .nav-links.active {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 100%;
+  top: 100%; /* Sits right under header */
   left: 0;
   width: 100%;
   background: #e5cda3;
   padding: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
   z-index: 999;
 }
 
@@ -112,18 +111,19 @@ header {
 @media (min-width: 768px) {
   header {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: space-between; /* Spread items out across the width */
+    align-items: center; /* Vertically center all items */
     height: 90px;
     padding: 0 30px;
-    width: 100%;
+    width: 100%; /* Ensure header takes the full width */
   }
 
   /* Logo aligned to the left */
   .logo {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 20px;  /* Space between logo and website name */
+    position: static; /* Remove absolute centering */
   }
 
   .logo img {
@@ -131,19 +131,20 @@ header {
     max-width: 180px;
   }
 
-  /* Website name next to logo */
+  /* Website name on the far right */
   .website-name {
     font-size: 1.2rem;
     font-weight: bold;
-    color: green;
-    margin-right: 40px;
+    color: #064420;
+    margin-left: auto; /* Push website name to the far right */
+    padding-left: 20px; /* Add some space between website name and nav links */
   }
 
   /* Nav links */
   .nav-links {
     display: flex;
-    gap: 28px;
-    margin-left: auto;
+    gap: 28px; /* Space between navigation links */
+    margin-left: auto; /* Push nav links to the right */
     align-items: center;
     font-size: 1.1rem;
     font-weight: 500;
@@ -165,7 +166,7 @@ header {
 
   /* Hide hamburger (mobile only) */
   .hamburger {
-    display: none; 
+    display: none;  /* Hide hamburger on desktop */
   }
 
   /* Vertically center items in the navbar */
@@ -174,6 +175,7 @@ header {
     align-self: center;
   }
 }
+
 
 
 
