@@ -313,7 +313,8 @@ header {
   }
 }
 
-/*What Our Clients Say*/.client {
+/* What Our Clients Say Section */
+.client {
   background-color: #27ae60;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
   text-align: center;  /* Center-align the content */
@@ -341,11 +342,13 @@ header {
   text-align: center;  /* Center-align the paragraph */
 }
 
+/* Flex container for testimonials */
 .flex-container {
   display: flex;
-  justify-content: center;  /* Center the testimonials */
-  gap: 15px;
-  flex-wrap: wrap;  /* Allows wrapping for smaller screen sizes */
+  justify-content: space-between;  /* Space between testimonials */
+  gap: 20px;  /* More space between items */
+  flex-wrap: wrap;  /* Allows wrapping on smaller screen sizes */
+  margin-top: 40px;
 }
 
 .testimonial {
@@ -353,8 +356,8 @@ header {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 48%;  /* Adjusted to fit properly on mobile */
-  text-align: left;
+  width: 32%;  /* Adjusted for 3 columns on desktop */
+  text-align: center;  /* Center-align text */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -373,7 +376,7 @@ header {
   font-size: 1.5rem;
   color: #2c3e50;
   margin-top: 10px;
-  font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
+  font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
 .testimonial p {
@@ -383,6 +386,7 @@ header {
   font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
+/* Media query for smaller screens (mobile) */
 @media screen and (max-width: 768px) {
   .testimonial {
     width: 100%;  /* Stack testimonials on smaller screens */
