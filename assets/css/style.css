@@ -16,16 +16,16 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;      /* Remove vertical padding, let height control it */
+  padding: 0 20px;
   background-color: #e5cda3;
   top: 0;
   z-index: 1000;
-  height: 80px;         /* Slightly taller navbar for better accommodation */
+  height: 80px; /* Slightly taller navbar for better accommodation */
 }
 
 /* Logo scales with header height */
 .logo img {
-  height: 100%;         /* Fills navbar height */
+  height: 100%; /* Fills navbar height */
   max-height: 100%;
   width: auto;
   display: block;
@@ -128,6 +128,7 @@ header {
     height: 90px;
     padding: 0 30px;
     width: 100%;
+    flex-wrap: wrap; /* Allow items to wrap when necessary */
   }
 
   /* Logo aligned to the left */
@@ -135,6 +136,7 @@ header {
     display: flex;
     align-items: center;
     position: static; /* Remove absolute positioning */
+    margin-right: 20px;
   }
 
   .logo img {
@@ -142,13 +144,13 @@ header {
     max-width: 180px;
   }
 
-  /* Website name on the far right */
+  /* Website name next to logo */
   .website-name {
     font-size: 1.2rem;
     font-weight: bold;
     color: #064420;
-    margin-left: auto; /* Push website name to the far right */
-    padding-left: 20px; /* Add space between website name and nav links */
+    margin-left: 20px; /* Add space between logo and website name */
+    padding-left: 20px; /* Add spacing between name and navbar links */
   }
 
   /* Nav links */
@@ -159,6 +161,13 @@ header {
     align-items: center;
     font-size: 1.1rem;
     font-weight: 500;
+    flex-wrap: wrap; /* Allow nav items to wrap if the screen is smaller */
+    justify-content: flex-end;
+  }
+
+  /* Nav item on a new row if space is tight */
+  .nav-links li {
+    flex-basis: 100%; /* Force each nav item into a new row */
   }
 
   /* Button styling */
@@ -186,8 +195,6 @@ header {
     align-self: center;
   }
 }
-
-
 
 /* Hero section */
 .hero {
