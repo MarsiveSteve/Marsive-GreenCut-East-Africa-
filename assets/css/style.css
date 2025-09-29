@@ -167,8 +167,6 @@ header {
   }
 }
 
-
-
 /* Hero section */
 .hero {
   position: relative; /* Needed for ::after overlay */
@@ -233,6 +231,7 @@ header {
 }
 
 /* General Section styles */
+/* General Styling */
 * {
   margin: 0;
   padding: 0;
@@ -311,6 +310,9 @@ body {
     font-size: 1em;
   }
 }
+
+
+
 
 /* Services Section styles */
 .services-section {
