@@ -329,20 +329,16 @@ header {
   margin: 0 auto;
 }
 
-.client h2 {
-  font-size: 2.5rem;
-  color: white;  /* White color for the title */
-  margin-bottom: 20px;
-  font-family: 'Georgia', serif;  /* Updated font-family for style consistency */
-  text-align: center;  /* Center-align the title */
+.client h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-top: 10px;
 }
 
 .client p {
-  font-size: 1.2rem;
-  color: white;  /* White text color for better contrast */
-  margin-bottom: 40px;
-  font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
-  text-align: center;  /* Center-align the paragraph */
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-top: 5px;
 }
 
 /* Flex container for the cards */
