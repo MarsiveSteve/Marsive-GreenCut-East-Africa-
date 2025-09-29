@@ -114,12 +114,18 @@ header {
   header {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center;   /* Vertically center all items */
     height: 90px;
     padding: 0 30px;
   }
 
-  /* Logo on left */
+  /* Logo aligned to the left */
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;  /* Add space between logo and website name */
+  }
+
   .logo img {
     max-height: 70px;
     max-width: 180px;
@@ -127,12 +133,12 @@ header {
 
   /* Website name next to logo */
   .website-name {
-    margin-left: 20px;  /* space between logo and website name */
-    font-size: 1.2rem;   /* adjust font size */
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #064420;      /* match the color theme */
+    color: #064420;
   }
 
+  /* Nav links */
   .nav-links {
     display: flex;
     gap: 28px;
@@ -142,6 +148,7 @@ header {
     font-weight: 500;
   }
 
+  /* Button styling */
   .btn {
     display: inline-block;
     margin-left: 24px;
@@ -156,7 +163,7 @@ header {
   }
 
   .hamburger {
-    display: none; /* hide hamburger on desktop */
+    display: none;  /* hide hamburger on desktop */
   }
 
   /* Vertically center items in the navbar */
