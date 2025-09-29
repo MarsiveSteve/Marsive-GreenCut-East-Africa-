@@ -95,33 +95,40 @@ header {
   header {
     position: relative;
     justify-content: flex-start;
-    height: 90px;                 /* taller navbar */
-    padding: 0 30px;              /* more breathing space */
+    height: 90px;               /* taller navbar */
+    padding: 0 30px;            /* more breathing space */
   }
 
-  /* Logo larger */
+  /* Reset logo position on desktop */
+  .logo {
+    position: static;
+    transform: none;
+    margin-right: 24px;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+  }
+
   .logo img {
-    max-height: 70px;             /* grows with navbar */
+    max-height: 70px;
     max-width: 180px;
   }
 
-  /* Nav links bigger */
   .nav-links {
     display: flex;
-    gap: 28px;                    /* more spacing */
+    gap: 28px;
     margin-left: auto;
     align-items: center;
-    font-size: 1.1rem;             /* slightly larger text */
-    font-weight: 500;              /* a little bolder */
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 
-  /* Bigger button */
   .btn {
     display: inline-block;
     margin-left: 24px;
     background: #28a745;
     color: white;
-    padding: 12px 20px;            /* more padding = bigger button */
+    padding: 12px 20px;
     border: none;
     border-radius: 6px;
     font-size: 1rem;
@@ -129,9 +136,14 @@ header {
     cursor: pointer;
   }
 
-  /* Vertically center everything */
-  header .nav-links, header .btn {
+  header .nav-links,
+  header .btn {
     align-self: center;
+  }
+
+  /* Hide hamburger on desktop */
+  .hamburger {
+    display: none;  /* hide hamburger on desktop */
   }
 }
 
