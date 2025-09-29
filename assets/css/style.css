@@ -132,6 +132,7 @@ header {
     font-weight: bold;
     color: #064420;           /* Dark green color */
     margin-left: 15px;        /* Space between logo and website name */
+    flex-shrink: 0;           /* Prevent name from shrinking */
   }
 
   .nav-links {
