@@ -313,9 +313,10 @@ header {
   }
 }
 
-/* What our clients say*/
+
+/* What Our Clients Say Section */
 .client {
-  background-color: #b68d4c;  /* Green background, darker shade */
+  background-color: #27ae60;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
   text-align: center;  /* Center-align the content */
   margin-top: 60px;  /* Adjusted for spacing from previous section */
@@ -328,69 +329,67 @@ header {
 
 .client h2 {
   font-size: 2.5rem;
-  color: #222;                    /* Dark heading text */
+  color: white;  /* White color for the title */
   margin-bottom: 20px;
+  font-family: 'Georgia', serif;  /* Updated font-family for style consistency */
+  text-align: center;  /* Center-align the title */
 }
 
 .client p {
   font-size: 1.2rem;
-  color: #f4f4f4;                  /* Light text for contrast on dark bg */
+  color: white;  /* White text color for better contrast */
   margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
+  text-align: center;  /* Center-align the paragraph */
 }
 
-/* Flex container for the cards */
+/* Flex container for testimonials */
 .flex-container {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: nowrap;               /* Prevent wrapping in desktop */
-  margin-top: 40px;                 /* Adds space between text and services */
+  justify-content: space-between;  /* Spread out the testimonials */
+  gap: 20px;  /* Space between items */
+  flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+  margin-top: 40px;
 }
 
 .testimonial {
-  background-color: #fff;
+  background-color: #c0ebb7;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 32%;                       /* Slightly reduced width to fit 3 items */
-  text-align: center;               /* Ensure text is centered */
+  width: 32%;  /* 3 items in a row on desktop */
+  text-align: center;  /* Center-align text */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;              /* Added spacing at the bottom */
+  margin-bottom: 20px;  /* Space between testimonial blocks */
 }
 
 .testimonial img {
-  width: 100%;
-  height: auto;                    /* Keep natural aspect ratio */
-  object-fit: cover;
+  width: 100%;  /* Image takes the full width */
+  height: 300px;  /* Adjusted height for image consistency */
+  object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 20px;  /* Space between the image and text */
 }
 
 .testimonial h3 {
   font-size: 1.5rem;
   color: #2c3e50;
   margin-top: 10px;
+  font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
 .testimonial p {
   font-size: 1rem;
   color: #7f8c8d;
   margin-top: 5px;
+  font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
-/* Optional small-screen tweak */
-@media (max-width: 768px) {
+/* Media query for smaller screens (mobile) */
+@media screen and (max-width: 768px) {
   .testimonial {
-    width: 100%;                  /* Take full width on smaller screens */
-  }
-
-  .client h2 {
-    font-size: 2rem;               /* Slightly smaller heading for mobile */
-  }
-
-  .client p {
-    font-size: 1rem;               /* Adjust paragraph font size for mobile */
+    width: 100%;  /* Stack testimonials on smaller screens */
   }
 }
