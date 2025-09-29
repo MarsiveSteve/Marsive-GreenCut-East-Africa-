@@ -134,7 +134,7 @@ header {
   }
 
   .logo img {
-    max-height: 60px;   /* slightly larger on desktop */
+    max-height: 40px;   /* slightly larger on desktop */
     max-width: 160px;
   }
 
