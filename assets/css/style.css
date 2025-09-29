@@ -146,7 +146,7 @@ header {
 .hero {
   position: relative; /* Needed for ::after overlay */
   min-height: 100vh;  /* Full screen height */
-  background: url("assets/images/hero.jpg") no-repeat center center/cover;
+  background: url("assets/images/nyumba.webp") no-repeat center center/cover;
 }
 
 /* Overlay */
