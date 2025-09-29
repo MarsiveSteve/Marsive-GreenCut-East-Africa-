@@ -312,3 +312,85 @@ header {
     font-size: 1rem;               /* Adjust paragraph font size for mobile */
   }
 }
+
+/* What our clients say*/
+.client {
+  background-color: #b68d4c;  /* Green background, darker shade */
+  padding: 60px 0;  /* More padding for better spacing */
+  text-align: center;  /* Center-align the content */
+  margin-top: 60px;  /* Adjusted for spacing from previous section */
+}
+
+.client-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.client h2 {
+  font-size: 2.5rem;
+  color: #222;                    /* Dark heading text */
+  margin-bottom: 20px;
+}
+
+.client p {
+  font-size: 1.2rem;
+  color: #f4f4f4;                  /* Light text for contrast on dark bg */
+  margin-bottom: 40px;
+}
+
+/* Flex container for the cards */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;               /* Prevent wrapping in desktop */
+  margin-top: 40px;                 /* Adds space between text and services */
+}
+
+.testimonial {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 32%;                       /* Slightly reduced width to fit 3 items */
+  text-align: center;               /* Ensure text is centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;              /* Added spacing at the bottom */
+}
+
+.testimonial img {
+  width: 100%;
+  height: auto;                    /* Keep natural aspect ratio */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.testimonial h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-top: 10px;
+}
+
+.testimonial p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+/* Optional small-screen tweak */
+@media (max-width: 768px) {
+  .testimonial {
+    width: 100%;                  /* Take full width on smaller screens */
+  }
+
+  .client h2 {
+    font-size: 2rem;               /* Slightly smaller heading for mobile */
+  }
+
+  .client p {
+    font-size: 1rem;               /* Adjust paragraph font size for mobile */
+  }
+}
