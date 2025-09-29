@@ -49,21 +49,29 @@ header {
 }
 
 /* visually-centered logo on mobile */
+/* Mobile first */
+header {
+  height: 64px; /* or 72px if you want it taller */
+  padding: 0 20px; /* remove vertical padding, height handles it */
+}
+
 .logo {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  top: 50%;
-  transform: translate(-50%, -50%); /* vertical center inside header */
-  pointer-events: none; /* so taps go to hamburger/button, not the logo */
+  top: 0; /* align to top */
+  transform: translateX(-50%); /* only center horizontally */
+  height: 100%; /* fill header height */
+  display: flex;
+  align-items: center; /* keep image centered inside */
 }
+
 .logo img {
-  display: block;
-  max-height: 56px;
-  max-width: 140px;
+  height: 100%;   /* match header height */
   width: auto;
-  height: auto;
+  max-height: 100%;
+  object-fit: contain;
 }
+
 
 /* Nav & button hidden/compact on mobile by default */
 .nav-links {
