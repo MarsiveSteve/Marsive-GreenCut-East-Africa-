@@ -106,19 +106,18 @@ header {
 @media (min-width: 768px) {
   header {
     position: relative;
+    display: flex;
     justify-content: flex-start;
+    align-items: center; /* Align logo and website name vertically */
     height: 90px;               /* taller navbar */
     padding: 0 30px;            /* more breathing space */
   }
 
-  /* Reset logo position on desktop */
+  /* Logo and website name container */
   .logo {
-    position: static;
-    transform: none;
-    margin-right: 24px;
-    pointer-events: auto;
     display: flex;
     align-items: center;
+    margin-right: 24px;
   }
 
   .logo img {
@@ -132,7 +131,7 @@ header {
     font-weight: bold;
     color: #064420;           /* Dark green color */
     margin-left: 15px;        /* Space between logo and website name */
-    flex-shrink: 0;           /* Prevent name from shrinking */
+    white-space: nowrap;      /* Prevent wrapping */
   }
 
   .nav-links {
