@@ -120,31 +120,26 @@ header {
 
   /* Reset logo position on desktop */
   .logo {
-    position: static;           /* no absolute centering on desktop */
-    transform: none;            /* cancel mobile centering */
-    margin-right: 24px;         /* space between logo and nav */
+    position: static;
+    transform: none;
+    margin-right: 24px;
     pointer-events: auto;
     display: flex;
     align-items: center;
   }
 
   .logo img {
-    max-height: 70px;            /* logo grows with navbar */
+    max-height: 70px;
     max-width: 180px;
-  }
-
-  /* Hide hamburger menu on desktop */
-  .hamburger {
-    display: none;  /* ensure hamburger is hidden on desktop */
   }
 
   .nav-links {
     display: flex;
-    gap: 28px;                  /* more spacing between links */
+    gap: 28px;
     margin-left: auto;
     align-items: center;
-    font-size: 1.1rem;          /* larger text */
-    font-weight: 500;           /* bolder text */
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 
   .btn {
@@ -152,7 +147,7 @@ header {
     margin-left: 24px;
     background: #28a745;
     color: white;
-    padding: 12px 20px;         /* larger button */
+    padding: 12px 20px;
     border: none;
     border-radius: 6px;
     font-size: 1rem;
@@ -160,10 +155,14 @@ header {
     cursor: pointer;
   }
 
-  /* Vertically center items in the navbar */
-  header .nav-links, 
-  header .btn { 
-    align-self: center; 
+  header .nav-links,
+  header .btn {
+    align-self: center;
+  }
+
+  /* Hide hamburger on desktop */
+  .hamburger {
+    display: none;  /* hide hamburger on desktop */
   }
 }
 
