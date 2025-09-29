@@ -9,6 +9,13 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* ---------- Hide website name on mobile ---------- */
+@media (max-width: 767px) {
+  .website-name {
+    display: none; /* Hide website name on mobile */
+  }
+}
+
 
 /* ---------- Header base (mobile-first) ---------- */
 header {
