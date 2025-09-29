@@ -114,48 +114,43 @@ header {
   header {
     position: relative;
     justify-content: flex-start;
-    height: 90px;              /* make navbar taller */
-    padding: 0 30px;           /* optional: give more side space */
+    height: 90px;                 /* taller navbar */
+    padding: 0 30px;              /* more breathing space */
   }
 
-  /* Logo grows with navbar */
+  /* Logo larger */
   .logo img {
-    max-height: 70px;          /* larger logo */
+    max-height: 70px;             /* grows with navbar */
     max-width: 180px;
   }
 
-  /* Make nav links slightly bigger and spaced out */
+  /* Nav links bigger */
   .nav-links {
     display: flex;
-    gap: 28px;                 /* more spacing between links */
+    gap: 28px;                    /* more spacing */
     margin-left: auto;
     align-items: center;
-    font-size: 1.1rem;         /* increase text size */
-    font-weight: 500;          /* make them bolder */
+    font-size: 1.1rem;             /* slightly larger text */
+    font-weight: 500;              /* a little bolder */
   }
 
-  /* Bigger call-to-action button */
+  /* Bigger button */
   .btn {
     display: inline-block;
     margin-left: 24px;
     background: #28a745;
     color: white;
-    padding: 12px 20px;        /* more padding = taller button */
+    padding: 12px 20px;            /* more padding = bigger button */
     border: none;
     border-radius: 6px;
+    font-size: 1rem;
     font-weight: bold;
-    font-size: 1rem;           /* increase text size */
     cursor: pointer;
   }
 
-  .hamburger {
-    display: none;
-  }
-
-  /* Keep everything vertically centered */
-  header .nav-links, 
-  header .btn { 
-    align-self: center; 
+  /* Vertically center everything */
+  header .nav-links, header .btn {
+    align-self: center;
   }
 }
 
