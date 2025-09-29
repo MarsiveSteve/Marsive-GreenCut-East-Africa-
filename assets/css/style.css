@@ -11,16 +11,27 @@ body {
 
 
 /* ---------- Header base (mobile-first) ---------- */
+/* ---------- Header base (mobile-first) ---------- */
 header {
-  position: relative;                /* needed for absolutely-centering logo on mobile */
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;    /* hamburger left, other controls right by default */
-  padding: 12px 20px;
+  justify-content: space-between;
+  padding: 0 20px;      /* remove vertical padding, let height control it */
   background-color: #e5cda3;
   top: 0;
   z-index: 1000;
+  height: 64px;         /* set consistent navbar height */
 }
+
+/* logo scales with header height */
+.logo img {
+  height: 100%;         /* fills navbar height */
+  max-height: 100%;
+  width: auto;
+  display: block;
+}
+
 
 /* hamburger (mobile visible) */
 .hamburger {
