@@ -70,6 +70,17 @@ header {
   object-fit: contain;
 }
 
+/* Website name on mobile - left-aligned and smaller */
+.website-name {
+  font-size: 1rem;    /* Small size for mobile */
+  font-weight: bold;
+  color: #064420;
+  position: absolute;
+  left: 10px;         /* Align name to the left */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center */
+  padding-left: 10px;
+}
 
 /* Nav & button hidden/compact on mobile by default */
 .nav-links {
@@ -175,7 +186,6 @@ header {
     align-self: center;
   }
 }
-
 
 
 
