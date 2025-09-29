@@ -112,25 +112,25 @@ header {
 /* ---------- Desktop (≥768px) ---------- */
 @media (min-width: 768px) {
   header {
-    position: relative;
-    justify-content: flex-start;
-    height: 90px;               /* taller navbar */
-    padding: 0 30px;            /* more breathing space */
-  }
-
-  /* Reset logo position on desktop */
-  .logo {
-    position: static;
-    transform: none;
-    margin-right: 24px;
-    pointer-events: auto;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
+    height: 90px;
+    padding: 0 30px;
   }
 
+  /* Logo on left */
   .logo img {
     max-height: 70px;
     max-width: 180px;
+  }
+
+  /* Website name next to logo */
+  .website-name {
+    margin-left: 20px;  /* space between logo and website name */
+    font-size: 1.2rem;   /* adjust font size */
+    font-weight: bold;
+    color: #064420;      /* match the color theme */
   }
 
   .nav-links {
@@ -155,14 +155,14 @@ header {
     cursor: pointer;
   }
 
-  header .nav-links,
-  header .btn {
-    align-self: center;
+  .hamburger {
+    display: none; /* hide hamburger on desktop */
   }
 
-  /* Hide hamburger on desktop */
-  .hamburger {
-    display: none;  /* hide hamburger on desktop */
+  /* Vertically center items in the navbar */
+  header .nav-links, 
+  header .btn {
+    align-self: center;
   }
 }
 
