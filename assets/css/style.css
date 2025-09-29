@@ -113,17 +113,18 @@ header {
 @media (min-width: 768px) {
   header {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;   /* Vertically center all items */
+    justify-content: flex-start; /* Align everything to the left */
+    align-items: center; /* Vertically center all items */
     height: 90px;
     padding: 0 30px;
+    width: 100%; /* Ensure header takes the full width */
   }
 
   /* Logo aligned to the left */
   .logo {
     display: flex;
     align-items: center;
-    margin-right: 20px;  /* Add space between logo and website name */
+    margin-right: 20px;  /* Space between logo and website name */
   }
 
   .logo img {
@@ -136,13 +137,14 @@ header {
     font-size: 1.2rem;
     font-weight: bold;
     color: #064420;
+    margin-right: auto; /* Push nav links to the right */
   }
 
-  /* Nav links */
+  /* Nav links (push to the right) */
   .nav-links {
     display: flex;
     gap: 28px;
-    margin-left: auto;
+    margin-left: auto; /* Push nav links to the right */
     align-items: center;
     font-size: 1.1rem;
     font-weight: 500;
@@ -162,8 +164,9 @@ header {
     cursor: pointer;
   }
 
+  /* Hamburger (hide on desktop) */
   .hamburger {
-    display: none;  /* hide hamburger on desktop */
+    display: none;  /* Hide hamburger on desktop */
   }
 
   /* Vertically center items in the navbar */
