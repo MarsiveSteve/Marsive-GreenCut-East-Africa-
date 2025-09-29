@@ -317,7 +317,7 @@ header {
 
 
 /* What Our Clients Say Section */
-/* Why Marsive Section */
+/* Why Marsive Section
 .why-marsive {
   background-color: #b68d4c;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
@@ -397,4 +397,4 @@ header {
   .why-marsive p {
     font-size: 1rem;               /* Adjust paragraph font size for mobile */
   }
-}
+}*/
