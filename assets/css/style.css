@@ -317,28 +317,29 @@ header {
 
 
 /* What Our Clients Say Section */
-.client {
-  background-color: #27ae60;  /* Green background, darker shade */
+/* Why Marsive Section */
+.why-marsive {
+  background-color: #b68d4c;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
   text-align: center;  /* Center-align the content */
   margin-top: 60px;  /* Adjusted for spacing from previous section */
 }
 
-. client-container {
+.why-marsive .container {
   width: 80%;
   margin: 0 auto;
 }
 
-.client h3 {
-  font-size: 1.5rem;
-  color: #2c3e50;
-  margin-top: 10px;
+.why-marsive h2 {
+  font-size: 2.5rem;
+  color: #222;                    /* Dark heading text */
+  margin-bottom: 20px;
 }
 
-.client p {
-  font-size: 1rem;
-  color: #7f8c8d;
-  margin-top: 5px;
+.why-marsive p {
+  font-size: 1.2rem;
+  color: #f4f4f4;                  /* Light text for contrast on dark bg */
+  margin-bottom: 40px;
 }
 
 /* Flex container for the cards */
@@ -350,7 +351,7 @@ header {
   margin-top: 40px;                 /* Adds space between text and services */
 }
 
-.testimonial {
+.service {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -363,7 +364,7 @@ header {
   margin-bottom: 20px;              /* Added spacing at the bottom */
 }
 
-.testimonial img {
+.service img {
   width: 100%;
   height: auto;                    /* Keep natural aspect ratio */
   object-fit: cover;
@@ -371,13 +372,13 @@ header {
   margin-bottom: 20px;
 }
 
-.testimonial h3 {
+.service h3 {
   font-size: 1.5rem;
   color: #2c3e50;
   margin-top: 10px;
 }
 
-.testimonial p {
+.service p {
   font-size: 1rem;
   color: #7f8c8d;
   margin-top: 5px;
@@ -389,11 +390,11 @@ header {
     width: 100%;                  /* Take full width on smaller screens */
   }
 
-  .client h2 {
+  .why-marsive h2 {
     font-size: 2rem;               /* Slightly smaller heading for mobile */
   }
 
-  .client p {
+  .why-marsive p {
     font-size: 1rem;               /* Adjust paragraph font size for mobile */
   }
 }
