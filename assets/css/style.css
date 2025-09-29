@@ -9,14 +9,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* ---------- Hide website name on mobile ---------- */
-@media (max-width: 767px) {
-  .website-name {
-    display: none; /* Hide website name on mobile */
-  }
-}
-
-
 /* ---------- Header base (mobile-first) ---------- */
 header {
   position: relative;                /* needed for absolutely-centering logo on mobile */
@@ -95,6 +87,13 @@ header {
 .nav-links.active li {
   margin: 10px 0;
   text-align: center;
+}
+
+/* ---------- Hide website name on mobile ---------- */
+@media (max-width: 767px) {
+  .website-name {
+    display: none; /* Hide website name on mobile */
+  }
 }
 
 /* ---------- Desktop (≥768px) ---------- */
