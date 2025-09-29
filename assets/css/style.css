@@ -16,11 +16,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 20px;      /* Remove vertical padding, let height control it */
   background-color: #e5cda3;
   top: 0;
   z-index: 1000;
-  height: 64px;         /* Set consistent navbar height */
+  height: 80px;         /* Slightly taller navbar for better accommodation */
 }
 
 /* Logo scales with header height */
@@ -49,15 +49,15 @@ header {
 
 /* Visually-centered logo on mobile */
 header {
-  height: 64px;
-  padding: 0 20px;
+  height: 80px; /* Or 72px if you want it taller */
+  padding: 0 20px; /* Remove vertical padding, height handles it */
 }
 
 .logo {
   position: absolute;
-  left: 50%;
-  top: 0; /* Align to top */
-  transform: translateX(-50%); /* Only center horizontally */
+  left: 10px; /* Align logo to left */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center */
   height: 100%; /* Fill header height */
   display: flex;
   align-items: center; /* Keep image centered inside */
@@ -69,6 +69,7 @@ header {
   max-height: 100%;
   object-fit: contain;
 }
+
 
 /* Nav & button hidden/compact on mobile by default */
 .nav-links {
@@ -85,7 +86,7 @@ header {
 /* Make header the reference for absolute positioning */
 header {
   position: relative;
-  z-index: 1000;
+  z-index: 1000; /* Keeps header/nav above hero */
 }
 
 /* Mobile dropdown when .active is added */
@@ -98,7 +99,7 @@ header {
   width: 100%;
   background: #e5cda3;
   padding: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
   z-index: 999;
 }
 
@@ -111,18 +112,18 @@ header {
 @media (min-width: 768px) {
   header {
     display: flex;
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: space-between; /* Spread items across the header */
     align-items: center; /* Vertically center all items */
     height: 90px;
     padding: 0 30px;
-    width: 100%; /* Ensure header takes the full width */
+    width: 100%;
   }
 
   /* Logo aligned to the left */
   .logo {
     display: flex;
     align-items: center;
-    margin-right: 20px;  /* Space between logo and website name */
+    position: static; /* Remove absolute positioning */
   }
 
   .logo img {
@@ -130,12 +131,13 @@ header {
     max-width: 180px;
   }
 
-  /* Website name next to logo */
+  /* Website name on the far right */
   .website-name {
     font-size: 1.2rem;
     font-weight: bold;
     color: #064420;
-    margin-left: 20px; /* Add space between logo and website name */
+    margin-left: auto; /* Push website name to the far right */
+    padding-left: 20px; /* Add space between website name and nav links */
   }
 
   /* Nav links */
@@ -162,9 +164,9 @@ header {
     cursor: pointer;
   }
 
-  /* Hide hamburger (mobile only) */
+  /* Hide hamburger on desktop */
   .hamburger {
-    display: none;  /* Hide hamburger on desktop */
+    display: none;
   }
 
   /* Vertically center items in the navbar */
