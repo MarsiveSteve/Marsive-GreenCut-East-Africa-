@@ -9,36 +9,38 @@ body {
   font-family: Arial, sans-serif;
 }
 
+
+/* ---------- Header base (mobile-first) ---------- */
 /* ---------- Header base (mobile-first) ---------- */
 header {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 20px;      /* remove vertical padding, let height control it */
   background-color: #e5cda3;
   top: 0;
   z-index: 1000;
-  height: 64px;
+  height: 64px;         /* set consistent navbar height */
 }
 
-/* Logo scales with header height */
+/* logo scales with header height */
 .logo img {
-  height: 100%;
+  height: 100%;         /* fills navbar height */
   max-height: 100%;
   width: auto;
   display: block;
 }
 
-/* Mobile hamburger */
+
+/* hamburger (mobile visible) */
 .hamburger {
   display: flex;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 1200;
+  z-index: 1200; /* keeps it above the centered logo */
 }
-
 .hamburger div {
   width: 28px;
   height: 3px;
@@ -46,9 +48,65 @@ header {
   border-radius: 2px;
 }
 
-/* Website name on mobile */
-.website-name {
-  display: none;  /* Hide the website name on mobile */
+/* visually-centered logo on mobile */
+/* Mobile first */
+header {
+  height: 64px; /* or 72px if you want it taller */
+  padding: 0 20px; /* remove vertical padding, height handles it */
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 0; /* align to top */
+  transform: translateX(-50%); /* only center horizontally */
+  height: 100%; /* fill header height */
+  display: flex;
+  align-items: center; /* keep image centered inside */
+}
+
+.logo img {
+  height: 100%;   /* match header height */
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+/* Nav & button hidden/compact on mobile by default */
+.nav-links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  display: none;
+}
+
+/* Make header the reference for absolute positioning */
+header {
+  position: relative;
+  z-index: 1000; /* keeps header/nav above hero */
+}
+
+/* Mobile dropdown when .active is added */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* sits right under header */
+  left: 0;
+  width: 100%;
+  background: #e5cda3;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  z-index: 999;
+}
+
+.nav-links.active li {
+  margin: 10px 0;
+  text-align: center;
 }
 
 /* ---------- Desktop (≥768px) ---------- */
@@ -59,14 +117,14 @@ header {
     align-items: center; /* Vertically center all items */
     height: 90px;
     padding: 0 30px;
-    width: 100%;
+    width: 100%; /* Ensure header takes the full width */
   }
 
   /* Logo aligned to the left */
   .logo {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 20px;  /* Space between logo and website name */
   }
 
   .logo img {
@@ -79,15 +137,14 @@ header {
     font-size: 1.2rem;
     font-weight: bold;
     color: #064420;
-    margin-right: 40px;  /* Add space between the website name and nav links */
-    display: block; /* Show the website name on desktop */
+    margin-right: auto; /* Push nav links to the right */
   }
 
-  /* Nav links */
+  /* Nav links (push to the right) */
   .nav-links {
     display: flex;
     gap: 28px;
-    margin-left: auto;
+    margin-left: auto; /* Push nav links to the right */
     align-items: center;
     font-size: 1.1rem;
     font-weight: 500;
@@ -107,18 +164,84 @@ header {
     cursor: pointer;
   }
 
-  /* Hide hamburger on desktop */
+  /* Hamburger (hide on desktop) */
   .hamburger {
-    display: none;
+    display: none;  /* Hide hamburger on desktop */
   }
 
   /* Vertically center items in the navbar */
-  header .nav-links,
+  header .nav-links, 
   header .btn {
     align-self: center;
   }
 }
 
+/* ---------- Desktop (≥768px) ---------- */
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: flex-start; /* Align everything to the left */
+    align-items: center; /* Vertically center all items */
+    height: 90px;
+    padding: 0 30px;
+    width: 100%; /* Ensure header takes the full width */
+  }
+
+  /* Logo aligned to the left */
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;  /* Space between logo and website name */
+  }
+
+  .logo img {
+    max-height: 70px;
+    max-width: 180px;
+  }
+
+  /* Website name next to logo */
+  .website-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #064420;
+    margin-right: 40px; /* Add spacing between the website name and nav links */
+  }
+
+  /* Nav links */
+  .nav-links {
+    display: flex;
+    gap: 28px; /* Space between navigation links */
+    margin-left: auto; /* Push nav links to the right */
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  /* Button styling */
+  .btn {
+    display: inline-block;
+    margin-left: 24px;
+    background: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Hide hamburger (mobile only) */
+  .hamburger {
+    display: none;  /* Hide hamburger on desktop */
+  }
+
+  /* Vertically center items in the navbar */
+  header .nav-links, 
+  header .btn {
+    align-self: center;
+  }
+}
 
 
 /* Hero section */
