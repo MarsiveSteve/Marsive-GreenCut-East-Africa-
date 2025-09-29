@@ -232,144 +232,12 @@ header {
   }
 }
 
-/* Lawn Care Section */
-.treeplanting-section {
-  background-color: #0a1a2f;
-  color: white;
+/* Main Container for all four sections */
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Create four equal columns */
+  gap: 30px;
   padding: 60px 20px;
-  text-align: center;
-  display: flex;  /* Add flexbox layout */
-  flex-direction: column;  /* Stack content vertically */
-  align-items: center;  /* Center content horizontally */
-}
-
-.treeplanting-title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.treeplanting-text {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-.treeplanting-image-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;  /* Ensure full width */
-}
-
-.treeplanting-image {
-  width: 95%;          /* 👈 makes image wider (close to edges) */
-  max-width: 1200px;   /* optional: limit max size on large screens */
-  border-radius: 0;    /* 👈 sharp corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  object-fit: cover;   /* 👈 ensures it crops nicely if tall */
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .treeplanting-section {
-    padding: 40px 15px;
-  }
-  .treeplanting-title {
-    font-size: 2em;
-  }
-  .treeplanting-text {
-    font-size: 1em;
-  }
-  .treeplanting-image {
-    width: 100%;  /* full width on tablets/phones */
-  }
-}
-
-@media (max-width: 480px) {
-  .treeplanting-title {
-    font-size: 1.6em;
-  }
-  .treeplanting-text {
-    font-size: 0.95em;
-  }
-}
-
-.treeplanting-section {
-  background-color: #0a1a2f;
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.treeplanting-title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.treeplanting-text {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-.treeplanting-image-wrapper {
-  display: flex;
-  justify-content: centeru
-}
-
-.treeplanting-image {
-  width: 95%;          /* 👈 makes image wider (close to edges) */
-  max-width: 1200px;   /* optional: limit max size on large screens */
-  border-radius: 0;    /* 👈 sharp corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  object-fit: cover;   /* 👈 ensures it crops nicely if tall */
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .treeplanting-section {
-    padding: 40px 15px;
-  }
-  .treeplanting-title {
-    font-size: 2em;
-  }
-  .treeplanting-text {
-    font-size: 1em;
-  }
-  .treeplanting-image {
-    width: 100%;  /* full width on tablets/phones */
-  }
-}
-
-@media (max-width: 480px) {
-  .treeplanting-title {
-    font-size: 1.6em;
-  }
-  .treeplanting-text {
-    font-size: 0.95em;
-  }
-}
- 
- /*comprehensive-services Title*/
-.comprehensive-services {
-  background-color: #2C6B2F; /* Green background color */
-  padding: 30px 0;
-  text-align: center;
-}
-
-.services-container h2 {
-  color: #fff;
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.services-container p {
-  color: #fff;
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .service-section {
@@ -408,46 +276,113 @@ header {
   line-height: 1.6;
 }
 
-/*landscaping-section*/
-.landscaping-section {
-  background-color: #2C6B2F; /* Green background color */
-  padding: 50px 0;
-}
-
-.landscaping-container {
+/* Specific Styles for Each Section */
+.lawn-care, .landscaping-design, .irrigation-setup {
   display: flex;
-  align-items: flex-start; /* Align items at the top */
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a1a2f;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.landscaping-text {
-  color: #fff;
-  max-width: 600px;
-  padding-right: 20px; /* Add spacing between text and image */
+.lawn-care h2, .landscaping-design h2, .irrigation-setup h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
-.landscaping-text h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.landscaping-text p {
-  font-size: 16px;
+.lawn-care p, .landscaping-design p, .irrigation-setup p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto 40px;
   line-height: 1.6;
 }
 
-.landscaping-image {
-  margin-top: 20px; /* Image slightly below the text */
+.lawn-care img, .landscaping-design img, .irrigation-setup img {
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 0;
+  object-fit: cover;
 }
 
-.landscaping-image img {
+/* Responsive Layout for Tablets */
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+  }
+  .lawn-care h2, .landscaping-design h2, .irrigation-setup h2 {
+    font-size: 2.2em;
+  }
+  .lawn-care p, .landscaping-design p, .irrigation-setup p {
+    font-size: 1em;
+  }
+  .service-image img {
+    width: 100%;
+  }
+}
+
+/* Responsive Layout for Mobile Devices */
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 20px;
+  }
+  .lawn-care h2, .landscaping-design h2, .irrigation-setup h2 {
+    font-size: 1.8em;
+  }
+  .lawn-care p, .landscaping-design p, .irrigation-setup p {
+    font-size: 0.95em;
+  }
+  .service-image img {
+    width: 100%;
+  }
+}
+
+/* Responsive Layout for Very Small Mobile Devices */
+@media (max-width: 480px) {
+  .services-container {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+  .lawn-care h2, .landscaping-design h2, .irrigation-setup h2 {
+    font-size: 1.6em;
+  }
+  .lawn-care p, .landscaping-design p, .irrigation-setup p {
+    font-size: 0.85em;
+  }
+  .service-image img {
+    width: 100%;
+  }
+}
+
+/* Styling for Service Image */
+.service-image img {
   width: 100%;
   height: auto;
-  max-width: 600px; /* Adjust the max width of the image */
   border-radius: 8px;
 }
+
+/* Specific Adjustments for Each Section */
+.lawn-care {
+  background-color: #1a3b26;
+}
+
+.lawn-care img {
+  object-fit: cover;
+}
+
+.landscaping-design {
+  background-color: #214233;
+}
+
+.irrigation-setup {
+  background-color: #243334;
+}
+
+
 
 /* Why Marsive Section */
 .why-marsive {  background-color:#b68d4c ;  /* Green background, darker shade */
