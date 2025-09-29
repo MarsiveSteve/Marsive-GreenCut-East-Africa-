@@ -41,11 +41,11 @@ header {
 .logo {
   position: absolute;
   left: 50%;
-  top: 12px; /* same as header padding */
   transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%); /* vertical center inside header */
+  pointer-events: none; /* so taps go to hamburger/button, not the logo */
 }
-
-
 .logo img {
   display: block;
   max-height: 56px;
