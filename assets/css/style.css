@@ -248,6 +248,8 @@ header {
   font-size: 2.5rem;
   color: #222;                    /* Dark heading text */
   margin-bottom: 20px;
+  font-family: 'Georgia', serif;  /* Updated font-family for style consistency */
+  text-align: center;  /* Center-align the title */
 }
 
 .why-marsive p {
@@ -268,7 +270,7 @@ header {
 .service {
   background-color: #fff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 32%;                       /* Slightly reduced width to fit 3 items */
   text-align: center;               /* Ensure text is centered */
@@ -355,9 +357,9 @@ header {
 .testimonial {
   background-color: #c0ebb7;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 32%;  /* 3 items in a row on desktop */
+  width: 28%;  /* 3 items in a row on desktop */
   text-align: center;  /* Center-align text */
   display: flex;
   flex-direction: column;
@@ -367,7 +369,7 @@ header {
 
 .testimonial img {
   width: 100%;  /* Image takes the full width */
-  height: 300px;  /* Adjusted height for image consistency */
+  height: 400px;  /* Adjusted height for image consistency */
   object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
   border-radius: 8px;
   margin-bottom: 20px;  /* Space between the image and text */
