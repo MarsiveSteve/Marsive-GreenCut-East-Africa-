@@ -328,7 +328,7 @@ header {
   margin-top: 40px;
 }
 
-.service1 {
+.service2 {
   background-color: #c0ebb7;
   padding: 20px;
   border-radius: 0px;
@@ -341,7 +341,7 @@ header {
   margin-bottom: 20px;  /* Space between service1 blocks */
 }
 
-.service1 img {
+.service2 img {
   width: 100%;  /* Image takes the full width */
   height: 500px;  /* Adjusted height for image consistency */
   object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
@@ -349,14 +349,14 @@ header {
   margin-bottom: 20px;  /* Space between the image and text */
 }
 
-.service1 h3 {
+.service2 h3 {
   font-size: 1.5rem;
   color: #2c3e50;
   margin-top: 10px;
   font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
-.service1 p {
+.service2 p {
   font-size: 1rem;
   color: #ffffff;
   margin-top: 5px;
@@ -365,7 +365,7 @@ header {
 
 /* Media query for smaller screens (mobile) */
 @media screen and (max-width: 768px) {
-  .service1 {
+  .service2 {
     width: 100%;  /* Stack services on smaller screens */
   }
 }
