@@ -265,7 +265,7 @@ header {
   font-size: 1.8rem;  /* Reduced font size for the title */
   font-family: 'Georgia', serif;  /* Title font style */
   margin-bottom: 15px;  /* Reduced margin below the title */
-  text-align: left;  /* Left-align the title */
+  text-align: center;  /* Left-align the title */
 }
 
 .lawn-mowing-care p {
