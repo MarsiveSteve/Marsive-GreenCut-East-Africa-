@@ -359,7 +359,7 @@ header {
   padding: 20px;
   border-radius: 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 28%;  /* 3 items in a row on desktop */
+  width: 32%;  /* 3 items in a row on desktop */
   text-align: center;  /* Center-align text */
   display: flex;
   flex-direction: column;
@@ -371,7 +371,7 @@ header {
   width: 100%;  /* Image takes the full width */
   height: 400px;  /* Adjusted height for image consistency */
   object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
-  border-radius: 8px;
+  border-radius: 0px;
   margin-bottom: 20px;  /* Space between the image and text */
 }
 
