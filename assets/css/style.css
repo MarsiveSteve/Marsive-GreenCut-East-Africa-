@@ -280,9 +280,9 @@ header {
 
 .service img {
   width: 100%;
-  height: auto;                    /* Keep natural aspect ratio */
-  object-fit: cover;
-  border-radius: 8px;
+  height: 250px;                    /* Fixed height for proportional scaling */
+  object-fit: cover;                /* Ensure images cover the space without distortion */
+  border-radius: 0;                 /* Remove rounded corners for sharp edges */
   margin-bottom: 20px;
 }
 
