@@ -230,6 +230,72 @@ header {
   }
 }
 
+/* Services Section */
+.service-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #2d5a3b;  /* Adjusted background color */
+  color: white;
+  padding: 60px 20px;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  text-align: center;  /* Center text horizontally */
+  height: 100vh; /* Ensures the section takes full viewport height for vertical centering */
+}
+
+/* Styling for text content */
+.service-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 500px;  /* Limiting the width of the content */
+}
+
+/* Title styling */
+.service-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Description styling */
+.service-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Image styling */
+.service-image {
+  flex: 1;
+  padding: 20px;
+}
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .service-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-content {
+    max-width: none;  /* Remove the max-width to allow full width on mobile */
+  }
+
+  .service-image {
+    padding: 0;  /* Adjust padding for mobile */
+  }
+
+  .service-image img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 /* Why Marsive Section */
 .why-marsive {
