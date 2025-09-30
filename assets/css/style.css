@@ -233,19 +233,19 @@ header {
 
 
 /* Why Marsive Greencut? */
-.why-marsive {
+.marsive {
   background-color: #27ae60;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
   text-align: center;  /* Center-align the content */
   margin-top: 60px;  /* Adjusted for spacing from previous section */
 }
 
-.why-marsive .container {
+.marsive-container {
   width: 80%;
   margin: 0 auto;
 }
 
-.why-marsive h2 {
+.marsive h2 {
   font-size: 2.5rem;
   color: white;  /* White color for the title */
   margin-bottom: 20px;
@@ -253,7 +253,7 @@ header {
   text-align: center;  /* Center-align the title */
 }
 
-.why-marsive p {
+.marsive p {
   font-size: 1.2rem;
   color: white;  /* White text color for better contrast */
   margin-bottom: 40px;
@@ -261,7 +261,7 @@ header {
   text-align: center;  /* Center-align the paragraph */
 }
 
-/* Flex container for testimonials */
+/* Flex container for services */
 .flex-container {
   display: flex;
   justify-content: space-between;  /* Spread out the testimonials */
