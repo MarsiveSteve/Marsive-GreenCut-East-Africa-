@@ -296,7 +296,7 @@ header {
 
 /* Why Marsive Greencut? */
 .marsive {
-  background-color: #27ae60;  /* Green background, darker shade */
+  background-color: #c9c497;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
   text-align: center;  /* Center-align the content */
   margin-top: 60px;  /* Adjusted for spacing from previous section */
@@ -317,7 +317,7 @@ header {
 
 .marsive p {
   font-size: 1.2rem;
-  color: white;  /* White text color for better contrast */
+  color: rgb(1, 2, 43);  /* White text color for better contrast */
   margin-bottom: 40px;
   font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
   text-align: center;  /* Center-align the paragraph */
@@ -333,7 +333,7 @@ header {
 }
 
 .services1 {
-  background-color: #c0ebb7;
+  background-color: #fafcfa;
   padding: 20px;
   border-radius: 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
