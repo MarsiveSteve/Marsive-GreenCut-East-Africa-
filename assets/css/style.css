@@ -230,69 +230,7 @@ header {
   }
 }
 
-/* Comprehensive Services Section */
-.services-section {
-  background-color: #2e4718; /* Dark green background */
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
 
-.services-header {
-  font-family: 'Georgia', serif;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-/* Flexbox container for services */
-.services-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Each service block */
-.service {
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.service img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-/* Alternate design for text and images */
-.service:nth-child(even) {
-  flex-direction: row-reverse; /* Reverse the order of the text and image */
-}
-
-.service p {
-  font-size: 1rem;
-  color: #f1f1f1;
-  margin-top: 10px;
-}
-
-/* Media queries for responsiveness */
-@media (min-width: 768px) {
-  .service {
-    width: 45%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .service {
-    width: 30%;
-  }
-}
 
 /* Why Marsive Greencut? */
 .why-marsive {
@@ -302,7 +240,7 @@ header {
   margin-top: 60px;  /* Adjusted for spacing from previous section */
 }
 
-.why-marsive-container {
+.why-marsive .container {
   width: 80%;
   margin: 0 auto;
 }
