@@ -301,6 +301,78 @@ header {
   }
 }
 
+/* Landscaping Design Section */
+.landscaping-design {
+  background-color: #27ae60;  /* Green background */
+  padding: 40px 0;  /* Reduced padding to maintain height consistency */
+}
+
+.landscaping-design .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.landscaping-design .content {
+  display: flex;
+  justify-content: space-between; /* Aligns the image and text side by side */
+  align-items: center; /* Vertically centers the items */
+  gap: 20px;  /* Adds space between the image and text */
+  flex-direction: row-reverse; /* Flips the order: Image on the right */
+}
+
+.landscaping-design img {
+  width: 50%;  /* Image takes up 50% of the container */
+  height: 400px;  /* Set height for the image */
+  object-fit: cover;
+  border-radius: 8px;  /* Optional: adds rounded corners to the image */
+}
+
+.landscaping-design .text {
+  width: 45%;  /* Text takes up 45% of the container */
+  color: white;  /* White text color */
+}
+
+.landscaping-design h3 {
+  font-size: 1.8rem;  /* Reduced font size for the title */
+  font-family: 'Georgia', serif;  /* Title font style */
+  margin-bottom: 15px;  /* Reduced margin below the title */
+  text-align: center;  /* Center-align the title */
+}
+
+.landscaping-design p {
+  font-size: 1rem;  /* Reduced font size for the paragraph */
+  font-family: 'Arial', sans-serif;  /* Consistent font for the paragraph */
+  text-align: center;  /* Center-align the paragraph text */
+  line-height: 1.5;  /* Adjust line height for better readability */
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  .landscaping-design .content {
+    flex-direction: column;  /* Stacks image and text vertically on mobile */
+    text-align: center;  /* Center-aligns text on mobile */
+  }
+
+  .landscaping-design img {
+    width: 80%;  /* Image takes up more width on mobile */
+    height: 300px;  /* Reduced image height for mobile */
+    margin-bottom: 20px;  /* Adds space between the image and the text */
+  }
+
+  .landscaping-design .text {
+    width: 80%;  /* Text takes up more width on mobile */
+  }
+
+  .landscaping-design h3 {
+    font-size: 1.6rem;  /* Reduced title size on mobile */
+  }
+
+  .landscaping-design p {
+    font-size: 0.9rem;  /* Reduced paragraph size on mobile */
+  }
+}
+
+
 /* Why Marsive GreenCut Section */
 .marsive {
   background-color: #a38b02;  /* Green background, darker shade */
