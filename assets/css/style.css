@@ -303,74 +303,59 @@ header {
 }
 
 /* Landscaping Design Section */
-.landscaping-design {
-  background-color: #bed1c6;  /* Green background */
-  padding: 40px 0;  /* Reduced padding to maintain height consistency */
+/* Landscape Design Section */
+.landscape-design {
+  background-color: #0c4724;  /* Green background */
+  padding: 40px 0;  /* Adjust padding for consistency */
 }
 
-.landscaping-design .container {
+.landscape-design .container {
   width: 80%;
   margin: 0 auto;
 }
 
-.landscaping-design .content {
+.landscape-design .content {
   display: flex;
-  justify-content: space-between; /* Aligns the image and text side by side */
-  align-items: center; /* Vertically centers the items */
-  gap: 20px;  /* Adds space between the image and text */
-  flex-direction: row-reverse; /* Flips the order: Image on the right */
+  justify-content: space-between;
+  align-items: center;
 }
 
-.landscaping-design .img {
-  width: 50%;  /* Image takes up 50% of the container */
-  height: 400px;  /* Set height for the image */
-  object-fit: cover;
-  border-radius: 0px;  /* Optional: adds rounded corners to the image */
+.landscape-design .content img {
+  width: 50%;
+  height: auto;
 }
 
-.landscaping-design .text {
-  width: 45%;  /* Text takes up 45% of the container */
-  color: white;  /* White text color */
+.landscape-design .text {
+  width: 50%;
+  padding-left: 20px;  /* Adjust padding to give space between text and image */
+  text-align: left;
 }
 
-.landscaping-design h3 {
-  font-size: 1.8rem;  /* Reduced font size for the title */
-  font-family: 'Georgia', serif;  /* Title font style */
-  margin-bottom: 15px;  /* Reduced margin below the title */
-  text-align: left;  /* Align title to the left */
-}
-
-.landscaping-design p {
-  font-size: 1rem;  /* Reduced font size for the paragraph */
-  font-family: 'Arial', sans-serif;  /* Consistent font for the paragraph */
-  text-align: left;  /* Align paragraph text to the left */
-  line-height: 1.5;  /* Adjust line height for better readability */
-}
-
-/* Mobile Responsiveness */
+/* Media query for mobile devices */
 @media screen and (max-width: 768px) {
-  .landscaping-design .content {
-    flex-direction: column !important;  /* Stacks image and text vertically on mobile */
-    text-align: center !important;  /* Center-aligns text on mobile */
+  .landscape-design .content {
+    flex-direction: column;  /* Stack content vertically on mobile */
+    text-align: center;  /* Center-align text on mobile */
   }
 
-  .landscaping-design .img {
-    width: 80%;  /* Image takes up more width on mobile */
-    height: auto;  /* Auto height for image to maintain aspect ratio */
-    margin-bottom: 20px;  /* Adds space between the image and the text */
+  .landscape-design .content img {
+    width: 100%;  /* Ensure image fills the container */
+    margin-bottom: 20px;  /* Add space below the image */
   }
 
-  .landscaping-design .text {
-    width: 80%;  /* Text takes up more width on mobile */
-    margin-bottom: 20px;  /* Adds space after text block */
+  .landscape-design .text {
+    width: 100%;
+    padding-left: 0;  /* Remove padding on mobile */
+    padding-right: 0;  /* Remove padding on mobile */
+    order: 1;  /* Ensure the text comes below the image */
   }
 
-  .landscaping-design h3 {
-    font-size: 1.6rem;  /* Reduced title size on mobile */
+  .landscape-design h2 {
+    font-size: 1.8em;  /* Adjust header font size for mobile */
   }
 
-  .landscaping-design p {
-    font-size: 0.9rem;  /* Reduced paragraph size on mobile */
+  .landscape-design p {
+    font-size: 1em;  /* Adjust paragraph font size for mobile */
   }
 }
 
