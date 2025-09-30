@@ -253,7 +253,7 @@ header {
   width: 50%;  /* Image takes up 50% of the container */
   height: 400px;  /* Reduced image height */
   object-fit: cover;
-  border-radius: 8px;  /* Optional: adds rounded corners to the image */
+  border-radius: 0px;  /* Optional: adds rounded corners to the image */
 }
 
 .lawn-mowing-care .text {
