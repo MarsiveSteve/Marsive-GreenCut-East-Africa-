@@ -240,6 +240,7 @@ header {
 
 .services-header {
   font-family: 'Georgia', serif;
+  text-align: center;  /* Center-align the title */
   font-size: 2rem;
   margin-bottom: 30px;
 }
