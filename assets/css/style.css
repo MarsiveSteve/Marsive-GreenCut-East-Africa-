@@ -305,7 +305,7 @@ header {
 
 .marsive h2 {
   font-size: 2.5rem;
-  color: rgb(255, 255, 255);  /* White color for the title */
+  color: rgb(0, 0, 0);  /* White color for the title */
   margin-bottom: 20px;
   font-family: 'Georgia', serif;  /* Updated font-family for style consistency */
   text-align: center;  /* Center-align the title */
@@ -313,7 +313,7 @@ header {
 
 .marsive p {
   font-size: 1.2rem;
-  color: rgb(255, 255, 255);  /* White text color for better contrast */
+  color: rgb(0, 0, 0);  /* White text color for better contrast */
   margin-bottom: 40px;
   font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
   text-align: center;  /* Center-align the paragraph */
