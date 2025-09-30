@@ -290,20 +290,20 @@ header {
   }
 }
 
-/* Why Marsive Greencut? */
-.marsive {
-  background-color: #c9c497;  /* Green background, darker shade */
+/* What Our Clients Say Section */
+.client {
+  background-color: #27ae60;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
   text-align: center;  /* Center-align the content */
   margin-top: 60px;  /* Adjusted for spacing from previous section */
 }
 
-.marsive-container {
+.client-container {
   width: 80%;
   margin: 0 auto;
 }
 
-.marsive h2 {
+.client h2 {
   font-size: 2.5rem;
   color: white;  /* White color for the title */
   margin-bottom: 20px;
@@ -311,25 +311,25 @@ header {
   text-align: center;  /* Center-align the title */
 }
 
-.marsive p {
+.client p {
   font-size: 1.2rem;
-  color: rgb(1, 2, 43);  /* White text color for better contrast */
+  color: white;  /* White text color for better contrast */
   margin-bottom: 40px;
   font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
   text-align: center;  /* Center-align the paragraph */
 }
 
-/* Flex container for services */
+/* Flex container for testimonials */
 .flex-container {
   display: flex;
-  justify-content: space-between;  /* Spread out the services */
+  justify-content: space-between;  /* Spread out the testimonials */
   gap: 20px;  /* Space between items */
   flex-wrap: wrap;  /* Allows wrapping on smaller screens */
   margin-top: 40px;
 }
 
-.services1 {
-  background-color: #fafcfa;
+.testimonial {
+  background-color: #c0ebb7;
   padding: 20px;
   border-radius: 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -338,10 +338,10 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;  /* Space between services1 blocks */
+  margin-bottom: 20px;  /* Space between testimonial blocks */
 }
 
-.services1 img {
+.testimonial img {
   width: 100%;  /* Image takes the full width */
   height: 500px;  /* Adjusted height for image consistency */
   object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
@@ -349,14 +349,14 @@ header {
   margin-bottom: 20px;  /* Space between the image and text */
 }
 
-.services1 h3 {
+.testimonial h3 {
   font-size: 1.5rem;
   color: #2c3e50;
   margin-top: 10px;
   font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
-.services1 p {
+.testimonial p {
   font-size: 1rem;
   color: #7f8c8d;
   margin-top: 5px;
@@ -365,8 +365,8 @@ header {
 
 /* Media query for smaller screens (mobile) */
 @media screen and (max-width: 768px) {
-  .services1 {
-    width: 100%;  /* Stack servicess on smaller screens */
+  .testimonial {
+    width: 100%;  /* Stack testimonials on smaller screens */
   }
 }
 
