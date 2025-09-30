@@ -231,62 +231,63 @@ header {
 }
 
 /* Comprehensive Services Section */
-.services-section {
-  background-color: #2e4718; /* Dark green background */
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
+/* Lawn Mowing Care Section */
+.lawn-mowing-care {
+  background-color: #27ae60;  /* Green background */
+  padding: 60px 0;  /* Padding for better spacing */
 }
 
-.services-header {
-  font-family: 'Georgia', serif;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
+.lawn-mowing-care .container {
+  width: 80%;
+  margin: 0 auto;
 }
 
-/* Flexbox container for services */
-.services-container {
+.lawn-mowing-care .content {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between; /* Aligns the text and image side by side */
+  align-items: center; /* Vertically centers the items */
+  gap: 20px;  /* Adds space between the image and text */
 }
 
-/* Each service block */
-.service {
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.service img {
-  width: 100%;
+.lawn-mowing-care img {
+  width: 50%;  /* Image takes up 50% of the container */
   height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  object-fit: cover;
+  border-radius: 8px;  /* Optional: adds rounded corners to the image */
 }
 
-
-.service p {
-  font-size: 1rem;
-  color: #f1f1f1;
-  margin-top: 10px;
+.lawn-mowing-care .text {
+  width: 45%;  /* Text takes up 45% of the container */
+  color: white;  /* Text color */
 }
 
-/* Media queries for responsiveness */
-@media (min-width: 768px) {
-  .service {
-    width: 45%;
+.lawn-mowing-care h3 {
+  font-size: 2rem;
+  font-family: 'Georgia', serif;  /* Title font style */
+  margin-bottom: 20px;
+  text-align: left;  /* Left-align the title */
+}
+
+.lawn-mowing-care p {
+  font-size: 1.2rem;
+  font-family: 'Arial', sans-serif;  /* Consistent font for the paragraph */
+  text-align: left;  /* Left-align the paragraph text */
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  .lawn-mowing-care .content {
+    flex-direction: column;  /* Stack image and text vertically on mobile */
+    text-align: center;  /* Center-align text on mobile */
   }
-}
 
-@media (min-width: 1024px) {
-  .service {
-    width: 30%;
+  .lawn-mowing-care img {
+    width: 80%;  /* Image takes more space on mobile */
+    margin-bottom: 20px;  /* Adds space between the image and the text */
+  }
+
+  .lawn-mowing-care .text {
+    width: 80%;  /* Text takes more space on mobile */
   }
 }
 
