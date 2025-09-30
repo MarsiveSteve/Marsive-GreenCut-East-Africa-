@@ -233,8 +233,8 @@ header {
 /* Comprehensive Services Section */
 /* Lawn Mowing Care Section */
 .lawn-mowing-care {
-  background-color: #094924;  /* Green background */
-  padding: 60px 0;  /* Padding for better spacing */
+  background-color: #06381b;  /* Green background */
+  padding: 40px 0;  /* Reduced padding to reduce the height */
 }
 
 .lawn-mowing-care .container {
@@ -251,7 +251,7 @@ header {
 
 .lawn-mowing-care img {
   width: 50%;  /* Image takes up 50% of the container */
-  height: auto;
+  height: 400px;  /* Reduced image height */
   object-fit: cover;
   border-radius: 8px;  /* Optional: adds rounded corners to the image */
 }
@@ -262,32 +262,42 @@ header {
 }
 
 .lawn-mowing-care h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;  /* Reduced font size for the title */
   font-family: 'Georgia', serif;  /* Title font style */
-  margin-bottom: 20px;
+  margin-bottom: 15px;  /* Reduced margin below the title */
   text-align: left;  /* Left-align the title */
 }
 
 .lawn-mowing-care p {
-  font-size: 1.2rem;
+  font-size: 1rem;  /* Reduced font size for the paragraph */
   font-family: 'Arial', sans-serif;  /* Consistent font for the paragraph */
   text-align: left;  /* Left-align the paragraph text */
+  line-height: 1.5;  /* Adjust line height for better readability */
 }
 
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
   .lawn-mowing-care .content {
-    flex-direction: column;  /* Stack image and text vertically on mobile */
-    text-align: center;  /* Center-align text on mobile */
+    flex-direction: column;  /* Stacks image and text vertically on mobile */
+    text-align: center;  /* Center-aligns text on mobile */
   }
 
   .lawn-mowing-care img {
-    width: 80%;  /* Image takes more space on mobile */
+    width: 80%;  /* Image takes up more width on mobile */
+    height: 300px;  /* Reduced image height for mobile */
     margin-bottom: 20px;  /* Adds space between the image and the text */
   }
 
   .lawn-mowing-care .text {
-    width: 80%;  /* Text takes more space on mobile */
+    width: 80%;  /* Text takes up more width on mobile */
+  }
+
+  .lawn-mowing-care h3 {
+    font-size: 1.6rem;  /* Reduced title size on mobile */
+  }
+
+  .lawn-mowing-care p {
+    font-size: 0.9rem;  /* Reduced paragraph size on mobile */
   }
 }
 
