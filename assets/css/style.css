@@ -313,7 +313,7 @@ header {
 
 .marsive p {
   font-size: 1.2rem;
-  color: rgb(61, 55, 55);  /* White text color for better contrast */
+  color: rgb(248, 247, 247);  /* White text color for better contrast */
   margin-bottom: 40px;
   font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
   text-align: center;  /* Center-align the paragraph */
