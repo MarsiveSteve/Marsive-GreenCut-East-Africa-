@@ -337,24 +337,24 @@ header {
   font-size: 1.8rem;  /* Reduced font size for the title */
   font-family: 'Georgia', serif;  /* Title font style */
   margin-bottom: 15px;  /* Reduced margin below the title */
-  text-align: center;  /* Center-align the title */
+  text-align: left;  /* Align title to the left */
 }
 
 .landscaping-design p {
   font-size: 1rem;  /* Reduced font size for the paragraph */
   font-family: 'Arial', sans-serif;  /* Consistent font for the paragraph */
-  text-align: center;  /* Center-align the paragraph text */
+  text-align: left;  /* Align paragraph text to the left */
   line-height: 1.5;  /* Adjust line height for better readability */
 }
 
-/* Media query for mobile screens */
+/* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
   .landscaping-design .content {
     flex-direction: column !important;  /* Stacks image and text vertically on mobile */
     text-align: center !important;  /* Center-aligns text on mobile */
   }
 
-  .landscaping-design img {
+  .landscaping-design .img {
     width: 80%;  /* Image takes up more width on mobile */
     height: auto;  /* Auto height for image to maintain aspect ratio */
     margin-bottom: 20px;  /* Adds space between the image and the text */
