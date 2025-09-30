@@ -323,7 +323,7 @@ header {
 
 .landscaping-design .image {
   flex: 1;
-  text-align: right; /* Align image to the right */
+  text-align: left; /* Align image to the right */
 }
 
 .landscaping-design .image img {
