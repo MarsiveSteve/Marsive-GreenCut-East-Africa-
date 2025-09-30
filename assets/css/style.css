@@ -355,12 +355,13 @@ header {
 
   .landscaping-design img {
     width: 80%;  /* Image takes up more width on mobile */
-    height: 300px;  /* Reduced image height for mobile */
+    height: auto;  /* Auto height for image to maintain aspect ratio */
     margin-bottom: 20px;  /* Adds space between the image and the text */
   }
 
   .landscaping-design .text {
     width: 80%;  /* Text takes up more width on mobile */
+    margin-bottom: 20px;  /* Adds space after text block */
   }
 
   .landscaping-design h3 {
