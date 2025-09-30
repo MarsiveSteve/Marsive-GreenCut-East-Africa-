@@ -372,7 +372,7 @@ header {
 
 /* What Our Clients Say Section */
 .client {
-  background-color: #27ae60;  /* Green background, darker shade */
+  background-color: #013b19;  /* Green background, darker shade */
   padding: 60px 0;  /* More padding for better spacing */
   text-align: center;  /* Center-align the content */
   margin-top: 60px;  /* Adjusted for spacing from previous section */
@@ -431,14 +431,14 @@ header {
 
 .testimonial h3 {
   font-size: 1.5rem;
-  color: #2c3e50;
+  color: #022b55;
   margin-top: 10px;
   font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
 
 .testimonial p {
   font-size: 1rem;
-  color: #7f8c8d;
+  color: #101213;
   margin-top: 5px;
   font-family: 'Arial', sans-serif;  /* Consistent font styling */
 }
