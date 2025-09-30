@@ -270,10 +270,6 @@ header {
   margin-bottom: 15px;
 }
 
-/* Alternate design for text and images */
-.service:nth-child(even) {
-  flex-direction: row-reverse; /* Reverse the order of the text and image */
-}
 
 .service p {
   font-size: 1rem;
