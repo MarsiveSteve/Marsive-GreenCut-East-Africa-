@@ -350,8 +350,8 @@ header {
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
   .landscaping-design .content {
-    flex-direction: column;  /* Stacks image and text vertically on mobile */
-    text-align: center;  /* Center-aligns text on mobile */
+    flex-direction: column !important;  /* Stacks image and text vertically on mobile */
+    text-align: center !important;  /* Center-aligns text on mobile */
   }
 
   .landscaping-design img {
