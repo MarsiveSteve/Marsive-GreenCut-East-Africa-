@@ -367,6 +367,82 @@ header {
   }
 }
 
+/* Irrigation Setup Section */
+.irrigation-setup {
+  background-color: #0c4724;  /* Green background */
+  padding: 40px 0;  /* Reduced padding to reduce the height */
+}
+
+.irrigation-setup .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.irrigation-setup .content {
+  display: flex;
+  flex-direction: row-reverse;  /* Image on the right, text on the left */
+  justify-content: space-between;
+  align-items: center; /* Vertically centers the items */
+  gap: 20px;  /* Adds space between the image and text */
+}
+
+.irrigation-setup img {
+  width: 50%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+.irrigation-setup .text {
+  width: 45%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers text vertically */
+  text-align: center;      /* centers text horizontally */
+}
+
+.irrigation-setup h3 {
+  font-size: 1.8rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 15px;
+}
+
+.irrigation-setup p {
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  text-align: left; /* paragraphs left aligned */
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  .irrigation-setup .content {
+    flex-direction: column;  /* Stack image above text */
+    text-align: center;
+  }
+
+  .irrigation-setup img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .irrigation-setup .text {
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+
+  .irrigation-setup h3 {
+    font-size: 1.6rem;
+  }
+
+  .irrigation-setup p {
+    font-size: 0.9rem;
+    text-align: center; /* make paragraph centered on mobile if you prefer */
+  }
+}
+
 /* Why Marsive GreenCut Section */
 .marsive {
   background-color: #a38b02;  /* Green background, darker shade */
