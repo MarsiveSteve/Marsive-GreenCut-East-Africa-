@@ -271,6 +271,63 @@ header {
   }
 }
 
+.treeplanting-section {
+  background-color: #0a1a2f;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.treeplanting-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.treeplanting-text {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.treeplanting-image-wrapper {
+  display: flex;
+  justify-content: centeru
+}
+
+.treeplanting-image {
+  width: 95%; /* 👈 makes image wider (close to edges) */
+  max-width: 1200px; /* optional: limit max size on large screens */
+  border-radius: 0; /* 👈 sharp corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  object-fit: cover; /* 👈 ensures it crops nicely if tall */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .treeplanting-section {
+    padding: 40px 15px;
+  }
+  .treeplanting-title {
+    font-size: 2em;
+  }
+  .treeplanting-text {
+    font-size: 1em;
+  }
+  .treeplanting-image {
+    width: 100%; /* full width on tablets/phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .treeplanting-title {
+    font-size: 1.6em;
+  }
+  .treeplanting-text {
+    font-size: 0.95em;
+  }
+}
+
 /* Comprehensive Services Section */
 /* Lawn Mowing Care Section */
 .lawn-mowing-care {
