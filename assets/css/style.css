@@ -295,9 +295,19 @@ header {
 .landscaping-design .content {
   display: flex;
   flex-direction: row-reverse;  /* Image on the right, text on the left */
-  justify-content: space-between;
-  align-items: center; /* Vertically centers the items */
-  gap: 20px;  /* Adds space between the image and text */
+  justify-content: center;      /* Centers horizontally inside the container */
+  align-items: center;          /* Aligns text & image vertically center */
+  gap: 20px;  /* Space between image and text */
+}
+
+.landscaping-design .text {
+  width: 45%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Vertically centers content inside the text block */
+  text-align: center;       /* Centers heading text horizontally */
+  height: 100%;             /* Ensures it takes full height of the flex row */
 }
 
 .landscaping-design img {
