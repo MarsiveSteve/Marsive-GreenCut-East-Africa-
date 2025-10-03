@@ -257,3 +257,31 @@
   max-width: 600px; /* Adjust the max width of the image */
   border-radius: 8px;
 }
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .landscape-design .content {
+    flex-direction: column;  /* Stack content vertically on mobile */
+    text-align: center;  /* Center-align text on mobile */
+  }
+
+  .landscape-design .content img {
+    width: 100%;  /* Ensure image fills the container */
+    margin-bottom: 20px;  /* Add space below the image */
+  }
+
+  .landscape-design .text {
+    width: 100%;
+    padding-left: 0;  /* Remove padding on mobile */
+    padding-right: 0;  /* Remove padding on mobile */
+    order: 1;  /* Ensure the text comes below the image */
+  }
+
+  .landscape-design h2 {
+    font-size: 1.8em;  /* Adjust header font size for mobile */
+  }
+
+  .landscape-design p {
+    font-size: 1em;  /* Adjust paragraph font size for mobile */
+  }
+}
