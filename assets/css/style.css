@@ -220,6 +220,17 @@ header {
   align-items: center; /* Center content horizontally */
 }
 
+/* ✅ Added container inside the first treeplanting-section */
+.treeplanting-section .container {
+  width: 1200px; /* fixed width */
+  height: 700px; /* fixed height */
+  margin: 0 auto; /* center horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .treeplanting-title {
   font-size: 2.5em;
   margin-bottom: 20px;
@@ -249,7 +260,7 @@ header {
 /* Responsive */
 @media (max-width: 768px) {
   .treeplanting-section {
-    padding: 50px 20px;
+    padding: 45px 15px;
   }
   .treeplanting-title {
     font-size: 2em;
@@ -259,6 +270,12 @@ header {
   }
   .treeplanting-image {
     width: 100%; /* full width on tablets/phones */
+  }
+
+  /* ✅ Adjust container for mobile */
+  .treeplanting-section .container {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -279,6 +296,17 @@ header {
   text-align: center;
 }
 
+/* ✅ Added container inside the second treeplanting-section */
+.treeplanting-section .fixed-container {
+  width: 1200px; /* fixed width */
+  height: 700px; /* fixed height */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .treeplanting-title {
   font-size: 2.5em;
   margin-bottom: 20px;
@@ -293,7 +321,7 @@ header {
 
 .treeplanting-image-wrapper {
   display: flex;
-  justify-content: centeru
+  justify-content: center; /* 🛠️ fixed typo 'centeru' */
 }
 
 .treeplanting-image {
@@ -401,76 +429,6 @@ header {
   }
 }
 
-/* Landscaping Design Section */
-.landscaping-design {
-  background-color: #0c4724;  /* Green background */
-  padding: 40px 0;  /* Reduced padding to reduce the height */
-}
-
-.landscaping-design .container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.landscaping-design .content {
- display: flex;
-  justify-content: space-between; /* Aligns the text and image side by side */
-  align-items: center; /* Vertically centers the items */
-  gap: 20px;  /* Adds space between the image and text */
-}
-
-.landscaping-design .text {
-width: 45%;  /* Text takes up 45% of the container */
-  color: white;  /* Text color */
-}
-
-.landscaping-design img {
-  width: 50%;  /* Image takes up 50% of the container */
-  height: 400px;  /* Reduced image height */
-  object-fit: cover;
-  border-radius: 0px;  /* Optional: adds rounded corners to the image */
-}
-
-.landscaping-design h3 {
-  font-size: 1.8rem;
-  font-family: 'Georgia', serif;
-  margin-bottom: 15px;
-}
-
-.landscaping-design p {
-  font-size: 1rem;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.5;
-  text-align: left; /* paragraphs left aligned */
-}
-
-/* Media query for mobile screens */
-@media screen and (max-width: 768px) {
-  .landscaping-design .content {
-    flex-direction: column;  /* Stack image above text */
-    text-align: center;
-  }
-
-  .landscaping-design img {
-    width: 80%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  .landscaping-design .text {
-    width: 80%;
-    margin: 0 auto 20px auto;
-  }
-
-  .landscaping-design h3 {
-    font-size: 1.6rem;
-  }
-
-  .landscaping-design p {
-    font-size: 0.9rem;
-    text-align: center; /* make paragraph centered on mobile if you prefer */
-  }
-}
 
 /* Irrigation Setup Section */
 .irrigation-setup {
@@ -528,7 +486,7 @@ width: 45%;  /* Text takes up 45% of the container */
   }
 
   .irrigation-setup img {
-    width: 80%;
+    width: 100%;
     height: auto;
     margin-bottom: 20px;
   }
