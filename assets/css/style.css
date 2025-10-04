@@ -356,19 +356,18 @@ header {
     font-size: 0.95em;
   }
 }
-
 /* Comprehensive Services Section */
 .comprehensive-services {
   background-color: #0c4724; /* Green background color */
-  padding: 30px 0;
+  padding: 60px 0 30px; /* Desktop: more top spacing */
   text-align: center;
 }
 
 .services-container h2 {
   color: #fff;
   font-size: 36px;
-  font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
-  text-align: center;  /* Center-align the paragraph */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
   margin-bottom: 15px;
 }
 
@@ -379,6 +378,35 @@ header {
   max-width: 800px;
   margin: 0 auto;
 }
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .comprehensive-services {
+    padding: 40px 0 25px; /* Reduce top spacing on tablets */
+  }
+  .services-container h2 {
+    font-size: 28px;
+  }
+  .services-container p {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .comprehensive-services {
+    padding: 30px 0 20px; /* Smaller spacing on mobile */
+  }
+  .services-container h2 {
+    font-size: 24px;
+  }
+  .services-container p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
 
 /* Lawn Mowing Care Section */
 .lawn-mowing-care {
