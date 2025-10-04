@@ -382,7 +382,7 @@ header {
   }
 
   .lawn-mowing-care img {
-    width: 80%;  /* Image takes up more width on mobile */
+    width: 100%;  /* Image takes up more width on mobile */
     height: auto;  /* Auto height for image to maintain aspect ratio */
     margin-bottom: 20px;  /* Adds space between the image and the text */
   }
