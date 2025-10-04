@@ -209,7 +209,7 @@ header {
   }
 }
 
-/* Lawn Care + Tree Planting Section */
+/* Lawn Care section*/
 .treeplanting-section {
   background-color: #0a1a2f;
   color: white;
@@ -249,7 +249,7 @@ header {
 /* Responsive */
 @media (max-width: 768px) {
   .treeplanting-section {
-    padding: 40px 15px;
+    padding: 50px 20px;
   }
   .treeplanting-title {
     font-size: 2em;
@@ -271,6 +271,7 @@ header {
   }
 }
 
+/* Tree Planting Section */
 .treeplanting-section {
   background-color: #0a1a2f;
   color: white;
