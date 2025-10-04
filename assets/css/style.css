@@ -359,7 +359,7 @@ header {
 
 /* Comprehensive Services Section */
 .comprehensive-services {
-  background-color: #2C6B2F; /* Green background color */
+  background-color: #0c4724; /* Green background color */
   padding: 30px 0;
   text-align: center;
 }
@@ -376,42 +376,6 @@ header {
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-}
-
-.service-section {
-  background-color: #2C6B2F; /* Green background color */
-  padding: 50px 0;
-}
-
-.service-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.service-image img {
-  width: 100%;
-  height: auto;
-  max-width: 600px;
-  border-radius: 8px;
-}
-
-.service-text {
-  color: #fff;
-  max-width: 600px;
-  padding: 20px;
-}
-
-.service-text h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.service-text p {
-  font-size: 16px;
-  line-height: 1.6;
 }
 
 /* Lawn Mowing Care Section */
