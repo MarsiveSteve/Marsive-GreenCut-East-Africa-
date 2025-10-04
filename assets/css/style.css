@@ -367,6 +367,8 @@ header {
 .services-container h2 {
   color: #fff;
   font-size: 36px;
+  font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
+  text-align: center;  /* Center-align the paragraph */
   margin-bottom: 15px;
 }
 
