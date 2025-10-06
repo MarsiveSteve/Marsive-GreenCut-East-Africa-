@@ -209,71 +209,94 @@ header {
   }
 }
 
-/* Lawn Care section*/
+/* ✅ Lawn Care Section */
 .treeplanting-section {
   background-color: #0a1a2f;
   color: white;
   padding: 60px 20px;
   text-align: center;
-  display: flex; /* Add flexbox layout */
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center content horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ✅ Added container inside the first treeplanting-section */
+/* ✅ Stable container */
 .treeplanting-section .container {
-  width: 1200px; /* fixed width */
-  height: 700px; /* fixed height */
-  margin: 0 auto; /* center horizontally */
+  max-width: 1200px; /* Fixed maximum width for stability */
+  width: 100%;
+  min-height: 700px; /* Consistent height */
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+/* ✅ Section title */
 .treeplanting-title {
   font-size: 2.5em;
   margin-bottom: 20px;
+  font-family: 'Georgia', serif;
 }
 
+/* ✅ Description text */
 .treeplanting-text {
   font-size: 1.2em;
   max-width: 800px;
   margin: 0 auto 40px;
   line-height: 1.6;
+  font-family: 'Arial', sans-serif;
 }
 
+/* ✅ Image wrapper */
 .treeplanting-image-wrapper {
   display: flex;
   justify-content: center;
-  width: 100%; /* Ensure full width */
+  width: 100%;
 }
 
+/* ✅ Image stability and proportions */
 .treeplanting-image {
-  width: 95%; /* 👈 makes image wider (close to edges) */
-  max-width: 1200px; /* optional: limit max size on large screens */
-  border-radius: 0; /* 👈 sharp corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  object-fit: cover; /* 👈 ensures it crops nicely if tall */
+  width: 95%; /* Keeps a stable width ratio */
+  max-width: 1200px;
+  height: 450px; /* Fixed height for consistent look */
+  border-radius: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
 }
 
-/* Responsive */
+/* ✅ Responsive adjustments */
+@media (max-width: 1024px) {
+  .treeplanting-section .container {
+    max-width: 900px;
+    min-height: 600px;
+  }
+
+  .treeplanting-image {
+    height: 400px;
+  }
+}
+
 @media (max-width: 768px) {
   .treeplanting-section {
     padding: 45px 15px;
   }
+
+  .treeplanting-section .container {
+    width: 100%;
+    min-height: auto;
+  }
+
   .treeplanting-title {
     font-size: 2em;
   }
+
   .treeplanting-text {
     font-size: 1em;
-  }
-  .treeplanting-image {
-    width: 100%; /* full width on tablets/phones */
+    max-width: 90%;
   }
 
-  /* ✅ Adjust container for mobile */
-  .treeplanting-section .container {
+  .treeplanting-image {
     width: 100%;
     height: auto;
   }
@@ -283,23 +306,34 @@ header {
   .treeplanting-title {
     font-size: 1.6em;
   }
+
   .treeplanting-text {
     font-size: 0.95em;
   }
+
+  .treeplanting-image {
+    height: auto;
+  }
 }
 
+
 /* Tree Planting Section */
+/* ✅ Lawn Care Section */
 .treeplanting-section {
   background-color: #0a1a2f;
   color: white;
   padding: 60px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ✅ Added container inside the second treeplanting-section */
-.treeplanting-section .fixed-container {
-  width: 1200px; /* fixed width */
-  height: 700px; /* fixed height */
+/* ✅ Stable container */
+.treeplanting-section .container {
+  max-width: 1200px; /* Fixed maximum width for stability */
+  width: 100%;
+  min-height: 700px; /* Consistent height */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -307,44 +341,73 @@ header {
   align-items: center;
 }
 
+/* ✅ Section title */
 .treeplanting-title {
   font-size: 2.5em;
   margin-bottom: 20px;
+  font-family: 'Georgia', serif;
 }
 
+/* ✅ Description text */
 .treeplanting-text {
   font-size: 1.2em;
   max-width: 800px;
   margin: 0 auto 40px;
   line-height: 1.6;
+  font-family: 'Arial', sans-serif;
 }
 
+/* ✅ Image wrapper */
 .treeplanting-image-wrapper {
   display: flex;
-  justify-content: center; /* 🛠️ fixed typo 'centeru' */
+  justify-content: center;
+  width: 100%;
 }
 
+/* ✅ Image stability and proportions */
 .treeplanting-image {
-  width: 95%; /* 👈 makes image wider (close to edges) */
-  max-width: 1200px; /* optional: limit max size on large screens */
-  border-radius: 0; /* 👈 sharp corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  object-fit: cover; /* 👈 ensures it crops nicely if tall */
+  width: 95%; /* Keeps a stable width ratio */
+  max-width: 1200px;
+  height: 450px; /* Fixed height for consistent look */
+  border-radius: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
 }
 
-/* Responsive */
+/* ✅ Responsive adjustments */
+@media (max-width: 1024px) {
+  .treeplanting-section .container {
+    max-width: 900px;
+    min-height: 600px;
+  }
+
+  .treeplanting-image {
+    height: 400px;
+  }
+}
+
 @media (max-width: 768px) {
   .treeplanting-section {
-    padding: 40px 15px;
+    padding: 45px 15px;
   }
+
+  .treeplanting-section .container {
+    width: 100%;
+    min-height: auto;
+  }
+
   .treeplanting-title {
     font-size: 2em;
   }
+
   .treeplanting-text {
     font-size: 1em;
+    max-width: 90%;
   }
+
   .treeplanting-image {
-    width: 100%; /* full width on tablets/phones */
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -352,130 +415,174 @@ header {
   .treeplanting-title {
     font-size: 1.6em;
   }
+
   .treeplanting-text {
     font-size: 0.95em;
   }
-}
-/* Comprehensive Services Section */
-.comprehensive-services {
-  background-color: #0c4724; /* Green background color */
-  padding: 60px 0 30px; /* Desktop: more top spacing */
-  text-align: center;
+
+  .treeplanting-image {
+    height: auto;
+  }
 }
 
+/* ✅ Comprehensive Services Section */
+.comprehensive-services {
+  background-color: #0c4724; /* Green background */
+  padding: 60px 0 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* ✅ Stable inner container */
+.services-container {
+  max-width: 1200px; /* Prevents stretching on large screens */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px; /* Prevents text from touching edges */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ✅ Section Title */
 .services-container h2 {
   color: #fff;
-  font-size: 36px;
+  font-size: 2.5rem;
   font-family: 'Georgia', sans-serif;
   text-align: center;
   margin-bottom: 15px;
 }
 
+/* ✅ Paragraph Text */
 .services-container p {
   color: #fff;
-  font-size: 18px;
+  font-size: 1.125rem; /* = 18px */
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
 }
 
-/* Tablet view */
+/* ✅ Tablet view */
+@media (max-width: 1024px) {
+  .services-container {
+    max-width: 900px;
+  }
+}
+
 @media (max-width: 768px) {
   .comprehensive-services {
-    padding: 40px 0 25px; /* Reduce top spacing on tablets */
+    padding: 45px 0 25px;
   }
+
+  .services-container {
+    width: 100%;
+    max-width: 700px;
+  }
+
   .services-container h2 {
-    font-size: 28px;
+    font-size: 1.75rem; /* 28px */
   }
+
   .services-container p {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 0 15px;
   }
 }
 
-/* Mobile view */
+/* ✅ Mobile view */
 @media (max-width: 480px) {
   .comprehensive-services {
-    padding: 30px 0 20px; /* Smaller spacing on mobile */
+    padding: 30px 0 20px;
   }
+
+  .services-container {
+    width: 100%;
+    max-width: 400px;
+  }
+
   .services-container h2 {
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px */
   }
+
   .services-container p {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px */
     padding: 0 10px;
   }
 }
 
 
-/* Lawn Mowing Care Section */
-.lawn-mowing-care {
-  background-color: #0c4724;  /* Green background */
-  padding: 40px 0;  /* Reduced padding to reduce the height */
+
+/* Irrigation Setup Section */
+.irrigation-setup {
+  background-color: #0a1a2f;  /* Dark blue background */
+  padding: 40px 0;  /* Comfortable spacing top & bottom */
 }
 
-.lawn-mowing-care .container {
+.irrigation-setup .container {
   width: 80%;
   margin: 0 auto;
 }
 
-.lawn-mowing-care .content {
+.irrigation-setup .content {
   display: flex;
-  justify-content: space-between; /* Aligns the text and image side by side */
-  align-items: center; /* Vertically centers the items */
-  gap: 20px;  /* Adds space between the image and text */
+  justify-content: space-between; /* Side-by-side layout */
+  align-items: center; /* Vertically centered */
+  gap: 20px;  /* Space between image and text */
 }
 
-.lawn-mowing-care img {
-  width: 50%;  /* Image takes up 50% of the container */
-  height: 400px;  /* Reduced image height */
+.irrigation-setup img {
+  width: 50%;  /* Image takes up half the section */
+  height: 400px;  /* Controlled height */
   object-fit: cover;
-  border-radius: 0px;  /* Optional: adds rounded corners to the image */
+  border-radius: 0px;  /* Sharp corners for professional look */
 }
 
-.lawn-mowing-care .text {
-  width: 45%;  /* Text takes up 45% of the container */
-  color: white;  /* Text color */
+.irrigation-setup .text {
+  width: 45%;  /* Text block size */
+  color: white;  /* Contrast on dark background */
 }
 
-.lawn-mowing-care h3 {
-  font-size: 1.8rem;  /* Reduced font size for the title */
-  font-family: 'Georgia', serif;  /* Title font style */
-  margin-bottom: 15px;  /* Reduced margin below the title */
-  text-align: center;  /* Left-align the title */
+.irrigation-setup h3 {
+  font-size: 1.8rem;  /* Section title size */
+  font-family: 'Georgia', serif;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.lawn-mowing-care p {
-  font-size: 1rem;  /* Reduced font size for the paragraph */
-  font-family: 'Arial', sans-serif;  /* Consistent font for the paragraph */
-  text-align: left;  /* Left-align the paragraph text */
-  line-height: 1.5;  /* Adjust line height for better readability */
+.irrigation-setup p {
+  font-size: 1rem;  /* Paragraph font size */
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+  line-height: 1.5;
 }
 
-/* Media query for mobile screens */
+/* ✅ Responsive Design for Tablets and Mobile */
 @media screen and (max-width: 768px) {
-  .lawn-mowing-care .content {
-    flex-direction: column;  /* Stacks image and text vertically on mobile */
-    text-align: center;  /* Center-aligns text on mobile */
+  .irrigation-setup .content {
+    flex-direction: column;  /* Stack vertically */
+    text-align: center;  /* Center content */
   }
 
-  .lawn-mowing-care img {
-    width: 100%;  /* Image takes up more width on mobile */
-    height: auto;  /* Auto height for image to maintain aspect ratio */
-    margin-bottom: 20px;  /* Adds space between the image and the text */
+  .irrigation-setup img {
+    width: 100%;  /* Full width on smaller screens */
+    height: auto;
+    margin-bottom: 20px;
   }
 
-  .lawn-mowing-care .text {
-    width: 80%;  /* Text takes up more width on mobile */
-    margin-bottom: 20px;  /* Adds space after text block */
+  .irrigation-setup .text {
+    width: 80%;  /* Wider text block */
+    margin-bottom: 20px;
   }
 
-  .lawn-mowing-care h3 {
-    font-size: 1.6rem;  /* Reduced title size on mobile */
+  .irrigation-setup h3 {
+    font-size: 1.6rem;
   }
 
-  .lawn-mowing-care p {
-    font-size: 0.9rem;  /* Reduced paragraph size on mobile */
+  .irrigation-setup p {
+    font-size: 0.9rem;
   }
 }
 
