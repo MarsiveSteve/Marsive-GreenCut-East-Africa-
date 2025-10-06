@@ -558,83 +558,92 @@ header {
 
 /* Why Marsive GreenCut Section */
 .marsive {
-  background-color: #a38b02;  /* Green background, darker shade */
-  padding: 60px 0;  /* More padding for better spacing */
-  text-align: center;  /* Center-align the content */
-  margin-top: 60px;  /* Adjusted for spacing from previous section */
+  background-color: #a38b02;
+  padding: 60px 0;
+  text-align: center;
+  margin-top: 60px;
 }
 
 .marsive-container {
-  width: 80%;
+  max-width: 1200px;  /* Fixed max width for stability */
   margin: 0 auto;
+  padding: 0 20px;  /* Prevents edge touching */
 }
 
 .marsive h2 {
   font-size: 2.5rem;
-  color: rgb(0, 0, 0);  /* White color for the title */
+  color: #000;
   margin-bottom: 20px;
-  font-family: 'Georgia', serif;  /* Updated font-family for style consistency */
-  text-align: center;  /* Center-align the title */
+  font-family: 'Georgia', serif;
+  text-align: center;
 }
 
 .marsive p {
   font-size: 1.2rem;
-  color: rgb(0, 0, 0);  /* White text color for better contrast */
+  color: #000;
   margin-bottom: 40px;
-  font-family: 'Arial', sans-serif;  /* Same font family used in screenshot */
-  text-align: center;  /* Center-align the paragraph */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
 }
 
-/* Flex container for testimonials */
+/* Flex container for service cards */
 .flex-container {
   display: flex;
-  justify-content: space-between;  /* Spread out the testimonials */
-  gap: 20px;  /* Space between items */
-  flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+  justify-content: center;  /* Center instead of stretch */
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
 
+/* Individual card */
 .service2 {
   background-color: #f5f5d4;
   padding: 20px;
-  border-radius: 0px;
+  border-radius: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 32%;  /* 3 items in a row on desktop */
-  text-align: center;  /* Center-align text */
+  flex: 0 0 360px;  /* Fixed card width */
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;  /* Space between service1 blocks */
+  margin-bottom: 20px;
 }
 
 .service2 img {
-  width: 100%;  /* Image takes the full width */
-  height: 450px;  /* Adjusted height for image consistency */
-  object-fit: cover;  /* Ensures the image maintains aspect ratio and fills the area */
-  border-radius: 0px;
-  margin-bottom: 20px;  /* Space between the image and text */
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  margin-bottom: 20px;
 }
 
 .service2 h3 {
   font-size: 1.5rem;
   color: #002549;
   margin-top: 10px;
-  font-family: 'Arial', sans-serif;  /* Consistent font styling */
+  font-family: 'Arial', sans-serif;
 }
 
 .service2 p {
   font-size: 1rem;
   color: #0e0d0d;
   margin-top: 5px;
-  font-family: 'Arial', sans-serif;  /* Consistent font styling */
+  font-family: 'Arial', sans-serif;
 }
 
-/* Media query for smaller screens (mobile) */
+/* Responsive layout for mobile */
 @media screen and (max-width: 768px) {
   .service2 {
-    width: 100%;  /* Stack services on smaller screens */
+    flex: 0 0 100%; /* Stack vertically on small screens */
+    max-width: 400px;
+  }
+
+  .flex-container {
+    justify-content: center;
   }
 }
+
 
 /* What Our Clients Say Section */
 .client {
