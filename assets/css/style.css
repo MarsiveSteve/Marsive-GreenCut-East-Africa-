@@ -425,340 +425,136 @@ header {
   }
 }
 
-/* ✅ Comprehensive Services Section */
+/* Comprehensive Services Section */
 .comprehensive-services {
-  background-color: #0c4724; /* Green background */
-  padding: 60px 0 30px;
+  background-color: #0c4724; /* Green background color */
+  padding: 60px 0 30px; /* Desktop: more top spacing */
   text-align: center;
-  display: flex;
-  justify-content: center;
 }
 
-/* ✅ Stable inner container */
-.services-container {
-  max-width: 1200px; /* Prevents stretching on large screens */
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px; /* Prevents text from touching edges */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* ✅ Section Title */
 .services-container h2 {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 36px;
   font-family: 'Georgia', sans-serif;
   text-align: center;
   margin-bottom: 15px;
 }
 
-/* ✅ Paragraph Text */
 .services-container p {
   color: #fff;
-  font-size: 1.125rem; /* = 18px */
+  font-size: 18px;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
 }
 
-/* ✅ Tablet view */
-@media (max-width: 1024px) {
-  .services-container {
-    max-width: 900px;
-  }
-}
-
+/* Tablet view */
 @media (max-width: 768px) {
   .comprehensive-services {
-    padding: 45px 0 25px;
+    padding: 40px 0 25px; /* Reduce top spacing on tablets */
   }
-
-  .services-container {
-    width: 100%;
-    max-width: 700px;
-  }
-
   .services-container h2 {
-    font-size: 1.75rem; /* 28px */
+    font-size: 28px;
   }
-
   .services-container p {
-    font-size: 1rem;
+    font-size: 16px;
     padding: 0 15px;
   }
 }
 
-/* ✅ Mobile view */
+/* Mobile view */
 @media (max-width: 480px) {
   .comprehensive-services {
-    padding: 30px 0 20px;
+    padding: 30px 0 20px; /* Smaller spacing on mobile */
   }
-
-  .services-container {
-    width: 100%;
-    max-width: 400px;
-  }
-
   .services-container h2 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 24px;
   }
-
   .services-container p {
-    font-size: 0.875rem; /* 14px */
+    font-size: 14px;
     padding: 0 10px;
   }
 }
 
 
-
-/* Irrigation Setup Section */
-.irrigation-setup {
-  background-color: #0a1a2f;  /* Dark blue background */
-  padding: 40px 0;  /* Comfortable spacing top & bottom */
-}
-
-.irrigation-setup .container {
-  width: 80%;
-  max-width: 1200px; /* ✅ prevents over-expansion */
-  margin: 0 auto;
-}
-
-.irrigation-setup .content {
-  display: flex;
-  justify-content: space-between; /* Side-by-side layout */
-  align-items: center; /* Vertically centered */
-  gap: 20px;  /* Space between image and text */
-  flex-wrap: wrap; /* ✅ allows wrapping to prevent stretch */
-}
-
-.irrigation-setup img {
-  width: 50%;  /* Image takes up half the section */
-  max-width: 100%; /* ✅ prevents overflow */
-  height: auto;  /* ✅ maintain aspect ratio */
-  max-height: 400px; /* ✅ limits image height */
-  object-fit: cover;
-  border-radius: 0px;  /* Sharp corners for professional look */
-}
-
-.irrigation-setup .text {
-  width: 45%;  /* Text block size */
-  color: white;  /* Contrast on dark background */
-}
-
-.irrigation-setup h3 {
-  font-size: 1.8rem;  /* Section title size */
-  font-family: 'Georgia', serif;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.irrigation-setup p {
-  font-size: 1rem;  /* Paragraph font size */
-  font-family: 'Arial', sans-serif;
-  text-align: left;
-  line-height: 1.5;
-}
-
-/* ✅ Responsive Design for Tablets and Mobile */
-@media screen and (max-width: 768px) {
-  .irrigation-setup .content {
-    flex-direction: column;  /* Stack vertically */
-    text-align: center;  /* Center content */
-  }
-
-  .irrigation-setup img {
-    width: 100%;  /* Full width on smaller screens */
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  .irrigation-setup .text {
-    width: 80%;  /* Wider text block */
-    margin-bottom: 20px;
-  }
-
-  .irrigation-setup h3 {
-    font-size: 1.6rem;
-  }
-
-  .irrigation-setup p {
-    font-size: 0.9rem;
-  }
-}
-
-
-/* Irrigation Setup Section */
-.irrigation-setup {
+/* Lawn Mowing Care Section */
+.lawn-mowing-care {
   background-color: #0c4724;  /* Green background */
   padding: 40px 0;  /* Reduced padding to reduce the height */
 }
 
-.irrigation-setup .container {
+.lawn-mowing-care .container {
   width: 80%;
-  max-width: 1200px; /* ✅ keeps layout centered & stable */
+  max-width: 1200px; /* ✅ Prevents full stretch on large screens */
   margin: 0 auto;
 }
 
-.irrigation-setup .content {
+.lawn-mowing-care .content {
   display: flex;
-  flex-direction: row-reverse;  /* Image on the right, text on the left */
-  justify-content: space-between;
+  justify-content: space-between; /* Aligns the text and image side by side */
   align-items: center; /* Vertically centers the items */
   gap: 20px;  /* Adds space between the image and text */
-  flex-wrap: wrap; /* ✅ prevents stretching */
+  flex-wrap: wrap; /* ✅ Prevents items from stretching too wide */
 }
 
-.irrigation-setup img {
-  width: 50%;
-  max-width: 100%; /* ✅ prevent over-stretching */
-  height: auto; /* ✅ maintain proportions */
-  max-height: 400px; /* ✅ set a limit */
+.lawn-mowing-care img {
+  width: 50%;  /* Image takes up 50% of the container */
+  max-width: 100%; /* ✅ Keeps image from overflowing container */
+  height: auto;  /* ✅ Maintain natural aspect ratio */
+  max-height: 400px;  /* ✅ Limit image height */
   object-fit: cover;
-  border-radius: 0px;
+  border-radius: 0px;  /* Optional: adds rounded corners to the image */
 }
 
-.irrigation-setup .text {
-  width: 45%;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centers text vertically */
-  text-align: center;      /* centers text horizontally */
+.lawn-mowing-care .text {
+  width: 45%;  /* Text takes up 45% of the container */
+  color: white;  /* Text color */
 }
 
-.irrigation-setup h3 {
-  font-size: 1.8rem;
-  font-family: 'Georgia', serif;
-  margin-bottom: 15px;
+.lawn-mowing-care h3 {
+  font-size: 1.8rem;  /* Reduced font size for the title */
+  font-family: 'Georgia', serif;  /* Title font style */
+  margin-bottom: 15px;  /* Reduced margin below the title */
+  text-align: center;  /* Left-align the title */
 }
 
-.irrigation-setup p {
-  font-size: 1rem;
-  font-family: 'Arial', sans-serif;
-  line-height: 1.5;
-  text-align: left; /* paragraphs left aligned */
+.lawn-mowing-care p {
+  font-size: 1rem;  /* Reduced font size for the paragraph */
+  font-family: 'Arial', sans-serif;  /* Consistent font for the paragraph */
+  text-align: left;  /* Left-align the paragraph text */
+  line-height: 1.5;  /* Adjust line height for better readability */
 }
 
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
-  .irrigation-setup .content {
-    flex-direction: column;  /* Stack image above text */
-    text-align: center;
+  .lawn-mowing-care .content {
+    flex-direction: column;  /* Stacks image and text vertically on mobile */
+    text-align: center;  /* Center-aligns text on mobile */
   }
 
-  .irrigation-setup img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+  .lawn-mowing-care img {
+    width: 100%;  /* Image takes up more width on mobile */
+    height: auto;  /* Auto height for image to maintain aspect ratio */
+    margin-bottom: 20px;  /* Adds space between the image and the text */
   }
 
-  .irrigation-setup .text {
-    width: 80%;
-    margin: 0 auto 20px auto;
+  .lawn-mowing-care .text {
+    width: 80%;  /* Text takes up more width on mobile */
+    margin-bottom: 20px;  /* Adds space after text block */
   }
 
-  .irrigation-setup h3 {
-    font-size: 1.6rem;
+  .lawn-mowing-care h3 {
+    font-size: 1.6rem;  /* Reduced title size on mobile */
   }
 
-  .irrigation-setup p {
-    font-size: 0.9rem;
-    text-align: center; /* make paragraph centered on mobile if you prefer */
+  .lawn-mowing-care p {
+    font-size: 0.9rem;  /* Reduced paragraph size on mobile */
   }
 }
 
 
-/* Why Marsive GreenCut Section */
-.marsive {
-  background-color: #a38b02;
-  padding: 60px 0;
-  text-align: center;
-  margin-top: 60px;
-}
 
-.marsive-container {
-  max-width: 1200px;  /* Fixed max width for stability */
-  margin: 0 auto;
-  padding: 0 20px;  /* Prevents edge touching */
-}
-
-.marsive h2 {
-  font-size: 2.5rem;
-  color: #000;
-  margin-bottom: 20px;
-  font-family: 'Georgia', serif;
-  text-align: center;
-}
-
-.marsive p {
-  font-size: 1.2rem;
-  color: #000;
-  margin-bottom: 40px;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-}
-
-/* Flex container for service cards */
-.flex-container {
-  display: flex;
-  justify-content: center;  /* Center instead of stretch */
-  align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-/* Individual card */
-.service2 {
-  background-color: #f5f5d4;
-  padding: 20px;
-  border-radius: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 0 0 360px;  /* Fixed card width */
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.service2 img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 0;
-  margin-bottom: 20px;
-}
-
-.service2 h3 {
-  font-size: 1.5rem;
-  color: #002549;
-  margin-top: 10px;
-  font-family: 'Arial', sans-serif;
-}
-
-.service2 p {
-  font-size: 1rem;
-  color: #0e0d0d;
-  margin-top: 5px;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Responsive layout for mobile */
-@media screen and (max-width: 768px) {
-  .service2 {
-    flex: 0 0 100%; /* Stack vertically on small screens */
-    max-width: 400px;
-  }
-
-  .flex-container {
-    justify-content: center;
-  }
-}/* Irrigation Setup Section */
+/* Irrigation Setup Section */
 .irrigation-setup {
   background-color: #0c4724;  /* Green background */
   padding: 40px 0;  /* Reduced padding to reduce the height */
