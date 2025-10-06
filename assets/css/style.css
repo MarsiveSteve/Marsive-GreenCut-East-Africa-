@@ -562,6 +562,7 @@ header {
 
 .irrigation-setup .container {
   width: 80%;
+  max-width: 1200px; /* ✅ Prevents stretching beyond a fixed limit */
   margin: 0 auto;
 }
 
@@ -571,11 +572,14 @@ header {
   justify-content: space-between;
   align-items: center; /* Vertically centers the items */
   gap: 20px;  /* Adds space between the image and text */
+  flex-wrap: wrap; /* ✅ Ensures layout doesn’t stretch awkwardly */
 }
 
 .irrigation-setup img {
   width: 50%;
-  height: 400px;
+  max-width: 100%; /* ✅ Prevents image overflow */
+  height: auto; /* ✅ Keeps proper aspect ratio */
+  max-height: 400px; /* ✅ Limits tall image stretch */
   object-fit: cover;
   border-radius: 0px;
 }
@@ -629,6 +633,7 @@ header {
     text-align: center; /* make paragraph centered on mobile if you prefer */
   }
 }
+
 
 /* Why Marsive GreenCut Section */
 .marsive {
