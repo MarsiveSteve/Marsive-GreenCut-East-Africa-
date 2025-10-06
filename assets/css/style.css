@@ -523,6 +523,7 @@ header {
 
 .irrigation-setup .container {
   width: 80%;
+  max-width: 1200px; /* ✅ prevents over-expansion */
   margin: 0 auto;
 }
 
@@ -531,11 +532,14 @@ header {
   justify-content: space-between; /* Side-by-side layout */
   align-items: center; /* Vertically centered */
   gap: 20px;  /* Space between image and text */
+  flex-wrap: wrap; /* ✅ allows wrapping to prevent stretch */
 }
 
 .irrigation-setup img {
   width: 50%;  /* Image takes up half the section */
-  height: 400px;  /* Controlled height */
+  max-width: 100%; /* ✅ prevents overflow */
+  height: auto;  /* ✅ maintain aspect ratio */
+  max-height: 400px; /* ✅ limits image height */
   object-fit: cover;
   border-radius: 0px;  /* Sharp corners for professional look */
 }
@@ -588,6 +592,173 @@ header {
 
 
 /* Irrigation Setup Section */
+.irrigation-setup {
+  background-color: #0c4724;  /* Green background */
+  padding: 40px 0;  /* Reduced padding to reduce the height */
+}
+
+.irrigation-setup .container {
+  width: 80%;
+  max-width: 1200px; /* ✅ keeps layout centered & stable */
+  margin: 0 auto;
+}
+
+.irrigation-setup .content {
+  display: flex;
+  flex-direction: row-reverse;  /* Image on the right, text on the left */
+  justify-content: space-between;
+  align-items: center; /* Vertically centers the items */
+  gap: 20px;  /* Adds space between the image and text */
+  flex-wrap: wrap; /* ✅ prevents stretching */
+}
+
+.irrigation-setup img {
+  width: 50%;
+  max-width: 100%; /* ✅ prevent over-stretching */
+  height: auto; /* ✅ maintain proportions */
+  max-height: 400px; /* ✅ set a limit */
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+.irrigation-setup .text {
+  width: 45%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers text vertically */
+  text-align: center;      /* centers text horizontally */
+}
+
+.irrigation-setup h3 {
+  font-size: 1.8rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 15px;
+}
+
+.irrigation-setup p {
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  text-align: left; /* paragraphs left aligned */
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  .irrigation-setup .content {
+    flex-direction: column;  /* Stack image above text */
+    text-align: center;
+  }
+
+  .irrigation-setup img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .irrigation-setup .text {
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+
+  .irrigation-setup h3 {
+    font-size: 1.6rem;
+  }
+
+  .irrigation-setup p {
+    font-size: 0.9rem;
+    text-align: center; /* make paragraph centered on mobile if you prefer */
+  }
+}
+
+
+/* Why Marsive GreenCut Section */
+.marsive {
+  background-color: #a38b02;
+  padding: 60px 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.marsive-container {
+  max-width: 1200px;  /* Fixed max width for stability */
+  margin: 0 auto;
+  padding: 0 20px;  /* Prevents edge touching */
+}
+
+.marsive h2 {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  text-align: center;
+}
+
+.marsive p {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* Flex container for service cards */
+.flex-container {
+  display: flex;
+  justify-content: center;  /* Center instead of stretch */
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Individual card */
+.service2 {
+  background-color: #f5f5d4;
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 0 0 360px;  /* Fixed card width */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.service2 img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+
+.service2 h3 {
+  font-size: 1.5rem;
+  color: #002549;
+  margin-top: 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+.service2 p {
+  font-size: 1rem;
+  color: #0e0d0d;
+  margin-top: 5px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Responsive layout for mobile */
+@media screen and (max-width: 768px) {
+  .service2 {
+    flex: 0 0 100%; /* Stack vertically on small screens */
+    max-width: 400px;
+  }
+
+  .flex-container {
+    justify-content: center;
+  }
+}/* Irrigation Setup Section */
 .irrigation-setup {
   background-color: #0c4724;  /* Green background */
   padding: 40px 0;  /* Reduced padding to reduce the height */
