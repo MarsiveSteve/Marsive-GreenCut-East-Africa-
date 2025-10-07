@@ -112,27 +112,27 @@ header {
   }
 
   /* Reset logo position on desktop */
-  .logo {
-    position: static;
-    transform: none;
-    margin-right: 24px;
-    pointer-events: auto;
-    display: flex;
-    align-items: center;
-  }
+ .branding {
+  display: flex;                 /* Aligns logo and name horizontally */
+  align-items: center;           /* Vertically centers them */
+  gap: 15px;                     /* Space between logo and name */
+  cursor: pointer;
+}
 
-  .logo img {
-    max-height: 70px;
-    max-width: 180px;
-  }
+.branding .logo {
+  max-height: 70px;
+  max-width: 180px;
+  object-fit: contain;
+}
 
-  /* Add website name next to logo */
-  .website-name {
-    font-size: 1.5rem;        /* Adjust font size */
-    font-weight: bold;
-    color: #064420;           /* Dark green color */
-    margin-left: 15px;        /* Space between logo and website name */
-  }
+.branding .web-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #064420;                /* Dark green */
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
 
   .nav-links {
     display: flex;
