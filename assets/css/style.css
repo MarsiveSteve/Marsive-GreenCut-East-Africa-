@@ -111,26 +111,59 @@ header {
     padding: 0 30px;            /* more breathing space */
   }
 
-  /* Reset logo position on desktop */
- .branding {
-  display: flex;                 /* Aligns logo and name horizontally */
-  align-items: center;           /* Vertically centers them */
-  gap: 15px;                     /* Space between logo and name */
+/* Logo + Website Name (Branding) */
+.branding {
+  display: flex;                  /* Horizontal alignment */
+  flex-direction: row;            /* Ensure left-to-right flow */
+  align-items: center;            /* Vertically center both */
+  justify-content: flex-start;    /* Push content to the left */
+  gap: 15px;                      /* Space between logo and text */
   cursor: pointer;
 }
 
+/* Logo Image */
 .branding .logo {
   max-height: 70px;
   max-width: 180px;
   object-fit: contain;
+  display: block;
 }
 
+/* Website Name */
 .branding .web-name {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #064420;                /* Dark green */
+  color: #064420;                 /* Dark green */
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
+  white-space: nowrap;            /* Prevent text from wrapping under the logo */
+}
+/* Logo + Website Name (Branding) */
+.branding {
+  display: flex;                  /* Horizontal alignment */
+  flex-direction: row;            /* Ensure left-to-right flow */
+  align-items: center;            /* Vertically center both */
+  justify-content: flex-start;    /* Push content to the left */
+  gap: 15px;                      /* Space between logo and text */
+  cursor: pointer;
+}
+
+/* Logo Image */
+.branding .logo {
+  max-height: 70px;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Website Name */
+.branding .web-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #064420;                 /* Dark green */
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  white-space: nowrap;            /* Prevent text from wrapping under the logo */
 }
 
 
