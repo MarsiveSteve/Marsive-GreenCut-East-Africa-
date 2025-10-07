@@ -54,29 +54,6 @@ header {
   height: auto;
 }
 
-@media (max-width: 768px) {
-  /* Site name on left of logo, vertically centered */
-  .site-name {
-    position: absolute;
-    left: 10px; /* Space from left edge */
-    top: 50%; /* Vertically center */
-    transform: translateY(-50%);
-    color: #0c4724; /* Green */
-    font-size: 0.9em; /* Slightly smaller text */
-    font-weight: 600;
-    text-align: left;
-  }
-
-/* Nav & button hidden/compact on mobile by default */
-.nav-links {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.btn {
-  display: none;
-}
 
 /* Make header the reference for absolute positioning */
 header {
