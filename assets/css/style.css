@@ -54,6 +54,12 @@ header {
   height: auto;
 }
 
+/* ---------- Hide website name on mobile ---------- */
+@media (max-width: 767px) {
+  .website-name {
+    display: none;
+  }
+}
 
 /* Make header the reference for absolute positioning */
 header {
@@ -78,13 +84,6 @@ header {
 .nav-links.active li {
   margin: 10px 0;
   text-align: center;
-}
-
-/* ---------- Hide website name on mobile ---------- */
-@media (max-width: 767px) {
-  .website-name {
-    display: none; /* Hide website name on mobile 
-  }
 }
 
 /* ---------- Desktop (≥768px) ---------- */
