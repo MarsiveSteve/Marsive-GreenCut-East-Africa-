@@ -54,11 +54,9 @@ header {
   height: auto;
 }
 
-/* ---------- Hide website name on mobile ---------- */
-@media (max-width: 767px) {
-  .website-name {
-    display: none;
-  }
+/* Website name on mobile - hidden */
+.website-name {
+  display: none;
 }
 
 /* Make header the reference for absolute positioning */
