@@ -54,16 +54,10 @@ header {
   height: auto;
 }
 
+/* Website name on mobile - hidden */
 .website-name {
-  display: none; /* Hidden by default */
+  display: none;
 }
-
-@media screen and (min-width: 769px) {
-  .website-name {
-    display: inline-block; /* Visible on desktop */
-  }
-}
-
 
 /* Nav & button hidden/compact on mobile by default */
 .nav-links {
@@ -719,19 +713,15 @@ header {
 
 /* Responsive layout for mobile */
 @media screen and (max-width: 768px) {
+  .service2 {
+    flex: 0 0 100%; /* Stack vertically on small screens */
+    max-width: 400px;
+  }
+
   .flex-container {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
   }
-
-  .service2 {
-    flex: 0 0 33.33%; /* 3 cards per row */
-    max-width: 33.33%;
-    box-sizing: border-box;
-  }
 }
-
 
 
 /* What Our Clients Say Section */
