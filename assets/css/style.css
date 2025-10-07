@@ -54,10 +54,16 @@ header {
   height: auto;
 }
 
-/* Website name on mobile - hidden */
 .website-name {
-  display: none;
+  display: none; /* Hidden by default */
 }
+
+@media screen and (min-width: 769px) {
+  .website-name {
+    display: inline-block; /* Visible on desktop */
+  }
+}
+
 
 /* Nav & button hidden/compact on mobile by default */
 .nav-links {
