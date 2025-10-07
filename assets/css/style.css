@@ -732,7 +732,7 @@ header {
 
 /* What Our Clients Say Section */
 .client {
-  background-color: #013b19;
+  background-color: #e9bb50;
   padding: 60px 0;
   text-align: center;
   margin-top: 60px;
@@ -772,7 +772,7 @@ header {
 
 /* Testimonial Card */
 .testimonial {
-  background-color: #c0ebb7;
+  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
