@@ -54,10 +54,7 @@ header {
   height: auto;
 }
 
-/* Website name on mobile - hidden */
-.website-name {
-  display: none;
-}
+
 
 /* Nav & button hidden/compact on mobile by default */
 .nav-links {
