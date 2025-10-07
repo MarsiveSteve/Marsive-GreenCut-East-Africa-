@@ -634,25 +634,23 @@ header {
   }
 }
 
-
-/* Why Marsive GreenCut Section */
+/* Why Marsive*/
 .marsive {
-  background-color: #a38b02;
+  background-color: #829628;
   padding: 60px 0;
   text-align: center;
   margin-top: 60px;
 }
 
 .marsive-inner {
-  max-width: 1200px;
+  max-width: 1200px; /* Fixed maximum width for stability */
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px; /* Prevents content from touching edges */
 }
-
 
 .marsive h2 {
   font-size: 2.5rem;
-  color: #000;
+  color: rgb(17, 17, 17);
   margin-bottom: 20px;
   font-family: 'Georgia', serif;
   text-align: center;
@@ -660,29 +658,29 @@ header {
 
 .marsive p {
   font-size: 1.2rem;
-  color: #000;
+  color: rgb(12, 12, 12);
   margin-bottom: 40px;
   font-family: 'Arial', sans-serif;
   text-align: center;
 }
 
-/* Flex container for service cards */
+/* Flex container for services*/
 .flex-container {
   display: flex;
-  justify-content: center;  /* Center instead of stretch */
+  justify-content: center; /* Keep items centered */
   align-items: flex-start;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 40px;
 }
 
-/* Individual card */
+/* service Card */
 .service2 {
-  background-color: #f5f5d4;
+  background-color: #f5f5f5;
   padding: 20px;
   border-radius: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 0 0 360px;  /* Fixed card width */
+  flex: 0 0 360px; /* Fixed width for consistent layout */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -692,7 +690,7 @@ header {
 
 .service2 img {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
   border-radius: 0;
   margin-bottom: 20px;
@@ -700,22 +698,28 @@ header {
 
 .service2 h3 {
   font-size: 1.5rem;
-  color: #002549;
+  color: #022b55;
   margin-top: 10px;
   font-family: 'Arial', sans-serif;
 }
 
 .service2 p {
   font-size: 1rem;
-  color: #0e0d0d;
+  color: #101213;
   margin-top: 5px;
   font-family: 'Arial', sans-serif;
 }
 
-/* Responsive layout for mobile */
+/* Responsive behavior for tablets and phones */
+@media screen and (max-width: 1024px) {
+  .service2 {
+    flex: 0 0 45%; /* Two cards per row on tablets */
+  }
+}
+
 @media screen and (max-width: 768px) {
   .service2 {
-    flex: 0 0 100%; /* Stack vertically on small screens */
+    flex: 0 0 100%; /* Stack vertically on mobile */
     max-width: 400px;
   }
 
@@ -723,6 +727,7 @@ header {
     justify-content: center;
   }
 }
+
 
 
 /* What Our Clients Say Section */
