@@ -54,10 +54,6 @@ header {
   height: auto;
 }
 
-/* Website name on mobile - hidden */
-.website-name {
-  display: none;
-}
 
 /* Make header the reference for absolute positioning */
 header {
@@ -106,14 +102,6 @@ header {
   .logo img {
     max-height: 70px;
     max-width: 180px;
-  }
-
-  /* Add website name next to logo */
-  .website-name {
-    font-size: 1.5rem;        /* Adjust font size */
-    font-weight: bold;
-    color: #064420;           /* Dark green color */
-    margin-left: 15px;        /* Space between logo and website name */
   }
 
   .nav-links {
