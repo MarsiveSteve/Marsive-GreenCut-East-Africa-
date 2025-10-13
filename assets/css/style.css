@@ -54,6 +54,21 @@ header {
   height: auto;
 }
 
+/* Website name on mobile - hidden */
+.website-name {
+  display: none;
+}
+
+/* ---------- Desktop (≥768px) ---------- */
+@media (min-width: 768px) {
+  .website-name {
+    display: block;   /* Make it visible again on desktop */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #064420;
+    margin-left: 15px;
+  }
+}
 
 
 /* Nav & button hidden/compact on mobile by default */
