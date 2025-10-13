@@ -638,6 +638,10 @@ header {
 .marsive {
   padding-bottom: 80px; /* spacing inside yellow */
   margin-bottom: 0;     /* no external gap */
+  background-color: #013b19;
+  padding: 60px 0;
+  text-align: center;
+  margin-top: 60px;
 }
 .green-section {
   padding-top: 80px;    /* spacing inside green */
