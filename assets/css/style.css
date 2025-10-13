@@ -95,13 +95,6 @@ header {
   text-align: center;
 }
 
-/* ---------- Hide website name on mobile ---------- 
-@media (max-width: 767px) {
-  .website-name {
-    display: none; /* Hide website name on mobile 
-  }
-}*/
-
 /* ---------- Desktop (≥768px) ---------- */
 @media (min-width: 768px) {
   header {
@@ -142,6 +135,16 @@ header {
     font-size: 1.1rem;
     font-weight: 500;
   }
+
+  .nav-links a {
+  text-decoration: none;  /* Removes the underline */
+  color: inherit;         /* Keeps the text color consistent */
+}
+
+.nav-links a:hover {
+  text-decoration: none;  /* Ensures no underline appears on hover */
+  color: #064420;         /* Optional: change hover color if desired */
+}
 
   .btn {
     display: inline-block;
