@@ -174,8 +174,8 @@ header {
   background: url('../images/banner.webp') no-repeat center center/cover;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* better alignment keyword */
-  overflow: hidden; /* prevents scrollbars if image overflows */
+  justify-content: left;
+  padding-top: 120px; /* 👈 adds space between navbar & text */
 }
 
 .hero::after {
@@ -183,29 +183,29 @@ header {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.1); /* soft overlay */
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .hero-text {
   position: relative;
-  color: rgb(248, 246, 227);
+  color: rgb(151, 5, 103);
   text-align: left;
   max-width: 600px;
-  padding: 20px 40px;
-  z-index: 2; /* keeps text above overlay */
+  padding: 20px;
+  z-index: 2;
 }
 
 .hero-text h1 {
   font-size: 3rem;
   line-height: 1.2;
   font-weight: bold;
-  margin-bottom: 25px; /* space below the heading */
+  margin-bottom: 25px;
 }
 
 .hero-text p {
   color: #ffffff;
   font-size: 1.1rem;
-  margin-bottom: 35px; /* space below the paragraph */
+  margin-bottom: 35px;
   max-width: 500px;
   line-height: 1.6;
 }
@@ -222,14 +222,13 @@ header {
   font-weight: 600;
 }
 
-/* Hover effect */
 .hero-btn:hover {
   background-color: #025e2d;
 }
 
-/* Responsive spacing adjustments */
+/* Responsive adjustments */
 @media screen and (max-width: 1024px) {
-  .hero-text h1 {
+    .hero-text h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
@@ -240,6 +239,11 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+  .hero {
+    padding-top: 80px; /* smaller gap for mobile */
+    height: auto; /* allow natural height on small screens */
+    padding-bottom: 60px;
+  }
   .hero-text h1 {
     font-size: 2rem;
     margin-bottom: 18px;
@@ -253,6 +257,7 @@ header {
     font-size: 0.95rem;
   }
 }
+
 
 
 /* ---------- Responsive Breakpoints ---------- */
