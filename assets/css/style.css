@@ -552,8 +552,6 @@ header {
   }
 }
 
-
-
 /* Irrigation Setup Section */
 .irrigation-setup {
   background-color: #0c4724;  /* Green background */
@@ -642,7 +640,6 @@ header {
   padding-top: 80px;         /* adds top spacing too for balance */
   text-align: center;        /* keep title and text centered */
 }
-
 
 .marsive h2 {
   font-size: 2.5rem;
@@ -736,11 +733,7 @@ header {
   padding-top: 80px;         /* adds top spacing too for balance */
   text-align: center;        /* keep title and text centered */
 
-.client-container {
-  max-width: 1200px; /* Fixed maximum width for stability */
-  margin: 0 auto;
-  padding: 0 20px; /* Prevents content from touching edges */
-}
+
 
 .client h2 {
   font-size: 2.5rem;
