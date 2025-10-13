@@ -186,7 +186,7 @@ header {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Darkened overlay */
+  background-color: rgba(0, 0, 0, 0.7); /* Darkened overlay */
   filter: blur(3px); /* Optional: adds slight blur for smoother background */
   z-index: 1; /* Ensure overlay is on top of the image */
 }
