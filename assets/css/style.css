@@ -136,14 +136,22 @@ header {
     font-weight: 500;
   }
 
-  .nav-links a {
-  text-decoration: none;  /* Removes the underline */
-  color: inherit;         /* Keeps the text color consistent */
+ .nav-links a {
+  text-decoration: none;      /* Remove underline */
+  color: #b84af8;             /* Default color (dark green) */
+  font-weight: 600;           /* Make them stand out a bit */
+  transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 .nav-links a:hover {
-  text-decoration: none;  /* Ensures no underline appears on hover */
-  color: #064420;         /* Optional: change hover color if desired */
+  color: #28a745;             /* Change to bright green on hover */
+  text-decoration: none;      /* Keep underline off */
+}
+
+.nav-links a:active {
+  color: #1c7c31;             /* Slightly darker when clicked */
+}
+
 }
 
   .btn {
