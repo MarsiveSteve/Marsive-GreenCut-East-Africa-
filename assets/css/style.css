@@ -636,16 +636,12 @@ header {
 
 /* Why Marsive */
 .marsive {
-  background-color: #f8d124;
-  padding: 60px 0;
-  text-align: center;
-  margin-top: 60px;
+  padding-bottom: 80px; /* spacing inside yellow */
+  margin-bottom: 0;     /* no external gap */
 }
-
-.marsive-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.green-section {
+  padding-top: 80px;    /* spacing inside green */
+  margin-top: 0;
 }
 
 .marsive h2 {
