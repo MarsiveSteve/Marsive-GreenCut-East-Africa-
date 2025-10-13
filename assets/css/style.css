@@ -152,7 +152,12 @@ header {
   color: #1c7c31;             /* Slightly darker when clicked */
 }
 
+@media (max-width: 767px) {
+  .website-name {
+    display: none;
+  }
 }
+
 
   .btn {
     display: inline-block;
@@ -176,7 +181,7 @@ header {
   .hamburger {
     display: none;  /* hide hamburger on desktop */
   }
-}
+
 /* Hero section */
 /* Hero section */
 /* Hero Section */
