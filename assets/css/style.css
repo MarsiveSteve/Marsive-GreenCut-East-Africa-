@@ -643,10 +643,6 @@ header {
   text-align: center;        /* keep title and text centered */
 }
 
-.green-section {
-  padding-top: 80px;    /* spacing inside green */
-  margin-top: 0;
-}
 
 .marsive h2 {
   font-size: 2.5rem;
