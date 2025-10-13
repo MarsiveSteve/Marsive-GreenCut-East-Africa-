@@ -199,22 +199,20 @@ header {
   font-size: 3rem;
   line-height: 1.2;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 25px; /* space below the heading */
 }
 
 .hero-text p {
   color: #ffffff;
   font-size: 1.1rem;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 35px; /* space below the paragraph */
   max-width: 500px;
   line-height: 1.6;
 }
 
-/* Contact Button Style */
 .hero-btn {
   display: inline-block;
-  background-color: #027a3a; /* green to match your brand */
+  background-color: #027a3a;
   color: white;
   text-decoration: none;
   font-size: 1rem;
@@ -224,18 +222,32 @@ header {
   font-weight: 600;
 }
 
+/* Hover effect */
 .hero-btn:hover {
-  background-color: #025e2d; /* darker shade on hover */
+  background-color: #025e2d;
 }
 
-/* Responsive tweaks */
-@media screen and (max-width: 768px) {
+/* Responsive spacing adjustments */
+@media screen and (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
   .hero-text p {
     font-size: 1rem;
-    max-width: 90%;
-    margin: 15px auto;
+    margin-bottom: 30px;
   }
+}
 
+@media screen and (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 18px;
+  }
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
   .hero-btn {
     padding: 10px 24px;
     font-size: 0.95rem;
