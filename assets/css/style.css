@@ -202,6 +202,47 @@ header {
   margin: 0;
 }
 
+.hero-text p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Contact Button Style */
+.hero-btn {
+  display: inline-block;
+  background-color: #027a3a; /* green to match your brand */
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.hero-btn:hover {
+  background-color: #025e2d; /* darker shade on hover */
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .hero-text p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 15px auto;
+  }
+
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+
 /* ---------- Responsive Breakpoints ---------- */
 
 /* Large screens (desktops and big laptops) */
