@@ -735,10 +735,10 @@ header {
 /*  What Our Clients Say Section */
 .client {
   background-color: #013b19;
-  padding: 60px 0;
-  text-align: center;
-  margin-top: 60px;
-}
+  padding-bottom: 80px;      /* spacing inside yellow */
+  margin-bottom: 0;          /* no external gap */
+  padding-top: 80px;         /* adds top spacing too for balance */
+  text-align: center;        /* keep title and text centered */
 
 .client-container {
   max-width: 1200px; /* Fixed maximum width for stability */
