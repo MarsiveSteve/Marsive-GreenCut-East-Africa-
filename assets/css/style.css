@@ -136,28 +136,15 @@ header {
     font-weight: 500;
   }
 
- .nav-links a {
-  text-decoration: none;      /* Remove underline */
-  color: #b84af8;             /* Default color (dark green) */
-  font-weight: 600;           /* Make them stand out a bit */
-  transition: color 0.3s ease; /* Smooth hover effect */
+  .nav-links a {
+  text-decoration: none;  /* Removes the underline */
+  color: inherit;         /* Keeps the text color consistent */
 }
 
 .nav-links a:hover {
-  color: #28a745;             /* Change to bright green on hover */
-  text-decoration: none;      /* Keep underline off */
+  text-decoration: none;  /* Ensures no underline appears on hover */
+  color: #064420;         /* Optional: change hover color if desired */
 }
-
-.nav-links a:active {
-  color: #1c7c31;             /* Slightly darker when clicked */
-}
-
-@media (max-width: 767px) {
-  .website-name {
-    display: none;
-  }
-}
-
 
   .btn {
     display: inline-block;
@@ -181,7 +168,7 @@ header {
   .hamburger {
     display: none;  /* hide hamburger on desktop */
   }
-
+}
 /* Hero section */
 /* Hero section */
 /* Hero Section */
