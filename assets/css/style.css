@@ -385,9 +385,9 @@ header {
 
     /* Image Styling */
     .service-box1 img {
-      width: 100%;
+      width: 120%;
       height: 400px;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;      /* keeps main focus centered */
       border-radius: 0px;
       margin-bottom: 20px;
