@@ -834,17 +834,17 @@ header {
 }
 
 .testimonial h3 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #022b55;
   margin-top: 10px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Georgia', sans-serif;
 }
 
 .testimonial p {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #101213;
   margin-top: 5px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Georgia', sans-serif;
 }
 
 /* Responsive behavior for tablets and phones */
