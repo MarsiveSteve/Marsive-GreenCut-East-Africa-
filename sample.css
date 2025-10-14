@@ -286,3 +286,12 @@
   }
 }
 
+.service-box1 img {
+  position: absolute;
+  top: -20px;        /* shift image to control crop */
+  left: 0;
+  width: 100%;
+  height: auto;      /* maintain aspect ratio */
+  transform: scale(1.1);  /* zoom slightly */
+  transition: transform 0.5s ease;
+}
