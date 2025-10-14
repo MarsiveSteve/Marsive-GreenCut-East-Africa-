@@ -437,20 +437,6 @@ header {
       }
     }
 
-    /* Overlay container */
-.service-box1 .text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
-  width: 100%;
-  padding: 0 15px;
-  box-sizing: border-box;
-  pointer-events: none; /* prevents blocking image hover */
-}
-
 /* Ensure parent allows absolute positioning */
 .service-box1 {
   position: relative;
