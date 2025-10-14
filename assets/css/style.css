@@ -384,9 +384,17 @@ header {
     }
 
     /* Image Styling */
+  .service-box1 {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  position: relative;
+}
+
 .service-box1 img {
   width: 100%;
   height: 550px;
+  overflow: hidden;
   position: relative;
   position: absolute;
   top: -20px;        /* shift image to control crop */
