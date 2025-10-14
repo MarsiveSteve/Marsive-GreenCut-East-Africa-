@@ -387,7 +387,7 @@ header {
     .service-box1 img {
       width: 120%;
       height: 400px;
-      object-fit: contain;
+      object-fit: fill;
       object-position: center;      /* keeps main focus centered */
       border-radius: 0px;
       margin-bottom: 20px;
