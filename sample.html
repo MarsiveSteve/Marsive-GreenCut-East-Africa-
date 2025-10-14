@@ -1,73 +1,184 @@
-<!-- comprehensive services -->
-<section class="comprehensive-services">
-  <div class="services-container">
-    <h2>Our Comprehensive Services</h2>
-    <p>Explore the range of professional services we provide for all your landscaping and maintenance needs.</p>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marsive GreenCut - Services</title>
+  <style>
+    /* --- Base Styles --- */
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
 
-<!-- Lawn Care Section -->
-<section class="treeplanting-section">
-  <div class="treeplanting-container">
-    <h2 class="treeplanting-title">Expert Lawn Care</h2>
-    <p class="treeplanting-text">
-      Our professional lawn mowing services ensure that your grass is healthy and beautifully maintained, enhancing the aesthetic of your property.
-    </p>
-    <div class="treeplanting-image-wrapper">
-      <img src="assets/images/b3.jpg" alt="Sustainable Tree Planting Service" class="treeplanting-image">
-    </div>
-  </div>
-</section>
+    .services3 {
+      background-color: #081d3f; /* dark navy */
+      color: #fff;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      overflow: hidden;
+    }
 
-<!-- Tree Planting Section -->
-<section class="treeplanting-section">
-  <div class="treeplanting-container">
-    <h2 class="treeplanting-title">Sustainable Tree Planting</h2>
-    <p class="treeplanting-text">
-      We promote environmental health through strategic tree planting initiatives 
-      that not only beautify spaces but also contribute to local ecosystems.
-    </p>
-    <div class="treeplanting-image-wrapper">
-      <img src="assets/images/mzungu.webp" alt="Sustainable Tree Planting Service" class="treeplanting-image">
-    </div>
-  </div>
-</section>
+    /* Each service block */
+    .service-box1 {
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
 
-<!-- Lawn Mowing Care Section -->
-<section class="service-section">
-  <div class="service-container">
-    <div class="service-image">
-      <img src="assets/images/mowers.webp" alt="Lawn Mowing Care">
-    </div>
-    <div class="service-text">
-      <h2>Lawn Mowing Care</h2>
-      <p>Our lawn mowing services are tailored to ensure your grass remains healthy, lush, and well-groomed throughout the seasons. We use state-of-the-art equipment and techniques to deliver optimal results.</p>
-    </div>
-  </div>
-</section>
+    /* Fade-in visible state */
+    .service-box1.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
 
-<!-- Landscaping Section -->
-<section class="landscaping-section">
-  <div class="landscaping-container">
-    <div class="landscaping-text">
-      <h2>Landscaping Design</h2>
-      <p>Transform your outdoor space with our expert landscaping design services. We work collaboratively with you to create beautiful, functional gardens that enhance your property and harmonize with the environment.</p>
-    </div>
-    <div class="landscaping-image">
-      <img src="assets/images/maasai.webp" alt="Landscaping Design">
-    </div>
-  </div>
-</section>
+    /* Image Styling */
+    .service-box1 img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.5s ease;
+    }
 
-<!-- Irrigation Setup Section -->
-<section class="service-section">
-  <div class="service-container">
-    <div class="service-image">
-      <img src="assets/images/irrigation.webp" alt="Lawn Mowing Care">
+    /* Slight hover lift */
+    .service-box1:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Title Styling */
+    .service-box1 h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Paragraph Styling */
+    .service-box1 p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 auto 20px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 480px) {
+      .services3 {
+        padding: 40px 15px;
+        gap: 40px;
+      }
+
+      .service-box1 img {
+        height: 220px;
+      }
+
+      .service-box1 h2 {
+        font-size: 1.4rem;
+      }
+
+      .service-box1 p {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      .services3 {
+        padding: 50px 25px;
+        gap: 50px;
+      }
+
+      .service-box1 img {
+        height: 280px;
+      }
+
+      .service-box1 h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .services3 {
+        padding: 70px 100px;
+        gap: 70px;
+      }
+
+      .service-box1 h2 {
+        font-size: 2rem;
+      }
+
+      .service-box1 p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="services3">
+    <div class="service-box1">
+      <img src="assets/images/image.webp" alt="Expert Lawn Care">
+      <h2>Expert Lawn Care</h2>
+      <p>
+        Our professional lawn mowing services ensure that your grass is healthy 
+        and beautifully maintained, enhancing the aesthetic of your property.
+      </p>
     </div>
-    <div class="service-text">
-      <h2>Irrigation Setup</h2>
-      <p>Our irrigation setup services ensure your garden receives the right amount of water efficiently. We design and install systems that conserve water while promoting healthy plant growth.</p>
+
+    <div class="service-box1">
+      <img src="assets/images/image.webp" alt="Sustainable Tree Planting">
+      <h2>Sustainable Tree Planting</h2>
+      <p>
+        We promote environmental health through strategic tree planting initiatives 
+        that not only beautify spaces but also contribute to local ecosystems.
+      </p>
     </div>
-  </div>
-</section>
+
+    <div class="service-box1">
+      <img src="assets/images/image.webp" alt="Comprehensive Landscaping">
+      <h2>Comprehensive Landscaping</h2>
+      <p>
+        Our landscaping services are designed to create stunning outdoor spaces 
+        that reflect your vision while being environmentally sustainable.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // --- One-time Dynamic Fade-Up + Scale Animation with Stagger ---
+    const boxes = document.querySelectorAll('.service-box1');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = [...boxes].indexOf(entry.target);
+          const delay = index * 200; // 200ms stagger per item
+
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+
+          // Animate only once
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    boxes.forEach(box => observer.observe(box));
+  </script>
+
+</body>
+</html>

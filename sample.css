@@ -42,123 +42,118 @@
 }
 
 /* Lawn Section */
-.treeplanting-section {
-  background-color: #0a1a2f;
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  display: flex; /* Add flexbox layout */
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center content horizontally */
-}
+  .services3 {
+      background-color: #081d3f; /* dark navy */
+      color: #fff;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      overflow: hidden;
+    }
 
-.treeplanting-title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
+    /* Each service block */
+    .service-box1 {
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
 
-.treeplanting-text {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
+    /* Fade-in visible state */
+    .service-box1.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
 
-.treeplanting-image-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%; /* Ensure full width */
-}
+    /* Image Styling */
+    .service-box1 img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.5s ease;
+    }
 
-.treeplanting-image {
-  width: 95%; /* 👈 makes image wider (close to edges) */
-  max-width: 1200px; /* optional: limit max size on large screens */
-  border-radius: 0; /* 👈 sharp corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  object-fit: cover; /* 👈 ensures it crops nicely if tall */
-}
+    /* Slight hover lift */
+    .service-box1:hover img {
+      transform: scale(1.02);
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .treeplanting-section {
-    padding: 40px 15px;
-  }
-  .treeplanting-title {
-    font-size: 2em;
-  }
-  .treeplanting-text {
-    font-size: 1em;
-  }
-  .treeplanting-image {
-    width: 100%; /* full width on tablets/phones */
-  }
-}
+    /* Title Styling */
+    .service-box1 h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
 
-@media (max-width: 480px) {
-  .treeplanting-title {
-    font-size: 1.6em;
-  }
-  .treeplanting-text {
-    font-size: 0.95em;
-  }
-}
+    /* Paragraph Styling */
+    .service-box1 p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0 auto 20px auto;
+      max-width: 800px;
+      text-align: center;
+    }
 
-.treeplanting-section {
-  background-color: #0a1a2f;
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 480px) {
+      .services3 {
+        padding: 40px 15px;
+        gap: 40px;
+      }
 
-.treeplanting-title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
+      .service-box1 img {
+        height: 220px;
+      }
 
-.treeplanting-text {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
+      .service-box1 h2 {
+        font-size: 1.4rem;
+      }
 
-.treeplanting-image-wrapper {
-  display: flex;
-  justify-content: centeru
-}
+      .service-box1 p {
+        font-size: 0.9rem;
+      }
+    }
 
-.treeplanting-image {
-  width: 95%; /* 👈 makes image wider (close to edges) */
-  max-width: 1200px; /* optional: limit max size on large screens */
-  border-radius: 0; /* 👈 sharp corners */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  object-fit: cover; /* 👈 ensures it crops nicely if tall */
-}
+    @media (min-width: 481px) and (max-width: 768px) {
+      .services3 {
+        padding: 50px 25px;
+        gap: 50px;
+      }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .treeplanting-section {
-    padding: 40px 15px;
-  }
-  .treeplanting-title {
-    font-size: 2em;
-  }
-  .treeplanting-text {
-    font-size: 1em;
-  }
-  .treeplanting-image {
-    width: 100%; /* full width on tablets/phones */
-  }
-}
+      .service-box1 img {
+        height: 280px;
+      }
 
-@media (max-width: 480px) {
-  .treeplanting-title {
-    font-size: 1.6em;
-  }
-  .treeplanting-text {
-    font-size: 0.95em;
-  }
-}
+      .service-box1 h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .services3 {
+        padding: 70px 100px;
+        gap: 70px;
+      }
+
+      .service-box1 h2 {
+        font-size: 2rem;
+      }
+
+      .service-box1 p {
+        font-size: 1.1rem;
+      }
+    }
  
  /*comprehensive-services Title*/
 .comprehensive-services {
