@@ -6,12 +6,12 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
 }
 
 /* ---------- Header base (mobile-first) ---------- */
 header {
-  position: relative;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
