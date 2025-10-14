@@ -377,23 +377,25 @@ header {
       transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     }
 
-    /* Fade-in visible state */
-    .service-box1.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+   .service-box1 {
+  width: 100%;
+  max-width: 1200px; /* limit max width of container */
+  margin: 0 auto;    /* center container */
+  background-color: #031d44; /* match your background color */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
-    /* Image Styling */
-    .service-box1 img {
-      width: 120%;
-      height: 400px;
-      object-fit: fill;
-      object-position: center;      /* keeps main focus centered */
-      border-radius: 0px;
-      margin-bottom: 20px;
-      display: block;
-      transition: transform 0.5s ease;
-    }
+.service-box1 img {
+  width: 95%;             /* almost full width but with some space */
+  max-height: 400px;
+  object-fit: contain;    /* show full image without cropping */
+  object-position: center;
+  border-radius: 0;
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
 
     /* Slight hover lift */
     .service-box1:hover img {
