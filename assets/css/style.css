@@ -867,3 +867,65 @@ header {
   }
 }
 }
+
+/* Review form styling */
+.review-form {
+  background-color: #c0ebb7;
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 0 0 360px; /* Same width as testimonials */
+  text-align: left;
+  margin-top: 30px;
+  margin-left: calc((100% - 1140px)/2); /* Centers left-aligned block under cards (optional tweak) */
+}
+
+/* Align form elements */
+.review-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-form h3 {
+  font-size: 1.4rem;
+  color: #022b55;
+  margin-bottom: 10px;
+  font-family: 'Georgia', sans-serif;
+}
+
+/* Input and textarea styling */
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #a4d7a3;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Georgia', sans-serif;
+}
+
+/* Button styling */
+.review-form button {
+  background-color: #013b19;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content; /* Keeps button small */
+  font-size: 1rem;
+}
+
+.review-form button:hover {
+  background-color: #026b2c;
+}
+
+/* ✅ Mobile view adjustments */
+@media screen and (max-width: 767px) {
+  .review-form {
+    width: 90%;
+    max-width: 350px;
+    margin: 30px auto 0 auto; /* Center on mobile */
+  }
+}
