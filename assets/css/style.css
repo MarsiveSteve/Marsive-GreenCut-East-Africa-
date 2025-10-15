@@ -782,18 +782,18 @@ header {
   text-align: center;        /* keep title and text centered */
 
 .client h2 {
-  font-size: 2.5rem;
-  color: white;
+  font-size: 2.1rem;
+  color: rgb(17, 17, 17);
   margin-bottom: 20px;
   font-family: 'Georgia', serif;
   text-align: center;
 }
 
 .client p {
-  font-size: 1.5rem;
-  color: white;
+  font-size: 1.2rem;
+  color: rgb(12, 12, 12);
   margin-bottom: 40px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Georgia', sans-serif;
   text-align: center;
 }
 
