@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>
+  <style>
+    /* Basic Styling for Admin Dashboard */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+
+  <!-- Table to display reviews -->
+  <table id="reviewsTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    // Initialize Supabase client
+    const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co'; // Your Supabase URL
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE'; // Your Supabase Anon Key
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Fetch pending reviews (status = false)
+    async function fetchReviews() {
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .eq('status', false); // Only fetch reviews with status = false (pending)
+
+      if (error) {
+        console.error('Error fetching reviews:', error);
+      } else {
+        displayReviews(data);
+      }
+    }
+
+    // Display reviews in table
+    function displayReviews(reviews) {
+      const tableBody = document.querySelector('#reviewsTable tbody');
+      tableBody.innerHTML = ''; // Clear any existing rows
+      reviews.forEach(review => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${review.name}</td>
+          <td>${review.email}</td>
+          <td>${review.message}</td>
+          <td>${review.status ? 'Approved' : 'Pending'}</td>
+          <td>
+            <button onclick="approveReview(${review.id})">Approve</button>
+            <button onclick="rejectReview(${review.id})">Reject</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Approve a review (update status to true)
+    async function approveReview(id) {
+      const { data, error } = await supabase
+        .from('reviews')
+        .update({ status: true }) // Mark review as approved
+        .eq('id', id);
+
+      if (error) {
+        console.error('Error updating review:', error);
+      } else {
+        alert('Review approved!');
+        fetchReviews(); // Refresh the table
+      }
+    }
+
+    // Reject a review (update status to false)
+    async function rejectReview(id) {
+      const { data, error } = await supabase
+        .from('reviews')
+        .update({ status: false }) // Mark review as rejected
+        .eq('id', id);
+
+      if (error) {
+        console.error('Error updating review:', error);
+      } else {
+        alert('Review rejected!');
+        fetchReviews(); // Refresh the table
+      }
+    }
+
+    // Call fetchReviews when the page loads
+    window.onload = fetchReviews;
+  </script>
+</body>
+</html>

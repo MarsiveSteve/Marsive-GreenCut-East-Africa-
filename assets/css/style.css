@@ -581,24 +581,35 @@ header {
   }
 
   .lawn-mowing-care img {
-    width: 100%;  /* Image takes up more width on mobile */
-    height: auto;  /* Auto height for image to maintain aspect ratio */
-    margin-bottom: 20px;  /* Adds space between the image and the text */
+    width: 95%;  /* Image takes up slightly more width */
+    height: auto;  /* Keeps aspect ratio */
+    margin: 0 auto 25px;  /* Centers and adds space below */
+    display: block;
   }
 
   .lawn-mowing-care .text {
-    width: 80%;  /* Text takes up more width on mobile */
-    margin-bottom: 20px;  /* Adds space after text block */
+    width: 85%;  /* Slightly reduced text width for balance */
+    margin: 0 auto 25px;  /* Centers and adds space */
   }
 
   .lawn-mowing-care h3 {
-    font-size: 1.6rem;  /* Reduced title size on mobile */
+    font-size: 1.6rem;  /* Keep same size */
   }
 
   .lawn-mowing-care p {
-    font-size: 0.9rem;  /* Reduced paragraph size on mobile */
+    font-size: 0.95rem;  /* Slightly increased for readability */
   }
 }
+
+/* Medium screens (481px - 768px) to match services3 behavior */
+@media (min-width: 481px) and (max-width: 768px) {
+  .lawn-mowing-care img {
+    width: 90%;  /* More balanced size for tablets */
+    height: 280px;  /* Match services3 visual rhythm */
+    object-fit: cover;  /* Ensures good crop on different image ratios */
+  }
+}
+
 
 /* Irrigation Setup Section */
 .irrigation-setup {
