@@ -54,4 +54,17 @@ hamburger.addEventListener("click", () => {
       this.reset();
     }
   });
+
+// Appointment booking logic
+  function bookAppointment() {
+  const datetime = document.getElementById("appointment-time").value;
+  if (!datetime) {
+    alert("Please select a date and time for your appointment.");
+    return;
+  }
+
+  // Simulate booking logic
+  alert(`Appointment booked for: ${new Date(datetime).toLocaleString()}`);
+}
+
  

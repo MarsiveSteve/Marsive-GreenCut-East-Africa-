@@ -946,3 +946,94 @@ header {
     margin: 30px auto 0 auto; /* Center on mobile */
   }
 }
+
+/* Appointment Section - Schedule Your Lawn */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f0f0f0;
+}
+
+.appointment-section {
+  background-color: white;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.appointment-section p {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.image-container {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.form-container {
+  flex: 1 1 300px;
+  padding: 0 20px;
+}
+
+.form-container h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-container small {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.form-container input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container .timezone {
+  font-size: 13px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.form-container button {
+  background-color: #3e5130;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #2c3e1f;
+}
