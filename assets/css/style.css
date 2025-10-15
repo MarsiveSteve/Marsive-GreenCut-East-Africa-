@@ -373,11 +373,7 @@ header {
       transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     }
 
-    /* Fade-in visible state */
-    .service-box1.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+   
 
     /* Image Styling */
     .service-box1 img {
