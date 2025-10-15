@@ -910,15 +910,17 @@ header {
 }
 
 /* Button styling */
-.review-form button {
-  background-color: #013b19;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  width: fit-content; /* Keeps button small */
-  font-size: 1rem;
+.review-form {
+  background-color: #c0ebb7;
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 360px;            /* same width as testimonial cards */
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 10px;       /* small left offset below cards */
+  display: inline-block;   /* prevents full stretch */
+  vertical-align: top;     /* aligns neatly with card top if ever side-by-side */
 }
 
 .review-form button:hover {
