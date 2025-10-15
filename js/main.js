@@ -56,15 +56,24 @@ hamburger.addEventListener("click", () => {
   });
 
 // Appointment booking logic
-  function bookAppointment() {
-  const datetime = document.getElementById("appointment-time").value;
-  if (!datetime) {
+function bookAppointment() {
+  const datetimeLocal = document.getElementById("appointment-time").value;
+  if (!datetimeLocal) {
     alert("Please select a date and time for your appointment.");
     return;
   }
 
-  // Simulate booking logic
-  alert(`Appointment booked for: ${new Date(datetime).toLocaleString()}`);
+  const localDate = new Date(datetimeLocal);
+
+  // Convert to East Africa Time (EAT)
+  const eastAfricaTime = new Intl.DateTimeFormat('en-KE', {
+    timeZone: 'Africa/Nairobi',
+    dateStyle: 'full',
+    timeStyle: 'short',
+  }).format(localDate);
+
+  alert(`Appointment booked for (East Africa Time): ${eastAfricaTime}`);
 }
+
 
  
