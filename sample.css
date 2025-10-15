@@ -295,3 +295,23 @@
   transform: scale(1.1);  /* zoom slightly */
   transition: transform 0.5s ease;
 }
+
+/* Start hidden and slightly moved down */
+.appointment-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* When visible (triggered once via JS) */
+.appointment-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-container button.stay-hover,
+.form-container button:hover {
+  background-color: #2c3e1f;
+  transform: scale(1.02);
+}
+

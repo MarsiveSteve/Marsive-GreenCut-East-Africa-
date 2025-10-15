@@ -75,5 +75,31 @@ function bookAppointment() {
   alert(`Appointment booked for (East Africa Time): ${eastAfricaTime}`);
 }
 
+// Fade + Slide In on Scroll — Only once
+document.addEventListener('DOMContentLoaded', function () {
+  const section = document.querySelector('.appointment-section');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        section.classList.add('visible');
+        observer.unobserve(entry.target); // Ensure it only happens once
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  observer.observe(section);
+});
+
+// Make hover effect persist on click
+document.querySelectorAll('.form-container button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.add('stay-hover');
+  });
+});
+
+
 
  
