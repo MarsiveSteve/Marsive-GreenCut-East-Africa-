@@ -373,7 +373,11 @@ header {
       transition: opacity 0.9s ease-out, transform 0.9s ease-out;
     }
 
-   
+    /* Fade-in visible state */
+    .service-box1.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
 
     /* Image Styling */
     .service-box1 img {
@@ -384,7 +388,7 @@ header {
       margin-bottom: 20px;
       display: block;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      transition: transform 0.5s ease;
+      transition: transform 0.2s ease;
     }
 
     /* Slight hover lift */
