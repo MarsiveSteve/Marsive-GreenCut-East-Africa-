@@ -187,11 +187,13 @@
     </div>
     <div class="review-form">
   <h3>Leave Us a Review</h3>
-  <form action="https://formspree.io/f/myznleve" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <textarea name="message" rows="4" placeholder="Your Feedback" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
+<form action="https://formspree.io/f/myznleve" method="POST" id="reviewForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="_replyto" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Review" required></textarea>
+  <button type="submit">Send Review</button>
+  <p id="formMessage" style="display:none; color:#022b55; margin-top:10px;"></p>
+</form>
 </div>
   </div>
 </section>

@@ -26,4 +26,28 @@ hamburger.addEventListener("click", () => {
     }, { threshold: 0.2 });
 
     boxes.forEach(box => observer.observe(box));
+
+// Handle review form submission
+  const form = document.getElementById("reviewForm");
+  const msg = document.getElementById("formMessage");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      msg.textContent = "✅ Thank you! Your review has been submitted.";
+      msg.style.display = "block";
+      form.reset();
+    } else {
+      msg.textContent = "⚠️ Sorry, something went wrong. Please try again.";
+      msg.style.display = "block";
+    }
+  });
+
  
