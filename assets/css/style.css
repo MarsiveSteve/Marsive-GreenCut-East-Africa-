@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+  font-family: Georgia, sans-serif;
 }
 
 /* ---------- Header base (mobile-first) ---------- */
@@ -182,8 +182,6 @@ header {
   }
 }
 /* Hero section */
-/* Hero section */
-/* Hero Section */
 .hero {
   position: relative;
   min-height: 100vh; /* 👈 Full viewport height */
@@ -702,7 +700,7 @@ header {
   font-size: 1.2rem;
   color: rgb(12, 12, 12);
   margin-bottom: 40px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Georgia', sans-serif;
 }
 
 /* Flex container for services */
@@ -845,22 +843,31 @@ header {
   font-family: 'Georgia', sans-serif;
 }
 
-/* Responsive behavior for tablets and phones */
-@media screen and (max-width: 1024px) {
+/* ✅ Desktop and tablet: horizontal row of cards */
+@media screen and (min-width: 768px) {
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap; /* Keep in one row */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
   .testimonial {
-   flex: 1 1 30%; /* still 3 in a row on tablets */
-    max-width: 300px;
+    flex: 0 0 360px; /* Fixed width for consistency */
   }
 }
 
-@media screen and (max-width: 768px) {
-  .testimonial {
-    flex: 1 1 30%; /* keep 3 per row if possible */
-    max-width: 280px;
+/* ✅ Mobile: stack cards vertically */
+@media screen and (max-width: 767px) {
+  .flex-container {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
   }
 
-  .flex-container {
-    justify-content: center;
+  .testimonial {
+    width: 90%;
+    max-width: 350px;
   }
 }
 }
