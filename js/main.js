@@ -75,6 +75,8 @@ if (appointmentForm) {
   // ✅ Convert to ISO timestamp for Supabase (timestamp with time zone)
   const date = rawDate ? new Date(rawDate).toISOString() : null;
 
+  console.log({ name, email, phone, location, rawDate });
+
   // ✅ Validate
   if (!name || !email || !phone || !location || !rawDate) {
     alert("⚠️ Please fill in all required fields.");
