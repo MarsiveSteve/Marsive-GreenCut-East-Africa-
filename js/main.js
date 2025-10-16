@@ -63,7 +63,6 @@ function bookAppointment() {
     return;
   }
 
-
   const localDate = new Date(datetimeLocal);
   const eastAfricaTime = new Intl.DateTimeFormat('en-KE', {
     timeZone: 'Africa/Nairobi',
@@ -73,7 +72,6 @@ function bookAppointment() {
 
   alert(`Appointment booked for (East Africa Time): ${eastAfricaTime}`);
 }
-
 
 // Fade + Slide In on Scroll — Only once
 document.addEventListener('DOMContentLoaded', function () {
