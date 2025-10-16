@@ -28,68 +28,88 @@ hamburger.addEventListener("click", () => {
     boxes.forEach(box => observer.observe(box));
 
 // ✅ Supabase client setup
+// ✅ Supabase client setup
 const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE';
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
-document.getElementById("reviewForm").addEventListener("submit", async function (e) {
-  e.preventDefault();
-  
-  const formData = new FormData(this);
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const message = formData.get("message");
+// ✅ Review form submission
+const reviewForm = document.getElementById("reviewForm");
+if (reviewForm) {
+  reviewForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  // ✅ Use supabaseClient here
-  const { data, error } = await supabaseClient
-    .from('reviews')
-    .insert([{ name, email, message, status: false }]);
+    const formData = new FormData(this);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
 
-  if (error) {
-  alert('Error submitting review — check console for details');
-  console.error("Supabase insert error:", error);
-} else {
-  alert('Review submitted successfully! It is pending approval.');
-  this.reset();
-}
-});
+    const { data, error } = await supabaseClient
+      .from('reviews')
+      .insert([{ name, email, message, status: false }]);
 
-
-// Appointment booking logic
-function bookAppointment() {
-  const datetimeLocal = document.getElementById("appointment-time").value;
-  if (!datetimeLocal) {
-    alert("Please select a date and time for your appointment.");
-    return;
-  }
-
-  const localDate = new Date(datetimeLocal);
-  const eastAfricaTime = new Intl.DateTimeFormat('en-KE', {
-    timeZone: 'Africa/Nairobi',
-    dateStyle: 'full',
-    timeStyle: 'short',
-  }).format(localDate);
-
-  alert(`Appointment booked for (East Africa Time): ${eastAfricaTime}`);
+    if (error) {
+      alert('❌ Error submitting review — check console for details.');
+      console.error("Supabase insert error:", error);
+    } else {
+      alert('✅ Review submitted successfully! Pending admin approval.');
+      this.reset();
+    }
+  });
 }
 
-// Fade + Slide In on Scroll — Only once
+// ✅ Appointment form submission
+const appointmentForm = document.getElementById("appointmentForm");
+if (appointmentForm) {
+  appointmentForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
+    const location = formData.get("location");
+    const date = formData.get("appointment-time");
+    const message = formData.get("message");
+
+    if (!name || !email || !phone || !location || !date) {
+      alert("⚠️ Please fill in all required fields.");
+      return;
+    }
+
+    const { data, error } = await supabaseClient.from("appointments").insert([
+      { name, email, phone, location, date, message }
+    ]);
+
+    if (error) {
+      console.error("❌ Error booking appointment:", error.message);
+      alert("❌ Error booking appointment: " + error.message);
+    } else {
+      alert("✅ Appointment booked successfully!");
+      this.reset();
+    }
+  });
+}
+
+// ✅ Scroll + animation logic (optional UI enhancement)
 document.addEventListener('DOMContentLoaded', function () {
   const section = document.querySelector('.appointment-section');
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        section.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  observer.observe(section);
-});
+  if (section) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          section.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(section);
+  }
 
-// Make hover effect persist on click
-document.querySelectorAll('.form-container button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.classList.add('stay-hover');
+  // Make hover effect persist on click
+  document.querySelectorAll('.form-container button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('stay-hover');
+    });
   });
 });
