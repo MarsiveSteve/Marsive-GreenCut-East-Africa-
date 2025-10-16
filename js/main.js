@@ -6,7 +6,7 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-    // --- One-time Dynamic Fade-Up + Scale Animation with Stagger ---
+    // --- (Welcome Section)One-time Dynamic Fade-Up + Scale Animation with Stagger ---
     const boxes = document.querySelectorAll('.service-box1');
 
     const observer = new IntersectionObserver((entries) => {
@@ -26,6 +26,38 @@ hamburger.addEventListener("click", () => {
     }, { threshold: 0.2 });
 
     boxes.forEach(box => observer.observe(box));
+
+// ===== UNIVERSAL FADE-IN ANIMATION FOR ALL SERVICE PARTS =====
+document.addEventListener("DOMContentLoaded", () => {
+  const serviceSection = document.querySelector(".services-section");
+  if (!serviceSection) return;
+
+  const parts = serviceSection.querySelectorAll(".service-part");
+
+  // Fade-in for the first part (usually the heading/introduction)
+  if (parts.length > 0) {
+    setTimeout(() => {
+      parts[0].classList.add("fade-in");
+    }, 300);
+  }
+
+  // Scroll-triggered fade-ins for all parts (including the first if needed)
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Add a slight stagger for elegance
+          entry.target.style.transitionDelay = `${index * 0.25}s`;
+          entry.target.classList.add("fade-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  parts.forEach((part) => observer.observe(part));
+});
 
 // ✅ Supabase client setup
 const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co';
