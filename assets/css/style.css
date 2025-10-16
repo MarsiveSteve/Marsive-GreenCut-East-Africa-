@@ -967,12 +967,6 @@ body {
 }
 
 /* Parent section styling */
-.appointment-section {
-  padding: 40px 20px;
-  background-color: #fdfba0; /* optional yellow background */
-  text-align: center;
-}
-
 .appointment-section h2 {
   font-size: 28px;
   margin-bottom: 10px;
