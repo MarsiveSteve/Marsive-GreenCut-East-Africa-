@@ -64,24 +64,24 @@ if (appointmentForm) {
   appointmentForm.addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const formData = new FormData(this);
+  // ✅ Collect all form fields at once
   const name = formData.get("name");
   const email = formData.get("email");
   const phone = formData.get("phone");
   const location = formData.get("location");
-
-  // ✅ Convert datetime-local value to ISO timestamp (with timezone)
-  const rawDate = formData.get("appointment-time"); // e.g. "2025-10-16T14:30"
-  const date = new Date(rawDate).toISOString();     // → "2025-10-16T14:30:00.000Z"
-
+  const rawDate = formData.get("appointment-time"); // user input (e.g. 2025-10-16T14:30)
   const message = formData.get("message");
 
+  // ✅ Convert to ISO timestamp for Supabase (timestamp with time zone)
+  const date = rawDate ? new Date(rawDate).toISOString() : null;
+
+  // ✅ Validate
   if (!name || !email || !phone || !location || !rawDate) {
     alert("⚠️ Please fill in all required fields.");
     return;
   }
 
-  // ✅ Insert into Supabase (works with timestamp with time zone)
+  // ✅ Insert into Supabase
   const { data, error } = await supabaseClient
     .from("appointments")
     .insert([{ name, email, phone, location, date, message }]);
