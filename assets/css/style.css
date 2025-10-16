@@ -969,18 +969,32 @@ body {
 /* Parent section styling */
 .appointment-section {
   padding: 40px 20px;
-  background-color: #f9f9f9;
+  background-color: #fdfba0; /* optional yellow background */
+  text-align: center;
 }
 
-/* Flex layout for image and form */
+.appointment-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.appointment-section p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* This wraps image + form side by side (or stacked on mobile) */
 .appointment-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
-  align-items: flex-start;
-  margin-top: 30px;
+  gap: 30px;
+  margin-top: 0;
+  text-align: left;
 }
+
+
 
 /* Image container styles */
 .image-container {
