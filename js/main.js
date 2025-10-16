@@ -72,7 +72,7 @@ if (appointmentForm) {
     const date = formData.get("appointment-time");
     const message = formData.get("message");
 
-    if (!name || !email || !phone || !location || !date) {
+    if (!name || !email || !phone || !location || !appointment-time) {
       alert("⚠️ Please fill in all required fields.");
       return;
     }
