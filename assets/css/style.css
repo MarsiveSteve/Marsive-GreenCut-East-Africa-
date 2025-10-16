@@ -691,6 +691,18 @@ header {
   }
 }
 
+/* === Universal fade-in animation for all service subsections === */
+.services-section .service-part {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.services-section .fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Why Marsive */
 .marsive {
   background-color: #f8d124; /* beige-yellow background */
