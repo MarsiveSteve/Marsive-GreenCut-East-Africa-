@@ -28,7 +28,6 @@ hamburger.addEventListener("click", () => {
     boxes.forEach(box => observer.observe(box));
 
 // ✅ Supabase client setup
-// ✅ Supabase client setup
 const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE';
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
@@ -63,6 +62,8 @@ const appointmentForm = document.getElementById("appointmentForm");
 if (appointmentForm) {
   appointmentForm.addEventListener("submit", async function (e) {
   e.preventDefault();
+
+    const formData = new FormData(this); // ✅ Declare first
 
   // ✅ Collect all form fields at once
   const name = formData.get("name");
