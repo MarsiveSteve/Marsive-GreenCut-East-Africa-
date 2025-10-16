@@ -46,13 +46,13 @@ document.getElementById("reviewForm").addEventListener("submit", async function 
     .insert([{ name, email, message, status: false }]);
 
   if (error) {
-    alert('Error submitting review');
-    console.error(error);
-  } else {
-    alert('Review submitted successfully! It is pending approval.');
-    this.reset();
-  }
-});
+  alert('Error submitting review — check console for details');
+  console.error("Supabase insert error:", error);
+} else {
+  alert('Review submitted successfully! It is pending approval.');
+  this.reset();
+}
+
 
 // Appointment booking logic
 function bookAppointment() {
