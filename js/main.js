@@ -62,54 +62,36 @@ if (reviewForm) {
 const appointmentForm = document.getElementById("appointmentForm");
 if (appointmentForm) {
   appointmentForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const formData = new FormData(this);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const phone = formData.get("phone");
-    const location = formData.get("location");
-    const date = formData.get("appointment-time");
-    const message = formData.get("message");
+  const formData = new FormData(this);
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const phone = formData.get("phone");
+  const location = formData.get("location");
 
-    if (!name || !email || !phone || !location || !appointment-time) {
-      alert("⚠️ Please fill in all required fields.");
-      return;
-    }
+  // ✅ Convert datetime-local value to ISO timestamp (with timezone)
+  const rawDate = formData.get("appointment-time"); // e.g. "2025-10-16T14:30"
+  const date = new Date(rawDate).toISOString();     // → "2025-10-16T14:30:00.000Z"
 
-    const { data, error } = await supabaseClient.from("appointments").insert([
-      { name, email, phone, location, date, message }
-    ]);
+  const message = formData.get("message");
 
-    if (error) {
-      console.error("❌ Error booking appointment:", error.message);
-      alert("❌ Error booking appointment: " + error.message);
-    } else {
-      alert("✅ Appointment booked successfully!");
-      this.reset();
-    }
-  });
-}
-
-// ✅ Scroll + animation logic (optional UI enhancement)
-document.addEventListener('DOMContentLoaded', function () {
-  const section = document.querySelector('.appointment-section');
-  if (section) {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          section.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    observer.observe(section);
+  if (!name || !email || !phone || !location || !rawDate) {
+    alert("⚠️ Please fill in all required fields.");
+    return;
   }
 
-  // Make hover effect persist on click
-  document.querySelectorAll('.form-container button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.add('stay-hover');
-    });
-  });
+  // ✅ Insert into Supabase (works with timestamp with time zone)
+  const { data, error } = await supabaseClient
+    .from("appointments")
+    .insert([{ name, email, phone, location, date, message }]);
+
+  if (error) {
+    console.error("❌ Error booking appointment:", error.message);
+    alert("❌ Error booking appointment: " + error.message);
+  } else {
+    alert("✅ Appointment booked successfully!");
+    this.reset();
+  }
 });
+}
