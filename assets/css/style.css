@@ -803,6 +803,7 @@ header {
   margin-bottom: 0;          /* no external gap */
   padding-top: 80px;         /* adds top spacing too for balance */
   text-align: center;        /* keep title and text centered */
+}
 
 .client h2 {
   font-size: 2.1rem;
