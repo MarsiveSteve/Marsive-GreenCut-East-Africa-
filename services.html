@@ -1,0 +1,208 @@
+<!-- File: services.html --><!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marsive Greencut — Services</title>
+  <style>
+    :root{
+      --green:#0f9d58;
+      --dark:#153225;
+      --muted:#e9f2ee;
+      --card:#f5f7f5;
+      --shadow: 0 6px 18px rgba(8,20,10,0.05);
+      --container:1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #0f2a23;
+    }
+    body{margin:0;background:#f1f6f4}
+    .site-header{background:linear-gradient(180deg,var(--muted),transparent);padding:18px 24px;border-bottom:1px solid rgba(10,20,15,0.03)}
+    .brand{display:flex;align-items:center;gap:12px;max-width:var(--container);margin:0 auto}
+    .logo{width:36px;height:36px;border-radius:999px;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .nav{margin-left:auto;display:flex;gap:18px;align-items:center}
+    main{max-width:var(--container);margin:24px auto;padding:0 18px}.hero{text-align:center;padding:28px 0}
+.hero h1{font-size:28px;margin:0 0 8px}
+.hero p{color:#6b7f78;margin:0 0 18px}
+
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:720px){.grid{grid-template-columns:1fr}}
+
+.card{background:var(--card);padding:22px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(8,20,10,0.03)}
+.card .icon{width:56px;height:56px;border-radius:999px;background:linear-gradient(180deg,#eaf8ee,#f2fbf6);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.card h3{margin:0 0 8px}
+.card p{margin:0 0 12px;color:#6b7f78;font-size:14px}
+.bullet{color:#6b7f78;font-size:14px;margin:0 0 10px}
+.learn{display:inline-block;padding:8px 14px;border-radius:8px;border:1px solid rgba(8,20,10,0.06);background:white;text-decoration:none;color:var(--dark);font-weight:600}
+
+.stats{margin:26px 0;padding:20px;background:linear-gradient(90deg,#eaf7ef,#f4fbf7);display:flex;justify-content:space-around;border-radius:10px}
+.stat{text-align:center}
+.stat h4{margin:0;font-size:20px;color:var(--green)}
+.stat p{margin:6px 0 0;color:#6b7f78}
+
+footer{background:var(--dark);color:#dbe8df;padding:30px 18px;margin-top:30px}
+.footer-inner{max-width:var(--container);margin:0 auto;display:flex;gap:24px;align-items:flex-start}
+.footer-inner .col{flex:1}
+.footer-inner h4{color:#fff}
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">G</div>
+      <div style="font-weight:700">Marsive Greencut</div>
+      <nav class="nav">
+        <div>Home</div>
+        <div>Services</div>
+        <div>About</div>
+        <button style="background:var(--green);color:#fff;border:0;padding:8px 12px;border-radius:8px">Book Service</button>
+      </nav>
+    </div>
+  </header>  <main>
+    <section class="hero">
+      <h1>Our Services</h1>
+      <p>Professional lawn care and environmental services designed to beautify your space while contributing to a greener East Africa.</p>
+    </section><section class="grid" aria-label="services list">
+  <article class="card">
+    <div class="icon">✂️</div>
+    <h3>Lawn Mowing</h3>
+    <p>Professional lawn mowing services to keep your grass healthy and perfectly trimmed year-round.</p>
+    <ul class="bullet">
+      <li>Weekly/Monthly schedules</li>
+      <li>Edge trimming</li>
+      <li>Grass collection</li>
+    </ul>
+    <a class="learn" href="#">Learn More</a>
+  </article>
+
+  <article class="card">
+    <div class="icon">🌲</div>
+    <h3>Tree Planting</h3>
+    <p>Environmental conservation through strategic tree planting initiatives across East Africa.</p>
+    <ul class="bullet">
+      <li>Native species selection</li>
+      <li>Soil preparation</li>
+      <li>Planting guidance</li>
+    </ul>
+    <a class="learn" href="#">Learn More</a>
+  </article>
+
+  <article class="card">
+    <div class="icon">🪴</div>
+    <h3>Garden Maintenance</h3>
+    <p>Complete garden care including pruning, weeding, fertilizing, and seasonal planting.</p>
+    <ul class="bullet">
+      <li>Pruning & trimming</li>
+      <li>Weed control</li>
+      <li>Fertilization</li>
+    </ul>
+    <a class="learn" href="#">Learn More</a>
+  </article>
+
+  <article class="card">
+    <div class="icon">🧩</div>
+    <h3>Landscaping</h3>
+    <p>Transform your outdoor space with professional landscape design and installation services.</p>
+    <ul class="bullet">
+      <li>Design consultation</li>
+      <li>Hardscape installation</li>
+      <li>Irrigation systems</li>
+    </ul>
+    <a class="learn" href="#">Learn More</a>
+  </article>
+</section>
+
+<section class="stats" aria-label="statistics">
+  <div class="stat"><h4>500+</h4><p>Lawns Maintained</p></div>
+  <div class="stat"><h4>1,200+</h4><p>Trees Planted</p></div>
+  <div class="stat"><h4>50+</h4><p>Communities Served</p></div>
+</section>
+
+  </main>  <footer>
+    <div class="footer-inner">
+      <div class="col">
+        <h4>Marsive Greencut</h4>
+        <p>Professional lawn care services and environmental conservation initiatives across East Africa. Making a difference, one lawn and one tree at a time.</p>
+      </div>
+      <div class="col">
+        <h4>Services</h4>
+        <ul style="list-style:none;padding:0;margin:0;color:#cfe6d8">
+          <li>Lawn Mowing</li>
+          <li>Tree Planting</li>
+          <li>Garden Maintenance</li>
+          <li>Landscaping</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html><!-- File: about.html --><!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Marsive Greencut East Africa</title>
+  <style>
+    :root{--green:#0f9d58;--muted:#eef6f1;--card:#fbfdfb;--dark:#123024;font-family:Inter,system-ui,Arial}
+    body{margin:0;background:var(--muted);color:var(--dark)}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .hero{text-align:center;padding:28px 0}
+    .hero h1{font-size:30px;margin:0 0 8px}
+    .hero p{color:#627c76;max-width:820px;margin:0 auto}.values{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
+@media (max-width:720px){.values{grid-template-columns:1fr}}
+.value-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(10,20,15,0.03);box-shadow:0 8px 20px rgba(8,20,10,0.04)}
+.value-card h3{margin:0 0 6px}
+.value-card p{margin:0;color:#6b7f78}
+
+.metrics{display:flex;gap:16px;margin-top:26px}
+@media (max-width:720px){.metrics{flex-direction:column}}
+.metric{flex:1;background:linear-gradient(90deg,#eaf7ef,#f4fbf7);padding:18px;border-radius:10px;text-align:center}
+.metric h4{margin:0;color:var(--green)}
+.metric p{margin:6px 0 0;color:#6b7f78}
+
+footer{padding:18px 0;text-align:center;color:#8aa79a}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>About Marsive Greencut</h1>
+      <p>We are dedicated to transforming outdoor spaces across East Africa while making a positive environmental impact. Our commitment goes beyond lawn care — we're building a greener future for our communities.</p>
+    </header><section class="values" aria-label="company values">
+  <div class="value-card">
+    <h3>Our Mission</h3>
+    <p>To provide exceptional lawn care services while promoting environmental conservation across East Africa through sustainable practices and community engagement.</p>
+  </div>
+
+  <div class="value-card">
+    <h3>Environmental Care</h3>
+    <p>Every service we provide contributes to a healthier environment. We plant trees, use eco-friendly methods, and educate communities about conservation.</p>
+  </div>
+
+  <div class="value-card">
+    <h3>Community Impact</h3>
+    <p>We work closely with local communities to create green spaces that benefit everyone while providing employment opportunities and environmental education.</p>
+  </div>
+
+  <div class="value-card">
+    <h3>Professional Excellence</h3>
+    <p>Our trained professionals use the latest techniques and equipment to deliver outstanding results that exceed expectations every time.</p>
+  </div>
+</section>
+
+<section class="metrics" aria-label="impact metrics">
+  <div class="metric"><h4>500+</h4><p>Lawns Maintained</p></div>
+  <div class="metric"><h4>1,200+</h4><p>Trees Planted</p></div>
+  <div class="metric"><h4>50+</h4><p>Communities Served</p></div>
+</section>
+
+<footer>
+  © 2025 Marsive Greencut. All rights reserved.
+</footer>
+
+  </div>
+</body>
+</html>
