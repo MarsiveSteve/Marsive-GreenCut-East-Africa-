@@ -214,5 +214,28 @@ footer{padding:18px 0;text-align:center;color:#8aa79a}
 </footer>
 
   </div>
+<script>
+  // Fade-in effect when page loads
+  window.addEventListener('load', () => {
+    document.body.classList.add('fade-in');
+  });
+
+  // Smooth fade-out when clicking internal links
+  document.querySelectorAll('a').forEach(link => {
+    const isInternal = link.hostname === window.location.hostname;
+    const isAnchor = link.getAttribute('href')?.startsWith('#');
+    if (isInternal && !isAnchor) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.href;
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = target;
+        }, 500); // matches CSS transition speed
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
