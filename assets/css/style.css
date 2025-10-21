@@ -880,13 +880,25 @@ header {
   margin-top: 40px;
 }
 
+/* Flex container for testimonials */
+.flex-container {
+  display: flex;
+  justify-content: center; /* Keep items centered */
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding: 0 20px; /* Add horizontal padding to prevent edge overflow */
+}
+
 /* Testimonial Card */
 .testimonial {
   background-color: #c0ebb7;
   padding: 20px;
   border-radius: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 0 0 360px; /* Fixed width for consistent layout */
+  flex: 1 1 300px; /* Allow flexible width with a min size */
+  max-width: 320px; /* Prevent cards from being too wide */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -896,7 +908,7 @@ header {
 
 .testimonial img {
   width: 100%;
-  height: 350px;
+  height: 280px;
   object-fit: cover;
   border-radius: 0;
   margin-bottom: 20px;
