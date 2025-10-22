@@ -1,7 +1,7 @@
 // ---------- Supabase Client ----------
 const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co';
 const supabaseAnonKey =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ2ZnJsZ294anZjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1ODIxMzA0NCwiZXhwIjoyMDczNzg5MDQ0fQ.XXY5-TayS6eUVcInYaC8xjogFubxC7XAcw3VezVrBiw';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE';
 const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
 
 // ---------- UI Elements ----------
