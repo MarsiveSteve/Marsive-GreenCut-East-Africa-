@@ -326,6 +326,12 @@
     }
 
     // ---------------- Password toggles + validation ----------------
+
+function validateStrongPassword(password) {
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
+  return regex.test(password);
+}
+
     function togglePassword(id, icon) {
       const input = document.getElementById(id);
       if (!input) return;
