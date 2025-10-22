@@ -541,17 +541,34 @@ header {
   box-shadow: 0 8px 18px rgba(12, 71, 36, 0.3);
 }
 
-/* Mobile view */
+/* ✅ Mobile view (fix spacing & image sizing) */
 @media (max-width: 1024px) {
   .comprehensive-services {
-    padding: 30px 0 20px; /* Smaller spacing on mobile */
+    padding: 20px 0; /* Reduce vertical spacing */
   }
+
+  .services-container {
+    margin: 0;
+    padding: 0 10px;
+  }
+
   .services-container h2 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 8px; /* Tighter title spacing */
   }
+
   .services-container p {
     font-size: 14px;
-    padding: 0 10px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .services-container img {
+    width: 100%;       /* Fill full screen width */
+    height: auto;      /* Keep aspect ratio */
+    display: block;
+    margin: 10px 0;    /* Small spacing above/below */
+    border-radius: 6px;
   }
 }
 
