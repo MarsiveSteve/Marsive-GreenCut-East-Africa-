@@ -351,6 +351,14 @@
       document.getElementById('confirmPasswordAuth')?.classList.remove('error','success');
     }
 
+// ---------------- Handle password recovery via URL ----------------
+window.addEventListener('load', async () => {
+  const hash = window.location.hash;
+  if (hash.includes('access_token')) {
+    document.getElementById('resetSection').style.display = 'block';
+  }
+});
+
     // Live validation for signup fields
     function validatePasswords() {
       const passEl = document.getElementById('password');
