@@ -251,7 +251,7 @@
 
         if (error) return alert(error.message);
 
-        // 👇 Insert new user into your "admin" table with name
+        // Insert new user into your "admin" table with name
         await supabase.from('admin').insert({
           id: data.user.id,
           name,
@@ -359,12 +359,13 @@ window.addEventListener('load', async () => {
 });
 
 // Toggle password visibility
-function togglePasswordVisibility() {
-  const newPass = document.getElementById('newPassword');
-  const confirmPass = document.getElementById('confirmPassword');
-  const type = newPass.type === 'password' ? 'text' : 'password';
-  newPass.type = type;
-  confirmPass.type = type;
+function togglePassword(id, icon) {
+  const input = document.getElementById(id);
+  const isHidden = input.type === 'password';
+  input.type = isHidden ? 'text' : 'password';
+
+  // Change color instead of swapping emoji
+  icon.style.color = isHidden ? '#007bff' : '#aaa'; // blue when visible, grey when hidden
 }
 
 // Handle password update
