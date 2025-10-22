@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Password | Marsive GreenCut East Africa</title>
+
+  <!-- Supabase Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Font Awesome (for the professional eye icon) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Dl6avd2X+7IR8DGPy1wb/jg4TxeK1CKl9UxBB3y44Xb8BbA6r8k3xT2Wkn0gxQUMC3hTgeiE14pVJiw8pVL0Yw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="assets/admin.css" />
+</head>
+<body>
+  <div class="modal" style="display:flex;justify-content:center;align-items:center;min-height:100vh;">
+    <div class="modal-content" style="max-width:400px;">
+      <h2>Set New Password</h2>
+      <p>Please enter your new password below to complete your reset.</p>
+
+      <div class="password-container">
+        <input type="password" id="newPassword" placeholder="New Password" />
+        <span class="toggle-eye" onclick="togglePassword('newPassword', this)">
+          <i class="fa-regular fa-eye-slash"></i>
+        </span>
+      </div>
+
+      <div class="password-container">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+        <span class="toggle-eye" onclick="togglePassword('confirmPassword', this)">
+          <i class="fa-regular fa-eye-slash"></i>
+        </span>
+      </div>
+
+      <button class="main-btn" id="resetButton">Update Password</button>
+
+      <a href="admin.html" class="link">Back to Login</a>
+    </div>
+  </div>
+
+  <script src="js/reset.js"></script>
+</body>
+</html>
