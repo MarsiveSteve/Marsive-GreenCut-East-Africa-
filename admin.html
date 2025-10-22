@@ -337,6 +337,12 @@ if (!validateStrongPassword(password)) {
   return;
 }
 
+if (!validateStrongPassword(newPassword)) {
+  errEl.style.display = 'block';
+  errEl.textContent = 'Weak password: use 6+ chars, 1 uppercase, 1 number, 1 symbol.';
+  return;
+}
+
     function togglePassword(id, icon) {
       const input = document.getElementById(id);
       if (!input) return;
