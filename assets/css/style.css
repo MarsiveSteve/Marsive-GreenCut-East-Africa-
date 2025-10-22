@@ -1062,8 +1062,6 @@ body {
   text-align: left;
 }
 
-
-
 /* Image container styles */
 .image-container {
   flex: 1 1 300px;
@@ -1129,6 +1127,12 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .appointment-section {
+    margin: 30px 15px;  /* adds side beige margins on small screens */
+    padding: 40px 15px; /* reduces padding for smaller screens */
+    border-radius: 10px;
+  }
+
   .appointment-content {
     flex-direction: column;
     align-items: center;
