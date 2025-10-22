@@ -325,6 +325,16 @@
       hidePasswordError();
     }
 
+function closeModal() {
+  const modal = document.getElementById('authModal');
+  modal.style.display = 'none';
+  modal.querySelectorAll('input').forEach(inp => {
+    inp.value = '';
+    inp.classList.remove('error','success');
+  });
+  hidePasswordError();
+}
+
     // ---------------- Password toggles + validation ----------------
 
 function validateStrongPassword(password) {
