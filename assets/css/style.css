@@ -1026,12 +1026,14 @@ body {
   background-color: #f2f39d;
 }
 
+/* White container centered with beige background margins */
 .appointment-section {
   background-color: white;
   padding: 60px 20px;
-  max-width: 1000px;
-  margin: 50px auto;
+  max-width: 900px; /* narrower to leave beige sides on desktop */
+  margin: 50px auto; /* centers the section */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px; /* optional: softens edges for modern look */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
