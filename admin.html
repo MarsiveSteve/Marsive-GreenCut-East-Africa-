@@ -332,6 +332,11 @@ function validateStrongPassword(password) {
   return regex.test(password);
 }
 
+if (!validateStrongPassword(password)) {
+  showPasswordError('Password must be at least 6 characters and include an uppercase letter, a number, and a symbol.');
+  return;
+}
+
     function togglePassword(id, icon) {
       const input = document.getElementById(id);
       if (!input) return;
