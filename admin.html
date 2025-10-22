@@ -172,33 +172,44 @@
   <button id="openAuthBtn" onclick="openModal()">Login / Sign Up</button>
 
   <!-- Modal for Login/Signup -->
-  <div id="authModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="authTitle">Login</h2>
+<div id="authModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
 
-      <input type="text" id="name" placeholder="Full Name" style="display:none;" />
+    <h2 id="authTitle">Welcome Back</h2>
+    <p id="authSubtitle">Please log in to continue</p>
 
-      <input type="email" id="email" placeholder="Email" />
+    <input type="text" id="name" placeholder="Full Name" style="display:none;" />
+    <input type="email" id="email" placeholder="Email" />
 
-      <div class="password-container">
-        <input type="password" id="password" placeholder="Password" oninput="validatePasswords()" />
-        <span class="toggle-eye" onclick="togglePassword('password', this)">👁️</span>
-      </div>
-
-      <div class="password-container" id="confirmPasswordContainer" style="display:none;">
-        <input type="password" id="confirmPasswordAuth" placeholder="Confirm Password" oninput="validatePasswords()" />
-        <span class="toggle-eye" onclick="togglePassword('confirmPasswordAuth', this)">👁️</span>
-      </div>
-
-      <small id="passwordError" class="error-msg" style="display:none;"></small>
-
-      <button id="authButton" onclick="handleAuth()">Login</button>
-
-      <span class="link" onclick="toggleAuthMode()">Create new account</span>
-      <span class="link" onclick="resetPassword()">Forgot password?</span>
+    <div class="password-field">
+      <input type="password" id="password" placeholder="Password" />
+      <span class="toggle-eye" onclick="togglePassword('password', this)">👁️</span>
     </div>
+
+    <div class="password-field" id="confirmField" style="display:none;">
+      <input type="password" id="confirmPasswordAuth" placeholder="Confirm Password" />
+      <span class="toggle-eye" onclick="togglePassword('confirmPasswordAuth', this)">👁️</span>
+    </div>
+
+    <button id="authButton" class="main-btn" onclick="handleAuth()">Login</button>
+
+    <!-- Vertical layout for login/signup switch -->
+    <div class="auth-switch">
+      <div class="switch-box" id="loginBox" style="display:block;">
+        <p>Don’t have an account?</p>
+        <button class="secondary-btn" onclick="switchToSignup()">Sign Up</button>
+      </div>
+
+      <div class="switch-box" id="signupBox" style="display:none;">
+        <p>Already have an account?</p>
+        <button class="secondary-btn" onclick="switchToLogin()">Login</button>
+      </div>
+    </div>
+
+    <span class="link" onclick="resetPassword()">Forgot password?</span>
   </div>
+</div>
 
   <!-- Password Reset Form -->
   <div id="resetSection" class="modal" aria-hidden="true">
