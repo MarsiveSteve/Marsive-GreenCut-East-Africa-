@@ -4,6 +4,9 @@ const supabaseAnonKey =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE';
 const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
 
+// ---------- Redirect Base URL ----------
+const baseRedirect = 'https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/';
+
 // ---------- UI Elements ----------
 const modal = document.getElementById('authModal');
 const authTitle = document.getElementById('authTitle');
@@ -23,7 +26,6 @@ let isSignup = false;
 function openModal() {
   modal.style.display = 'flex';
 }
-
 function closeModal() {
   modal.style.display = 'none';
 }
@@ -71,7 +73,6 @@ async function handleAuth() {
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value;
   const name = document.getElementById('name').value.trim();
-  const redirectUrl = document.getElementById('redirectUrl').value;
 
   if (!email || !password) {
     alert('Please fill all fields.');
@@ -90,7 +91,7 @@ async function handleAuth() {
       password,
       options: {
         data: { name },
-        emailRedirectTo: redirectUrl,
+        emailRedirectTo: baseRedirect, // ✅ Redirect after email verification
       },
     });
 
@@ -142,14 +143,12 @@ async function resetPassword() {
   const email = prompt('Enter your email to reset password:');
   if (!email) return;
 
-  const redirectUrl = document.getElementById('redirectUrl').value;
-
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: redirectUrl + 'reset.html',
+    redirectTo: baseRedirect + 'reset.html', // ✅ Redirect to reset page
   });
 
   if (error) alert(error.message);
-  else alert('📩 Password reset email sent!');
+  else alert('📩 Password reset email sent! Check your inbox.');
 }
 
 // ---------- Reviews Fetch & Update ----------
@@ -216,7 +215,6 @@ async function updateReviewStatus(id, status) {
 function approveReview(id) {
   updateReviewStatus(id, true);
 }
-
 function rejectReview(id) {
   updateReviewStatus(id, false);
 }
