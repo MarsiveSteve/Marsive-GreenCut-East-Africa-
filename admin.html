@@ -160,6 +160,20 @@
     </div>
   </div>
 
+<!-- Password Reset Form (hidden by default) -->
+<div id="resetSection" class="modal" style="display:none;">
+  <div class="modal-content">
+    <h2>Set New Password</h2>
+    <input type="password" id="newPassword" placeholder="New Password" />
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+    
+    <!-- 👁️ Toggle visibility -->
+    <span onclick="togglePasswordVisibility()" style="cursor:pointer;">👁️ Show Password</span>
+    
+    <button onclick="updatePassword()">Update Password</button>
+  </div>
+</div>
+
   <!-- Dashboard -->
   <div id="dashboardSection" class="dashboard" style="display:none;">
     <h2>Welcome, <span id="userEmail"></span> (<span id="userRole"></span>)</h2>
