@@ -325,6 +325,49 @@
       }
     }
 
+// Check if URL contains the password recovery hash
+window.addEventListener('load', async () => {
+  const { data } = await supabase.auth.getSession();
+  const hash = window.location.hash;
+
+  if (hash.includes('type=recovery')) {
+    // Show password reset form
+    document.getElementById('resetSection').style.display = 'flex';
+  } else if (data.session) {
+    // If already logged in
+    loadUserDashboard(data.session.user);
+  }
+});
+
+// Toggle password visibility
+function togglePasswordVisibility() {
+  const newPass = document.getElementById('newPassword');
+  const confirmPass = document.getElementById('confirmPassword');
+  const type = newPass.type === 'password' ? 'text' : 'password';
+  newPass.type = type;
+  confirmPass.type = type;
+}
+
+// Handle password update
+async function updatePassword() {
+  const newPassword = document.getElementById('newPassword').value.trim();
+  const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+  if (!newPassword || !confirmPassword) {
+    return alert('Please fill all fields');
+  }
+  if (newPassword !== confirmPassword) {
+    return alert('Passwords do not match');
+  }
+
+  const { data, error } = await supabase.auth.updateUser({ password: newPassword });
+  if (error) return alert(error.message);
+
+  alert('Password updated successfully!');
+  document.getElementById('resetSection').style.display = 'none';
+  window.location.href = 'https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/admin.html';
+}
+
     window.onload = checkSession;
   </script>
 </body>
