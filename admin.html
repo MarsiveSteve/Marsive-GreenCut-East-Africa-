@@ -20,26 +20,22 @@
       color: #333;
       margin: 0;
       padding: 20px;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
     }
 
     h1, h2 { text-align: center; }
 
-    .auth-container, .dashboard {
+    .dashboard {
       background: var(--white);
       padding: 30px 25px;
       border-radius: 16px;
       width: 100%;
-      max-width: 400px;
+      max-width: 900px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       margin-top: 50px;
-    }
-
-    .dashboard {
-      max-width: 900px;
     }
 
     input {
@@ -106,8 +102,40 @@
       margin-top: 20px;
     }
 
+    /* --- Modal --- */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #888;
+    }
+
     @media (max-width: 768px) {
-      .dashboard, .auth-container { padding: 20px 15px; }
       th, td { font-size: 12px; padding: 8px; }
     }
   </style>
@@ -115,14 +143,20 @@
 <body>
   <h1>Admin Dashboard</h1>
 
-  <!-- Authentication -->
-  <div id="authSection" class="auth-container">
-    <h2 id="authTitle">Login</h2>
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Password" />
-    <button id="authButton" onclick="handleAuth()">Login</button>
-    <span class="link" onclick="toggleAuthMode()">Create new account</span>
-    <span class="link" onclick="resetPassword()">Forgot password?</span>
+  <!-- Login Button -->
+  <button onclick="openModal()">Login / Sign Up</button>
+
+  <!-- Modal for Login/Signup -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="authTitle">Login</h2>
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="authButton" onclick="handleAuth()">Login</button>
+      <span class="link" onclick="toggleAuthMode()">Create new account</span>
+      <span class="link" onclick="resetPassword()">Forgot password?</span>
+    </div>
   </div>
 
   <!-- Dashboard -->
@@ -140,12 +174,20 @@
   </div>
 
   <script>
-    // Supabase init
     const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co';
     const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE';
     const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+
     let isSignup = false;
     let userRole = 'user';
+
+    function openModal() {
+      document.getElementById('authModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('authModal').style.display = 'none';
+    }
 
     function toggleAuthMode() {
       isSignup = !isSignup;
@@ -162,13 +204,12 @@
       if (isSignup) {
         const { data, error } = await supabase.auth.signUp({ email, password });
         if (error) return alert(error.message);
-
-        // Add to profiles
         await supabase.from('profiles').insert({ id: data.user.id, email, role: 'user' });
         alert('Account created! Check your email for confirmation.');
       } else {
         const { data, error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) return alert(error.message);
+        closeModal();
         loadUserDashboard(data.user);
       }
     }
@@ -184,7 +225,7 @@
     async function logout() {
       await supabase.auth.signOut();
       document.getElementById('dashboardSection').style.display = 'none';
-      document.getElementById('authSection').style.display = 'block';
+      document.querySelector('button').style.display = 'block';
     }
 
     async function checkSession() {
@@ -193,12 +234,10 @@
     }
 
     async function loadUserDashboard(user) {
-      // Fetch role from profiles table
       const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single();
       userRole = profile?.role || 'user';
-
-      document.getElementById('authSection').style.display = 'none';
       document.getElementById('dashboardSection').style.display = 'block';
+      document.querySelector('button').style.display = 'none';
       document.getElementById('userEmail').textContent = user.email;
       document.getElementById('userRole').textContent = userRole;
       fetchReviews();
