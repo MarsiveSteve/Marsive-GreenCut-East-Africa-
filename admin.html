@@ -156,13 +156,14 @@
     <input type="email" id="email" placeholder="Email" />
 
     <div class="password-container">
-      <input type="password" id="password" placeholder="Password" />
-      <span class="toggle-eye" onclick="togglePassword('password')">👁️</span>
-    </div>
+  <input type="password" id="password" placeholder="Password" />
+  <span class="toggle-eye" onclick="togglePassword('password', this)">👁️</span>
+</div>
 
-    <div class="password-container confirm" id="confirmContainer" style="display:none;">
-      <input type="password" id="confirmPasswordAuth" placeholder="Confirm Password" />
-      <span class="toggle-eye" onclick="togglePassword('confirmPasswordAuth')">👁️</span>
+<div class="password-container">
+  <input type="password" id="confirmPasswordAuth" placeholder="Confirm Password" />
+  <span class="toggle-eye" onclick="togglePassword('confirmPasswordAuth', this)">👁️</span>
+</div>
     </div>
     <small id="passwordError" class="error-msg"></small>
 
