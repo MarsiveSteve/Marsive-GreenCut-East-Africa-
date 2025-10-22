@@ -147,29 +147,47 @@
   <button onclick="openModal()">Login / Sign Up</button>
 
   <!-- Modal for Login/Signup -->
-  <div id="authModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="authTitle">Login</h2>
-      <input type="text" id="name" placeholder="Full Name" style="display:none;" />
-      <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Password" />
-      <button id="authButton" onclick="handleAuth()">Login</button>
-      <span class="link" onclick="toggleAuthMode()">Create new account</span>
-      <span class="link" onclick="resetPassword()">Forgot password?</span>
-    </div>
-  </div>
+<div id="authModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="authTitle">Login</h2>
 
-<!-- Password Reset Form (hidden by default) -->
+    <input type="text" id="name" placeholder="Full Name" style="display:none;" />
+    <input type="email" id="email" placeholder="Email" />
+
+    <div class="password-container">
+      <input type="password" id="password" placeholder="Password" />
+      <span class="toggle-eye" onclick="togglePassword('password')">👁️</span>
+    </div>
+
+    <div class="password-container confirm" id="confirmContainer" style="display:none;">
+      <input type="password" id="confirmPasswordAuth" placeholder="Confirm Password" />
+      <span class="toggle-eye" onclick="togglePassword('confirmPasswordAuth')">👁️</span>
+    </div>
+    <small id="passwordError" class="error-msg"></small>
+
+    <button id="authButton" onclick="handleAuth()">Login</button>
+    <span class="link" onclick="toggleAuthMode()">Create new account</span>
+    <span class="link" onclick="resetPassword()">Forgot password?</span>
+  </div>
+</div>
+
+<!-- Password Reset Form -->
 <div id="resetSection" class="modal" style="display:none;">
   <div class="modal-content">
     <h2>Set New Password</h2>
-    <input type="password" id="newPassword" placeholder="New Password" />
-    <input type="password" id="confirmPassword" placeholder="Confirm Password" />
-    
-    <!-- 👁️ Toggle visibility -->
-    <span onclick="togglePasswordVisibility()" style="cursor:pointer;">👁️ Show Password</span>
-    
+
+    <div class="password-container">
+      <input type="password" id="newPassword" placeholder="New Password" />
+      <span class="toggle-eye" onclick="togglePassword('newPassword')">👁️</span>
+    </div>
+
+    <div class="password-container">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+      <span class="toggle-eye" onclick="togglePassword('confirmPassword')">👁️</span>
+    </div>
+
+    <small id="resetError" class="error-msg"></small>
     <button onclick="updatePassword()">Update Password</button>
   </div>
 </div>
