@@ -202,10 +202,25 @@
       if (!email || !password) return alert('Please fill all fields');
 
       if (isSignup) {
-        const { data, error } = await supabase.auth.signUp({ email, password });
-        if (error) return alert(error.message);
-        await supabase.from('profiles').insert({ id: data.user.id, email, role: 'user' });
-        alert('Account created! Check your email for confirmation.');
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: window.location.origin  // Redirect to your live site
+    }
+  });
+
+  if (error) return alert(error.message);
+
+  // 👇 Insert new user into your "admin" table
+  await supabase.from('admin').insert({
+    id: data.user.id,
+    email,
+    role: 'user'   // default role for new accounts
+  });
+
+  alert('Account created! Check your email for confirmation.');
+}
       } else {
         const { data, error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) return alert(error.message);
