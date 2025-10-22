@@ -271,25 +271,36 @@
   </div>
 </div>
 
-  <!-- Password Reset Form -->
-  <div id="resetSection" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <h2>Set New Password</h2>
+  <!-- Reset Password  -->
+<div id="authModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
 
-      <div class="password-container">
-        <input type="password" id="newPassword" placeholder="New Password" oninput="validateResetPasswords()" />
-        <span class="toggle-eye" onclick="togglePassword('newPassword', this)">👁️</span>
-      </div>
+    <h2 id="authTitle">Welcome Back</h2>
+    <p id="authSubtitle">Please log in to continue</p>
 
-      <div class="password-container">
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" oninput="validateResetPasswords()" />
-        <span class="toggle-eye" onclick="togglePassword('confirmPassword', this)">👁️</span>
-      </div>
+    <input type="text" id="name" placeholder="Full Name" style="display:none;" />
+    <input type="email" id="email" placeholder="Email" />
 
-      <small id="resetError" class="error-msg" style="display:none;"></small>
-      <button onclick="updatePassword()">Update Password</button>
+    <!-- Password Field -->
+    <div class="password-field">
+      <input type="password" id="password" placeholder="Password" />
+      <button type="button" class="toggle-eye" onclick="togglePassword('password', this)">
+        <i class="fa-regular fa-eye-slash"></i>
+      </button>
     </div>
+
+    <!-- Confirm Password Field (Signup only) -->
+    <div class="password-field" id="confirmField" style="display:none;">
+      <input type="password" id="confirmPasswordAuth" placeholder="Confirm Password" />
+      <button type="button" class="toggle-eye" onclick="togglePassword('confirmPasswordAuth', this)">
+        <i class="fa-regular fa-eye-slash"></i>
+      </button>
+    </div>
+
+    <button id="authButton" class="main-btn" onclick="handleAuth()">Login</button>
   </div>
+</div>
 
   <!-- Dashboard -->
   <div id="dashboardSection" class="dashboard" style="display:none;">
