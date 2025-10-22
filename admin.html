@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Admin Dashboard - Role Access</title>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <style>
     :root {
       --green: #0c4724;
@@ -12,12 +13,13 @@
       --red: #dc3545;
       --gray-bg: #f4f4f4;
       --white: #fff;
+      --accent: #007bff;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       background-color: var(--gray-bg);
-      color: #333;
+      color: #222;
       margin: 0;
       padding: 20px;
       min-height: 100vh;
@@ -26,7 +28,7 @@
       align-items: center;
     }
 
-    h1, h2 { text-align: center; }
+    h1, h2 { text-align: center; margin: 8px 0 0; }
 
     .dashboard {
       background: var(--white);
@@ -35,7 +37,7 @@
       width: 100%;
       max-width: 900px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      margin-top: 50px;
+      margin-top: 28px;
     }
 
     input {
@@ -45,6 +47,14 @@
       border-radius: 10px;
       border: 1px solid #ccc;
       font-size: 15px;
+      box-sizing: border-box;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 6px rgba(0,123,255,0.18);
     }
 
     button {
@@ -56,154 +66,166 @@
       border-radius: 10px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: transform 0.12s ease, background-color 0.18s ease;
     }
 
-    button:hover { background-color: var(--green-light); }
+    button:hover { background-color: var(--green-light); transform: translateY(-1px); }
 
     .link {
       display: block;
       text-align: center;
-      margin-top: 12px;
-      color: var(--green);
+      margin-top: 10px;
+      color: var(--accent);
       cursor: pointer;
+      user-select: none;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: left;
-    }
-
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
     th { background-color: #f9f9f9; }
 
     .approve, .reject {
-      padding: 6px 12px;
-      border-radius: 6px;
-      border: none;
-      color: white;
-      cursor: pointer;
-      font-size: 13px;
-      transition: 0.3s;
+      padding: 6px 12px; border-radius: 6px; border: none; color: white; cursor: pointer; font-size: 13px;
     }
-
     .approve { background-color: #28a745; }
     .reject { background-color: var(--red); }
-
-    .logout-btn {
-      background-color: var(--red);
-      margin-top: 20px;
-    }
+    .logout-btn { background-color: var(--red); margin-top: 20px; }
 
     /* --- Modal --- */
     .modal {
       display: none;
       position: fixed;
       z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.4);
-      justify-content: center;
-      align-items: center;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      justify-content: center; align-items: center;
     }
 
     .modal-content {
       background: var(--white);
-      padding: 25px;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      padding: 22px;
+      border-radius: 14px;
+      width: 92%;
+      max-width: 420px;
+      box-shadow: 0 6px 26px rgba(0,0,0,0.18);
       position: relative;
     }
 
     .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 22px;
-      cursor: pointer;
-      color: #888;
+      position: absolute; top: 10px; right: 14px; font-size: 22px; cursor: pointer; color: #888;
     }
 
+    /* Password container + eye */
+    .password-container {
+      position: relative;
+      margin-top: 8px;
+    }
 
+    .password-container input {
+      padding-right: 40px;
+    }
+
+    .toggle-eye {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 18px;
+      color: #aaa;              /* grey when hidden */
+      transition: color 0.22s ease, transform 0.12s ease, opacity 0.16s ease;
+      opacity: 0.95;
+    }
+
+    .toggle-eye:hover { color: #333; transform: translateY(-50%) scale(1.08); }
+
+    /* Inline error/success styles */
+    .error-msg {
+      color: var(--red);
+      font-size: 13px;
+      margin-top: 6px;
+      display: block;
+    }
+
+    input.error {
+      border-color: var(--red);
+      box-shadow: 0 0 6px rgba(220,53,69,0.18);
+    }
+
+    input.success {
+      border-color: #28a745;
+      box-shadow: 0 0 6px rgba(40,167,69,0.12);
+    }
 
     @media (max-width: 768px) {
       th, td { font-size: 12px; padding: 8px; }
+      .modal-content { padding: 18px; }
     }
-
   </style>
 </head>
+
 <body>
   <h1>Admin Dashboard</h1>
 
   <!-- Login Button -->
-  <button onclick="openModal()">Login / Sign Up</button>
+  <button id="openAuthBtn" onclick="openModal()">Login / Sign Up</button>
 
   <!-- Modal for Login/Signup -->
-<div id="authModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2 id="authTitle">Login</h2>
+  <div id="authModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="authTitle">Login</h2>
 
-    <input type="text" id="name" placeholder="Full Name" style="display:none;" />
-    <input type="email" id="email" placeholder="Email" />
+      <input type="text" id="name" placeholder="Full Name" style="display:none;" />
 
-    <div class="password-container">
-  <input type="password" id="password" placeholder="Password" />
-  <span class="toggle-eye" onclick="togglePassword('password', this)">👁️</span>
-</div>
+      <input type="email" id="email" placeholder="Email" />
 
-<div class="password-container">
-  <input type="password" id="confirmPasswordAuth" placeholder="Confirm Password" />
-  <span class="toggle-eye" onclick="togglePassword('confirmPasswordAuth', this)">👁️</span>
-</div>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Password" oninput="validatePasswords()" />
+        <span class="toggle-eye" onclick="togglePassword('password', this)">👁️</span>
+      </div>
+
+      <div class="password-container" id="confirmPasswordContainer" style="display:none;">
+        <input type="password" id="confirmPasswordAuth" placeholder="Confirm Password" oninput="validatePasswords()" />
+        <span class="toggle-eye" onclick="togglePassword('confirmPasswordAuth', this)">👁️</span>
+      </div>
+
+      <small id="passwordError" class="error-msg" style="display:none;"></small>
+
+      <button id="authButton" onclick="handleAuth()">Login</button>
+
+      <span class="link" onclick="toggleAuthMode()">Create new account</span>
+      <span class="link" onclick="resetPassword()">Forgot password?</span>
     </div>
-    <small id="passwordError" class="error-msg"></small>
-
-    <button id="authButton" onclick="handleAuth()">Login</button>
-    <span class="link" onclick="toggleAuthMode()">Create new account</span>
-    <span class="link" onclick="resetPassword()">Forgot password?</span>
   </div>
-</div>
 
-<!-- Password Reset Form -->
-<div id="resetSection" class="modal" style="display:none;">
-  <div class="modal-content">
-    <h2>Set New Password</h2>
+  <!-- Password Reset Form -->
+  <div id="resetSection" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h2>Set New Password</h2>
 
-    <div class="password-container">
-      <input type="password" id="newPassword" placeholder="New Password" />
-      <span class="toggle-eye" onclick="togglePassword('newPassword')">👁️</span>
+      <div class="password-container">
+        <input type="password" id="newPassword" placeholder="New Password" oninput="validateResetPasswords()" />
+        <span class="toggle-eye" onclick="togglePassword('newPassword', this)">👁️</span>
+      </div>
+
+      <div class="password-container">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" oninput="validateResetPasswords()" />
+        <span class="toggle-eye" onclick="togglePassword('confirmPassword', this)">👁️</span>
+      </div>
+
+      <small id="resetError" class="error-msg" style="display:none;"></small>
+      <button onclick="updatePassword()">Update Password</button>
     </div>
-
-    <div class="password-container">
-      <input type="password" id="confirmPassword" placeholder="Confirm Password" />
-      <span class="toggle-eye" onclick="togglePassword('confirmPassword')">👁️</span>
-    </div>
-
-    <small id="resetError" class="error-msg"></small>
-    <button onclick="updatePassword()">Update Password</button>
   </div>
-</div>
 
   <!-- Dashboard -->
   <div id="dashboardSection" class="dashboard" style="display:none;">
     <h2>Welcome, <span id="userEmail"></span> (<span id="userRole"></span>)</h2>
-    <table id="reviewsTable">
+    <table id="reviewsTable" aria-describedby="reviews">
       <thead>
-        <tr>
-          <th>Name</th><th>Email</th><th>Message</th><th>Status</th><th>Actions</th>
-        </tr>
+        <tr><th>Name</th><th>Email</th><th>Message</th><th>Status</th><th>Actions</th></tr>
       </thead>
       <tbody></tbody>
     </table>
@@ -211,39 +233,133 @@
   </div>
 
   <script>
+    // ---------------- Supabase client ----------------
     const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co';
     const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE';
     const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
 
+    // ---------------- State ----------------
     let isSignup = false;
     let userRole = 'user';
 
+    // ---------------- Modal controls ----------------
     function openModal() {
       document.getElementById('authModal').style.display = 'flex';
     }
-
     function closeModal() {
       document.getElementById('authModal').style.display = 'none';
     }
 
+    // Toggle login / signup UI
     function toggleAuthMode() {
       isSignup = !isSignup;
       document.getElementById('authTitle').innerText = isSignup ? 'Create Account' : 'Login';
       document.getElementById('authButton').innerText = isSignup ? 'Sign Up' : 'Login';
       document.querySelectorAll('.link')[0].innerText = isSignup ? 'Already have an account? Login' : 'Create new account';
       document.getElementById('name').style.display = isSignup ? 'block' : 'none';
+      document.getElementById('confirmPasswordContainer').style.display = isSignup ? 'block' : 'none';
+      // clear errors
+      hidePasswordError();
     }
 
+    // ---------------- Password toggles + validation ----------------
+    function togglePassword(id, icon) {
+      const input = document.getElementById(id);
+      if (!input) return;
+      const isHidden = input.type === 'password';
+      input.type = isHidden ? 'text' : 'password';
+      // color cue: blue when visible, grey when hidden
+      icon.style.color = isHidden ? '#007bff' : '#aaa';
+      // mild opacity flicker for smoother feel
+      icon.style.opacity = 0.6;
+      setTimeout(()=> icon.style.opacity = 1, 120);
+    }
+
+    function showPasswordError(msg) {
+      const el = document.getElementById('passwordError');
+      el.style.display = 'block';
+      el.textContent = msg;
+    }
+    function hidePasswordError() {
+      const el = document.getElementById('passwordError');
+      el.style.display = 'none';
+      el.textContent = '';
+      document.getElementById('password')?.classList.remove('error','success');
+      document.getElementById('confirmPasswordAuth')?.classList.remove('error','success');
+    }
+
+    // Live validation for signup fields
+    function validatePasswords() {
+      const passEl = document.getElementById('password');
+      const confEl = document.getElementById('confirmPasswordAuth');
+      if (!passEl || !confEl) return;
+      const p = passEl.value;
+      const c = confEl.value;
+      const errorEl = document.getElementById('passwordError');
+
+      if (!c) {
+        confEl.classList.remove('error','success');
+        errorEl.style.display = 'none';
+        return;
+      }
+
+      if (p !== c) {
+        confEl.classList.add('error');
+        confEl.classList.remove('success');
+        errorEl.style.display = 'block';
+        errorEl.textContent = 'Passwords do not match.';
+      } else {
+        confEl.classList.remove('error');
+        confEl.classList.add('success');
+        errorEl.style.display = 'none';
+        errorEl.textContent = '';
+      }
+    }
+
+    // Reset modal validation
+    function validateResetPasswords() {
+      const newPass = document.getElementById('newPassword');
+      const conf = document.getElementById('confirmPassword');
+      const el = document.getElementById('resetError');
+      if (!newPass || !conf) return;
+
+      if (!conf.value) {
+        conf.classList.remove('error','success');
+        el.style.display = 'none';
+        return;
+      }
+
+      if (newPass.value !== conf.value) {
+        conf.classList.add('error'); conf.classList.remove('success');
+        el.style.display = 'block'; el.textContent = 'Passwords do not match.';
+      } else {
+        conf.classList.remove('error'); conf.classList.add('success');
+        el.style.display = 'none'; el.textContent = '';
+      }
+    }
+
+    // ---------------- Auth (signup/login) ----------------
     async function handleAuth() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const password = document.getElementById('password').value.trim();
 
       if (!email || !password || (isSignup && !name)) {
-        return alert('Please fill all fields');
+        return alert('Please fill all fields.');
       }
 
+      // If signing up, confirm passwords match
       if (isSignup) {
+        const confirmPassword = document.getElementById('confirmPasswordAuth').value.trim();
+        if (password !== confirmPassword) {
+          document.getElementById('confirmPasswordAuth').classList.add('error');
+          showPasswordError('Passwords do not match.');
+          return;
+        } else {
+          hidePasswordError();
+        }
+
+        // Sign up
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
@@ -254,47 +370,90 @@
 
         if (error) return alert(error.message);
 
-        // Insert new user into your "admin" table with name
-        await supabase.from('admin').insert({
-          id: data.user.id,
-          name,
-          email,
-          role: 'user'
-        });
+        // Insert into admin table (best-effort)
+        try {
+          if (data?.user?.id) {
+            await supabase.from('admin').insert({
+              id: data.user.id,
+              name,
+              email,
+              role: 'user'
+            });
+          }
+        } catch (e) {
+          // ignore DB insert errors for now but log
+          console.warn('admin insert error', e);
+        }
 
         alert('Account created! Check your email for confirmation.');
-      } else {
-        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) return alert(error.message);
         closeModal();
-        loadUserDashboard(data.user);
+        return;
       }
+
+      // Login flow
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) return alert(error.message);
+      closeModal();
+      loadUserDashboard(data.user);
     }
 
+    // ---------------- Reset password (send email) ----------------
     async function resetPassword() {
       const email = prompt('Enter your email for password reset:');
       if (!email) return;
-      const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: 'https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/admin.html' });
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: 'https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/admin.html'
+      });
       if (error) return alert(error.message);
-      alert('Password reset link sent.');
+      alert('Password reset link sent. Check your email.');
     }
 
+    // ---------------- Update password (after recovery) ----------------
+    async function updatePassword() {
+      const newPassword = document.getElementById('newPassword').value.trim();
+      const confirmPassword = document.getElementById('confirmPassword').value.trim();
+      const errEl = document.getElementById('resetError');
+
+      if (!newPassword || !confirmPassword) {
+        errEl.style.display = 'block'; errEl.textContent = 'Please fill all fields.';
+        return;
+      }
+      if (newPassword !== confirmPassword) {
+        errEl.style.display = 'block'; errEl.textContent = 'Passwords do not match.';
+        return;
+      }
+
+      const { data, error } = await supabase.auth.updateUser({ password: newPassword });
+      if (error) {
+        alert(error.message); return;
+      }
+
+      alert('Password updated successfully!');
+      document.getElementById('resetSection').style.display = 'none';
+      // clear hash from url for cleanliness
+      window.location.href = window.location.pathname;
+    }
+
+    // ---------------- Session / Dashboard ----------------
     async function logout() {
       await supabase.auth.signOut();
       document.getElementById('dashboardSection').style.display = 'none';
-      document.querySelector('button').style.display = 'block';
-    }
-
-    async function checkSession() {
-      const { data } = await supabase.auth.getSession();
-      if (data.session) loadUserDashboard(data.session.user);
+      document.getElementById('openAuthBtn').style.display = 'block';
     }
 
     async function loadUserDashboard(user) {
-      const { data: profile } = await supabase.from('admin').select('role, name').eq('id', user.id).single();
+      // Query admin profile
+      let profile = null;
+      try {
+        const { data: profData } = await supabase.from('admin').select('role, name').eq('id', user.id).maybeSingle();
+        profile = profData;
+      } catch (e) {
+        console.warn('profile fetch error', e);
+      }
+
       userRole = profile?.role || 'user';
       document.getElementById('dashboardSection').style.display = 'block';
-      document.querySelector('button').style.display = 'none';
+      document.getElementById('openAuthBtn').style.display = 'none';
       document.getElementById('userEmail').textContent = profile?.name ? `${profile.name} (${user.email})` : user.email;
       document.getElementById('userRole').textContent = userRole;
       fetchReviews();
@@ -303,7 +462,7 @@
     async function fetchReviews() {
       const { data, error } = await supabase.from('reviews').select('*').order('id', { ascending: false });
       if (error) return console.error(error);
-      displayReviews(data);
+      displayReviews(data || []);
     }
 
     function displayReviews(reviews) {
@@ -312,86 +471,79 @@
       reviews.forEach(r => {
         const row = document.createElement('tr');
         row.innerHTML = `
-          <td>${r.name}</td>
-          <td>${r.email}</td>
-          <td>${r.message}</td>
+          <td>${escapeHtml(r.name || '')}</td>
+          <td>${escapeHtml(r.email || '')}</td>
+          <td>${escapeHtml(r.message || '')}</td>
           <td>${r.status ? '✅ Approved' : '🕓 Pending'}</td>
           <td>
             ${
               userRole === 'admin'
-                ? `
-                <button class="approve" onclick="updateReviewStatus(${r.id}, true)">Approve</button>
-                <button class="reject" onclick="updateReviewStatus(${r.id}, false)">Reject</button>
-                `
+                ? `<button class="approve" onclick="updateReviewStatus(${r.id}, true)">Approve</button>
+                   <button class="reject" onclick="updateReviewStatus(${r.id}, false)">Reject</button>`
                 : `<em>View only</em>`
             }
-          </td>
-        `;
+          </td>`;
         tbody.appendChild(row);
       });
     }
 
     async function updateReviewStatus(id, status) {
       if (userRole !== 'admin') return alert('Access denied.');
-      const response = await fetch('https://ansfcahvbvzfrlgoxjvc.supabase.co/functions/v1/update-review', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id, status })
-      });
-      const result = await response.json();
-      if (response.ok && result.success) {
-        alert(status ? '✅ Review approved!' : '❌ Review rejected!');
-        fetchReviews();
-      } else {
-        alert('Error updating review.');
+      try {
+        const response = await fetch('https://ansfcahvbvzfrlgoxjvc.supabase.co/functions/v1/update-review', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, status })
+        });
+        const result = await response.json();
+        if (response.ok && result.success) {
+          alert(status ? '✅ Review approved!' : '❌ Review rejected!');
+          fetchReviews();
+        } else {
+          alert('Error updating review.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Network error.');
       }
     }
 
-// Check if URL contains the password recovery hash
-window.addEventListener('load', async () => {
-  const { data } = await supabase.auth.getSession();
-  const hash = window.location.hash;
+    // ---------------- Utilities ----------------
+    function escapeHtml(unsafe) {
+      return String(unsafe)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
 
-  if (hash.includes('type=recovery')) {
-    // Show password reset form
-    document.getElementById('resetSection').style.display = 'flex';
-  } else if (data.session) {
-    // If already logged in
-    loadUserDashboard(data.session.user);
-  }
-});
+    // ---------------- Load/Detection (single place) ----------------
+    window.addEventListener('load', async () => {
+      // Check URL hash for recovery token
+      const hash = window.location.hash || '';
+      const sessionResp = await supabase.auth.getSession();
 
-// Toggle password visibility
-function togglePassword(id, icon) {
-  const input = document.getElementById(id);
-  const isHidden = input.type === 'password';
-  input.type = isHidden ? 'text' : 'password';
+      if (hash.includes('type=recovery')) {
+        // Show reset modal and keep it visible
+        document.getElementById('resetSection').style.display = 'flex';
+        document.getElementById('resetSection').setAttribute('aria-hidden','false');
+      } else if (sessionResp?.data?.session) {
+        // If already logged in, load dashboard
+        loadUserDashboard(sessionResp.data.session.user);
+      }
+    });
 
-  // Change color instead of swapping emoji
-  icon.style.color = isHidden ? '#007bff' : '#aaa'; // blue when visible, grey when hidden
-}
-
-// Handle password update
-async function updatePassword() {
-  const newPassword = document.getElementById('newPassword').value.trim();
-  const confirmPassword = document.getElementById('confirmPassword').value.trim();
-
-  if (!newPassword || !confirmPassword) {
-    return alert('Please fill all fields');
-  }
-  if (newPassword !== confirmPassword) {
-    return alert('Passwords do not match');
-  }
-
-  const { data, error } = await supabase.auth.updateUser({ password: newPassword });
-  if (error) return alert(error.message);
-
-  alert('Password updated successfully!');
-  document.getElementById('resetSection').style.display = 'none';
-  window.location.href = 'https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/admin.html';
-}
-
-    window.onload = checkSession;
+    // Optional: check session on auth state change to react to sign-in/out
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (session?.user) {
+        loadUserDashboard(session.user);
+      } else {
+        // signed out
+        document.getElementById('dashboardSection').style.display = 'none';
+        document.getElementById('openAuthBtn').style.display = 'block';
+      }
+    });
   </script>
 </body>
 </html>
