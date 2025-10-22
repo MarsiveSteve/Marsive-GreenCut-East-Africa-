@@ -158,6 +158,58 @@
       box-shadow: 0 0 6px rgba(40,167,69,0.12);
     }
 
+/* Buttons layout */
+.main-btn {
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.main-btn:hover {
+  background: #0056b3;
+}
+
+.auth-switch {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.switch-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.switch-box p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.secondary-btn {
+  background: #f1f1f1;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 15px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+  background: #e6e6e6;
+}
+
     @media (max-width: 768px) {
       th, td { font-size: 12px; padding: 8px; }
       .modal-content { padding: 18px; }
