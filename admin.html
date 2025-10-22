@@ -607,6 +607,29 @@
         document.getElementById('openAuthBtn').style.display = 'block';
       }
     });
+
+function switchToSignup() {
+  isSignup = true;
+  document.getElementById('authTitle').innerText = 'Create Account';
+  document.getElementById('authSubtitle').innerText = 'Sign up to access the admin panel';
+  document.getElementById('authButton').innerText = 'Sign Up';
+  document.getElementById('name').style.display = 'block';
+  document.getElementById('confirmField').style.display = 'flex';
+  document.getElementById('loginBox').style.display = 'none';
+  document.getElementById('signupBox').style.display = 'block';
+}
+
+function switchToLogin() {
+  isSignup = false;
+  document.getElementById('authTitle').innerText = 'Welcome Back';
+  document.getElementById('authSubtitle').innerText = 'Please log in to continue';
+  document.getElementById('authButton').innerText = 'Login';
+  document.getElementById('name').style.display = 'none';
+  document.getElementById('confirmField').style.display = 'none';
+  document.getElementById('loginBox').style.display = 'block';
+  document.getElementById('signupBox').style.display = 'none';
+}
+
   </script>
 </body>
 </html>
