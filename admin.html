@@ -238,7 +238,7 @@
     async function resetPassword() {
       const email = prompt('Enter your email for password reset:');
       if (!email) return;
-      const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: window.location.origin });
+      const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: 'https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/admin.html' });
       if (error) return alert(error.message);
       alert('Password reset link sent.');
     }
