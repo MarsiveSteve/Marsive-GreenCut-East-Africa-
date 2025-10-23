@@ -109,7 +109,7 @@ if (appointmentForm) {
   const message = formData.get("message");
 
   // Validate fields
-  if (!name || !email || !phone || !location || !rawDate || !message) {
+  if (!name || !email || !phone || !location || !rawDate) {
     alert("⚠️ Please fill in all required fields.");
     return;
   }
