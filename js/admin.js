@@ -153,13 +153,16 @@ async function handleAuth() {
 }
 
 // ---------- Dashboard Display ----------
+let currentUserRole = 'user'; // 👈 global variable
+
 function showDashboard(user, role = 'user') {
   if (!user) return;
 
+  currentUserRole = role; // store globally
   document.getElementById('openAuthBtn').style.display = 'none';
   dashboardSection.style.display = 'block';
   userEmailEl.textContent = user.email;
-  userRoleEl.textContent = role; // ✅ Display fetched role
+  userRoleEl.textContent = role;
 
   fetchReviews();
 }
