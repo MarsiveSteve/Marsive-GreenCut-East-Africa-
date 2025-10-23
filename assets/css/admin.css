@@ -190,3 +190,23 @@ button:hover {
   th, td { font-size: 12px; padding: 8px; }
   .modal-content { padding: 18px; }
 }
+
+/* ---------- Role Badge Styles ---------- */
+#userRole {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+#userRole.admin {
+  background-color: #007bff; /* blue for admins */
+}
+
+#userRole.user {
+  background-color: #6c757d; /* gray for users */
+}
