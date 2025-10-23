@@ -153,16 +153,27 @@ async function handleAuth() {
 }
 
 // ---------- Dashboard Display ----------
-let currentUserRole = 'user'; // 👈 global variable
+let currentUserRole = 'user'; // global
 
 function showDashboard(user, role = 'user') {
   if (!user) return;
 
-  currentUserRole = role; // store globally
+  currentUserRole = role;
   document.getElementById('openAuthBtn').style.display = 'none';
   dashboardSection.style.display = 'block';
   userEmailEl.textContent = user.email;
+
+  // Apply role styling
   userRoleEl.textContent = role;
+  userRoleEl.className = role.toLowerCase(); // 👈 adds class like 'admin' or 'user'
+
+  // Hide action header for non-admins
+  const actionHeader = document.querySelector('#reviewsTable thead th:last-child');
+  if (currentUserRole !== 'admin') {
+    actionHeader.style.display = 'none';
+  } else {
+    actionHeader.style.display = '';
+  }
 
   fetchReviews();
 }
