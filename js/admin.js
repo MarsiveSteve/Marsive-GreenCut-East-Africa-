@@ -208,16 +208,28 @@ function displayReviews(reviews) {
 
   reviews.forEach((review) => {
     const row = document.createElement('tr');
+
+    // Default viewable content
+    let actions = `<td>-</td>`;
+
+    // Only admins can see action buttons
+    if (currentUserRole === 'admin') {
+      actions = `
+        <td>
+          <button class="approve" onclick="approveReview(${review.id})">Approve</button>
+          <button class="reject" onclick="rejectReview(${review.id})">Reject</button>
+        </td>
+      `;
+    }
+
     row.innerHTML = `
       <td>${review.name}</td>
       <td>${review.email}</td>
       <td>${review.message}</td>
       <td>${review.status ? '✅ Approved' : '🕓 Pending'}</td>
-      <td>
-        <button class="approve" onclick="approveReview(${review.id})">Approve</button>
-        <button class="reject" onclick="rejectReview(${review.id})">Reject</button>
-      </td>
+      ${actions}
     `;
+
     tableBody.appendChild(row);
   });
 }
