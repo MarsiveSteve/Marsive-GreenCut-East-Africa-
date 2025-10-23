@@ -153,13 +153,13 @@ async function handleAuth() {
 }
 
 // ---------- Dashboard Display ----------
-function showDashboard(user) {
+function showDashboard(user, role = 'user') {
   if (!user) return;
 
   document.getElementById('openAuthBtn').style.display = 'none';
   dashboardSection.style.display = 'block';
   userEmailEl.textContent = user.email;
-  userRoleEl.textContent = user.app_metadata?.role || 'user';
+  userRoleEl.textContent = role; // ✅ Display fetched role
 
   fetchReviews();
 }
