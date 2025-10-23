@@ -122,20 +122,34 @@ async function handleAuth() {
   switchToLogin();
 }
   } else {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
-    if (error) {
-      alert(error.message);
-      return;
-    }
-
-    alert('✅ Login successful!');
-    closeModal();
-    showDashboard(data.user);
+  if (error) {
+    alert(error.message);
+    return;
   }
+
+  alert('✅ Login successful!');
+  closeModal();
+
+  const user = data.user;
+
+  // 🧠 Fetch user's role from the 'admin' table
+  const { data: roleData, error: roleError } = await supabase
+    .from('admin')
+    .select('role')
+    .eq('email', user.email)
+    .single();
+
+  if (roleError) {
+    console.warn('Could not fetch role:', roleError.message);
+  }
+
+  // Pass user + role to dashboard
+  showDashboard(user, roleData?.role || 'user');
 }
 
 // ---------- Dashboard Display ----------
