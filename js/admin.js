@@ -80,28 +80,47 @@ async function handleAuth() {
   }
 
   if (isSignup) {
-    const confirmPassword = document.getElementById('confirmPasswordAuth').value;
-    if (password !== confirmPassword) {
-      alert('Passwords do not match!');
-      return;
-    }
+  const confirmPassword = document.getElementById('confirmPasswordAuth').value;
+  if (password !== confirmPassword) {
+    alert('Passwords do not match!');
+    return;
+  }
 
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { name },
-        emailRedirectTo: baseRedirect, // ✅ Redirect after email verification
-      },
-    });
+  // 1️⃣ Create user in Supabase Auth
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { name },
+      emailRedirectTo: baseRedirect, // ✅ Redirect after email verification
+    },
+  });
 
-    if (error) {
-      alert(error.message);
-      return;
-    }
+  if (error) {
+    alert(error.message);
+    return;
+  }
 
-    alert('✅ Signup successful! Please check your email to confirm your account.');
-    switchToLogin();
+  // 2️⃣ Insert user details into 'admin' table
+  const { error: insertError } = await supabase.from('admin').insert([
+    {
+      name: name,
+      email: email,
+      role: 'user', // Default role, adjust if you have role logic
+    },
+  ]);
+
+  if (insertError) {
+    console.error('Database insert error:', insertError);
+    alert('Signup complete, but failed to record user in admin table.');
+  } else {
+    console.log('✅ User inserted into admin table');
+  }
+
+  // 3️⃣ Notify and switch view
+  alert('✅ Signup successful! Please check your email to confirm your account.');
+  switchToLogin();
+}
   } else {
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
