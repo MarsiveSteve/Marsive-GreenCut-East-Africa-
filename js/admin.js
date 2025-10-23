@@ -245,3 +245,4 @@ window.onload = async () => {
   } = await supabase.auth.getSession();
   if (session?.user) showDashboard(session.user);
 };
+
