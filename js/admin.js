@@ -120,7 +120,6 @@ async function handleAuth() {
   // 3️⃣ Notify and switch view
   alert('✅ Signup successful! Please check your email to confirm your account.');
   switchToLogin();
-}
   } else {
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
@@ -176,14 +175,6 @@ function showDashboard(user, role = 'user') {
   }
 
   fetchReviews();
-}
-
-// Hide action column header for normal users
-const actionHeader = document.querySelector('#reviewsTable thead th:last-child');
-if (currentUserRole !== 'admin') {
-  actionHeader.style.display = 'none';
-} else {
-  actionHeader.style.display = '';
 }
 
 // ---------- Logout ----------
