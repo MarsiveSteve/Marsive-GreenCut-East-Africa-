@@ -167,6 +167,14 @@ function showDashboard(user, role = 'user') {
   fetchReviews();
 }
 
+// Hide action column header for normal users
+const actionHeader = document.querySelector('#reviewsTable thead th:last-child');
+if (currentUserRole !== 'admin') {
+  actionHeader.style.display = 'none';
+} else {
+  actionHeader.style.display = '';
+}
+
 // ---------- Logout ----------
 async function logout() {
   await supabase.auth.signOut();
