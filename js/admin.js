@@ -114,7 +114,7 @@ async function handleAuth() {
     console.error('Database insert error:', insertError);
     alert('Signup complete, but failed to record user in admin table.');
   } else {
-    console.log('✅ User inserted into admin table');
+    console.log('✅ User created successfully');
   }
 
   // 3️⃣ Notify and switch view
