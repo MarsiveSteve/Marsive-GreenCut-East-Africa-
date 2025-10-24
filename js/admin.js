@@ -8,7 +8,7 @@ const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
 const baseRedirect = 'https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/';
 
 // ---------- UI Elements ----------
-// ----- const modal = document.getElementById('authModal'); ---
+const modal = document.getElementById('authModal');
 const authTitle = document.getElementById('authTitle');
 const authSubtitle = document.getElementById('authSubtitle');
 const nameInput = document.getElementById('name');
@@ -24,11 +24,9 @@ let isSignup = false;
 
 // ---------- Modal Controls ----------
 function openModal() {
-  const modal = document.getElementById('authModal');
   modal.style.display = 'flex';
 }
 function closeModal() {
-  const modal = document.getElementById('authModal');
   modal.style.display = 'none';
 }
 
@@ -82,99 +80,53 @@ async function handleAuth() {
   }
 
   if (isSignup) {
-  const confirmPassword = document.getElementById('confirmPasswordAuth').value;
-  if (password !== confirmPassword) {
-    alert('Passwords do not match!');
-    return;
-  }
+    const confirmPassword = document.getElementById('confirmPasswordAuth').value;
+    if (password !== confirmPassword) {
+      alert('Passwords do not match!');
+      return;
+    }
 
-  // 1️⃣ Create user in Supabase Auth
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      data: { name },
-      emailRedirectTo: baseRedirect, // ✅ Redirect after email verification
-    },
-  });
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { name },
+        emailRedirectTo: baseRedirect, // ✅ Redirect after email verification
+      },
+    });
 
-  if (error) {
-    alert(error.message);
-    return;
-  }
+    if (error) {
+      alert(error.message);
+      return;
+    }
 
-  // 2️⃣ Insert user details into 'admin' table
-  const { error: insertError } = await supabase.from('admin').insert([
-    {
-      name: name,
-      email: email,
-      role: 'user', // Default role, adjust if you have role logic
-    },
-  ]);
-
-  if (insertError) {
-    console.error('Database insert error:', insertError);
-    alert('Signup complete, but failed to record user in admin table.');
+    alert('✅ Signup successful! Please check your email to confirm your account.');
+    switchToLogin();
   } else {
-    console.log('✅ User created successfully');
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    alert('✅ Login successful!');
+    closeModal();
+    showDashboard(data.user);
   }
-
-  // 3️⃣ Notify and switch view
-  alert('✅ Signup successful! Please check your email to confirm your account.');
-  switchToLogin();
-  } else {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
-
-  if (error) {
-    alert(error.message);
-    return;
-  }
-
-  alert('✅ Login successful!');
-  closeModal();
-
-  const user = data.user;
-
-  // 🧠 Fetch user's role from the 'admin' table
-  const { data: roleData, error: roleError } = await supabase
-    .from('admin')
-    .select('role')
-    .eq('email', user.email)
-    .single();
-
-  if (roleError) {
-    console.warn('Could not fetch role:', roleError.message);
-  }
-
-  // Pass user + role to dashboard
-  showDashboard(user, roleData?.role || 'user');
 }
 
 // ---------- Dashboard Display ----------
-let currentUserRole = 'user'; // global
-
-function showDashboard(user, role = 'user') {
+function showDashboard(user) {
   if (!user) return;
 
-  currentUserRole = role;
   document.getElementById('openAuthBtn').style.display = 'none';
   dashboardSection.style.display = 'block';
   userEmailEl.textContent = user.email;
-
-  // Apply role styling
-  userRoleEl.textContent = role;
-  userRoleEl.className = role.toLowerCase(); // 👈 adds class like 'admin' or 'user'
-
-  // Hide action header for non-admins
-  const actionHeader = document.querySelector('#reviewsTable thead th:last-child');
-  if (currentUserRole !== 'admin') {
-    actionHeader.style.display = 'none';
-  } else {
-    actionHeader.style.display = '';
-  }
+  userRoleEl.textContent = user.app_metadata?.role || 'user';
 
   fetchReviews();
 }
@@ -220,28 +172,16 @@ function displayReviews(reviews) {
 
   reviews.forEach((review) => {
     const row = document.createElement('tr');
-
-    // Default viewable content
-    let actions = `<td>-</td>`;
-
-    // Only admins can see action buttons
-    if (currentUserRole === 'admin') {
-      actions = `
-        <td>
-          <button class="approve" onclick="approveReview(${review.id})">Approve</button>
-          <button class="reject" onclick="rejectReview(${review.id})">Reject</button>
-        </td>
-      `;
-    }
-
     row.innerHTML = `
       <td>${review.name}</td>
       <td>${review.email}</td>
       <td>${review.message}</td>
       <td>${review.status ? '✅ Approved' : '🕓 Pending'}</td>
-      ${actions}
+      <td>
+        <button class="approve" onclick="approveReview(${review.id})">Approve</button>
+        <button class="reject" onclick="rejectReview(${review.id})">Reject</button>
+      </td>
     `;
-
     tableBody.appendChild(row);
   });
 }
@@ -286,15 +226,3 @@ window.onload = async () => {
   } = await supabase.auth.getSession();
   if (session?.user) showDashboard(session.user);
 };
-
-// Make modal functions globally accessible
-window.openModal = openModal;
-window.closeModal = closeModal;
-window.switchToSignup = switchToSignup;
-window.switchToLogin = switchToLogin;
-window.togglePassword = togglePassword;
-window.handleAuth = handleAuth;
-window.resetPassword = resetPassword;
-window.logout = logout;
-
-
