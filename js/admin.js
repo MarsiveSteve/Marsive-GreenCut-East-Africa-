@@ -24,6 +24,7 @@ let isSignup = false;
 
 // ---------- Modal Controls ----------
 function openModal() {
+  const modal = document.getElementById('authModal');
   modal.style.display = 'flex';
 }
 function closeModal() {
