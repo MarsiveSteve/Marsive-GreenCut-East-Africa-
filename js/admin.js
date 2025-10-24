@@ -285,4 +285,14 @@ window.onload = async () => {
   if (session?.user) showDashboard(session.user);
 };
 
+// Make modal functions globally accessible
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.switchToSignup = switchToSignup;
+window.switchToLogin = switchToLogin;
+window.togglePassword = togglePassword;
+window.handleAuth = handleAuth;
+window.resetPassword = resetPassword;
+window.logout = logout;
+
 
