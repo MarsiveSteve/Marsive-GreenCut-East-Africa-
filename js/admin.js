@@ -28,6 +28,7 @@ function openModal() {
   modal.style.display = 'flex';
 }
 function closeModal() {
+  const modal = document.getElementById('authModal');
   modal.style.display = 'none';
 }
 
