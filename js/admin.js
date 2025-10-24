@@ -8,7 +8,7 @@ const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
 const baseRedirect = 'https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/';
 
 // ---------- UI Elements ----------
-const modal = document.getElementById('authModal');
+// ----- const modal = document.getElementById('authModal'); ---
 const authTitle = document.getElementById('authTitle');
 const authSubtitle = document.getElementById('authSubtitle');
 const nameInput = document.getElementById('name');
