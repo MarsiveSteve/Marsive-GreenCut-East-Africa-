@@ -100,6 +100,22 @@ async function handleAuth() {
       return;
     }
 
+  // 2️⃣ Insert user details into 'admin' table
+  const { error: insertError } = await supabase.from('admin').insert([
+    {
+      name: name,
+      email: email,
+      role: 'user', // Default role, adjust if you have role logic
+    },
+  ]);
+
+  if (insertError) {
+    console.error('Database insert error:', insertError);
+    alert('Signup complete, but failed to record user in admin table.');
+  } else {
+    console.log('✅ User created successfully');
+  }
+
     alert('✅ Signup successful! Please check your email to confirm your account.');
     switchToLogin();
   } else {
