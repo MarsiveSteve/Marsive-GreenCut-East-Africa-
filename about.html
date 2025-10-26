@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Marsive Greencut East Africa</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🌿 Marsive Greencut EA</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html#appointment-section" class="book-btn">Book Service</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>About Marsive Greencut East Africa</h1>
+    <p>Committed to greener spaces and a better environment.</p>
+  </section>
+
+  <section class="about">
+    <h2>Our Mission</h2>
+    <p>To have a functional and climate-resilient ecosystem across every county through sustainable lawn and tree management.</p>
+
+    <h2>Our Vision</h2>
+    <p>To be the biggest player in climate change — planting 20+ billion trees in 10 years, with global collaboration to make the planet better than we found it.</p>
+
+    <h2>Our Values</h2>
+    <ul>
+      <li>Environmental responsibility</li>
+      <li>Community partnership</li>
+      <li>Innovation and sustainability</li>
+      <li>Professionalism and integrity</li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Marsive Greencut East Africa — All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Fade transition
+    window.addEventListener('load', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+      const isInternal = link.hostname === window.location.hostname;
+      if (isInternal) {
+        link.addEventListener('click', e => {
+          const target = link.getAttribute('href');
+          if (!target.startsWith('#')) {
+            e.preventDefault();
+            document.body.classList.remove('fade-in');
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+              window.location.href = target;
+            }, 400);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
