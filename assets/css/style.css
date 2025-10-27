@@ -1,6 +1,4 @@
-/* =========================================================
-   RESET & BASE
-========================================================= */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +7,10 @@
 
 body {
   font-family: Georgia, sans-serif;
+}
+
+/* Smooth fade-in and fade-out transition */
+body {
   opacity: 0;
   transition: opacity 0.6s ease;
 }
@@ -17,173 +19,176 @@ body.fade-in {
   opacity: 1;
 }
 
-/* =========================================================
-   HEADER (DESKTOP FIRST)
-========================================================= */
+/* ---------- Header base (mobile-first) ---------- */
 header {
-  position: fixed; /* ✅ Stay visible on scroll */
-  top: 0;
-  width: 100%;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 12px 20px;
   background-color: #e5cda3;
-  height: 90px;
-  padding: 0 30px;
+  top: 0;
   z-index: 1000;
+  height: 80px; /* Height for the navbar */
 }
 
-/* Logo */
-.logo {
+/* hamburger (mobile visible) */
+.hamburger {
   display: flex;
-  align-items: center;
-  pointer-events: auto;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1200; /* Keeps it above the centered logo */
+}
+.hamburger div {
+  width: 28px;
+  height: 3px;
+  background-color: #064420;
+  border-radius: 2px;
+}
+
+/* Visually-centered logo on mobile */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%); /* Vertically center inside header */
+  pointer-events: none; /* So taps go to hamburger/button, not the logo */
 }
 .logo img {
-  max-height: 70px;
-  max-width: 180px;
+  display: block;
+  max-height: 56px;
+  max-width: 140px;
   width: auto;
   height: auto;
 }
 
-/* Website Name (Desktop) */
+/* Website name on mobile - hidden */
 .website-name {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #064420;
-  margin-left: 15px;
-}
-
-/* Desktop Navigation */
-.nav-links {
-  display: flex;
-  gap: 28px;
-  margin-left: auto;
-  padding: 0;
-  list-style: none;
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-.nav-links a {
-  text-decoration: none;
-  color: inherit;
-}
-.nav-links a:hover {
-  color: #064420;
-}
-
-/* Desktop CTA button */
-.btn {
-  display: inline-block;
-  margin-left: 24px;
-  background: #28a745;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Hide Hamburger on Desktop */
-.hamburger {
   display: none;
 }
 
-/* =========================================================
-   MOBILE RESPONSIVE (≤768px)
-========================================================= */
-/* ---------- Default (Desktop First) ---------- */
-@media (min-width: 769px) {
-  .hamburger {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex;
-  }
-
-  .btn {
-    display: inline-block;
-  }
-
-  .logo {
-    position: relative;
-    transform: none;
-  }
-
+/* ---------- Desktop (≥768px) ---------- */
+@media (min-width: 768px) {
   .website-name {
-    display: block;
+    display: block;   /* Make it visible again on desktop */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #064420;
+    margin-left: 15px;
   }
 }
 
-@media (max-width: 768px) {
 
+/* Nav & button hidden/compact on mobile by default */
+.nav-links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  display: none;
+}
+
+/* Make header the reference for absolute positioning */
+header {
+  position: relative;
+  z-index: 1000; /* Keeps header/nav above hero */
+}
+
+/* Mobile dropdown when .active is added */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Sits right under header */
+  left: 0;
+  width: 100%;
+  background: #e5cda3;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  z-index: 999;
+}
+
+.nav-links.active li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* ---------- Desktop (≥768px) ---------- */
+@media (min-width: 768px) {
   header {
-    height: 80px;
-    padding: 12px 20px;
+    position: relative;
+    justify-content: flex-start;
+    height: 90px;               /* taller navbar */
+    padding: 0 30px;            /* more breathing space */
   }
 
-  /* Hamburger becomes visible */
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    z-index: 1200;
-  }
-  .hamburger div {
-    width: 28px;
-    height: 3px;
-    background-color: #064420;
-    border-radius: 2px;
-  }
-
-  /* Center logo on mobile */
+  /* Reset logo position on desktop */
   .logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-  .logo img {
-    max-height: 56px;
-    max-width: 140px;
-  }
-
-  /* Hide website name on mobile */
-  .website-name {
-    display: none;
-  }
-
-  /* Hide nav and button on mobile until toggled */
-  .nav-links {
-    display: none;
-  }
-  .btn {
-    display: none;
-  }
-
-  /* Dropdown when active */
-  .nav-links.active {
+    position: static;
+    transform: none;
+    margin-right: 24px;
+    pointer-events: auto;
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    width: 100%;
-    background: #e5cda3;
-    padding: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-    z-index: 999;
+    align-items: center;
   }
-  .nav-links.active li {
-    margin: 10px 0;
-    text-align: center;
+
+  .logo img {
+    max-height: 70px;
+    max-width: 180px;
+  }
+
+  /* Add website name next to logo */
+  .website-name {
+    font-size: 1.5rem;        /* Adjust font size */
+    font-weight: bold;
+    color: #064420;           /* Dark green color */
+    margin-left: 15px;        /* Space between logo and website name */
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    margin-left: auto;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .nav-links a {
+  text-decoration: none;  /* Removes the underline */
+  color: inherit;         /* Keeps the text color consistent */
+}
+
+.nav-links a:hover {
+  text-decoration: none;  /* Ensures no underline appears on hover */
+  color: #064420;         /* Optional: change hover color if desired */
+}
+
+  .btn {
+    display: inline-block;
+    margin-left: 24px;
+    background: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  header .nav-links,
+  header .btn {
+    align-self: center;
+  }
+
+  /* Hide hamburger on desktop */
+  .hamburger {
+    display: none;  /* hide hamburger on desktop */
   }
 }
 
