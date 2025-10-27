@@ -198,6 +198,8 @@ header {
   pointer-events: auto;
 }
 
+backdrop-filter: blur(5px);
+
 /* Spacing between nav bar and hero text */
   body > *:not(header):first-child {
     margin-top: 110px;
