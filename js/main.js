@@ -1,32 +1,4 @@
-// Toggle mobile nav menu
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-
-    // --- (Welcome Section)One-time Dynamic Fade-Up + Scale Animation with Stagger ---
-    const boxes = document.querySelectorAll('.service-box1');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = [...boxes].indexOf(entry.target);
-          const delay = index * 200; // 200ms stagger per item
-
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, delay);
-
-          // Animate only once
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    boxes.forEach(box => observer.observe(box));
-
+// ✅ Toggle mobile nav menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const closeMenu = document.querySelector('.close-menu');
@@ -35,17 +7,36 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Close menu when clicking the X
+// ✅ Close menu when clicking the X
 closeMenu.addEventListener('click', () => {
   navLinks.classList.remove('active');
 });
 
-// Close menu when clicking outside
+// ✅ Close menu when clicking outside
 document.addEventListener('click', (e) => {
   if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
     navLinks.classList.remove('active');
   }
 });
+
+// ✅ One-time Dynamic Fade-Up + Scale Animation with Stagger
+const boxes = document.querySelectorAll('.service-box1');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const index = [...boxes].indexOf(entry.target);
+      const delay = index * 200; // 200ms stagger per item
+
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, delay);
+
+      observer.unobserve(entry.target); // Animate only once
+    }
+  });
+}, { threshold: 0.2 });
+
+boxes.forEach(box => observer.observe(box));
 
 // ===== UNIVERSAL FADE-IN ANIMATION FOR ALL SERVICE PARTS =====
 document.addEventListener("DOMContentLoaded", () => {
