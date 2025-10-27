@@ -166,7 +166,7 @@ header {
     text-align: center;
   }
 
-/*
+
  .close-menu {
     display: block;
     position: absolute;
@@ -182,7 +182,7 @@ header {
   .close-menu:hover {
     transform: rotate(90deg);
   }
-} */
+} 
 
 /* --- Smooth dropdown animation --- */
 .nav-links {
