@@ -31,7 +31,7 @@ const observer = new IntersectionObserver((entries) => {
         entry.target.classList.add('visible');
       }, delay);
 
-      observer.unobserve(entry.target); // Animate only once
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.2 });
