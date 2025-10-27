@@ -161,14 +161,12 @@ header {
     margin: 10px 0;
     text-align: center;
   }
-}
 
-/* Spacing between nav bar and hero text 
-@media (max-width: 1024px) {
+/* Spacing between nav bar and hero text */
   body > *:not(header):first-child {
     margin-top: 110px;
   }
-} */
+} 
 
 /* Hero section */
 .hero {
