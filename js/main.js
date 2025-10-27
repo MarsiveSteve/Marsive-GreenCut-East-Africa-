@@ -1,43 +1,31 @@
-// ✅ Toggle mobile nav menu
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const closeMenu = document.querySelector('.close-menu');
+// Toggle mobile nav menu
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
 });
 
-// ✅ Close menu when clicking the X
-closeMenu.addEventListener('click', () => {
-  navLinks.classList.remove('active');
-});
+    // --- (Welcome Section)One-time Dynamic Fade-Up + Scale Animation with Stagger ---
+    const boxes = document.querySelectorAll('.service-box1');
 
-// ✅ Close menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-    navLinks.classList.remove('active');
-  }
-});
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = [...boxes].indexOf(entry.target);
+          const delay = index * 200; // 200ms stagger per item
 
-// ✅ One-time Dynamic Fade-Up + Scale Animation with Stagger
-const boxes = document.querySelectorAll('.service-box1');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const index = [...boxes].indexOf(entry.target);
-      const delay = index * 200; // 200ms stagger per item
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
 
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, delay);
+          // Animate only once
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
 
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-boxes.forEach(box => observer.observe(box));
-
+    boxes.forEach(box => observer.observe(box));
 // ===== UNIVERSAL FADE-IN ANIMATION FOR ALL SERVICE PARTS =====
 document.addEventListener("DOMContentLoaded", () => {
   const serviceSection = document.querySelector(".services-section");
