@@ -1256,23 +1256,32 @@ body {
 }
 
 //social media styles 
-social-icons {
-    text-align: center;
-    margin: 20px 0 10px 0;
-  }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+}
 
-  .social-icons a {
-    color: #ffffff;
-    background: #2e7d32;
-    display: inline-block;
-    margin: 0 8px;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 18px;
-    transition: all 0.3s ease;
-  }
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #2e7d32; /* Deep eco-green */
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.35s ease, background 0.3s;
+}
 
-  .social-icons a:hover {
-    background: #1b5e20;
-    transform: translateY(-3px);
-  }
+.social-icons a i {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.social-icons a:hover {
+  transform: scale(1.12);
+  background-color: #36a54a; /* lighter green on hover */
+  box-shadow: 0 0 14px rgba(54, 165, 74, 0.7);
+}
