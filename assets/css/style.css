@@ -162,6 +162,14 @@ header {
     text-align: center;
   }
 }
+
+/* Spacing between nav bar and hero text */
+@media (max-width: 1024px) {
+  body > *:not(header):first-child {
+    margin-top: 110px;
+  }
+}
+
 /* Hero section */
 .hero {
   position: relative;
