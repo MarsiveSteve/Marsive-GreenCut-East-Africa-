@@ -162,6 +162,20 @@ header {
     text-align: center;
   }
 
+.close-menu {
+  display: block;
+  text-align: right;
+  font-size: 1.8rem;
+  color: #064420;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: transform 0.2s ease;
+}
+
+.close-menu:hover {
+  transform: rotate(90deg);
+}
+
 /* Spacing between nav bar and hero text */
   body > *:not(header):first-child {
     margin-top: 110px;
