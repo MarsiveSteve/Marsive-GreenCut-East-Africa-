@@ -27,6 +27,26 @@ hamburger.addEventListener("click", () => {
 
     boxes.forEach(box => observer.observe(box));
 
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const closeMenu = document.querySelector('.close-menu');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking the X
+closeMenu.addEventListener('click', () => {
+  navLinks.classList.remove('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+    navLinks.classList.remove('active');
+  }
+});
+
 // ===== UNIVERSAL FADE-IN ANIMATION FOR ALL SERVICE PARTS =====
 document.addEventListener("DOMContentLoaded", () => {
   const serviceSection = document.querySelector(".services-section");
