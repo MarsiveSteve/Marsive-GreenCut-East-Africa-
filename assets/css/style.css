@@ -96,6 +96,30 @@ header {
 /* =========================================================
    MOBILE RESPONSIVE (≤768px)
 ========================================================= */
+/* ---------- Default (Desktop First) ---------- */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .btn {
+    display: inline-block;
+  }
+
+  .logo {
+    position: relative;
+    transform: none;
+  }
+
+  .website-name {
+    display: block;
+  }
+}
+
 @media (max-width: 768px) {
 
   header {
