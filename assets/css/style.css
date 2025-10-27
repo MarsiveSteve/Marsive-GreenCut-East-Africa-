@@ -94,9 +94,9 @@ header {
 }
 
 /* =========================================================
-   MOBILE RESPONSIVE (≤768px)
+   MOBILE RESPONSIVE (≤1024px)
 ========================================================= */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   header {
     height: 80px;
