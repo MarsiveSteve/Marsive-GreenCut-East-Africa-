@@ -183,6 +183,20 @@ header {
   }
 }
 
+/* --- Smooth dropdown animation --- */
+.nav-links {
+  opacity: 0;
+  transform: translateY(-15px);
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+
+.nav-links.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
 /* Spacing between nav bar and hero text */
   body > *:not(header):first-child {
