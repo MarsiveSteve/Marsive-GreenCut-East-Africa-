@@ -26,6 +26,7 @@ hamburger.addEventListener("click", () => {
     }, { threshold: 0.2 });
 
     boxes.forEach(box => observer.observe(box));
+
 // ===== UNIVERSAL FADE-IN ANIMATION FOR ALL SERVICE PARTS =====
 document.addEventListener("DOMContentLoaded", () => {
   const serviceSection = document.querySelector(".services-section");
