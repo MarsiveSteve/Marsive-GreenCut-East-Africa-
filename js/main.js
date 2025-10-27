@@ -27,6 +27,20 @@ hamburger.addEventListener("click", () => {
 
     boxes.forEach(box => observer.observe(box));
 
+// --- Hero Section Animation ---
+const heroText = document.querySelector('.hero-text');
+
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      heroText.classList.add('visible');
+      heroObserver.unobserve(entry.target); // Animate once
+    }
+  });
+}, { threshold: 0.3 });
+
+if (heroText) heroObserver.observe(heroText);
+
 // ===== UNIVERSAL FADE-IN ANIMATION FOR ALL SERVICE PARTS =====
 document.addEventListener("DOMContentLoaded", () => {
   const serviceSection = document.querySelector(".services-section");
