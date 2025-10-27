@@ -392,6 +392,33 @@ header {
       }
     }
 
+/* ---------- Hero Animation ---------- */
+.hero-text h1,
+.hero-text p,
+.hero-btn {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.hero-text.visible h1,
+.hero-text.visible p,
+.hero-text.visible .hero-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: slightly stagger them for a natural feel */
+.hero-text.visible h1 {
+  transition-delay: 0.1s;
+}
+.hero-text.visible p {
+  transition-delay: 0.25s;
+}
+.hero-text.visible .hero-btn {
+  transition-delay: 0.4s;
+}
+
 /* Ensure parent allows absolute positioning */
 .service-box1 {
   position: relative;
