@@ -3,177 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marsive Greencut EA — Our Services</title>
-
+  <title>Marsive Greencut — Services</title>
   <style>
+    :root {
+      --navy: #001f3f;
+      --grey: #f0f0f0;
+      --green: #2e7d32;
+      --light-green: #e8f5e9;
+      --white: #fff;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f6f6f6;
-      color: #222;
-      opacity: 0;
-      transition: opacity 0.4s ease;
+      background: var(--grey);
+      color: var(--white);
     }
 
-    body.fade-in {
-      opacity: 1;
+    header {
+      background: var(--navy);
+      padding: 12px 20px;
+      text-align: left;
     }
 
-    body.fade-out {
-      opacity: 0;
-    }
-
-    .header {
-      background: #2e7d32;
-      color: #fff;
-      padding: 15px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    .nav a {
-      color: #fff;
+    header a {
+      color: var(--white);
       text-decoration: none;
-      margin: 0 12px;
-      transition: color 0.3s;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      text-decoration: underline;
-    }
-
-    .book-btn {
-      background: #fff;
-      color: #2e7d32;
-      padding: 6px 12px;
-      border-radius: 4px;
       font-weight: bold;
+      font-size: 16px;
     }
 
-    .hero {
-      background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(46, 125, 50, 0.7)),
-                  url('images/lawn-bg.jpg') center/cover no-repeat;
+    h1, h2 {
+      color: var(--navy);
       text-align: center;
-      padding: 100px 20px;
-      color: #fff;
     }
 
-    .hero h1 {
-      font-size: 2.2em;
-      margin-bottom: 10px;
+    .services-section {
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    .services {
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 40px 20px;
+      margin-top: 30px;
     }
 
-    .service-card {
-      background: #fff;
-      padding: 25px;
+    .card {
+      background: var(--navy);
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+
+    .card h3 {
+      color: var(--light-green);
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li::before {
+      content: "• ";
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .learn-more {
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      padding: 8px 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    footer {
+      background: var(--green);
+      color: var(--white);
       text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-card h2 {
-      color: #2e7d32;
-      margin-bottom: 10px;
-    }
-
-    .footer {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 15px;
+      padding: 25px 10px;
       margin-top: 40px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: var(--white);
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">🌿 Marsive Greencut EA</div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="about.html">About</a>
-      <a href="index.html#appointment-section" class="book-btn">Book Service</a>
-    </nav>
+
+  <header>
+    <a href="index.html">← Back to Home</a>
   </header>
 
-  <section class="hero">
-    <h1>Our Lawn & Garden Services</h1>
-    <p>Professional care for your lawn, trees, and garden spaces.</p>
+  <section class="services-section">
+    <h1>Our Services</h1>
+    <p style="color:#333;">Professional lawn care and environmental services designed to beautify your space while contributing to a greener East Africa.</p>
+    
+    <div class="cards">
+      <div class="card">
+        <h3>Lawn Mowing</h3>
+        <p>Professional lawn mowing services to keep your grass healthy and trimmed year-round.</p>
+        <ul>
+          <li>Weekly/Monthly schedules</li>
+          <li>Edge trimming</li>
+          <li>Grass collection</li>
+          <li>Seasonal adjustments</li>
+        </ul>
+        <button class="learn-more">Learn More</button>
+      </div>
+
+      <div class="card">
+        <h3>Tree Planting</h3>
+        <p>Environmental conservation through strategic tree planting initiatives.</p>
+        <ul>
+          <li>Native species selection</li>
+          <li>Soil preparation</li>
+          <li>Planting guidance</li>
+          <li>Growth monitoring</li>
+        </ul>
+        <button class="learn-more">Learn More</button>
+      </div>
+
+      <div class="card">
+        <h3>Garden Maintenance</h3>
+        <p>Complete garden care including pruning, weeding, fertilizing, and pest control.</p>
+        <ul>
+          <li>Pruning & trimming</li>
+          <li>Weed control</li>
+          <li>Fertilization</li>
+          <li>Pest management</li>
+        </ul>
+        <button class="learn-more">Learn More</button>
+      </div>
+
+      <div class="card">
+        <h3>Landscaping</h3>
+        <p>Transform your outdoor space with professional design and installation services.</p>
+        <ul>
+          <li>Design consultation</li>
+          <li>Hardscape installation</li>
+          <li>Plant selection</li>
+          <li>Irrigation systems</li>
+        </ul>
+        <button class="learn-more">Learn More</button>
+      </div>
+    </div>
   </section>
 
-  <section class="services">
-    <div class="service-card">
-      <h2>Lawn Mowing</h2>
-      <p>Keep your yard perfectly trimmed and healthy with our regular mowing services.</p>
+  <footer>
+    <p>© 2025 Marsive Greencut. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:info@marsivegreencut.com"><i class="fas fa-envelope"></i></a>
     </div>
-
-    <div class="service-card">
-      <h2>Tree Trimming</h2>
-      <p>We prune and shape your trees for safety, growth, and beauty.</p>
-    </div>
-
-    <div class="service-card">
-      <h2>Landscaping</h2>
-      <p>Transform your outdoor area with custom landscape designs and maintenance.</p>
-    </div>
-
-    <div class="service-card">
-      <h2>Irrigation Installation</h2>
-      <p>Water-efficient systems designed to keep your lawn green all year round.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 Marsive Greencut East Africa — All Rights Reserved</p>
   </footer>
 
-  <script>
-    // Fade in/out transition
-    window.addEventListener('load', () => {
-      document.body.classList.add('fade-in');
-    });
-
-    document.querySelectorAll('a').forEach(link => {
-      const isInternal = link.hostname === window.location.hostname;
-      if (isInternal) {
-        link.addEventListener('click', e => {
-          const target = link.getAttribute('href');
-          if (!target.startsWith('#')) {
-            e.preventDefault();
-            document.body.classList.remove('fade-in');
-            document.body.classList.add('fade-out');
-            setTimeout(() => {
-              window.location.href = target;
-            }, 400);
-          }
-        });
-      }
-    });
-  </script>
-
-<!-- Back to Home Button -->
-<div class="back-home-container">
-  <a href="index.html" class="back-home-btn">Back to Home</a>
-</div>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
