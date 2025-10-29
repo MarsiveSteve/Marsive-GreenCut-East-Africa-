@@ -540,48 +540,18 @@ header {
 
 .learn-more-btn {
   display: inline-block;
-  background-color: #0c4724;
-  color: #fff;
-  padding: 14px 36px; /* Increased padding for comfort */
-  border-radius: 8px;
-  font-weight: 600;
+  background-color: #027a3a;
+  color: white;
   text-decoration: none;
-  font-size: 1rem; /* Scales nicely across devices */
-  letter-spacing: 0.5px; /* Adds breathing room between letters */
-  transition: all 0.3s ease;
-  text-align: center;
-  box-sizing: border-box;
+  font-size: 1.05rem;
+  padding: 14px 32px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
 }
 
-/* Hover effect */
 .learn-more-btn:hover {
-  background-color: #128a43;
-  transform: scale(1.05);
-  box-shadow: 0 8px 18px rgba(12, 71, 36, 0.3);
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .learn-more-btn {
-    padding: 12px 30px;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .learn-more-btn {
-    padding: 10px 26px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .learn-more-btn {
-    display: block; /* Center on small screens */
-    margin: 10px auto;
-    padding: 10px 24px;
-    font-size: 0.9rem;
-  }
+  background-color: #025e2d;
 }
 
 /* ✅ Mobile view (fix spacing & image sizing) */
