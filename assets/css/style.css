@@ -844,21 +844,21 @@ header {
 /* Responsive adjustments */
 @media screen and (max-width: 1024px) {
   .service2 {
-    flex: 1 1 30%; /* still 3 in a row on tablets */
+    flex: 1 1 30%; /* Adjust basis for medium screens, still 3 in a row */
     max-width: 300px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .service2 {
-    flex: 1 1 30%; /* keep 3 per row if possible */
+    flex: 1 1 30%; 
     max-width: 280px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .service2 {
-    flex: 1 1 100%; /* stack vertically only on small phones */
+    flex: 1 1 100%; 
     max-width: 400px;
   }
 }
@@ -972,7 +972,7 @@ header {
     max-width: 350px;
   }
 }
-}
+
 
 /* Review form styling */
 .review-form {
@@ -1020,9 +1020,9 @@ header {
   width: 360px;            /* same width as testimonial cards */
   text-align: left;
   margin-top: 30px;
-  margin-left: 10px;       /* small left offset below cards */
+  margin-left: 10px;       /* slight left margin for spacing */
   display: inline-block;   /* prevents full stretch */
-  vertical-align: top;     /* aligns neatly with card top if ever side-by-side */
+  vertical-align: top;     
 }
 
 .review-form button:hover {
@@ -1052,7 +1052,7 @@ body {
   max-width: 900px; /* narrower to leave beige sides on desktop */
   margin: 50px auto; /* centers the section */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
-  border-radius: 12px; /* optional: softens edges for modern look */
+  border-radius: 0px; /* optional: softens edges for modern look */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1147,8 +1147,8 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .appointment-section {
-    margin: 30px 15px;  /* adds side beige margins on small screens */
-    padding: 40px 15px; /* reduces padding for smaller screens */
+    margin: 30px 15px;  
+    padding: 40px 15px; 
     border-radius: 10px;
   }
 
@@ -1257,21 +1257,23 @@ body {
   }
 }
 
-//social media styles 
+/* Social Media Icons */
 .social-icons {
   display: flex;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 22px;
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 12px; /* spacing above the "All rights reserved" text */
 }
 
 .social-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  background-color: #2e7d32; /* Deep eco-green */
+  width: 38px; /* smaller size */
+  height: 38px;
+  background-color: #2e7d32; /* deep eco-green */
   border-radius: 50%;
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.35s ease, background 0.3s;
@@ -1279,11 +1281,11 @@ body {
 
 .social-icons a i {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 16px; /* slightly smaller icon size */
 }
 
 .social-icons a:hover {
   transform: scale(1.12);
   background-color: #36a54a; /* lighter green on hover */
-  box-shadow: 0 0 14px rgba(54, 165, 74, 0.7);
+  box-shadow: 0 0 10px rgba(54, 165, 74, 0.7);
 }
