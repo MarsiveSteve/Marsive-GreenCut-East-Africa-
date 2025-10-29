@@ -38,7 +38,7 @@ header {
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 1200; /* Keeps it above the centered logo */
+  z-index: 1200; 
 }
 .hamburger div {
   width: 28px;
@@ -53,8 +53,8 @@ header {
   left: 50%;
   transform: translateX(-50%);
   top: 50%;
-  transform: translate(-50%, -50%); /* Vertically center inside header */
-  pointer-events: none; /* So taps go to hamburger/button, not the logo */
+  transform: translate(-50%, -50%); 
+  pointer-events: none; 
 }
 .logo img {
   display: block;
@@ -72,7 +72,7 @@ header {
 /* ---------- Desktop (≥768px) ---------- */
 @media (min-width: 768px) {
   .website-name {
-    display: block;   /* Make it visible again on desktop */
+    display: block;   /* Show website name on desktop */
     font-size: 1.5rem;
     font-weight: bold;
     color: #064420;
@@ -95,7 +95,7 @@ header {
 /* Make header the reference for absolute positioning */
 header {
   position: relative;
-  z-index: 1000; /* Keeps header/nav above hero */
+  z-index: 1000; 
 }
 
 /* Mobile dropdown when .active is added */
@@ -103,7 +103,7 @@ header {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 100%; /* Sits right under header */
+  top: 100%; 
   left: 0;
   width: 100%;
   background: #e5cda3;
@@ -122,8 +122,8 @@ header {
   header {
     position: relative;
     justify-content: flex-start;
-    height: 90px;               /* taller navbar */
-    padding: 0 30px;            /* more breathing space */
+    height: 90px;               
+    padding: 0 30px;            
   }
 
   /* Reset logo position on desktop */
@@ -143,10 +143,10 @@ header {
 
   /* Add website name next to logo */
   .website-name {
-    font-size: 1.5rem;        /* Adjust font size */
+    font-size: 1.5rem;        
     font-weight: bold;
-    color: #064420;           /* Dark green color */
-    margin-left: 15px;        /* Space between logo and website name */
+    color: #064420;          
+    margin-left: 15px;        
   }
 
   .nav-links {
@@ -159,13 +159,13 @@ header {
   }
 
   .nav-links a {
-  text-decoration: none;  /* Removes the underline */
-  color: inherit;         /* Keeps the text color consistent */
+  text-decoration: none;  
+  color: inherit;         
 }
 
 .nav-links a:hover {
-  text-decoration: none;  /* Ensures no underline appears on hover */
-  color: #064420;         /* Optional: change hover color if desired */
+  text-decoration: none;  
+  color: #064420;         
 }
 
   .btn {
@@ -188,20 +188,20 @@ header {
 
   /* Hide hamburger on desktop */
   .hamburger {
-    display: none;  /* hide hamburger on desktop */
+    display: none;  
   }
 }
 
 /* Hero section */
 .hero {
   position: relative;
-  min-height: 100vh; /* 👈 Full viewport height */
+  min-height: 100vh; 
   background: url('../images/banner.webp') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: left;
-  padding-top: 140px; /* space from navbar */
-  padding-bottom: 80px; /* extra breathing room */
+  padding-top: 140px; 
+  padding-bottom: 80px; 
   box-sizing: border-box;
 }
 
@@ -210,9 +210,9 @@ header {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Darkened overlay */
-  filter: blur(3px); /* Optional: adds slight blur for smoother background */
-  z-index: 1; /* Ensure overlay is on top of the image */
+  background-color: rgba(0, 0, 0, 0.4); 
+  filter: blur(3px); 
+  z-index: 1; 
 }
 
 .hero-text {
@@ -289,8 +289,8 @@ header {
 /* ✅ Mobile */
 @media screen and (max-width: 768px) {
   .hero {
-    min-height: 95vh; /* slightly taller for small screens */
-    padding-top: 100px; /* 👈 creates space below navbar */
+    min-height: 95vh; 
+    padding-top: 100px; 
     padding-bottom: 100px;
     background-size: cover;
     background-position: center top;
@@ -339,7 +339,7 @@ header {
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 100px; /* Adds top space below fixed navbar */
+    padding-top: 100px; 
   }
 
   .hero-text {
@@ -498,8 +498,8 @@ header {
 
 /* Comprehensive Services Section */
 .comprehensive-services {
-  background-color: #0c4724; /* Green background color */
-  padding: 60px 0 30px; /* Desktop: more top spacing */
+  background-color: #0c4724; 
+  padding: 60px 0 30px; 
   text-align: center;
 }
 
@@ -522,7 +522,7 @@ header {
 /* Tablet view */
 @media (max-width: 768px) {
   .comprehensive-services {
-    padding: 40px 0 25px; /* Reduce top spacing on tablets */
+    padding: 40px 0 25px; 
   }
   .services-container h2 {
     font-size: 28px;
@@ -557,7 +557,7 @@ header {
 /* ✅ Mobile view (fix spacing & image sizing) */
 @media (max-width: 1024px) {
   .comprehensive-services {
-    padding: 20px 0; /* Reduce vertical spacing */
+    padding: 20px 0; 
   }
 
   .services-container {
@@ -567,7 +567,7 @@ header {
 
   .services-container h2 {
     font-size: 22px;
-    margin-bottom: 8px; /* Tighter title spacing */
+    margin-bottom: 8px; 
   }
 
   .services-container p {
@@ -577,10 +577,10 @@ header {
   }
 
   .services-container img {
-    width: 100%;       /* Fill full screen width */
-    height: auto;      /* Keep aspect ratio */
+    width: 100%;       
+    height: auto;      
     display: block;
-    margin: 10px 0;    /* Small spacing above/below */
+    margin: 10px 0;    
     border-radius: 6px;
   }
 }
@@ -598,7 +598,7 @@ header {
   }
 
   .learn-more-btn:hover {
-    transform: none; /* Prevent layout shift on small screens */
+    transform: none; 
     box-shadow: 0 6px 14px rgba(12, 71, 36, 0.25);
   }
 }
@@ -606,116 +606,116 @@ header {
 
 /* Lawn Mowing Care Section */
 .lawn-mowing-care {
-  background-color: #0c4724;  /* Green background */
-  padding: 40px 0;  /* Reduced padding to reduce the height */
+  background-color: #0c4724;  
+  padding: 40px 0;  
 }
 
 .lawn-mowing-care .container {
   width: 80%;
-  max-width: 1200px; /* ✅ Prevents full stretch on large screens */
+  max-width: 1200px; 
   margin: 0 auto;
 }
 
 .lawn-mowing-care .content {
   display: flex;
-  justify-content: space-between; /* Aligns the text and image side by side */
-  align-items: center; /* Vertically centers the items */
-  gap: 20px;  /* Adds space between the image and text */
-  flex-wrap: wrap; /* ✅ Prevents items from stretching too wide */
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 20px; 
+  flex-wrap: wrap; 
 }
 
 .lawn-mowing-care img {
-  width: 50%;  /* Image takes up 50% of the container */
-  max-width: 100%; /* ✅ Keeps image from overflowing container */
-  height: auto;  /* ✅ Maintain natural aspect ratio */
-  max-height: 400px;  /* ✅ Limit image height */
+  width: 50%;  
+  max-width: 100%; 
+  height: auto;  
+  max-height: 400px;  
   object-fit: cover;
-  border-radius: 0px;  /* Optional: adds rounded corners to the image */
+  border-radius: 0px;  
 }
 
 .lawn-mowing-care .text {
-  width: 45%;  /* Text takes up 45% of the container */
-  color: white;  /* Text color */
+  width: 45%;  
+  color: white;  
 }
 
 .lawn-mowing-care h3 {
-  font-size: 1.8rem;  /* Reduced font size for the title */
-  font-family: 'Georgia', serif;  /* Title font style */
-  margin-bottom: 15px;  /* Reduced margin below the title */
-  text-align: center;  /* Left-align the title */
+  font-size: 1.8rem;  
+  font-family: 'Georgia', serif;
+  margin-bottom: 15px; 
+  text-align: center;  
 }
 
 .lawn-mowing-care p {
-  font-size: 1rem;  /* Reduced font size for the paragraph */
-  font-family: 'Arial', sans-serif;  /* Consistent font for the paragraph */
-  text-align: left;  /* Left-align the paragraph text */
-  line-height: 1.5;  /* Adjust line height for better readability */
+  font-size: 1rem;  
+  font-family: 'Arial', sans-serif;  
+  text-align: left;  
+  line-height: 1.5;  /
 }
 
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
   .lawn-mowing-care .content {
-    flex-direction: column;  /* Stacks image and text vertically on mobile */
-    text-align: center;  /* Center-aligns text on mobile */
+    flex-direction: column;  
+    text-align: center;  
   }
 
   .lawn-mowing-care img {
-    width: 95%;  /* Image takes up slightly more width */
-    height: auto;  /* Keeps aspect ratio */
-    margin: 0 auto 25px;  /* Centers and adds space below */
+    width: 95%;  
+    height: auto;  
+    margin: 0 auto 25px;  
     display: block;
   }
 
   .lawn-mowing-care .text {
-    width: 85%;  /* Slightly reduced text width for balance */
-    margin: 0 auto 25px;  /* Centers and adds space */
+    width: 85%;  
+    margin: 0 auto 25px;  
   }
 
   .lawn-mowing-care h3 {
-    font-size: 1.6rem;  /* Keep same size */
+    font-size: 1.6rem;  
   }
 
   .lawn-mowing-care p {
-    font-size: 0.95rem;  /* Slightly increased for readability */
+    font-size: 0.95rem;  
   }
 }
 
 /* Medium screens (481px - 768px) to match services3 behavior */
 @media (min-width: 481px) and (max-width: 768px) {
   .lawn-mowing-care img {
-    width: 90%;  /* More balanced size for tablets */
-    height: 280px;  /* Match services3 visual rhythm */
-    object-fit: cover;  /* Ensures good crop on different image ratios */
+    width: 90%;  
+    height: 280px;  
+    object-fit: cover;  
   }
 }
 
 
 /* Irrigation Setup Section */
 .irrigation-setup {
-  background-color: #0c4724;  /* Green background */
-  padding: 40px 0;  /* Reduced padding to reduce the height */
+  background-color: #0c4724;  
+  padding: 40px 0;  
 }
 
 .irrigation-setup .container {
   width: 80%;
-  max-width: 1200px; /* ✅ Prevents stretching beyond a fixed limit */
+  max-width: 1200px; 
   margin: 0 auto;
 }
 
 .irrigation-setup .content {
   display: flex;
-  flex-direction: row-reverse;  /* Image on the right, text on the left */
+  flex-direction: row-reverse;  
   justify-content: space-between;
-  align-items: center; /* Vertically centers the items */
-  gap: 20px;  /* Adds space between the image and text */
-  flex-wrap: wrap; /* ✅ Ensures layout doesn’t stretch awkwardly */
+  align-items: center; 
+  gap: 20px;  
+  flex-wrap: wrap; 
 }
 
 .irrigation-setup img {
   width: 50%;
-  max-width: 100%; /* ✅ Prevents image overflow */
-  height: auto; /* ✅ Keeps proper aspect ratio */
-  max-height: 400px; /* ✅ Limits tall image stretch */
+  max-width: 100%; 
+  height: auto; 
+  max-height: 400px; 
   object-fit: cover;
   border-radius: 0px;
 }
@@ -725,8 +725,8 @@ header {
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centers text vertically */
-  text-align: center;      /* centers text horizontally */
+  justify-content: center; 
+  text-align: center;      
 }
 
 .irrigation-setup h3 {
@@ -739,13 +739,13 @@ header {
   font-size: 1rem;
   font-family: 'Arial', sans-serif;
   line-height: 1.5;
-  text-align: left; /* paragraphs left aligned */
+  text-align: left; /* paragraph left-aligned for readability */
 }
 
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {
   .irrigation-setup .content {
-    flex-direction: column;  /* Stack image above text */
+    flex-direction: column;  
     text-align: center;
   }
 
@@ -766,7 +766,7 @@ header {
 
   .irrigation-setup p {
     font-size: 0.9rem;
-    text-align: center; /* make paragraph centered on mobile if you prefer */
+    text-align: center; 
   }
 }
 
@@ -784,11 +784,11 @@ header {
 
 /* Why Marsive */
 .marsive {
-  background-color: #f8d124; /* beige-yellow background */
-  padding-bottom: 80px;      /* spacing inside yellow */
-  margin-bottom: 0;          /* no external gap */
-  padding-top: 80px;         /* adds top spacing too for balance */
-  text-align: center;        /* keep title and text centered */
+  background-color: #f8d124;
+  padding-bottom: 80px;      
+  margin-bottom: 0;          
+  padding-top: 80px;         
+  text-align: center;        
 }
 
 .marsive h2 {
@@ -805,31 +805,20 @@ header {
   font-family: 'Georgia', sans-serif;
 }
 
-/* Flex container for services */
-.flex-container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch; /* ensures equal height */
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-/* Service Card */
 .service2 {
   background-color: #f5f5f5;
   padding: 20px;
   border-radius: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1 1 30%; /* flexible, roughly 3 cards per row */
-  max-width: 350px; /* prevent over-expansion */
+  flex: 1 1 30%;
+  max-width: 350px;
   text-align: center;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: stretch;
-  margin-bottom: 20px;
+  height: 100%;        /* Ensures equal height */
 }
+
 
 .service2 img {
   width: 100%;
