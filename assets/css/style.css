@@ -534,25 +534,6 @@ header {
   }
 }
 
-.learn-more {
-  background: var(--green);
-  color: var(--white);
-  border: 2px solid var(--white); 
-  padding: 8px 16px;
-  margin: 10px auto; 
-  display: block; 
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.3s ease; 
-}
-
-.learn-more:hover {
-  background: var(--white);
-  color: var(--green);
-  border-color: var(--green);
-  transform: scale(1.05); 
-}
-
   .services-container {
     margin: 0;
     padding: 0 10px;
@@ -762,6 +743,26 @@ header {
     text-align: center; 
   }
 }
+
+.learn-more {
+  background: var(--green);
+  color: var(--white);
+  border: 2px solid var(--white); 
+  padding: 8px 16px;
+  margin: 10px auto; 
+  display: block; 
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease; 
+}
+
+.learn-more:hover {
+  background: var(--white);
+  color: var(--green);
+  border-color: var(--green);
+  transform: scale(1.05); 
+}
+
 
 /* === Universal fade-in animation for all service subsections === */
 .services-section .service-part {
