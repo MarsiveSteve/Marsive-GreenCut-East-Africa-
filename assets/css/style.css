@@ -897,10 +897,10 @@ header {
 /*  What Our Clients Say Section */
 .client {
   background-color: #013b19;
-  padding-bottom: 80px;      /* spacing inside yellow */
-  margin-bottom: 0;          /* no external gap */
-  padding-top: 80px;         /* adds top spacing too for balance */
-  text-align: center;        /* keep title and text centered */
+  padding-bottom: 80px;  
+  margin-bottom: 0;          
+  padding-top: 80px;         
+  text-align: center;        
 }
 
 .client h2 {
@@ -924,21 +924,21 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 25px; /* slightly larger space between cards */
+  gap: 25px; 
   flex-wrap: wrap;
-  margin: 40px auto; /* center container horizontally */
-  padding: 0 40px; /* adds nice spacing from page edges */
-  max-width: 1100px; /* prevents stretching too wide on large screens */
+  margin: 40px auto; 
+  padding: 0 40px; 
+  max-width: 1100px; 
 }
 
 /* Testimonial Card */
 .testimonial {
   background-color: #c0ebb7;
   padding: 20px;
-  border-radius: 8px; /* slightly rounded for smoother look */
+  border-radius: 0px; /* slightly rounded for smoother look */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  flex: 1 1 260px; /* narrower base width for better fit */
-  max-width: 300px; /* reduced from 320px for better margins */
+  flex: 1 1 260px; 
+  max-width: 300px; 
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1287,10 +1287,79 @@ body {
   }
 }
 
+/* ---------- Admin-button ---------- */
+.admin-container {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  margin-top: 20px;         
+  margin-bottom: 20px;       
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Admin button styling */
+.admin-btn {
+  display: inline-block;
+  background-color: #0c4724;
+  color: #fff;
+  padding: 14px 36px; /* Comfortable spacing */
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Hover effect */
+.admin-btn:hover {
+  background-color: #128a43;
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(12, 71, 36, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .admin-btn {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-container {
+    margin-top: 16px;
+  }
+
+  .admin-btn {
+    padding: 10px 26px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-container {
+    margin-top: 12px;
+  }
+
+  .admin-btn {
+    display: block; /* Centers automatically */
+    margin: 10px auto;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
 /* Social Media Icons */
 .social-icons {
   display: flex;
-  justify-content: center; /* center horizontally */
+  justify-content: center; 
   align-items: center;
   gap: 10px;
   margin-top: 10px;
@@ -1301,7 +1370,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px; /* smaller size */
+  width: 38px; 
   height: 38px;
   background-color: #2e7d32; /* deep eco-green */
   border-radius: 50%;
