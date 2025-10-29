@@ -255,7 +255,7 @@ header {
   background-color: #025e2d;
 }
 
-/* ✅ Large screens (desktops and big laptops) */
+/* Large screens (desktops and big laptops) */
 @media screen and (max-width: 1200px) {
   .hero {
     height: 80vh;
@@ -263,7 +263,7 @@ header {
   }
 }
 
-/* ✅ Tablets and medium screens */
+/* Tablets and medium screens */
 @media screen and (max-width: 1024px) {
   .hero {
     min-height: 90vh;
@@ -286,7 +286,7 @@ header {
   }
 }
 
-/* ✅ Mobile */
+/* Mobile */
 @media screen and (max-width: 768px) {
   .hero {
     min-height: 95vh; 
@@ -320,7 +320,7 @@ header {
   }
 }
 
-/* ✅ Small mobile phones */
+/* Small mobile phones */
 @media screen and (max-width: 480px) {
   .hero {
     height: 50vh;
@@ -534,31 +534,24 @@ header {
   }
 }
 
-.learn-more-container {
-  margin-top: 30px;
-}
-
-.learn-more-btn {
-  display: inline-block;
-  background-color: #027a3a;
-  color: white;
-  text-decoration: none;
-  font-size: 1.05rem;
-  padding: 14px 32px;
+.learn-more {
+  background: var(--green);
+  color: var(--white);
+  border: 2px solid var(--white); 
+  padding: 8px 16px;
+  margin: 10px auto; 
+  display: block; 
+  cursor: pointer;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
-  font-weight: 600;
+  transition: all 0.3s ease; 
 }
 
-.learn-more-btn:hover {
-  background-color: #025e2d;
+.learn-more:hover {
+  background: var(--white);
+  color: var(--green);
+  border-color: var(--green);
+  transform: scale(1.05); 
 }
-
-/* ✅ Mobile view (fix spacing & image sizing) */
-@media (max-width: 1024px) {
-  .comprehensive-services {
-    padding: 20px 0; 
-  }
 
   .services-container {
     margin: 0;
