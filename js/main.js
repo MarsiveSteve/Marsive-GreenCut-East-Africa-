@@ -167,3 +167,10 @@ if (appointmentForm) {
     }
   });
 
+  const checkbox = document.getElementById('termsCheckbox');
+  const bookButton = document.getElementById('bookNow');
+
+  checkbox.addEventListener('change', () => {
+    bookButton.disabled = !checkbox.checked;
+  });
+
