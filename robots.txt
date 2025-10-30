@@ -1,0 +1,11 @@
+# Marsive GreenCut East Africa - Robots.txt
+# This file tells search engines what to index and what to ignore
+
+User-agent: *
+Allow: /
+Sitemap: https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/sitemap.xml
+
+# Disallow internal or temporary files (if any)
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /scripts/
