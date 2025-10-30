@@ -1,135 +1,42 @@
-// Toggle mobile nav menu
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marsive GreenCut East Africa</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+<header>
+  <!-- Logo on the left -->
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="Marsive GreenCut Logo">
+  </div>
 
-    // --- (Welcome Section)One-time Dynamic Fade-Up + Scale Animation with Stagger ---
-    const boxes = document.querySelectorAll('.service-box1');
+  <!-- Website name section -->
+  <div class="website-name">Marsive GreenCut East Africa</div>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = [...boxes].indexOf(entry.target);
-          const delay = index * 200; // 200ms stagger per item
+  <!-- Nav links -->
+<!-- <ul class="nav-links">
+  <li class="close-menu"><i class="fa-solid fa-xmark"></i></li> -->
+<ul class="nav-links" id="navLinks">
+  <li><a href="#services3">Our Services</a></li>
+  <li><a href="#hero">Welcome</a></li>
+  <li><a href="#marsive">Why Choose Us</a></li>
+  <li><a href="#client">Testimonials</a></li>
+  <li><a href="#appointment-section">Booking</a></li>
+</ul>
 
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, delay);
+  <!-- Book button -->
+  <a href="#appointment-section" class="btn">Book Service</a>
 
-          // Animate only once
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    boxes.forEach(box => observer.observe(box));
-
-/* ✅ Tablet (medium screens) */
-@media screen and (max-width: 1024px) {
-  .hero {
-    min-height: 90vh;
-    padding-top: 120px;
-    padding-bottom: 70px;
-  }
-
-  .hero-text h1 {
-    font-size: 2.7rem;
-  }
-
-  .hero-text p {
-    font-size: 1.05rem;
-  }
-}
-
-/* ✅ Mobile */
-@media screen and (max-width: 768px) {
-  .hero {
-    min-height: 95vh; /* 👈 slightly taller than usual for smaller screens */
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background-position: center top;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-    margin-bottom: 30px;
-  }
-
-  .hero-btn {
-    font-size: 0.95rem;
-    padding: 12px 26px;
-  }
-}
-
-
-/* ---------- Responsive Breakpoints ---------- */
-
-/* Large screens (desktops and big laptops) */
-@media screen and (max-width: 1200px) {
-  .hero {
-    height: 80vh; /* slightly shorter banner */
-    background-position: center top;
-  }
-}
-
-/* Tablets and medium laptops */
-@media screen and (max-width: 1024px) {
-  .hero {
-    height: 70vh;
-    background-position: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-text {
-    max-width: 500px;
-    padding: 20px 30px;
-  }
-}
-
-/* Mobile landscape and tablets portrait */
-@media screen and (max-width: 768px) {
-  .hero {
-    height: 60vh; /* reduce banner height */
-    background-size: cover;
-    justify-content: center; /* center text horizontally */
-    text-align: center;
-  }
-
-  .hero-text {
-    max-width: 90%;
-    padding: 10px 20px;
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-}
-
-/* Small mobile phones */
-@media screen and (max-width: 480px) {
-  .hero {
-    height: 50vh; /* shorter banner for phones */
-    background-position: center;
-  }
-
-  .hero-text {
-    padding: 10px;
-  }
-
-  .hero-text h1 {
-    font-size: 1.6rem;
-    line-height: 1.3;
-  }
-}
+  <!-- Hamburger (only mobile) -->
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</header>
