@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Blog Homepage -->
+  <url>
+    <loc>https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/blog/</loc>
+    <lastmod>2025-10-31</lastmod>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/blog/eco-friendly-lawn-care.html</loc>
+    <lastmod>2025-10-28</lastmod>
+  </url>
+
+  <url>
+    <loc>https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/blog/tree-planting-initiatives-kenya.html</loc>
+    <lastmod>2025-10-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/blog/green-landscaping-tips.html</loc>
+    <lastmod>2025-10-26</lastmod>
+  </url>
+
+  <url>
+    <loc>https://marsivesteve.github.io/Marsive-GreenCut-East-Africa-/blog/sustainable-gardening-practices.html</loc>
+    <lastmod>2025-10-31</lastmod>
+  </url>
+
+</urlset>
