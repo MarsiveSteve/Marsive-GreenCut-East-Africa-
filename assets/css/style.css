@@ -107,18 +107,44 @@ header {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 100%; 
+  top: 100%;
   left: 0;
   width: 100%;
-  background: #e5cda3;
+  background: #fff; /* changed to white */
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.06);
   z-index: 999;
+  transition: all 0.3s ease;
 }
 
+/* Each nav item */
 .nav-links.active li {
   margin: 10px 0;
   text-align: center;
+}
+
+/* Close (X) button at top of dropdown */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: right;
+  color: #333;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Hide dropdown by default */
+.nav-links {
+  display: none;
+}
+
+/* Hamburger toggle (for mobile view) */
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+  display: block;
 }
 
 /* ---------- Desktop (≥768px) ---------- */
