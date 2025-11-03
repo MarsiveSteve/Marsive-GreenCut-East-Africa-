@@ -102,49 +102,104 @@ header {
   z-index: 1000;
 }
 
-/* Mobile dropdown when .active is added */
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
+/* Hide dropdown by default, but keep it ready for transition */
+.nav-links {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background: #fff; /* changed to white */
-  padding: 16px;
+  background: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.06);
   z-index: 999;
-  transition: all 0.3s ease;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  
+  /* For animation */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+}
+
+/* When active, slide it down */
+.nav-links.active {
+  max-height: 500px; /* enough space for all links */
+  opacity: 1;
+  transform: translateY(0);
+  padding: 16px;
 }
 
 /* Each nav item */
-.nav-links.active li {
+.nav-links li {
   margin: 10px 0;
   text-align: center;
 }
 
 /* Close (X) button at top of dropdown */
 .close-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
   text-align: right;
-  color: #333;
   width: 100%;
   margin-bottom: 10px;
 }
 
-/* Hide dropdown by default */
-.nav-links {
-  display: none;
+.close-btn i {
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-/* Hamburger toggle (for mobile view) */
-.menu-toggle {
-  font-size: 26px;
+.close-btn i:hover {
+  color: #a38b02;
+}
+
+/* Book button style */
+.btn {
+  display: inline-block;
+  margin-left: 24px;
+  background: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #218838;
+}
+
+/* Inside dropdown, make it fit nicely */
+.nav-links.active .btn {
+  margin-left: 0;
+  width: 100%;
+  text-align: center;
   display: block;
+}
+
+/* Hamburger styling */
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+}
+
+.hamburger div {
+  background-color: #333;
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
 }
 
 /* ---------- Desktop (≥768px) ---------- */
