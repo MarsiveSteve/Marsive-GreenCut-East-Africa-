@@ -157,7 +157,7 @@ header {
     gap: 28px;
     margin-left: auto;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.5rem;
     font-weight: 500;
   }
 
@@ -182,11 +182,13 @@ header {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none; 
   }
 
   header .nav-links,
   header .btn {
     align-self: center;
+    text-decoration: none; 
   }
 
   /* Hide hamburger on desktop */
