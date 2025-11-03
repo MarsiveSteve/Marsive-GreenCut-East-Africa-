@@ -1,10 +1,38 @@
 // Toggle mobile nav menu
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const closeMenu = document.getElementById('closeMenu');
+  const bookBtn = document.getElementById('bookBtn');
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+  // Toggle menu open/close
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevents closing immediately
+    navLinks.classList.toggle('active');
+  });
+
+  // Close on ❌ click
+  closeMenu.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (
+      navLinks.classList.contains('active') &&
+      !navLinks.contains(e.target) &&
+      e.target !== hamburger &&
+      !hamburger.contains(e.target)
+    ) {
+      navLinks.classList.remove('active');
+    }
+  });
+
+  // Close when a nav link or "Book Service" is clicked
+  const navItems = navLinks.querySelectorAll('a');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => navLinks.classList.remove('active'));
+  });
+  bookBtn.addEventListener('click', () => navLinks.classList.remove('active'));
 
     // --- (Welcome Section)One-time Dynamic Fade-Up + Scale Animation with Stagger ---
     const boxes = document.querySelectorAll('.service-box1');
