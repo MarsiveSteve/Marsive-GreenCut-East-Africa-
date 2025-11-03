@@ -87,6 +87,7 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-decoration: none; 
 }
 .btn {
   display: none;
