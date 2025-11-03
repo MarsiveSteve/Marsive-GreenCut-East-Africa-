@@ -90,7 +90,7 @@ header {
   text-decoration: none; 
 }
 .btn {
-  display: none;
+  display: flex;
 }
 
 /* Make header the reference for absolute positioning */
