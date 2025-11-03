@@ -1,60 +1,3 @@
-  if (isSignup) {
-  const confirmPassword = document.getElementById('confirmPasswordAuth').value;
-  if (password !== confirmPassword) {
-    alert('Passwords do not match!');
-    return;
-  }
-
-  // 1️⃣ Create user in Supabase Auth
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      data: { name },
-      emailRedirectTo: baseRedirect, // ✅ Redirect after email verification
-    },
-  });
-
-  if (error) {
-    alert(error.message);
-    return;
-  }
-
-  // 2️⃣ Insert user details into 'admin' table
-  const { error: insertError } = await supabase.from('admin').insert([
-    {
-      name: name,
-      email: email,
-      role: 'user', // Default role, adjust if you have role logic
-    },
-  ]);
-
-  if (insertError) {
-    console.error('Database insert error:', insertError);
-    alert('Signup complete, but failed to record user in admin table.');
-  } else {
-    console.log('✅ User created successfully');
-  }
-
-  // 3️⃣ Notify and switch view
-  alert('✅ Signup successful! Please check your email to confirm your account.');
-  switchToLogin();
-  } else {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
-
-  if (error) {
-    alert(error.message);
-    return;
-  }
-
-  alert('✅ Login successful!');
-  closeModal();
-
-  const user = data.user;
-
 /* Reset */
 * {
   margin: 0;
@@ -63,7 +6,7 @@
 }
 
 body {
-  font-family: Georgia, sans-serif;
+  font-family: Georgia, sans-serif; 
 }
 
 /* Smooth fade-in and fade-out transition */
@@ -95,7 +38,7 @@ header {
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 1200; /* Keeps it above the centered logo */
+  z-index: 1200; 
 }
 .hamburger div {
   width: 28px;
@@ -110,8 +53,8 @@ header {
   left: 50%;
   transform: translateX(-50%);
   top: 50%;
-  transform: translate(-50%, -50%); /* Vertically center inside header */
-  pointer-events: none; /* So taps go to hamburger/button, not the logo */
+  transform: translate(-50%, -50%); 
+  pointer-events: none; 
 }
 .logo img {
   display: block;
@@ -129,7 +72,7 @@ header {
 /* ---------- Desktop (≥768px) ---------- */
 @media (min-width: 768px) {
   .website-name {
-    display: block;   /* Make it visible again on desktop */
+    display: block;   /* Show website name on desktop */
     font-size: 1.5rem;
     font-weight: bold;
     color: #064420;
@@ -151,8 +94,11 @@ header {
 
 /* Make header the reference for absolute positioning */
 header {
-  position: relative;
-  z-index: 1000; /* Keeps header/nav above hero */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 /* Mobile dropdown when .active is added */
@@ -160,7 +106,7 @@ header {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 100%; /* Sits right under header */
+  top: 100%; 
   left: 0;
   width: 100%;
   background: #e5cda3;
@@ -179,8 +125,8 @@ header {
   header {
     position: relative;
     justify-content: flex-start;
-    height: 90px;               /* taller navbar */
-    padding: 0 30px;            /* more breathing space */
+    height: 90px;               
+    padding: 0 30px;            
   }
 
   /* Reset logo position on desktop */
@@ -200,10 +146,10 @@ header {
 
   /* Add website name next to logo */
   .website-name {
-    font-size: 1.5rem;        /* Adjust font size */
+    font-size: 1.5rem;        
     font-weight: bold;
-    color: #064420;           /* Dark green color */
-    margin-left: 15px;        /* Space between logo and website name */
+    color: #064420;          
+    margin-left: 15px;        
   }
 
   .nav-links {
@@ -216,13 +162,13 @@ header {
   }
 
   .nav-links a {
-  text-decoration: none;  /* Removes the underline */
-  color: inherit;         /* Keeps the text color consistent */
+  text-decoration: none;  
+  color: inherit;         
 }
 
 .nav-links a:hover {
-  text-decoration: none;  /* Ensures no underline appears on hover */
-  color: #064420;         /* Optional: change hover color if desired */
+  text-decoration: none;  
+  color: #064420;         
 }
 
   .btn {
@@ -245,6 +191,6 @@ header {
 
   /* Hide hamburger on desktop */
   .hamburger {
-    display: none;  /* hide hamburger on desktop */
+    display: none;  
   }
 }
