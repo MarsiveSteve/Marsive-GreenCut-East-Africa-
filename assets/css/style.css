@@ -82,6 +82,7 @@ header {
 
 
 /* Nav & button hidden/compact on mobile by default */
+@media (max-width: 767px) {
 .nav-links {
   display: none;
   list-style: none;
@@ -102,7 +103,7 @@ header {
   z-index: 1000;
 }
 
-/* Hide dropdown by default, but keep it ready for transition */
+/* Hide dropdown by default */
 .nav-links {
   position: absolute;
   top: 100%;
@@ -115,34 +116,33 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 16px;
-  
-  /* For animation */
+
+  /* --- Animation setup --- */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.4s ease;
+  padding: 0; /* no padding when closed */
 }
 
-/* When active, slide it down */
+/* Mobile dropdown when .active is added */
 .nav-links.active {
-  max-height: 500px; /* enough space for all links */
+  max-height: 500px; /* enough room for links */
   opacity: 1;
   transform: translateY(0);
   padding: 16px;
 }
 
 /* Each nav item */
-.nav-links li {
+.nav-links.active li {
   margin: 10px 0;
   text-align: center;
 }
 
-/* Close (X) button at top of dropdown */
+/* Close (X) icon styling */
 .close-btn {
   text-align: right;
-  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -154,35 +154,7 @@ header {
 }
 
 .close-btn i:hover {
-  color: #a38b02;
-}
-
-/* Book button style */
-.btn {
-  display: inline-block;
-  margin-left: 24px;
-  background: #28a745;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #218838;
-}
-
-/* Inside dropdown, make it fit nicely */
-.nav-links.active .btn {
-  margin-left: 0;
-  width: 100%;
-  text-align: center;
-  display: block;
+  color: #a38b02; /* optional hover color */
 }
 
 /* Hamburger styling */
@@ -200,6 +172,7 @@ header {
   height: 3px;
   width: 100%;
   border-radius: 2px;
+}
 }
 
 /* ---------- Desktop (≥768px) ---------- */
