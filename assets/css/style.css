@@ -1484,3 +1484,78 @@ body {
   background-color: #36a54a; /* lighter green on hover */
   box-shadow: 0 0 10px rgba(54, 165, 74, 0.7);
 }
+
+/* Footer padding optimization for mobile */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 15px 10px; /* reduce top/bottom padding */
+  }
+
+  .footer-content {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* reduce gaps between columns */
+  }
+
+  .footer-column {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 6px;
+    font-size: 1rem;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 4px;
+  }
+
+  /* Newsletter form spacing */
+  .newsletter-form {
+    margin-top: 8px;
+  }
+
+  .newsletter-form input {
+    width: 90%;
+    margin-bottom: 8px;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .newsletter-form button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* Social icons area */
+  .social-icons {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .social-icons a {
+    margin: 0 5px;
+  }
+
+  /* Admin container if shown */
+  .admin-container {
+    margin: 10px 0;
+  }
+
+  /* Copyright section */
+  .footer-bottom {
+    margin-top: 5px;
+    padding-top: 5px;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+    line-height: 1.4;
+  }
+}
