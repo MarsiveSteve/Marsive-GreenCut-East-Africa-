@@ -152,7 +152,7 @@ header {
 }
 
 /* Booking button style */
-#bookBtn {
+.btn {
   background-color: #28a745;
   color: #fff;
   border: none;
@@ -163,7 +163,7 @@ header {
   transition: background 0.3s ease;
 }
 
-#bookBtn:hover {
+.btn:hover {
   background-color: #005fcc;
 }
 
@@ -180,12 +180,12 @@ header {
   }
 
   /* Hide booking button on mobile when menu is closed */
-  #bookBtn {
+  .btn {
     display: none;
   }
 
   /* When menu is active, show booking button inside dropdown */
-  .nav-links.active #bookBtn {
+  .nav-links.active .btn {
     display: block;
     margin: 10px auto;
   }
@@ -197,7 +197,7 @@ header {
   .banner, 
   .main-banner, 
   .header-section {
-    margin-top: 80px; /* increase or reduce as needed */
+    margin-top: 65px; /* increase or reduce as needed */
   }
 }
 
@@ -212,7 +212,7 @@ header {
     gap: 20px;
   }
 
-  #bookBtn {
+  .btn {
     display: inline-block;
   }
 }
