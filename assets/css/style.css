@@ -151,26 +151,9 @@ header {
   margin-bottom: 10px;
 }
 
-/* Close menu button at bottom */
-.bottom-close-btn {
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  color: #333;
-  margin-top: 16px;
-  transition: background 0.3s ease;
-}
-
-.bottom-close-btn:hover {
-  background: #eee;
-}
-
 /* Booking button style */
 #bookBtn {
-  background-color: #0077ff;
+  background-color: #28a745;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -184,8 +167,10 @@ header {
   background-color: #005fcc;
 }
 
-/* Show dropdown only in mobile view */
-@media (max-width: 767px) {
+/* --- Responsive Rules --- */
+
+/* Mobile (menu closed) */
+@media (max-width: 768px) {
   .btn {
     display: block;
   }
@@ -194,13 +179,36 @@ header {
     display: none;
   }
 
-  .nav-links.active {
+  /* Hide booking button on mobile when menu is closed */
+  #bookBtn {
+    display: none;
+  }
+
+  /* When menu is active, show booking button inside dropdown */
+  .nav-links.active #bookBtn {
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+/* Desktop view (menu visible normally) */
+@media (min-width: 769px) {
+  .btn {
+    display: none;
+  }
+
+  .nav-links {
     display: flex;
+    gap: 20px;
+  }
+
+  #bookBtn {
+    display: inline-block;
   }
 }
 
 /* ---------- Desktop (≥768px) ---------- */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   header {
     position: fixed;
     justify-content: flex-start;
