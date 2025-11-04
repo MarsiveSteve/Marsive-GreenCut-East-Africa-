@@ -671,16 +671,19 @@ header {
   }
 
   .learn-more-btn {
-    width: 100%;
-    padding: 14px 0;
-    font-size: 16px;
-    border-radius: 6px;
-  }
+  display: inline-block;
+  background-color: #027a3a;
+  color: white;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 14px 32px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
 
-  .learn-more-btn:hover {
-    transform: none; 
-    box-shadow: 0 6px 14px rgba(12, 71, 36, 0.25);
-  }
+.learn-more-btn:hover {
+  background-color: #025e2d;
 }
 
 
