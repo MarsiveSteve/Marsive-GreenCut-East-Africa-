@@ -140,6 +140,14 @@ header {
   display: none;
 }
 
+.close-btn {
+  display: flex;
+}
+
+.btn {
+  display: none;
+}
+
 /* Hamburger toggle (for mobile view) */
 .menu-toggle {
   font-size: 26px;
