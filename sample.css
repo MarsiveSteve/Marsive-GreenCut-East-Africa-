@@ -1,196 +1,40 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<div class="all-services">
+    <!-- Lawn Mowing Care Section -->
+    <div class="lawn-mowing-care">
+      <div class="container">
+        <div class="content">
+          <img src="assets/images/mowers.webp" alt="Lawn Mowing Care">
+          <div class="text">
+            <h3>Lawn Mowing Care</h3>
+            <p>Our lawn mowing services are tailored to ensure your grass remains healthy, lush, and well-groomed throughout the seasons. We use state-of-the-art equipment and techniques to deliver optimal results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-body {
-  font-family: Georgia, sans-serif; 
-}
+    <!-- Landscaping Design Section -->
+    <div class="irrigation-setup">
+      <div class="container">
+        <div class="content">
+          <img src="assets/images/maasai.webp" alt="Landscaping Design">
+          <div class="text">
+            <h3>Landscaping Design</h3>
+            <p>Transform your outdoor space with our expert landscaping design services. We work collaboratively with you to create beautiful, functional gardens that enhance your property and harmonize with the environment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-/* Smooth fade-in and fade-out transition */
-body {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-body.fade-in {
-  opacity: 1;
-}
-
-/* ---------- Header base (mobile-first) ---------- */
-header {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  background-color: #e5cda3;
-  top: 0;
-  z-index: 1000;
-  height: 80px; /* Height for the navbar */
-}
-
-/* hamburger (mobile visible) */
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 1200; 
-}
-.hamburger div {
-  width: 28px;
-  height: 3px;
-  background-color: #064420;
-  border-radius: 2px;
-}
-
-/* Visually-centered logo on mobile */
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 50%;
-  transform: translate(-50%, -50%); 
-  pointer-events: none; 
-}
-.logo img {
-  display: block;
-  max-height: 56px;
-  max-width: 140px;
-  width: auto;
-  height: auto;
-}
-
-/* Website name on mobile - hidden */
-.website-name {
-  display: none;
-}
-
-/* ---------- Desktop (≥768px) ---------- */
-@media (min-width: 768px) {
-  .website-name {
-    display: block;   /* Show website name on desktop */
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #064420;
-    margin-left: 15px;
-  }
-}
-
-
-/* Nav & button hidden/compact on mobile by default */
-.nav-links {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.btn {
-  display: none;
-}
-
-/* Make header the reference for absolute positioning */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-/* Mobile dropdown when .active is added */
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100%; 
-  left: 0;
-  width: 100%;
-  background: #e5cda3;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-  z-index: 999;
-}
-
-.nav-links.active li {
-  margin: 10px 0;
-  text-align: center;
-}
-
-/* ---------- Desktop (≥768px) ---------- */
-@media (min-width: 768px) {
-  header {
-    position: relative;
-    justify-content: flex-start;
-    height: 90px;               
-    padding: 0 30px;            
-  }
-
-  /* Reset logo position on desktop */
-  .logo {
-    position: static;
-    transform: none;
-    margin-right: 24px;
-    pointer-events: auto;
-    display: flex;
-    align-items: center;
-  }
-
-  .logo img {
-    max-height: 70px;
-    max-width: 180px;
-  }
-
-  /* Add website name next to logo */
-  .website-name {
-    font-size: 1.5rem;        
-    font-weight: bold;
-    color: #064420;          
-    margin-left: 15px;        
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 28px;
-    margin-left: auto;
-    align-items: center;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  .nav-links a {
-  text-decoration: none;  
-  color: inherit;         
-}
-
-.nav-links a:hover {
-  text-decoration: none;  
-  color: #064420;         
-}
-
-  .btn {
-    display: inline-block;
-    margin-left: 24px;
-    background: #28a745;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  header .nav-links,
-  header .btn {
-    align-self: center;
-  }
-
-  /* Hide hamburger on desktop */
-  .hamburger {
-    display: none;  
-  }
-}
+    <!-- Irrigation Setup Section -->
+    <div class="lawn-mowing-care">
+      <div class="container">
+        <div class="content">
+          <img src="assets/images/maasai.webp" alt="Irrigation Setup">
+          <div class="text">
+            <h3>Irrigation Setup</h3>
+            <p>Our irrigation setup services ensure your garden receives the right amount of water efficiently. We design and install systems that conserve water while promoting healthy plant growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
