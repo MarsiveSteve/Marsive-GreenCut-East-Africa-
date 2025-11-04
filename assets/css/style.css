@@ -102,7 +102,12 @@ header {
   z-index: 1000;
 }
 
-/* Mobile dropdown when .active is added */
+/* Hide dropdown by default */
+.nav-links {
+  display: none;
+}
+
+/* Show dropdown when .active is added */
 .nav-links.active {
   display: flex;
   flex-direction: column;
@@ -110,7 +115,7 @@ header {
   top: 100%;
   left: 0;
   width: 100%;
-  background: #fff; /* changed to white */
+  background: #fff;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.06);
   z-index: 999;
@@ -119,40 +124,79 @@ header {
 
 /* Each nav item */
 .nav-links.active li {
-  margin: 10px 0;
+  list-style: none;
+  margin: 12px 0;
   text-align: center;
 }
 
-/* Close (X) button at top of dropdown */
+/* Nav links style (no underline, thicker text) */
+.nav-links.active a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ❌ close icon at top */
 .close-btn {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
   text-align: right;
   color: #333;
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
   margin-bottom: 10px;
 }
 
-/* Hide dropdown by default */
-.nav-links {
-  display: none;
-}
-
-.close-btn {
-  display: flex;
-}
-
-.btn {
-  display: none;
-}
-
-/* Hamburger toggle (for mobile view) */
-.menu-toggle {
-  font-size: 26px;
+/* Close menu button at bottom */
+.bottom-close-btn {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
   cursor: pointer;
-  display: block;
+  color: #333;
+  margin-top: 16px;
+  transition: background 0.3s ease;
+}
+
+.bottom-close-btn:hover {
+  background: #eee;
+}
+
+/* Booking button style */
+#bookBtn {
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#bookBtn:hover {
+  background-color: #005fcc;
+}
+
+/* Show dropdown only in mobile view */
+@media (max-width: 767px) {
+  .btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
 
 /* ---------- Desktop (≥768px) ---------- */
