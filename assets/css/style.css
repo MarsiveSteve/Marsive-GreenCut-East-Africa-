@@ -191,6 +191,16 @@ header {
   }
 }
 
+@media (max-width: 768px) {
+  /* Add more space below the navbar */
+  .hero, 
+  .banner, 
+  .main-banner, 
+  .header-section {
+    margin-top: 80px; /* increase or reduce as needed */
+  }
+}
+
 /* Desktop view (menu visible normally) */
 @media (min-width: 769px) {
   .btn {
