@@ -4,6 +4,25 @@
   const closeMenu = document.getElementById('closeMenu');
   const bookBtn = document.getElementById('bookBtn');
 
+// New year tweaks
+(function () {
+  const today = new Date();
+  const start = new Date("2025-12-31");
+  const end = new Date("2026-01-07");
+
+  const banner = document.getElementById("newYearBanner");
+
+  if (today >= start && today <= end) {
+    banner.style.display = "block";
+  } else {
+    banner.style.display = "none";
+  }
+
+  document.getElementById("closeBanner").onclick = function () {
+    banner.style.display = "none";
+  };
+})();
+
   // Toggle menu open/close
   hamburger.addEventListener('click', (e) => {
     e.stopPropagation(); // Prevents closing immediately
