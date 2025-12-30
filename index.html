@@ -37,10 +37,48 @@
 </head>
 <body>
 
-<div id="newYearBanner">
+<!-- New Year Banner -->
+<div id="newYearBanner" style="
+  display:none;
+  background:linear-gradient(90deg,#1b5e20,#2e7d32);
+  color:#ffffff;
+  text-align:center;
+  padding:10px 40px;
+  font-size:15px;
+  font-weight:600;
+  position:relative;
+">
+
   🎉 Happy New Year 2026 — Growing Green Together in East Africa 🌍🌱
-  <span id="closeBanner">✕</span>
+
+  <span id="closeBanner" style="
+    position:absolute;
+    right:15px;
+    top:8px;
+    cursor:pointer;
+    font-size:18px;
+  ">✕</span>
 </div>
+
+<script>
+(function () {
+  const today = new Date();
+  const start = new Date("2025-12-31");
+  const end   = new Date("2026-01-07");
+
+  const banner = document.getElementById("newYearBanner");
+  const close  = document.getElementById("closeBanner");
+
+  if (today >= start && today <= end) {
+    banner.style.display = "block";
+  }
+
+  close.onclick = function () {
+    banner.style.display = "none";
+  };
+})();
+</script>
+<!-- End New Year Banner -->
 
   <!-- ===== Header Section ===== -->
   <header>
