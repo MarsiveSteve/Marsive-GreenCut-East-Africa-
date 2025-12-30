@@ -1,3 +1,21 @@
+// New year banner
+(function () {
+  const today = new Date();
+  const start = new Date("2025-12-31");
+  const end   = new Date("2026-01-07");
+
+  const banner = document.getElementById("newYearBanner");
+  const close  = document.getElementById("closeBanner");
+
+  if (today >= start && today <= end) {
+    banner.style.display = "block";
+  }
+
+  close.onclick = function () {
+    banner.style.display = "none";
+  };
+})();
+
 // Toggle mobile nav menu
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
