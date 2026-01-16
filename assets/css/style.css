@@ -311,7 +311,6 @@ header {
   box-sizing: border-box;
 }
 
-
 .hero::after {
   content: "";
   position: absolute;
