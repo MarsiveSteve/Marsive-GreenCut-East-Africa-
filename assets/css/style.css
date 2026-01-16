@@ -298,7 +298,7 @@ header {
   display: none;
 }
 
-/* Hero section 
+/* Hero section */
 .hero {
   position: relative;
   min-height: 100vh; 
@@ -310,7 +310,7 @@ header {
   padding-bottom: 80px; 
   box-sizing: border-box;
 }
-*/
+
 
 .hero::after {
   content: "";
