@@ -1006,7 +1006,7 @@ header {
 
 .testimonial img {
   width: 100%;
-  height: 380px; /* slightly reduced to match card proportion */
+  height: 400px; /* slightly reduced to match card proportion */
   object-fit: cover;
   border-radius: 8px 8px 0 0;
   margin-bottom: 15px;
@@ -1065,6 +1065,7 @@ header {
   text-align: left;
   margin-top: 30px;
   margin-left: calc((100% - 1140px)/2); /* Centers left-aligned block under cards (optional tweak) */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Align form elements */
