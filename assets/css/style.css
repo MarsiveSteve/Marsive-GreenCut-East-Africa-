@@ -1129,7 +1129,7 @@ body {
 
 /* White container centered with beige background margins */
 .appointment-section {
-  background-color: rgb(250, 231, 250);
+  background-color: rgb(241, 239, 241);
   padding: 60px 20px;
   max-width: 900px; /* narrower to leave beige sides on desktop */
   margin: 50px auto; /* centers the section */
