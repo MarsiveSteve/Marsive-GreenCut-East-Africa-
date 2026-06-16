@@ -103,9 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ✅ Supabase client setup
-const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE';
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+//const supabaseUrl = 'https://ansfcahvbvzfrlgoxjvc.supabase.co';
+//const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFuc2ZjYWh2YnZ6ZnJsZ294anZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMTMwNDQsImV4cCI6MjA3Mzc4OTA0NH0.v7ivUsvaC57J3XdkbCu2jfynsg_N2_--V7Lbymx8HzE';
+//const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ✅ Review form submission
 //const reviewForm = document.getElementById("reviewForm");
