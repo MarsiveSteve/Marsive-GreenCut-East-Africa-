@@ -163,7 +163,7 @@ if (reviewForm) {
       });
 
       if (response.ok) {
-        alert('✅ Review submitted successfully! Pending admin approval.');
+        alert('✅ Review submitted successfully!');
         this.reset();
       } else {
         const errorData = await response.json();
@@ -176,7 +176,6 @@ if (reviewForm) {
     }
   });
 }
-
 
 
 // ✅ Appointment form submission using Formspree
