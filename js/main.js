@@ -108,7 +108,33 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ✅ Review form submission
+//const reviewForm = document.getElementById("reviewForm");
+//if (reviewForm) {
+  //reviewForm.addEventListener("submit", async function (e) {
+    //e.preventDefault();
+
+    //const formData = new FormData(this);
+  //  const name = formData.get("name");
+   // const email = formData.get("email");
+    //const message = formData.get("message");
+
+    //const { data, error } = await supabaseClient
+      //.from('reviews')
+     // .insert([{ name, email, message, status: false }]);
+
+   // if (error) {
+    //  alert('❌ Error submitting review — check console for details.');
+     // console.error("Supabase insert error:", error);
+   // } else {
+     // alert('✅ Review submitted successfully! Pending admin approval.');
+      //this.reset();
+    //}
+  //});
+//}
+
+// ✅ Review form submission using Formspree
 const reviewForm = document.getElementById("reviewForm");
+
 if (reviewForm) {
   reviewForm.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -118,37 +144,101 @@ if (reviewForm) {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    const { data, error } = await supabaseClient
-      .from('reviews')
-      .insert([{ name, email, message, status: false }]);
+    // Validate fields
+    if (!name || !email || !message) {
+      alert("⚠️ Please fill in all required fields.");
+      return;
+    }
 
-    if (error) {
-      alert('❌ Error submitting review — check console for details.');
-      console.error("Supabase insert error:", error);
-    } else {
-      alert('✅ Review submitted successfully! Pending admin approval.');
-      this.reset();
+    console.log("All fields are filled, sending review to Formspree...");  
+
+    try {
+      // Sent to your Formspree endpoint string
+      const response = await fetch("https://formspree.io/f/xykavwlo", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        alert('✅ Review submitted successfully! Pending admin approval.');
+        this.reset();
+      } else {
+        const errorData = await response.json();
+        console.error("❌ Formspree error:", errorData);
+        alert("❌ Error submitting review. Please try again.");
+      }
+    } catch (error) {
+      console.error("❌ Network error:", error);
+      alert("❌ Network error. Please check your connection.");
     }
   });
 }
 
+
 // ✅ Appointment form submission
+//const appointmentForm = document.getElementById("appointmentForm");
+
+//if (appointmentForm) {
+  //appointmentForm.addEventListener("submit", async function (e) {
+  //e.preventDefault();
+
+  //console.log('Form submitted');  // Add this to check if the event triggers
+
+  // Create FormData object
+ // const formData = new FormData(this);
+
+  //const name = formData.get("name");
+ // const email = formData.get("email");
+ // const phone = formData.get("phone");
+ // const location = formData.get("location");
+ // const rawDate = formData.get("appointment-time"); // e.g. "2025-10-16T14:30"
+ // const message = formData.get("message");
+
+  // Validate fields
+ // if (!name || !email || !phone || !location || !rawDate) {
+    //alert("⚠️ Please fill in all required fields.");
+   // return;
+ // }
+
+ // console.log("All fields are filled, inserting data...");  // Check before insert
+
+  // Convert raw date to ISO timestamp
+ // const date = new Date(rawDate).toISOString(); // → "2025-10-16T14:30:00.000Z"
+
+  // Insert into Supabase
+ // const { data, error } = await supabaseClient
+    //.from("appointments")
+   // .insert([{ name, email, phone, location, date, message }]);
+
+  //if (error) {
+    //console.error("❌ Error booking appointment:", error.message);
+   // alert("❌ Error booking appointment: " + error.message);
+//  } else {
+  //  alert("✅ Appointment booked successfully!");
+   // this.reset();
+  //}
+//});
+//} 
+
+// ✅ Appointment form submission using Formspree
 const appointmentForm = document.getElementById("appointmentForm");
 
 if (appointmentForm) {
   appointmentForm.addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  console.log('Form submitted');  // Add this to check if the event triggers
+  console.log('Form submitted');  
 
-  // Create FormData object
   const formData = new FormData(this);
 
   const name = formData.get("name");
   const email = formData.get("email");
   const phone = formData.get("phone");
   const location = formData.get("location");
-  const rawDate = formData.get("appointment-time"); // e.g. "2025-10-16T14:30"
+  const rawDate = formData.get("appointment-time"); 
   const message = formData.get("message");
 
   // Validate fields
@@ -157,25 +247,80 @@ if (appointmentForm) {
     return;
   }
 
-  console.log("All fields are filled, inserting data...");  // Check before insert
+  // Format date nicely for email readability
+  const formattedDate = new Date(rawDate).toLocaleString(); 
+  formData.set("appointment-time", formattedDate); 
 
-  // Convert raw date to ISO timestamp
-  const date = new Date(rawDate).toISOString(); // → "2025-10-16T14:30:00.000Z"
+  console.log("All fields are filled, sending to Formspree...");  
 
-  // Insert into Supabase
-  const { data, error } = await supabaseClient
-    .from("appointments")
-    .insert([{ name, email, phone, location, date, message }]);
+  try {
+    // Updated with your actual Formspree endpoint string
+    const response = await fetch("https://formspree.io/f/xykavwlo", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
 
-  if (error) {
-    console.error("❌ Error booking appointment:", error.message);
-    alert("❌ Error booking appointment: " + error.message);
-  } else {
-    alert("✅ Appointment booked successfully!");
-    this.reset();
+    if (response.ok) {
+      alert("✅ Appointment booked successfully!");
+      this.reset();
+    } else {
+      const errorData = await response.json();
+      console.error("❌ Formspree error:", errorData);
+      alert("❌ Error booking appointment. Please try again.");
+    }
+  } catch (error) {
+    console.error("❌ Network error:", error);
+    alert("❌ Network error. Please check your connection.");
   }
 });
 }
+
+// ✅ Newsletter Subscription form submission using Formspree
+const newsletterForm = document.querySelector(".newsletter-form");
+
+if (newsletterForm) {
+  newsletterForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const name = formData.get("name");
+    const email = formData.get("email");
+
+    // Validate fields
+    if (!name || !email) {
+      alert("⚠️ Please fill in all required fields.");
+      return;
+    }
+
+    console.log("Sending newsletter subscription to Formspree...");  
+
+    try {
+      const response = await fetch("https://formspree.io/f/xykavwlo", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        alert("✅ Thank you for subscribing to our newsletter!");
+        this.reset();
+      } else {
+        const errorData = await response.json();
+        console.error("❌ Formspree error:", errorData);
+        alert("❌ Error submitting subscription. Please try again.");
+      }
+    } catch (error) {
+      console.error("❌ Network error:", error);
+      alert("❌ Network error. Please check your connection.");
+    }
+  });
+}
+
 
   // Fade-in effect on page load
   window.addEventListener('load', () => {
