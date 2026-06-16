@@ -178,50 +178,6 @@ if (reviewForm) {
 }
 
 
-// ✅ Appointment form submission
-//const appointmentForm = document.getElementById("appointmentForm");
-
-//if (appointmentForm) {
-  //appointmentForm.addEventListener("submit", async function (e) {
-  //e.preventDefault();
-
-  //console.log('Form submitted');  // Add this to check if the event triggers
-
-  // Create FormData object
- // const formData = new FormData(this);
-
-  //const name = formData.get("name");
- // const email = formData.get("email");
- // const phone = formData.get("phone");
- // const location = formData.get("location");
- // const rawDate = formData.get("appointment-time"); // e.g. "2025-10-16T14:30"
- // const message = formData.get("message");
-
-  // Validate fields
- // if (!name || !email || !phone || !location || !rawDate) {
-    //alert("⚠️ Please fill in all required fields.");
-   // return;
- // }
-
- // console.log("All fields are filled, inserting data...");  // Check before insert
-
-  // Convert raw date to ISO timestamp
- // const date = new Date(rawDate).toISOString(); // → "2025-10-16T14:30:00.000Z"
-
-  // Insert into Supabase
- // const { data, error } = await supabaseClient
-    //.from("appointments")
-   // .insert([{ name, email, phone, location, date, message }]);
-
-  //if (error) {
-    //console.error("❌ Error booking appointment:", error.message);
-   // alert("❌ Error booking appointment: " + error.message);
-//  } else {
-  //  alert("✅ Appointment booked successfully!");
-   // this.reset();
-  //}
-//});
-//} 
 
 // ✅ Appointment form submission using Formspree
 const appointmentForm = document.getElementById("appointmentForm");
