@@ -249,47 +249,57 @@
     </div>
 
     <div class="form-container">
-      <h4>Book Now</h4>
-      <small>✅ Ensure to review our cancellation policy and any terms related to rescheduling your appointment to avoid any inconvenience.</small>
+  <h4>Book Now</h4>
+  <small>✅ Ensure to review our cancellation policy and any terms related to rescheduling your appointment to avoid any inconvenience.</small>
 
+  <form id="appointmentForm">
 
-      <form id="appointmentForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your full name">
 
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email">
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="Enter your email">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" required placeholder="Enter your location">
 
-        <label for="location">Location</label>
-        <input type="text" id="location" name="location" required placeholder="Enter your location">
+    <!-- ✅ Added Service Type Dropdown -->
+    <label for="service-type">Service Type</label>
+    <select id="service-type" name="service-type" required>
+      <option value="" disabled selected>Select a service...</option>
+      <option value="lawn-mowing">Lawn Mowing</option>
+      <option value="hedge-trimming">Hedge Trimming</option>
+      <option value="irrigation-setup">Irrigation Setup</option>
+      <option value="tree-planting">Tree Planting</option>
+      <option value="consultation-training">Consultation/Training</option>
+    </select>
+    <!-- End of Service Type Dropdown -->
 
-        <label for="appointment-time">Preferred Date & Time</label>
-        <input type="datetime-local" id="appointment-time" name="appointment-time" required>
+    <label for="appointment-time">Preferred Date & Time</label>
+    <input type="datetime-local" id="appointment-time" name="appointment-time" required>
 
-        <label for="message">Additional Message (optional)</label>
-        <textarea id="message" name="message" rows="3" placeholder="Any extra details..."></textarea>
+    <label for="message">Additional Message (optional)</label>
+    <textarea id="message" name="message" rows="3" placeholder="Any extra details..."></textarea>
 
-<!-- ✅ Checkbox for agreement -->
-  <div class="checkbox-container">
-    <input type="checkbox" id="termsCheckbox">
-    <label for="termsCheckbox">
-      I agree to the <a href="terms.html" target="_blank">Terms & Conditions and Cancellation Policy</a>.
-    </label>
-  </div>
-
-        <div class="timezone">
-          Event time zone: East Africa Time (EAT / GMT+03:00)
-        </div>
-
-        <button type="submit">Book Now</button>
-      </form>
+    <!-- ✅ Checkbox for agreement -->
+    <div class="checkbox-container">
+      <input type="checkbox" id="termsCheckbox" required>
+      <label for="termsCheckbox">
+        I agree to the <a href="terms.html" target="_blank">Terms & Conditions and Cancellation Policy</a>.
+      </label>
     </div>
-  </div>
-</section>
+
+    <div class="timezone">
+      Event time zone: East Africa Time (EAT / GMT+03:00)
+    </div>
+
+    <button type="submit">Book Now</button>
+  </form>
+</div>
+
 
 
 <footer class="footer-section">
