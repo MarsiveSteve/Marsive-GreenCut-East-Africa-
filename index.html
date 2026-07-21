@@ -266,16 +266,18 @@
     <label for="location">Location</label>
     <input type="text" id="location" name="location" required placeholder="Enter your location">
 
-    <!-- ✅ Added Service Type Dropdown -->
+    <!-- Service Type Dropdown -->
+<div class="form-group">
     <label for="service-type">Service Type</label>
-    <select id="service-type" name="service-type" required>
-      <option value="" disabled selected>Select a service...</option>
-      <option value="lawn-mowing">Lawn Mowing</option>
-      <option value="hedge-trimming">Hedge Trimming</option>
-      <option value="irrigation-setup">Irrigation Setup</option>
-      <option value="tree-planting">Tree Planting</option>
-      <option value="consultation-training">Consultation/Training</option>
+    <select id="service-type" name="service_type" required>
+        <option value="" selected disabled>Select a service...</option>
+        <option value="Lawn Mowing">Lawn Mowing</option>
+        <option value="Hedge Trimming">Hedge Trimming</option>
+        <option value="Irrigation Setup">Irrigation Setup</option>
+        <option value="Tree Planting">Tree Planting</option>
+        <option value="Consultation & Training">Consultation &amp; Training</option>
     </select>
+</div>
     <!-- End of Service Type Dropdown -->
 
     <label for="appointment-time">Preferred Date & Time</label>

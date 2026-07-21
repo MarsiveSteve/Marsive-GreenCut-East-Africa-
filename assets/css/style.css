@@ -1279,6 +1279,26 @@ body {
   }
 }
 
+/* Label and input spacing */
+.form-group label {
+    color: var(--grey);
+}
+
+.form-group select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    background: #fff;
+    transition: .3s;
+}
+
+.form-group select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 6px rgba(46, 139, 87, .25);
+    outline: none;
+}
+
 .footer-section {
   background-color: #30c261; /* green shade */
   color: #fff;
