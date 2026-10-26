@@ -52,7 +52,7 @@
       <li><a href="areas.html">Areas We Serve</a></li>
       <li><a href="training.html">Training</a></li>
       <li><a href="blog/index.html">Blog</a></li>
-      <li><a href="index.html#appointment-section" class="btn" id="bookBtn">Book Service</a></li>
+      <li><a href="booking.html" class="btn" id="bookBtn">Book Service</a></li>
     </ul>
 
     <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
@@ -72,7 +72,7 @@
           urban and reserve areas in Nairobi, Kiambu, Murang'a, Nyeri, Kirinyaga and Embu.
         </p>
         <a href="https://wa.me/254707899360?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" rel="noopener" class="hero-btn"><i class="fab fa-whatsapp"></i> Contact Us</a>
-        <a href="#appointment-section" class="hero-btn alt">Request a Quote</a>
+        <a href="booking.html" class="hero-btn alt">Request a Quote</a>
       </div>
     </section>
 
@@ -287,71 +287,13 @@
       </div>
     </section>
 
-    <!-- ===== Booking ===== -->
-    <section id="appointment-section" class="appointment-section">
-      <h2>Schedule Your Service or Request a Quote</h2>
-      <p>Choose your preferred date and time and tell us what you need</p>
-
-      <div class="appointment-content">
-        <div class="image-container">
-          <img src="assets/images/f2.png" alt="Marsive GreenCare lawn care staff at work" loading="lazy" decoding="async">
-        </div>
-
-        <div class="form-container">
-          <h3>Book Now</h3>
-          <small>&#9989; Please review our cancellation policy and any terms about rescheduling before you book, to avoid inconvenience.</small>
-
-          <form id="appointmentForm">
-            <input type="hidden" name="form_type" value="Appointment booking">
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Enter your full name">
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required autocomplete="email" placeholder="Enter your email">
-
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="Enter your phone number">
-
-            <label for="location">Location (town and county)</label>
-            <input type="text" id="location" name="location" required placeholder="e.g. Ruiru, Kiambu">
-
-            <div class="form-group">
-              <label for="service-type">Service Type</label>
-              <select id="service-type" name="service_type" required>
-                <option value="" selected disabled>Select a service...</option>
-                <option value="Lawn Mowing">Lawn Mowing</option>
-                <option value="Land Mowing">Land Mowing</option>
-                <option value="Hedge Trimming">Hedge Trimming</option>
-                <option value="Landscaping Design">Landscaping Design</option>
-                <option value="Irrigation Setup">Irrigation Setup</option>
-                <option value="Tree Planting">Tree Planting</option>
-                <option value="Green Space Development">Green Space Development</option>
-                <option value="Consultation & Training">Consultation &amp; Training</option>
-              </select>
-            </div>
-
-            <label for="appointment-time">Preferred Date &amp; Time</label>
-            <input type="datetime-local" id="appointment-time" name="appointment-time" required>
-
-            <label for="message">Additional Message (optional)</label>
-            <textarea id="message" name="message" rows="3" placeholder="Any extra details..."></textarea>
-
-            <div class="checkbox-container">
-              <input type="checkbox" id="termsCheckbox" required>
-              <label for="termsCheckbox">
-                I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions and Cancellation Policy</a>.
-              </label>
-            </div>
-
-            <div class="timezone">
-              Event time zone: East Africa Time (EAT / GMT+03:00)
-            </div>
-
-            <button type="submit" id="bookNow">Book Now</button>
-          </form>
-        </div>
+    <!-- ===== Booking call-to-action ===== -->
+    <section id="appointment-section" class="home-block deep">
+      <div class="inner">
+        <h2>Ready to Book or Request a Quote?</h2>
+        <p class="sub">Choose your service, date and location in a few minutes. We will confirm your booking with you.</p>
+        <a class="cta-btn" href="booking.html">Book a Service</a>
+        <a class="cta-btn alt" href="https://wa.me/254707899360?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
       </div>
     </section>
   </main>
@@ -368,8 +310,7 @@
           <li><a href="training.html">Sustainability Training</a></li>
         </ul>
       </div>
-
-      <div class="footer-column">
+ <div class="footer-column">
         <h4>Areas We Serve</h4>
         <ul>
           <li><a href="areas/nairobi.html">Nairobi</a></li>
