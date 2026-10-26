@@ -283,3 +283,90 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
   .home-block h2 { font-size: 1.6rem; }
   .hero-btn.alt { margin: 12px 0 0 0; }
 }
+
+/* ---------- Homepage service rows: taller, uniform cards ---------- */
+.lawn-mowing-care,
+.irrigation-setup { padding: 28px 0; }
+
+.lawn-mowing-care .container,
+.irrigation-setup .container { width: 92%; max-width: 1100px; }
+
+.lawn-mowing-care .content,
+.irrigation-setup .content {
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 32px;
+  min-height: 440px;
+}
+
+.lawn-mowing-care img,
+.irrigation-setup img {
+  flex: 0 0 50%;
+  width: 50%;
+  height: 440px;          /* same height for every image */
+  max-height: none;
+  object-fit: cover;
+}
+
+.lawn-mowing-care .text,
+.irrigation-setup .text {
+  flex: 1 1 0;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 6px;
+}
+
+.lawn-mowing-care h3,
+.irrigation-setup h3 { font-size: 2rem; margin-bottom: 18px; text-align: center; }
+
+.lawn-mowing-care p,
+.irrigation-setup p { font-size: 1.1rem; line-height: 1.75; text-align: left; }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .lawn-mowing-care .content,
+  .irrigation-setup .content { min-height: 380px; gap: 22px; }
+  .lawn-mowing-care img,
+  .irrigation-setup img { height: 380px; }
+  .lawn-mowing-care h3,
+  .irrigation-setup h3 { font-size: 1.7rem; }
+  .lawn-mowing-care p,
+  .irrigation-setup p { font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+  .lawn-mowing-care .container,
+  .irrigation-setup .container { width: 92%; }
+
+  .lawn-mowing-care .content,
+  .irrigation-setup .content {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    min-height: 0;
+    gap: 0;
+  }
+
+  .lawn-mowing-care img,
+  .irrigation-setup img {
+    flex: none;
+    width: 100%;
+    height: 260px;        /* same height on every phone card */
+    margin: 0;
+  }
+
+  .lawn-mowing-care .text,
+  .irrigation-setup .text {
+    width: 100%;
+    flex: none;
+    min-height: 230px;    /* keeps all text panels the same length */
+    margin: 0;
+    padding: 22px 18px;
+  }
+
+  .lawn-mowing-care h3,
+  .irrigation-setup h3 { font-size: 1.5rem; margin-bottom: 12px; }
+  .lawn-mowing-care p,
+  .irrigation-setup p { font-size: 1rem; text-align: center; }
+}
