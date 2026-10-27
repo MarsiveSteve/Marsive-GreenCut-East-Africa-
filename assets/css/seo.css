@@ -584,3 +584,28 @@ a.pill.pill-gold:hover,
 .wrap.content .cards .card a.more,
 .cards .card a.more { margin-top: auto; }
 .cards .card p:last-of-type { margin-bottom: 16px; }
+
+/* ---------- Credit link at the bottom of the mobile menu ---------- */
+.menu-credit { display: none; }
+@media (max-width: 768px) {
+  .nav-links.active .menu-credit {
+    display: block;
+    margin: 18px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid #dfe9e2;
+    text-align: center;
+  }
+  .nav-links.active .menu-credit a {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #064420;
+    text-decoration: none;
+    padding: 8px 6px;
+    display: inline-block;
+  }
+  .nav-links.active .menu-credit a:hover,
+  .nav-links.active .menu-credit a:focus-visible { text-decoration: underline; }
+}
