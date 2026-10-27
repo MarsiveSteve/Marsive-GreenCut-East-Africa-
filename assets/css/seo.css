@@ -609,3 +609,58 @@ a.pill.pill-gold:hover,
   .nav-links.active .menu-credit a:hover,
   .nav-links.active .menu-credit a:focus-visible { text-decoration: underline; }
 }
+
+/* ---------- Mobile menu: light beige panel, faint brown dividers, Georgia throughout ---------- */
+@media (max-width: 768px) {
+  .nav-links.active {
+    background: #f7f0df;                         /* light beige */
+    border-top: 1px solid rgba(139, 94, 52, 0.25);
+    padding: 8px 18px 14px;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  .nav-links.active li { margin: 0; }
+  .nav-links.active li > a:not(.btn) {
+    display: block;
+    padding: 15px 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #3a2a18;
+    text-align: center;
+    border-bottom: 1px solid rgba(139, 94, 52, 0.28);   /* faint brown line after each item */
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .nav-links.active li > a:not(.btn):hover,
+  .nav-links.active li > a:not(.btn):active {
+    background: rgba(139, 94, 52, 0.08);
+    color: #064420;
+  }
+  .nav-links.active .close-item { margin-bottom: 2px; }
+  .nav-links.active .close-btn { background: #fbf7ec; border-color: rgba(139, 94, 52, 0.3); }
+  .nav-links.active a.btn {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    margin: 18px auto 4px;
+  }
+  .nav-links.active .menu-credit {
+    border-top: 1px solid rgba(139, 94, 52, 0.28);
+    margin-top: 14px;
+  }
+  .nav-links.active .menu-credit a { border-bottom: 0; }
+}
+@media (max-width: 768px) {
+  .nav-links.active li.menu-credit > a:not(.btn) {
+    padding: 8px 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #064420;
+    border-bottom: 0;
+    display: inline-block;
+  }
+  .nav-links.active li.menu-credit > a:not(.btn):hover { background: none; text-decoration: underline; }
+}
+
+  
