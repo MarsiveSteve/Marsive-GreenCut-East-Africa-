@@ -370,3 +370,53 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
   .lawn-mowing-care p,
   .irrigation-setup p { font-size: 1rem; text-align: center; }
 }
+
+/* ---------- Booking page ---------- */
+.booking-form { max-width: 640px; margin: 8px auto 0; }
+.booking-form form { display: flex; flex-direction: column; gap: 14px; }
+.booking-form label { font-weight: 600; font-family: Georgia, serif; color: #064420; }
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="tel"],
+.booking-form input[type="datetime-local"],
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;            /* 16px stops iOS zooming on focus */
+  font-family: inherit;
+  border: 1px solid #b9cdbf;
+  border-radius: 6px;
+  background: #fff;
+}
+.booking-form textarea { resize: vertical; }
+.booking-form .form-group label { display: block; margin-bottom: 6px; color: #064420; }
+.booking-form .timezone { font-size: 0.9rem; color: #444; }
+.booking-form button[type="submit"] {
+  background: #027a3a; color: #fff; border: 0; border-radius: 6px;
+  padding: 14px 20px; font-size: 1.05rem; font-weight: 700; cursor: pointer; width: 100%;
+}
+.booking-form button[type="submit"]:hover { background: #025e2d; }
+.booking-form button[type="submit"]:disabled { opacity: 0.6; cursor: wait; }
+
+.terms-box {
+  border: 1px solid #cfe8d6;
+  background: #f6fbf7;
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.terms-box .checkbox-container { align-items: flex-start; font-size: 1rem; margin: 0 0 6px; }
+.terms-box .checkbox-container input[type="checkbox"] { width: 22px; height: 22px; margin-top: 2px; flex: none; }
+.terms-box .form-note { font-size: 0.92rem; color: #444; margin: 0; line-height: 1.55; }
+.terms-box.has-error { border-color: #d9a441; background: #fff9e8; }
+.form-error {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #5c4300;
+  background: #fff3cd;
+  border-left: 4px solid #f8d124;
+  border-radius: 4px;
+}
+.form-error[hidden] { display: none; }
