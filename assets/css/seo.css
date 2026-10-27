@@ -421,19 +421,46 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 }
 .form-error[hidden] { display: none; }
 
-/* ---------- Page hero: landscaping photo under the green overlay ---------- */
+/* ---------- Page hero: one photo per page under the green overlay ----------
+   TO CHANGE A PAGE'S PHOTO: edit the one line for that page below.
+   Use a file in your repo:   --hero-img: url('../images/yourfile.jpg');
+   Or a web image address:    --hero-img: url('https://example.com/photo.jpg');
+   If the image fails to load, the banner simply shows the green overlay. */
 .page-hero {
-  background:
+  --hero-img: url('../images/f4.png');
+  background-color: #0c4724;
+  background-image:
     linear-gradient(135deg, rgba(6, 68, 32, 0.86) 0%, rgba(12, 71, 36, 0.80) 60%, rgba(2, 122, 58, 0.72) 100%),
-    url('../images/f4.png') center / cover no-repeat;
+    var(--hero-img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.page-hero.hero-lawn       { background-image: linear-gradient(135deg, rgba(6,68,32,0.86), rgba(2,122,58,0.72)), url('../images/f2.png'); }
-.page-hero.hero-irrigation { background-image: linear-gradient(135deg, rgba(6,68,32,0.86), rgba(2,122,58,0.72)), url('../images/f5.png'); }
-.page-hero.hero-trees      { background-image: linear-gradient(135deg, rgba(6,68,32,0.86), rgba(2,122,58,0.72)), url('../images/l3.jpg'); }
-.page-hero.hero-garden     { background-image: linear-gradient(135deg, rgba(6,68,32,0.86), rgba(2,122,58,0.72)), url('../images/f7.png'); }
-.page-hero.hero-lawn, .page-hero.hero-irrigation,
-.page-hero.hero-trees, .page-hero.hero-garden { background-size: cover; background-position: center; background-repeat: no-repeat; }
 .page-hero h1, .page-hero .lead { text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); }
+
+.page-hero.hero-services { --hero-img: url('../images/f7.png'); }
+.page-hero.hero-lawn-mowing { --hero-img: url('../images/f2.png'); }
+.page-hero.hero-landscaping { --hero-img: url('../images/f7.png'); }
+.page-hero.hero-irrigation { --hero-img: url('../images/f5.png'); }
+.page-hero.hero-tree-planting { --hero-img: url('../images/l3.jpg'); }
+.page-hero.hero-training { --hero-img: url('../images/w1.webp'); }
+.page-hero.hero-areas { --hero-img: url('../images/banner.webp'); }
+.page-hero.hero-areas-nairobi { --hero-img: url('../images/f7.png'); }
+.page-hero.hero-areas-kiambu { --hero-img: url('../images/b3.jpg'); }
+.page-hero.hero-areas-muranga { --hero-img: url('../images/l3.jpg'); }
+.page-hero.hero-areas-nyeri { --hero-img: url('../images/w1.webp'); }
+.page-hero.hero-areas-kirinyaga { --hero-img: url('../images/f5.png'); }
+.page-hero.hero-areas-embu { --hero-img: url('../images/f4.png'); }
+.page-hero.hero-faq { --hero-img: url('../images/f4.png'); }
+.page-hero.hero-about { --hero-img: url('../images/banner.webp'); }
+.page-hero.hero-booking { --hero-img: url('../images/f4.png'); }
+.page-hero.hero-blog-index { --hero-img: url('../images/w1.webp'); }
+.page-hero.hero-blog-eco-friendly-lawn-care { --hero-img: url('../images/b3.jpg'); }
+.page-hero.hero-blog-tree-planting-initiatives-kenya { --hero-img: url('../images/l3.jpg'); }
+.page-hero.hero-blog-green-landscaping-tips { --hero-img: url('../images/f7.png'); }
+.page-hero.hero-blog-sustainable-gardening-practices { --hero-img: url('../images/w1.webp'); }
+.page-hero.hero-terms { --hero-img: none; }
+.page-hero.hero-privacy { --hero-img: none; }
 
 /* ---------- Slim footer for inner pages ---------- */
 .footer-slim {
@@ -449,3 +476,111 @@ a:focus-visible, button:focus-visible, summary:focus-visible,
 .footer-slim a:hover { text-decoration: underline; }
 .footer-slim-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-bottom: 8px; font-weight: 600; }
 .footer-slim-copy { font-size: 0.85rem; color: #b9d8c3; margin-top: 4px; }
+
+/* ---------- Mobile menu: visible close (X) button ---------- */
+@media (max-width: 768px) {
+  .nav-links.active .close-item { display: block; margin: 0 0 4px; text-align: right; }
+  .nav-links.active .close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    font-size: 28px;
+    line-height: 1;
+    color: #064420;
+    background: #f1f7f2;
+    border: 1px solid #cfe8d6;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .nav-links.active .close-btn:hover { background: #e3f1e7; }
+}
+@media (min-width: 769px) {
+  .nav-links .close-item { display: none; }
+}
+
+/* The X is drawn with plain text, so it shows even if the icon font is slow or blocked */
+.nav-links .close-btn i { display: none; }
+.nav-links .close-btn::before { content: "\00D7"; font-size: 34px; line-height: 1; font-family: Arial, sans-serif; }
+
+/* ---------- Pressable link buttons ("Learn more", "Read more", "See areas") ---------- */
+a.pill,
+.card a.more,
+.wrap.content .card a.more,
+.tile a,
+.home-block .tile a,
+.post-item a.more,
+.wrap.content .post-item a.more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 10px 22px;
+  min-height: 44px;                /* comfortable thumb target */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  color: #fff;
+  background: linear-gradient(180deg, #049247 0%, #027a3a 100%);
+  border: 2px solid #027a3a;
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(2, 122, 58, 0.28);
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+a.pill:hover,
+.card a.more:hover,
+.wrap.content .card a.more:hover,
+.tile a:hover,
+.home-block .tile a:hover,
+.post-item a.more:hover,
+.wrap.content .post-item a.more:hover {
+  color: #fff;
+  background: #064420;
+  border-color: #064420;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(6, 68, 32, 0.32);
+}
+a.pill:active,
+.card a.more:active,
+.tile a:active,
+.post-item a.more:active { transform: translateY(0); box-shadow: 0 2px 5px rgba(6, 68, 32, 0.3); }
+
+/* Gold version for dark-green backgrounds */
+a.pill.pill-gold,
+.home-block.deep .tile a {
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #ffe35c 0%, #f8d124 100%);
+  border-color: #f8d124;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+a.pill.pill-gold:hover,
+.home-block.deep .tile a:hover {
+  color: #1a1a1a;
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* Placement inside the homepage service rows */
+.lawn-mowing-care .text a.pill,
+.irrigation-setup .text a.pill { align-self: flex-start; margin-top: 18px; }
+@media (max-width: 768px) {
+  .lawn-mowing-care .text a.pill,
+  .irrigation-setup .text a.pill { align-self: center; }
+}
+
+/* Cards: keep the button at the bottom edge so cards line up */
+.cards .card { display: flex; flex-direction: column; }
+.cards .card a.more { align-self: flex-start; margin-top: auto; }
+.cards .card p { margin-bottom: 14px; }
+.wrap.content .cards .card a.more,
+.cards .card a.more { margin-top: auto; }
+.cards .card p:last-of-type { margin-bottom: 16px; }
