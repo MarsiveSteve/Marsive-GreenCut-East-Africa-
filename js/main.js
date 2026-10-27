@@ -19,6 +19,19 @@
     if (hamburger) hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
 
+  /* Credit link in the mobile menu: added here so every page gets it from this one file */
+  if (navLinks && !navLinks.querySelector('.menu-credit')) {
+    var creditLi = document.createElement('li');
+    creditLi.className = 'menu-credit';
+    var creditA = document.createElement('a');
+    creditA.href = 'https://www.linkedin.com/in/stephen-njambi-a65877241';
+    creditA.target = '_blank';
+    creditA.rel = 'noopener';
+    creditA.textContent = 'Powered by Marsive Steve';
+    creditLi.appendChild(creditA);
+    navLinks.appendChild(creditLi);
+  }
+
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', function (e) {
       e.stopPropagation();
